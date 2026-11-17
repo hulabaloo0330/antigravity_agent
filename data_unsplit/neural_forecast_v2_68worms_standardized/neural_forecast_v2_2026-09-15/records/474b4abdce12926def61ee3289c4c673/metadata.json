@@ -1,0 +1,207 @@
+{
+  "source_format": "wormwideweb-json",
+  "source_record_id": "2022-07-27-38",
+  "source_metadata": {
+    "blake3_neuropal_dict": "5b123fc9ae956c21c8085e694203fa222b121ad992db5a427c23f72b602b59e1",
+    "checksum_h5": "9a89018dc6c08c88e3e256ce908cdb7c4f96243f1e6f0e2b28f957cc518ce993",
+    "dataset_type": [
+      "neuropal",
+      "reFed"
+    ],
+    "n_neuron": 135,
+    "paper_id": "dag_nwabudike_kang_2023",
+    "source_filename": "2022-07-27-38-data.h5",
+    "uid": "2022-07-27-38"
+  },
+  "source_group_id": "source-h5:9a89018dc6c08c88e3e256ce908cdb7c4f96243f1e6f0e2b28f957cc518ce993",
+  "animal_id": null,
+  "animal_identity_status": "unknown",
+  "condition": [
+    "neuropal",
+    "reFed"
+  ],
+  "signal_kind": "calcium_reporter_fluorescence",
+  "signal_source_field": "gcamp/trace_array_original",
+  "signal_unit": "source_fluorescence_scale",
+  "source_preprocessing": "Author-provided extracted fluorescence; not raw photons or membrane voltage. Upstream processing is not proven causal.",
+  "normalization_applied_here": "none",
+  "source_author_zscore_uses_future_statistics": "possible; excluded by default loader",
+  "time_unit": "s",
+  "time_unit_evidence": "WormWideWeb JSON schema: timestamp_confocal and mean_timestep",
+  "source_time_origin": 1305975.918814917,
+  "event_index_origin": "unknown_preserved_not_converted",
+  "events_source_index": {},
+  "reversal_events_source_index": [
+    [
+      4,
+      10
+    ],
+    [
+      88,
+      91
+    ],
+    [
+      184,
+      187
+    ],
+    [
+      192,
+      199
+    ],
+    [
+      206,
+      211
+    ],
+    [
+      234,
+      247
+    ],
+    [
+      248,
+      252
+    ],
+    [
+      256,
+      259
+    ],
+    [
+      268,
+      270
+    ],
+    [
+      289,
+      293
+    ],
+    [
+      303,
+      305
+    ],
+    [
+      383,
+      387
+    ],
+    [
+      390,
+      402
+    ],
+    [
+      405,
+      417
+    ],
+    [
+      420,
+      425
+    ],
+    [
+      428,
+      433
+    ],
+    [
+      488,
+      494
+    ],
+    [
+      495,
+      501
+    ],
+    [
+      529,
+      558
+    ],
+    [
+      559,
+      561
+    ],
+    [
+      622,
+      625
+    ],
+    [
+      660,
+      666
+    ],
+    [
+      672,
+      674
+    ],
+    [
+      681,
+      686
+    ],
+    [
+      688,
+      691
+    ],
+    [
+      695,
+      697
+    ],
+    [
+      698,
+      700
+    ],
+    [
+      703,
+      705
+    ],
+    [
+      766,
+      778
+    ],
+    [
+      781,
+      791
+    ]
+  ],
+  "behavior_channels": [
+    {
+      "name": "velocity",
+      "source_unit": "0.1 mm/s",
+      "conversion": "identity"
+    },
+    {
+      "name": "head_angle",
+      "source_unit": "rad",
+      "conversion": "identity"
+    },
+    {
+      "name": "angular_velocity",
+      "source_unit": "rad/s",
+      "conversion": "identity"
+    },
+    {
+      "name": "pumping",
+      "source_unit": "1/s",
+      "conversion": "identity"
+    }
+  ],
+  "issues": [
+    "UPSTREAM_CAUSAL_PREPROCESSING_NOT_VERIFIED"
+  ],
+  "source_original_available": true,
+  "control": false,
+  "record_key": "474b4abdce12926def61ee3289c4c673",
+  "parser_version": "neural-v2.0",
+  "signal_sha256": "2144b94a93f877e387f7d189d98257316207c364f3105f16c5bb137d7409eb5c",
+  "timestamps_sha256": "19ee3216fcac035b49fa3938b3777296946a2df985971f51702d264fe6b0dd84",
+  "n_timepoints": 800,
+  "n_neurons": 135,
+  "n_named_neurons": 94,
+  "finite_fraction": 1.0,
+  "median_dt_s": 0.6000188854523003,
+  "n_segments": 1,
+  "axis_order": [
+    "time",
+    "neuron"
+  ],
+  "dtype": "float32",
+  "mask_definition": "finite numerical values; not a complete biological quality mask",
+  "qc_state": "usable",
+  "training_eligible": true,
+  "evaluation_scope": "chronological within-record forecasting; cross-animal grouping requires identity review",
+  "source": {
+    "source_archive": "C:\\projects\\bio\\source_data\\behavior_forecast_5papers_2026-09-15\\raw\\dag_nwabudike_kang_2023\\dag_nwabudike_kang_2023.tar.bz2",
+    "member": "dag_nwabudike_kang_2023_2022-07-27-38.json",
+    "paper_key": "dag_nwabudike_kang_2023"
+  }
+}

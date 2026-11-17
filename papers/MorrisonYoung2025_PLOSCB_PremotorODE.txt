@@ -1,0 +1,798 @@
+
+## A data-driven biology-based network model reproduces C. elegans premotor neural dynamics
+
+The authors have declared that no competing interests exist.
+
+* E-mail: mmorrison3@illinoistech.edu
+
+
+## Abstract
+
+C. elegans locomotion is composed of switches between forward and reversal states punctuated by turns. This locomotory capability is necessary for the nematode to move towards attractive stimuli, escape noxious chemicals, and explore its environment. Although experimentalists have identified a number of premotor neurons as drivers of forward and reverse motion, how these neurons work together to produce the behaviors observed remains to be understood. Towards a better understanding of C. elegans neurodynamics, we present in this paper a minimally parameterized, biology-based dynamical systems model of the premotor network. Our model consists of a recurrently connected collection of premotor neurons (the core group) driven by over a hundred sensory and interneurons that provide diverse feedforward inputs to the core group. It is data-driven in the sense that the choice of neurons in the core group follows experimental guidance, anatomical structures are dictated by the connectome, and physiological parameters are deduced from whole-brain imaging and voltage clamps data. When simulated with realistic input signals, our model produces premotor activity that closely resembles experimental data: from the seemingly random switching between forward and reversal behaviors to the synchronization of subnetworks to various higher-order statistics. We posit that different roles are played by gap junctions and synaptic connections in switching dynamics. Using the model we identify signal neurons that strongly influence switches between behavioral states and core neurons that play an important role in integrating signal information. The model produces switching statistics that underlie behaviors such as dwelling versus roaming as a result of the synaptic inputs received.
+
+
+## Author summary
+
+The nematode C. elegans has one of the most complete connectomes and relatively few behavioral states, making it an ideal organism for which to attempt the formidable task of connecting biology to function. This paper is about the premotor network, which controls locomotion. We model premotor activity as a driven dynamical system: a recurrent network of ~15 neurons known to be intimately connected to forward and reversal movements, driven by over 100 of their presynaptic neurons. Whole-brain imaging data are used to constrain parameters. Comparing model outputs to data, we show that the model accurately reproduces basic features of C. elegans movements, such as the seemingly random switches between forward crawling and reversals. Because our model of neural activity is semi-realistic and analyzable, it has the potential to reveal mechanisms and predict behavior. As an example, we use it to clarify the role of gap junctions versus synaptic inputs and the dependence on various sensory neurons.
+
+Received 2025 Jan 3; Accepted 2025 Dec 5; Collection date 2025 Dec.
+
+
+## Introduction
+
+To survive, animals must be able to generate a wide range of behaviors and to switch between them effectively. These behaviors, ubiquitous across species, include searching for food, forming social aggregates, and escaping from danger. The aim of this paper is to study the neural mechanisms responsible for producing different behaviors and inducing transitions. C. elegans, with their relatively simple nervous system, limited behavioral states, and amenability to experimentation [1–3], are an ideal candidate to attempt a theory that connects neurobiology to behavior. The building of such a theory is an overarching goal of the present work.
+
+The C. elegans connectome consists of 300+ neurons; interneurons act as the main processors of information, they receive input from sensory neurons and send commands to motor neurons [4–6]. To some extent, experimentalists have demystified how sensory neurons respond to stimuli and how motor neurons coordinate muscle activity [7–11], but relatively little is known about how the intermediary interneurons operate collectively to make behavioral decisions. A subset of interneurons—premotor neurons—are chiefly responsible for determining the most common locomotory behaviors [5,6,9]. In this work, we model and analyze the activity of the premotor network of C. elegans.
+
+Despite the remarkable progress that has been made in documenting various aspects of C. elegans neural circuits, gaps in our knowledge remain. Individual neurons that promote forward and reversal movements have been identified, but the mechanisms that govern their collective activity remain to be understood. The connectome [12] provides detailed, quantitative information on connections between pairs of neurons in the entire organism, but anatomy alone—without physiology or dynamics—does not predict activity. Whole-brain imaging data [13,14] connects neuronal activity to behavior, yet does not explain how activity patterns are generated.
+
+There is also a substantial theoretical literature, much of it consisting of phenomenological studies. With all of these available tools, we believe it is time to attempt a more systematic understanding of the neural mechanisms that drive function.
+
+We propose that computational modeling may supply some of the missing information. In this work, we endeavor to build a model with the following properties: (i) The model should have a clear representation of anatomical structures and physiological measurements; without these components, model inferences are hard to interpret. (ii) The model should be as biophysical as possible. (iii) Dynamics being one of the missing ingredients, it would be desirable to have a dynamical systems model capable of producing the range of activity and subsequent behaviors observed. (iv) The model’s responses must be realistic, i.e. its activity outputs must be similar to data. (v) Lastly, the model must be analyzable, as models are built to be interrogated.
+
+We present in this paper a model of the C. elegans premotor network focusing on a core group of 10-20 neurons that experimentalists have identified as drivers of forward and reversal movements and model the dynamical interaction among them by a system of differential equations. The state variables are the neurons’ calcium levels. This core group, which is small enough to be analyzable, receives inputs from over 100 presynaptic neurons. We do not model the dynamics of the presynaptic neurons. We instead treat their influence as an external force, i.e., we model premotor activity as a driven dynamical system. Leaving model details to the Results, we remark that we have leaned heavily on connectomic data for network architecture, and on many sets of whole-brain imaging data for model parameters.
+
+A signature of C. elegans locomotion is its seemingly random switching between forward crawling and reversals. These switches are, in fact, far from random: they enable the C. elegans to forage for food and linger in a favorable environment. When provided with realistic input, our model can reproduce salient characteristics of switching dynamics. It does so through partial synchronization of clusters of neurons similar to the activity seen in the data. The dynamics produced are complex: they are neither completely random (as in the Markov chains models [5,15]) nor are they limit cycles (as in earlier dynamical systems models [16,17]). The close resemblance of our model outputs to data enhances the plausibility of our findings. Model analysis reveals, among other things, the differing roles played by gap junctions and synaptic connections in switching dynamics. It also enables us to identify specific neurons that are more influential.
+
+
+## Previous models
+
+We discuss below some models of C. elegans locomotion, focusing in particular on switching behavior. Many existing models fall into one of the following broad categories: Phenomenological models aim to describe or clarify empirical observations by connecting them to mathematical frameworks without claiming to reproduce biological mechanisms. Mechanistic and data-driven models make more direct connections to the anatomy and physiological data of the organism.
+
+Several phenomenological models have been presented for the seemingly random switching between forward and reversal neurons, which underlies C. elegans locomotion. Ref [5] reproduced stochastic switching with a Markov model and proposed mutual inhibition and inherent stochasticity as the mechanisms for switching. Ref [15] proposed a model with random switches between discrete states, each described by linear dynamics. Chaotic heteroclinic networks can reproduce switching statistics, highlighting that deterministic neural dynamics can generate seemingly random state switches [18]. Ref [13] observed that motor commands are represented globally and found that the neural representation of motor sequences evolved on a low-dimensional manifold obtained from PCA. Ref [19] built a low-dimensional model of this neural activity actuated by control signals that induce switches. Ref [20] built a similar model using nonlinear dynamics. These models connect switching phenomena to mathematical frameworks, but it is hard to draw biological inferences from them, as they are too far removed from neuroanatomy.
+
+In the second category are network models of premotor neurons in which the authors pose models containing biophysical parameters tied to cellular dynamics. Various model outputs are used to infer the values of model parameters. Refs. [21] and [22] simulated the dynamics of a premotor and motor circuit. The stationary distributions of the motor neurons were then used to infer synaptic polarities, i.e., whether a synaptic connection is excitatory or inhibitory; there is little discussion of network dynamics. Ref [16] simulated the dynamics of the C. elegans neuronal network and evaluated the activity of the command neurons. Their model predicted that neural activity converges to limit cycles; i.e., all neurons eventually acquire the same periodicity. A number of other network models incorporating biophysical constraints assigned polarities to synapses through other means and explored the behavior of premotor neurons when activated by one or two specific sensory neurons [17,23,24]; Ref [17] also found that their network dynamics converged to a limit cycle.
+
+A publication that appeared recently reproduces realistic C. elegans forward motion towards an attractor with a biomechanical body-environment model [25]. BAAIWorm is an integrative model that uses a neural network to control muscles that actuate the body-environment component of the model [25]. The neural network component is biophysically detailed with many parameters fit using machine learning and with an emphasis on its ability to produce coordinated forward movement.
+
+Other recent work includes data-driven models introduced in Refs. [26] and [27]. Ref [26] applied independent component analysis with time-delay embedding to whole-brain imaging data to decompose the activity into meaningful components. Ref [27] assessed the extent to which the connectome captures signaling in the network and found that physical connections capture causal relationships.
+
+The model we present in this paper is mechanistic and is constrained and fit with physiological, connectomic, and whole-brain imaging data. Our focus is on unraveling the dynamic mechanisms of switching behavior. We will discuss—after we present our results—the ways in which our results agree with or deviate from the findings in previous work.
+
+
+## Results
+
+We fit a dynamical systems model of premotor interneurons using several sources of data—voltage clamps, whole-brain calcium imaging, and the connectome. More precisely, we use the known connectome structure to set the locations of gap junction and synaptic connections and then use the whole-brain imaging data in conjunction with voltage clamp data to determine parameters, which consist primarily but not exclusively of the signs and weights of synaptic connections. Our model is a recurrent network of premotor neurons driven by a large collection of their presynaptic neurons; the presynaptic activity is also taken from the imaging data.
+
+Our main results can be summarized as follows:
+
+(1) Our model reproduces stochastic switching between the forward and reversal premotor neuron clusters, resembling data.
+
+(2) The model reproduces neuronal time series whose higher-order statistics match those observed in the data.
+
+(3) Using the deduced synaptic sign estimates, we identify presynaptic neurons that promote specific behaviors.
+
+(4) We use our model to show how gap junctions and synaptic connections may collaborate to produce emergent stereotyped activity in the premotor network.
+
+
+## Model description
+
+To build a dynamical network of premotor neurons, we must first decide which neurons to include in the model. Experimental and whole-brain imaging studies have identified that various neurons are associated with forward and reversal locomotion, but there is no obvious way to isolate a subgraph of the connectome that corresponds to the premotor network. Premotor neurons receive inputs from many sensory neurons and interact with many other interneurons that may or may not be directly implicated in locomotion; these neurons, in turn, interact with a larger set of neurons, and so on. If all potentially relevant neurons were included, the resulting network would be exceedingly large; see Fig 1A. Such a model would be impossible to fit due to a deficit of labeled neurons in whole-brain imaging data and difficult to analyze due to a large number of variables and parameters.
+
+
+## (a) Partial connectome from [12] containing 198 sensory neurons, interneurons, and motor neurons (most motor neurons that form neuromuscular junctions with muscle cells are excluded).
+
+The 15 neurons that will be selected as core neurons are shown in purple. Additionally, the partial connectome contains 137 neurons that are directly connected to the core neurons either presynaptically or through gap junctions. (b) Core neurons selected for the premotor network model and the connections among them. We categorize most core neurons as either forward or reversal based on the connectome and previous experimental work.
+
+Attempting to strike a balance between biological realism and analyzability, we propose a model with the following basic structure: a core group of neurons whose dynamics we simulate while influenced by a larger group of neurons whose activity is applied as input. More precisely, neurons in our network are divided into two groups. The first is a core group of neurons deemed the most relevant to the study in question. For us, these would consist of interneurons believed to play the most important roles in C. elegans locomotion. Neurons in this group are coupled to one another in a recurrent network; we will refer to them as core neurons for simplicity. This group should be relatively modest in size, though as large as need be. Then there is a second group consisting of what we will refer to as signal neurons. Signal neurons provide feedforward input to the core group; we do not model their dynamics, gleaning their outputs instead from various data sets. Core neurons are assumed to only receive input from other core neurons and signal neurons.
+
+Mathematically, we build a model in the form of a driven dynamical system, defined by a set of ordinary differential equations describing the dynamics of neurons in the core group, together with a time-dependent forcing representing the inputs from signal neurons. Below we identify the neurons to be modeled and give the equations governing model dynamics.
+
+Selection of neurons. Guided by connectomic, whole-brain imaging, and experimental data, and constrained by data availability, [6,9,12–14], we converge to a set of 15 neurons that, we posit, play central roles in forward-reversal locomotion. These are the neurons we place in the core group in our model. Below we recall some basic biological facts about them, and explain why they were chosen.
+
+Conceptually, we cluster the 15 core neurons into three categories: (i) Forward neurons (AVBL, AVBR, RIBL, RIBR, and RID); the AVB neurons are known to be command premotor neurons that drive forward movement; they are connected to the other interneurons in the group via gap junctions [5,6,9,12,22,28–30]. (ii) Reversal neurons (AVAL, AVAR, RIML, RIMR, AVEL, AVER, AIBL, and AIBR); the AVA neurons are known to be command premotor neurons that drive reversal movements; they are connected to the other interneurons in the group via gap junctions [16,31]. The forward and reversal clusters above have many synaptic connections within and between clusters. Finally, (iii) there are two neurons (AVDL and AVDR), which are highly interconnected with the two clusters via synaptic connections. A diagram showing these 15 neurons together with their known connections is shown in Fig 1B.
+
+According to the connectome, 137 neurons provide input to the core group [12]; 112 of the 137 input neurons appear in the whole-brain imaging data used to fit our model [14]—these are the 112 signal neurons defined in our model. Divergent from our model, in the real C. elegans brain the 15 core neurons have many recurrent connections with the signal neurons—we have chosen to neglect these recurrent interactions in favor of a more tractable dynamical system.
+
+We remark that though guided by data, there is some arbitrariness in the choices above as well as practical constraints. Most notably, we do not include the PVC and DVA neurons in our core set despite their strong association with locomotion and strong connections with the core set. This is because the PVC and DVA neurons do not appear in the whole-brain imaging datasets we use to fit our model [14], making it infeasible to fit model parameters for these neurons using the methods we employ. Another omission of note is that we exclude most motor neurons, many of which provide feedback to our core group via gap junctions [12]. As these neurons are “downstream" from our network, we do not wish to model them as signal neurons.
+
+Model dynamics and parameters. We begin with model equations for a generic set of n core neurons and m signal neurons. Conditions having to do with the specific core neurons selected are imposed only at the end.
+
+As C. elegans neurons have graded responses to injected currents, it is natural to measure their activity in terms of calcium levels [32]. We set the state variable for each neuron to be its GCaMP z-score; these measurements are acquired from whole-brain imaging data [14]. Let x1,⋯,xn denote these scores for the n core neurons and xn+1,⋯,xn+m the scores for the signal neurons. We posit that for i≤n, the time evolution of xi is given by
+
+The first term on the right side describes neuron i’s intrinsic dynamics and the second term represents the combined influence from all core and signal neurons j that form gap junctions with neuron i. The third represents the influence from core and signal neurons presynaptic to neuron i; τ,β,𝐖ij,𝐀ij are constants, and σ()=ReLU() is the ReLU activation function.
+
+As stated earlier, the dynamics of xi for i > n, i.e., for signal neurons, will not be modeled. Instead, {xi(t)} is extracted from whole-brain imaging time series.
+
+The intrinsic dynamics of individual neurons are approximated by voltage clamp data [32,33]. Leaving details to the Methods, we assume fi(xi) has the form
+
+where the bias term 𝐝i is different for each neuron. In the absence of input from other neurons and without a bias term, the system has two stable states, a low-activity state at xi = −0.8 and a high-activity state at xi = 1. A positive bias 𝐝i makes the neuron’s high-activity state relatively more stable while a negative 𝐝i makes the neuron’s low-activity state more stable. The cubic form of the neurons’ intrinsic dynamics approximates the typical nonlinear response of C. elegans neurons to current injection [32,33].
+
+The influence from both gap junctions and synaptic connections is approximated as linear, but the latter involves a rectifier activation function. The rectifier activation function applied to the neural activity of the presynaptic neuron reflects our assumption that neurons influence their postsynaptic counterparts synaptically only when depolarized and do not affect postsynaptic neurons when hyperpolarized.
+
+The quantities that remain to be determined are 𝐝i (bias in the intrinsic dynamics of individual neurons), 𝐖ij (relative gap junction weights between neurons), 𝐀ij (synaptic weights), β (relative contribution of gap juction input), and τ (timescale parameter). These quantities depend on the specific neurons in the model, and here is how they are determined:
+
+The gap junction weights 𝐖ij are derived from connectome data [12] (see Methods); for the neurons in our model, they are shown in Fig 2A.
+
+
+## (a) Relative gap junction weights between core neurons and between signal neurons and core neurons (select signal neurons are shown).
+
+Weights are taken directly from [12]. (b) Synaptic signed weights between core neurons and between signal neurons and core neurons derived from regression (select signal neurons are shown). Signal neurons are loosely sorted as forward-promoting or reversal-promoting. (c) Cartoon of principal structure between signal neurons, forward core neurons, and reversal core neurons.
+
+As for the synaptic weights 𝐀ij, we set 𝐀ij=0 when the connectome shows no connection between the relevant neurons; absent connections are depicted by white boxes in Fig 2B. When a connection is present, connectome data offer information on the number of synapses without sign specification [12]. Interpretation of this data is further complicated by the fact that many synaptic connections within the locomotion subnetwork are known to be “complex", meaning the connection contains both excitatory and inhibitory neurotransmitter-receptor pairs [34]. In the absence of clear guidance, we have elected to estimate independently the values of 𝐀ij, which in our model can be positive or negative representing the net excitatory/inhibitory inputs.
+
+The 𝐀ij not set to 0 a priori, the values of 𝐝i, and β are estimated by linear regression. We first find datasets from [14] that contain a sufficient quantity of core neurons, resulting in 22 datasets that we use to fit our model. We then perform a parameter sweep for β over many linear regressions. The minimum combined error occurs when β=10 (See Methods). After setting β to be 10, we perform separate linear regressions for each of the 22 datasets and average over all of the dataset parameters to obtain a single general set of parameter values 𝐀ij and 𝐝i. The obtained values for the synaptic weights and signs, 𝐀ij, are shown in Fig 2B.
+
+The last parameter that must be fit is the timescale parameter τ. We fit τ by simulating the activity of the core neurons in the six datasets shown in Fig 14 for variable τ values. We select τ such that, on average, the simulated core neurons switch at the same speed as the real neurons (see Methods, Figs 13 and 14).
+
+
+## Time series of core neurons in whole-brain imaging data compared to the simulation using signal neuron input.
+
+Behavior is measured as the dominant cluster (forward or reversal). τ=0.2, magnification on synaptic input is 1.4.
+
+
+## Dataset compared to simulations with different timescales and magnification factors.
+
+Decreasing the timescale parameter τ makes the system respond quicker to stimuli. Because the system is receiving partial signals we also magnify 𝐀 by 1.4x. Increasing the amount of stimulus to the premotor neurons increases their average activity levels.
+
+Recapitulating, the neurons in our core group contain two subsets—the “forward cluster" and the “reversal cluster"—that are known from experiments to be associated with forward and reversal locomotion. (See the paragraph on neuron selection). Simulated dynamics of these core neurons will be studied and compared to data. We note that in our model, dynamical properties of individual neurons are emergent; the only information specific to a neuron that we have built into the model are gap junction weights and the presence or absence of synaptic connections.
+
+
+## Model validation
+
+In this section we compare model outputs to data, demonstrating that though much simplified, our model can reproduce many key features of C. elegans locomotion.
+
+
+## Switching dynamics.
+
+A salient characteristic of C. elegans locomotion is a constant switching between forward and reversal movements at characteristic yet variable time intervals. An appropriate first test of our premotor network model is thus to evaluate if the model can reproduce these switching dynamics. In Fig 3 we compare premotor neuron activity from dataset 2023-01-23-15.json [14] to simulated activity of the corresponding neurons. Of interest are the activity levels of neurons in the core group; xi(t) from this dataset will be compared to simulation results from our model when driven by signal neurons whose outputs are taken from the same dataset. Fig 3A shows xi(t) for individual neurons over a 12-minute duration: the top panel is data from [14], the bottom panel is the simulation results. In both cases, neurons in the forward and reversal clusters, and the AVD neurons, are shown in three different colors, and the partial synchronization within each group is visible. Qualitatively, the forward and reversal clusters in the simulation switch between high and low states similar to the switches seen in the data.
+
+
+## Comparison of data and model.
+
+(a) Core neuron activity in the dataset 2023-01-23-15 [14] versus the simulation (101 neurons labeled). (b) The dominant cluster of neurons—forward or reversal—is a proxy for behavior (see Appendix). (c) Pairwise correlations between neurons. (d) Distribution of neural activity. (e) Dwell times in the forward and reversal states. Histograms are generated from the forward/reversal sequences in (b) using bin size 0.1 and excluding dwell times less than 0.05 min.
+
+Assuming that a high state of the forward cluster represents forward locomotion and the analogous statement for the reversal cluster, Fig 3B shows the forward/reversal direction of movement for this C. elegans as a function of time. We let F(t) be xi(t) averaged among the forward neurons and let R(t) be xi(t) averaged among the reversal neurons. We assume that when F(t) – R(t) > 0.5 (dark green) the C elegans is engaging in forward movement as, on average, the forward neurons are more active than the reversal neurons. When F(t) – R(t) <−0.5 (tan) we assume it is in reversal as the reversal neurons are more active. For |F(t) − R(t)| < 0.5 (shown in grey), we consider the movement to be ambiguous or paused. A comparison of the true and inferred locomotion state is shown in the Appendix. The two strips showing data and simulations are remarkably similar given the many simplifying assumptions made in the design of our premotor network model (Fig 3B). More examples comparing data to simulations are shown in Fig 14.
+
+
+## Higher order statistics.
+
+Fig 3C shows the correlations between pairs of neurons. Data and simulation compare well: Neurons in the forward cluster are highly correlated and anticorrelated to the reversal neurons. An analogous statement holds for neurons in the reversal cluster. The AVD neurons are not strongly correlated with either cluster in both the data and simulation.
+
+Fig 3D shows the probability distribution functions of the activity levels for the neurons in question. Here as well, model statistics resemble data: e.g. the forward neurons are bimodal in their pdfs and the reversal neurons have a single strong peak below zero and a large positive tail. The distributions of some simulated neurons fit the data better than others. For example, the RID neuron has a larger reversal peak than forward peak in the data but the opposite is true in the simulation. The KL divergence is a metric that could be used to quantify distribution differences and used in a loss function to fit a model with simulation distributions [35].
+
+Fig 3E shows the dwell time distributions for the forward and reversal states. The histograms are qualitatively similar, with mean dwell times between 0.2 and 0.33 minutes in both data and simulations. Simulated dwell times are slightly longer, but note that the time constant τ in our model is optimized over all data sets.
+
+We stress that the parameters in our network model are deduced from many datasets and are not specific to the dataset 2023-01-23-15. Indeed, our model simulates forward/reversal switching that resembles the actual switching in many datasets (Fig 14).
+
+
+## Analysis
+
+
+## Gap junctions versus synaptic connections.
+
+Next, we use our premotor network model to examine the roles played by gap junctions versus synapses in the stochastic switching between forward and reversal seen in Fig 3. First, we observe two salient characteristics in the dynamics of the forward neurons. Fig 4A shows the time series from a data set. Fig 4B shows the corresponding time series, simulated using our premotor network model when driven by signal neurons from the same dataset. Note that in the data as in the model, the forward neurons are synchronized, and together they make irregular but characteristic switches between high and low states.
+
+
+## Forward and reversal cluster dynamics using connected neurons as signals.
+
+(a) Forward neuron activity from dataset 2023-01-23-15. (b) Simulated forward neuron activity using both gap junctions and synapses. (c) Simulated forward neuron activity using only gap junctions. (d) Simulated forward neuron activity using only synapses. (e) Reversal neuron activity from dataset 2023-01-23-15. (f) Simulated reversal neuron activity using both gap junctions and synapses. (g) Simulated reversal neuron activity using only gap junctions. (h) Simulated reversal neuron activity using only synapses.
+
+Next, we study the effect of removing the synapses in the model, leaving only gap junctions. Fig 4C shows that the forward neurons stay correlated but fail to produce clear, strong switches between the high and low states. When gap junctions are removed leaving only synaptic interaction, the forward neurons exhibit dramatic switches between states but do not stay synchronized (Fig 4D).
+
+Similar results are observed for the reversal cluster (Fig 4E–4H).
+
+These results show that in our premotor network, both gap junctions and synaptic connections are needed to produce the switching behavior observed in data. They play different roles: gap junctions synchronize, while the stochastic switching appears to be mediated by synaptic dynamics. We hypothesize that similar mechanisms may be at work in the real C. elegans brain.
+
+
+## Promoter and suppressor signal neurons.
+
+Some signal neurons are more influential than others in promoting a switch between behavioral states. We ranked the signal neurons in dataset 2023-01-05-01 [14] by the extent to which they excite or inhibit the core forward or reversal neurons through synaptic connections (Fig 5). We then evaluated the impact of setting the top promoters or suppressors to zero, in analogy with ablation experiments.
+
+
+## Simulations using signal neurons from dataset 2023-01-05-01 [14].
+
+Promoter and suppressor neurons from dataset 2023-01-05-01 [14] are ranked by the strength of their promotion or suppression (left column). Top promotors/suppressors are then set to zero, and resulting activity strips are shown (middle column). Fractions of time spent in forward and reversal motion are summarized (right column). (a) Signal neurons that promote the forward neurons. Behavioral time series in data (row 1), with the top promoters set to zero (rows 2,3,4). Analogous results are presented in (b), (c) and (d) for signal neurons that suppress reversal, promote reversal, and suppress forward neurons respectively.
+
+A switch from reversal to forward could in theory be generated by either exciting the forward neurons or inhibiting the reversal neurons. The top forward promoters (as measured by their cumulative excitatory input to the forward set preceding a switch to forward) are RMED, AUAL, and CEPDR (Fig 5A). Neutralizing these neurons results in extended reversal intervals and shortened forward intervals; the fraction of time spent in the forward state decreased from 0.38 to 0.14 while the fraction of time spent in the reversal state increased from 0.34 to 0.59, indicating that these neurons promote forward locomotion considerably. The top reversal suppressors (as measured by their cumulative inhibitory input to the reversal set preceding a switch to forward) are FLPL, CEPDL, and URXR (Fig 5B). In contrast to the forward promoters, setting the top reversal suppressors to zero does not have a significant impact on behavior; see Fig 5B.
+
+A switch from forward to reversal could be generated by either exciting the reversal cluster or by inhibiting the forward cluster. The top reversal promoters are URYVL, URYDR, and AIZR while the top forward suppressors are OLLL, URYVL, and URYDR; the URY neurons simultaneously excite the reversal neurons and inhibit the forward neurons in the model (Fig 5C–5D). Setting the top three reversal promoters to zero increases the fraction of time spent in the forward state from 0.38 to 0.57 and reduces the fraction of time spent in the reversal state from 0.34 to 0.17. Similar changes are observed when setting the top three forward suppressors to zero.
+
+In summary, we deduce from the analysis above that the drivers of forward and reversal motions are not symmetric: while forward motion requires stimulation of the forward cluster, reversal can be driven by either promotion of reversal neurons or suppression of forward neurons, suggesting that reversal may be a braking mechanism for forward motion.
+
+Analysis for another dataset is shown in the Appendix (Fig 15).
+
+
+## Simulations using signal neurons from dataset 2023-01-23-15 [14].
+
+Promoter and suppressor neurons from dataset 2023-01-23-15 are ranked by the strength of their promotion or suppression. (a) Signal neurons that promote the forward neurons. Behavioral time series with the top promoters set to zero. (b) Signal neurons that suppress the reversal neurons. Behavior with the top suppressors set to zero. (c) Signal neurons that promote reversal neurons and resulting behavior with the top reversal promoters set to zero. (d) Signal neurons that suppress the forward neurons and resulting behavior with the top forward suppressors set to zero.
+
+
+## Ablation of core neurons.
+
+The time series of the forward neurons are highly correlated, as are the reversal neurons (Fig 3), yet the connectivity of the core set is not uniform—each neuron forms a unique set of connections with other neurons in the network. It is unclear how each neuron within the core set contributes to the switching dynamics of the core network. To evaluate the contribution of each neuron class we perform simulations with ablations to the core set.
+
+Fig 6A shows the simulated baseline activity using signal neurons from dataset 2023-01-23-15 [14] with no ablations. We ablated (severed) both the synaptic connections and gap junctions in the model between each core neuron class and the remainder of the network and observed the impact that this has on the core network dynamics.
+
+
+## (a) Core neurons simulation with no ablations, using dataset 2023-01-23-15 for the signal neurons.
+
+(b) Core neurons simulation with RIB neurons ablated. (c) Simulation with AIB neurons ablated. (d) Simulation with AVD, AVA, and AVE neurons ablated. In all simulations, forward and reversal intervals of less than 2 seconds dividing a pause state were set to a pause state. Pause intervals of less than 5 seconds dividing a forward or reversal interval where set to the enclosing locomotive state (F or R).
+
+Among the forward neurons, ablating the RIB neurons had the largest impact on the dynamics resulting in significantly reduced forward intervals (Fig 6B). Ref [36] found that ablating RIB neurons reduced locomotion speed but did not significantly impact reversal frequency. In our model, such an ablation resulted in the conversion of a fraction of time spent in the forward state to the paused state, consistent with a slow-down of the nematode. Precisely, it reduced the fraction of time spent in the forward state from 0.46 to 0.23 and increased the fraction of time spent in the pause state from 0.13 to 0.44 (Fig 6B).
+
+Among the reversal neurons, ablating the AIB neurons had the largest impact on the dynamics resulting in reduced reversal intervals and extended forward intervals (Fig 6C). Ref [37] found that experimental ablations to the AIB neurons resulted in extended forward movement durations. In alignment with this finding, ablating the AIB neurons in the model increased the average forward duration time from 0.30 to 0.38 and reduced the average reversal duration time from 0.39 to 0.14. Ref [38] found that ablations to the AIB neurons suppressed reversal frequency, a phenomenon that did not occur in the model.
+
+Ref [38] also found that ablating the AVD, AVA, and AVE neurons combined resulted in a similar amount of reversal frequency suppression as ablating the AIB neurons alone. Ablating the AVD, AVA, and AVE classes combined in the model had a smaller impact on the dynamics than ablating the AIB neurons alone, in agreement with Ref [38] and further highlighting the importance of AIB neurons for reversals (Fig 6D).
+
+
+## Signal propagation maps.
+
+One way to investigate the sign of a neural connection, i.e., whether it is excitatory or inhibitory, is through optogenetic stimulation. Ref [39] applied optogenetic stimulation to C. elegans neurons one at a time and then measured the response in other neurons. Fig 7A shows the signal propagation map for the core neuron set, reproduced from Ref [39] data. Each column shows the strength of the post-stimulus neural activity in response to stimulation applied to the neuron at the top of each column.
+
+
+## (a) Signal propagation map reproduced from Ref [39] data.
+
+(b) Post-stimulus average displacement computed from the simulation displacement trajectories.
+
+From simulated data, we generate an analogous signal propagation map (Fig 7B). Core neurons are stimulated one at a time without any other signal input, and network responses are simulated. Post-stimulus displacement for a target neuron is computed by measuring its steady state activity level during stimulation and subtracting from that the neuron’s baseline value (when unstimulated). In the absence of any stimulus, the neurons converged to a fixed point of the undriven core neuron dynamics. The forward neurons stabilized at higher values than the reversal neurons, indicating that the core network contains bias in favor of forward locomotion. Ref [40] also found that the C. elegans neuronal network is biased in favor of forward-circuit activity.
+
+The signal propagation map generated from the model shares some similarities with the map in Ref [39] but differs from it in several ways: Excitatory responses within the forward and reversal clusters are stronger and less varied than corresponding responses in the experimental map. In the model, forward neuron perturbations consistently inhibited the reversal neurons while in the experiment they both excited and inhibited the reversal neurons depending on the connection.
+
+A possible explanation for these discrepancies is the existence of pathways not represented in the model. Specifically, two neurons in the core group can be—in fact likely are—connected by multiple pathways that involve neurons from outside of the core group. When multiple pathways are involved, the summed response tends to be nuanced, consistent with what is seen in the experimental map. The exclusion of such pathways simplified the model substantially but as this analysis shows, it is also a limitation.
+
+Another implication of these additional pathways is that while the functional relationship between two neurons is good indication of the sign of the synapse between them, one cannot take for granted that the two necessarily coincide. Other factors that impact the functional relationship are gap junctions, intrinsic dynamics, and extra-synaptic signaling—these additional factors can also make the functional relationship sign deviate from the synaptic sign.
+
+
+## Replicating the impact of heat shocks.
+
+External stimulus impacts the neural dynamics of C. elegans and can change how behavior is encoded [14]. Ref [14] found that applying a heat shock to the nematode increased its reversal probability post heat shock (Fig 8B) [14]. The authors also identified several heat responsive neuron classes: ADA, AVD, AWB, and AWC exhibited excitatory responses to heat shocks and neuron classes AIM, OLQD, OLL, and AIY exhibited inhibitory responses (Fig 8A).
+
+
+## (a) Event-triggered averages of neural activity aligned to the heat stimulus for some neurons with (D) excitatory or (E) inhibitory responses to the stimulus [14].
+
+(b) Event-triggered averages of behavior of 32 animals in response to the heat stimulus [14]. (a,b: Reprinted from Cell, 186(19), Atanas, A. A. & Kim, J., et al., Brain-wide representations of behavior spanning multiple timescales and states in C. elegans, 4134-4151, Copyright (2023), with permission from Elsevier.) (c) Positive and negative perturbations applied to heat responsive neurons and resulting time series of heat responsive neurons with the perturbation applied. (d) Fraction reversing before and after perturbations are applied, averaged over 44 perturbation events.
+
+We mimicked the impact of heat shocks to model neurons by directly applying positive perturbations to signal neurons ADAL, AWBL, and AWCL and negative perturbations to signal neurons OLQDL, OLQDR, OLLL, and OLLR in dataset 2023-01-05-01 (Fig 8C). Perturbation shapes were chosen to emulate the responses of these neurons in data (see Fig 8A).
+
+Fig 8D shows the fraction of model simulations in a reversal state immediately before and after the neural perturbations above were applied, averaged over 44 perturbation events. The fraction of reversals was significantly increased in alignment with data. However, unlike data, the model did not show a persistent state that lasted beyond the end of the perturbation. This should not be surprising as the neurons we perturbed are far from the only ones impacted by a real heat shock.
+
+
+## Behavior over long durations: Roaming vs dwelling.
+
+While semi-regular switching between forward and reversal is characteristic of C. elegans locomotion, the patterns and frequencies of these switches are known to convey information on the behavior of the worm over longer time durations. Roaming and dwelling are two such complementary behavioral states. Roaming allows C. elegans to explore a large space to find food while dwelling keeps C. elegans in a more confined region so that it can, e.g., exploit a discovered food source [30]. Roaming is characterized by long stretches of forward runs interrupted by infrequent reversals while dwelling is characterized by shorter forward runs and frequent, short, reversals [30].
+
+Using different datasets as signal input, the model produces various behaviors over time durations of 10-15 minutes. Fig 9 contrasts a behavioral sequence that is indicative of A dwelling behavior and B roaming behavior using signal input from two Ref [14] datasets: 2023-01-09-22 and 2023-01-23-15. From the behavioral time series of forward/reversal transitions we construct locomotory paths that simulate C. elegans locomotion on an agar plate: Following [41], a simplified pattern of forward-run, reversal, turn, and resume-forward is imposed. The durations of forward and reversal are given by the behavior simulation while forward and reversal speeds are fixed and turn angles are randomly selected from a distribution. Different draws of turn angles result in different realizations of the locomotory path, three of which are shown for each of the two datasets (Fig 9). More details on path reconstruction are given in the Methods.
+
+
+## (a) Behavioral state time series from the model simulation using dataset 2023-01-09-22 [14], and three locomotion paths simulated from this behavioral time series.
+
+The simulation procedure is described in the Methods. (b) Analogous results using dataset 2023-01-23-15 as input for the simulation.
+
+Signal input from dataset 2023-01-09-22 produces high frequency switches, resulting in shorter forward runs and reversals (Fig 9A). As a result, the C. elegans stays confined to a smaller region over the 12-minute time interval; this behavior is characteristic of dwelling. Signal input from dataset 2023-01-23-15 produces longer forward runs and longer reversals; the resulting paths in Fig 9B explore larger regions than the paths in Fig 9A. These paths show characteristics in the direction of roaming.
+
+
+## Discussion
+
+
+## Relation to existing literature
+
+The functions of individual C. elegans neurons and their association with behavior have been extensively studied [13,16,30,42–44]. Experimentalists have identified interneurons that are primarily responsible for driving and facilitating the primary locomotion behaviors of forward crawling, reversals, and turns [9,37,38]. Ablation studies show that key premotor neurons are essential for producing forward and reversal movements [45,46]. Whole-brain imaging shows that many neurons beyond the command premotor neurons are correlated with primary locomotion behaviors; moreover, network activity as a whole encodes behaviors better than the activity of individual neurons [13,14,47]. Many additional neurons and circuits have been linked to specific higher-order behaviors such as roaming and dwelling, local and global search, quiescence, chemotaxis, and the escape response [30,31,42,48,49]. Still, the question remains:
+
+How do these neurons work together to determine behavior, sustain different behaviors, and switch between them?
+
+Our data-driven, biology-based network model presents a dynamical picture different from those obtained by previous authors: our results do not fit with classical paradigms such as limit cycles, which are too simplistic given that forward-reversal transitions occur at irregular times. As our core system is driven by more than a hundred signal neurons with diverse functionalities, our simulated premotor dynamics are complex and varied, with seemingly random switching statistics that match what is observed in imaging data. We have benefited from many extensively labeled whole-brain imaging datasets that became available only recently and that we used to fit model parameters [14]. These datasets have enabled us to build a model that is directly connected to anatomy and has more realistic model outputs.
+
+A list of models related to ours is included at the end of the Introduction. There is little basis for comparison with the more abstract, phenomenological models. Below, we compare our results with a few that are more biophysical and/or data-driven.
+
+The dynamical picture we present differs from those in Refs [17,23–25], the outputs of which do not match well whole-brain imaging activity in data; specifically, these models do not reproduce the stochastic switching phenomena. For example, the worm model in [24] swims forward; in [25], the model also swims forward, but toward an attractor, with no stochastic switching. The dynamics in [17,23] tend to periodic cycles that underlie forward locomotion in their models.
+
+Ref [26] constructed a model from whole-brain imaging data that was collected while the worm was subjected to sensory stimuli in the form of periodic changes in NaCl concentration, which elicited a response in some sensory neurons. While locomotion neurons receive input from all of their presynaptic neighbors, Ref [26] found that the neural activity of the premotor neurons resided in separate motifs from the motifs capturing the sensory response to NaCl concentration changes. From this, they deduced that noise was necessary to produce realistic premotor activity. Our model leads to a different hypothesis: stochastic switching in our model occurs as a direct consequence of input from a (large) group of sensory and interneurons we call “signal neurons". Our findings are not necessarily in conflict, as the signal neurons that act as stimuli in our model are a more comprehensive set of stimuli than the neurons that responded to NaCl concentrations in Ref [26].
+
+Finally, our model is less detailed, with fewer parameters, than, for example, Ref [25]. We have chosen to work with a parsimonious model that could be analyzed in a transparent manner, as our aim in this study is to discover mechanisms and to posit an explanation for how the premotor network integrates sensory information to produce realistic dynamics.
+
+Because this model is semi-realistic, and it is analyzable, it has the potential to shed light on how connection type, structure, and signal input contribute to C. elegans locomotion. We find, for example, that gap junctions and synaptic connections support stochastic switching in different ways. By simulating the core neuron dynamics with and without activity from different signal neurons, we demonstrate that a small group of neurons is disproportionally responsible for inducing switches between forward and reversal locomotion, although the signals initiating switches are distributed among many neurons. Systematically ablating the core neurons reveals that not all ablations have an equal effect and that ablating the RIB and AIB neurons had the most significant impact on the dynamics. We observed also how different switching statistics results in qualitative differences in simulated locomotory paths.
+
+
+## Challenges in building a mechanistic network that is data-driven, biophysical, and analyzable
+
+One of the challenges in building such a model is the extraction of a suitable subnetwork. C. elegans neurons are highly recurrently connected; they do not process information in a feed-forward manner. Many premotor neurons are known to be “hubs" in the network with extensive connections [29]. These network features obfuscate which subset of neurons is responsible for determining locomotion—yet analyzability demands clarity and simplicity. An innovation in this paper is to select a core group of neurons of manageable size and model their dynamics as they receive input from a larger group of neurons (called signal neurons) the outputs of which we glean directly from data. We propose that approximating networked systems as a core system driven by external input can be a paradigm for modeling complex network dynamics in mathematical biology.
+
+While it is far more realistic than studying a closed circuit driven by one or two input sources, the approach we have introduced is not without limitations: To keep the size of the core group manageable, we have had to omit a significant amount of feedback from the core neurons to the signal neurons. Because we view the premotor neurons as primarily driving the motor neurons, we have neglected feedback from motor neurons. The exclusion of indirect signal transmission between core neurons via pathways that involve neurons outside of the core group is another major drawback, one that became all too apparent when comparing experimental and model signal propagation maps, as we have discussed earlier. We expect that model accuracy will improve if we fit the dynamics of a larger set of neurons (than the current core group), use more detailed models of individual neurons, and allow nonlinear interactions. This, however, will introduce more parameters, which in turn may require more data to constrain than what is currently available. See also the first paragraph under Ongoing and future work, where we discuss a specific way forward.
+
+Our model is also constrained by data availability. We do not include neurons for which we lack whole-brain imaging data. Specifically, we exclude the PVC and DVA neurons despite their strong recurrent connections with the core set. Many additional neurons are rarely or never labeled in whole-brain imaging data which means that their contribution to the dynamics is not represented [14]. We expect that the accuracy of the model would improve if these neurons could be included.
+
+A major challenge in modeling biological systems is integrating disparate and inconsistent experimental evidence (and/or inferences from other computational studies). An example of the uncertainty we have encountered is in the signs of synaptic weights in the C. elegans connectome. For example, Ref [34] contains an extensive set of experimentally determined polarity predictions using gene expression data. Though many of the polarities are labeled as complex due to the existence of both excitatory and inhibitory neurotransmitter-receptor pairs between the pre- and postsynaptic neurons, overall they predict more excitatory than inhibitory connections (Fig 10). In contrast, Ref [22] predicts, based on a computational model, that most interneurons in the circuit controlling locomotion (AVA, AVB, AVD, AVE, DVA, PVC) are inhibitory [21,22]. Not all experimental studies agree on sign predictions either. For example, the synaptic connection from RIM to AVB is excitatory according to Ref [34] but inhibitory according to Ref [42] (Fig 10). Additionally, there is not a clear relationship between functional connectivity and anatomical connections [50]. Because we cannot infer synaptic signs and weights from signal propagation data, as is available from Ref [39], we do not include the Fig 7 functional weights in the comparison of polarities.
+
+
+## Polarities obtained from regression compared to polarities determined from previous work [16,34,38,42].
+
+Synaptic weights are grouped and averaged over each neuron class (e.g. AVBL and AVBR and combined to form AVB). Ref [34] determines polarities for synapses that are not in the Ref [12] dataset which is used to establish the location of synapses for the model in this study.
+
+Because different studies predict different synaptic polarities, it is unclear how to use previous studies to constrain model parameters; our predictions were obtained independently through regression based on whole-brain data. Nor is it possible—given these discrepancies—to match all existing data. Fig 10 shows synaptic signs and weights between core neurons in our model (grid box color) compared to the polarities predicted by several previous studies. As can be seen, our synaptic predictions match some previous predictions and deviate from others. For example, we predict inhibitory synapses from forward neurons AVB and RIB to reversal neurons AVE and AIB, and mostly excitatory synapses from the reversal neurons to other reversal neurons, matching fairly well the findings of Ref [34]. On the other hand, RIM to AVA is inhibitory in our model and Ref [16] but excitatory in Ref [34].
+
+We remark that despite the discrepancies in polarity predictions, our model reproduces stochastic switching behavior, suggesting that such behavior is very robust.
+
+
+## Summary and conclusion
+
+From a highly interconnected network such as the C. elegans central nervous system, it is a priori unclear if one can meaningfully isolate a small subnetwork for detailed study. This challenge is especially severe in cases such as this, when the subsystem that we wish to model is intermediary between inputs and outputs. We propose that a suitable framework may be that of driven dynamical systems.
+
+In this paper we have focused on premotor neurons, modeling them as a small network of core neurons driven by a much larger collection of “signal neurons". Our model reproduces switching dynamics, which underlie C. elegans locomotion, far more realistically than previous dynamical models, and it correctly predicts the influence of many neurons, though the model was not built to reflect the behavior of any one neuron.
+
+Because the model is analyzable, we have used it to answer theoretical questions, such as the roles of gap junctions versus synapses. Model results suggest that, in the real worm, much of the seemingly random switching is in response to an array of inputs distributed across a large number of sensory and interneurons, some more influential than others. We hypothesize also that reverse motion is not antithesis to forward motion, rather it may serve as a brake to forward motion.
+
+Our model is not without limitations, however: a comparison with experimental functional connectivity maps revealed that more subtle responses in the network are missed. We conclude that overall, our modeling approach has yielded a useful though far-from-perfect approximation of the C. elegans premotor dynamics.
+
+
+## Ongoing and future work
+
+On the technical side: Although data availability is a limitation, using advanced statistical methods with the existing data may result in more accurate and reliable model fits. The identifiability analysis literature includes methods for fitting model parameters while also proving that the model fit is unique and accurate [51–55]. Identifiability has typically been achievable for smaller systems with well-defined terms and highly accessible measurements; it has not been generally established for larger nonlinear systems with few restrictions on terms. A useful future direction would be to explore the extent to which identifiability is achievable for neuronal systems given that the graph structure and known neuronal mechanisms will significantly constrain model possibilities.
+
+Towards advancing biology: While our model captures transitions between the two primary locomotory states, forward and reversal, there are several other locomotory states whose neural correlates have been identified, such as dorsal and ventral turns, omega turns, and quiescence [13,15,56]. The methods developed in this paper can be used to study these states. Our model can also be used to examine the impact of the environment on premotor activity through sensory neurons. Signals from the environment such as oxygen levels and chemical gradients are critical for chemotaxis and escape responses.
+
+A biologically semi-realistic model such as ours can shed light on dynamic mechanisms, including mechanisms for sustaining and switching between different locomotion states, and for higher-order behavioral states such as dwelling and roaming. It can also be used to analyze the effects of ablations and identify the function of signal neurons with respect to locomotion.
+
+Going forward, the driven dynamical systems paradigm proposed in this paper has many potential applications. Closer to this work is the modeling and analysis of other circuits in the C. elegans nervous system, and the integration of circuits for multiple functions into more comprehensive models. Further afield, the techniques developed here can be exported to other model organisms with available connectomic or large-scale imaging data.
+
+
+## Methods
+
+In the Results section, we pose a general model for C. elegans neural dynamics constructed using the connectome and experimentally observed intrinsic dynamics, and then fit model parameters using whole-brain imaging data. Here we fill in details omitted in the main text, mainly on (a) the modeling of intrinsic dynamics of individual neurons, and (b) how some of the parameters are fitted. We also provide more details on (c) network simulations such as those in Fig 3, and (d) our construction of locomotion paths in Fig 9.
+
+
+## Model dynamics and parameters
+
+As stated in the Results section, each of the core neurons, 𝐱→=[x1,x2,...,xn]T ∈ ℝn, has the following approximate dynamics for its calcium imaging brightness xi (neuron GCamp (z-scored)):
+
+where f(xi) is neuron xi’s intrinsic dynamics, β∑j=1n+m𝐖ij(xj − xi) represents the influence from neurons that form gap junctions with neuron xi, and ∑j=1n+m𝐀ijσ(xj) represents the influence from neurons that are presynaptic to neuron xi. σ()=ReLU() is the ReLU activation function and τ is a global timescale variable. The dynamics of the signal neurons are not modeled, their dynamics are extracted from the whole-brain imaging time series.
+
+
+## Intrinsic dynamics.
+
+Voltage and current clamp experiments show that C. elegans neurons have a graded, nonlinear response to input current [32,33]. The degree of nonlinearity varies from neuron to neuron; some neurons smoothly depolarize or hyperpolarize from the resting membrane potential while other neurons are bistable [57]. Most C. elegans neurons do not exhibit action potentials as they lack voltage-gated sodium channels; however, a few neurons, such as the AWA class, are able to spike via voltage-gated calcium channels [57]. Due to voltage-dependent ion channels, C. elegans neurons tend to be highly sensitive to input around their resting membrane potential and become less sensitive to input far from their resting membrane potential (Fig 11A). Suppose that the dynamics for a neuron’s voltage is dVdt=f(V). An approximation for f(V) can be attained through voltage clamp experiments. The dynamics for a neuron’s voltage when an input current is applied to the neuron is dVdt=f(V)  +  I. Voltage clamps stabilize a neuron’s voltage at a given level V, essentially setting the derivative equal to zero, dVdt=0, by applying a current I that will satisfy this objective. The amount of current I necessary to stabilize the neuron at a range of voltage levels V provides an approximation for –f(V). We approximate –f(V) for the inter/motor neuron RMD with the cubic function −f(V)=18000(V+70)(V+60)(V+50) (Fig 11B). This cubic function approximately matches the RMD steady-state I-V relation derived in Ref [33] (Fig 11A). The approximate function for intrinsic voltage dynamics, f(V)=−18000(V  +  70)(V  +  60)(V  +  50), indicates that there are two stable fixed points in the voltage dynamics at approximately V=−70 and V=−50 and an unstable fixed point at V=−60. This bistability is corroborated by experiments that show that RMD neurons have a plateau potential at approximately –35 mV in addition to its resting membrane potential at –70 mV [58].
+
+
+## (a) Voltage clamp experiments from Ref [32].
+
+Reprinted from Neuron, 20(4), Goodman M, Hall D, Avery L, and Lockery S, Active currents regulate sensitivity and dynamic range in C. elegans neurons, 763–772, Copyright (1998), with permission from Elsevier. Voltage clamp experiments from Ref [33]. (b) Intrinsic dynamics approximated from voltage clamp data in terms of voltage, V. (c) Calcium imaging time series and distribution over premotor neurons. The pdf of the time series of the premotor neurons is used to set fixed points for the intrinsic dynamics, xfp = −0.8,0.1,1. (d) Negative of approximate intrinsic dynamics, −f(x), in terms of the calcium imaging variable, x.
+
+While voltage clamp experiments can provide approximate forms for the intrinsic dynamics in terms of voltage, we need formulas for the intrinsic dynamics in terms of calcium imaging brightness, which poses a challenge as there is no function that directly transforms voltage to GCaMP brightness. We posit a nonlinear, cubic form for the intrinsic dynamics of each neuron in terms of the state variables for our model (GCaMP z-scores) using the following justification. Experiments measuring voltage levels and GCaMP (calcium imaging) concurrently in AWA neurons found that GCaMP fluorescence increased with rising voltage levels and decreased with drops in voltage levels, with a response that was smooth and delayed [57]. We estimate the average resting membrane potential and sensitivity range in x, the neuron GCaMP variable, by taking the distribution of x over the premotor neurons and finding peaks in the distribution (Fig 11C). We find the most common value across neurons is x = −0.8, and so set this as the average resting membrane potential (Fig 11C). There is another bump in the distribution around x = 1, and so we set this to be the plateau potential stable state in the intrinsic dynamics with an unstable fixed point between the two stable fixed points at x = 0.1 (Fig 11D). The resulting cubic f(x)=−2(x+0.8)(x−0.1)(x−1) is a qualitative estimate for the intrinsic dynamics of interneurons in general. The locations of the fixed points and their stabilities vary from neuron to neuron—this is accounted for by introducing an individual bias term 𝐝i for each neuron. Voltage clamps show that while the intrinsic dynamics of neurons have the same qualitative shape, the fixed point locations differ [32,33] (Fig 11A). We include the bias term 𝐝i in the intrinsic dynamics to account for this variability (Fig 11D).
+
+We set the intrinsic dynamics of each neuron in terms of xi, without input from other neurons to be
+
+where 𝐝i varies from neuron to neuron. When 𝐝i=0, the intrinsic dynamics have two stable states at xi = −0.8 and xi = 1 and one unstable state at xi = 0.1. Allowing a different bias term 𝐝i for each neuron allows the locations and stability of the fixed points to vary across neurons while keeping the same general form. Depending on the value of 𝐝i, one of the stable fixed points can become semi-stable or eliminated (Fig 11D).
+
+The cubic form we use to approximate the intrinsic dynamics captures several key properties. Firstly, it allows for voltage bistability in interneurons. Plateau potentials allow neurons to have the same computational properties as Schmitt triggers [58,59]. Neurons that lack two stable fixed points due to the bias term still have richer computational properties than if they possessed linear intrinsic dynamics. Second, the cubic form acts to provide bounds on the voltage range of each neuron. Neurons do not have an unlimited capacity for hyperpolarization or depolarization; negative feedback pressures keep the voltage within a bounded range and our model captures this constraint with the negative cubic term –x3. Saturation effects must be included to ensure the model produces realistic neural activity. Thirdly, the cubic form reflects the neurons’ increased sensitivity to input near its resting membrane potential and plateau potential. The neurons’ sensitivity to input varies in a voltage-dependent manner which is consistent with experimental data [32].
+
+The cubic form we use for the intrinsic dynamics of the C. elegans neurons has similarities to the voltage dynamics in models for spiking neurons. Both the FitzHugh–Nagumo and Hindmarsh–Rose models of neuron dynamics approximate the voltage dynamics with a cubic function [60–62]. One of the key differences between these models and our model is that models of spiking neurons incorporate recovery variables that capture spiking and the instability of the high-voltage state. C. elegans neurons do not spike and can be stable at a high-voltage state so we approximate each neuron’s intrinsic dynamics without using recovery variables [58,59].
+
+
+## Gap junctions and synaptic weights.
+
+The second term in Eq 2, β∑j=1n+m𝐖ij(xj − xi), captures the influence of neurons connected to neuron xi via gap junctions. 𝐖 is a symmetric matrix that holds the relative strengths of gap junctions between pairs of neurons; these weights are taken from the connectome [12]. The weights in 𝐖 are applied to the difference between xj and xi, meaning that the activity of neurons connected via gap junctions are pressured to equalize. The entire term is scaled by β which determines the relative contribution of gap junctions to the overall dynamics; we fit β with a parameter sweep over many fits with whole-brain imaging data.
+
+The third term in Eq 2, ∑j=1n+m𝐀ijσ(xj) captures the input from neurons presynaptic to neuron xi. 𝐀 is a nonsymmetric matrix that contains the signed, weighted, and directed synaptic inputs between pairs of neurons. The edge graph for synaptic connections in C. elegans is derived from [12].
+
+
+## Parameter fit.
+
+We determine β, 𝐀, and 𝐝 simultaneously by performing multiple linear regressions to approximate 𝐀 and 𝐝 for different values of β across 22 datasets selected from Ref [14]. Our criteria for the selection of these 22 datasets is that the dataset must contain at least one of the following forward core neurons—AVBL, AVBR, RIBL, or RIBR—because they are sparsely labeled in the datasets and one neuron in each class of the reversal neurons and AVD. To reduce the error from missing neurons we perform data replacement on missing time series when possible by substituting missing time series with the time series of highly correlated neurons. Certain pairs of left/right neurons are consistently highly correlated and therefore one neuron’s time series can be used as a proxy for the other if one neuron in the pair is missing. We label neuron pairs as highly correlated if they are on average at least 70% correlated in the datasets where they both appear; 30 neurons fit this criterion. For these highly correlated neurons, when one of the neurons is missing we use the time series of the other neuron as a proxy in the regression.
+
+We set τ=1 and fit the remaining parameters. From Eq 2 we subtract the default intrinsic dynamics and gap junction terms from the derivatives, leaving the synaptic weights and bias terms on the right-hand side,
+
+Eq 4 provides us with a reformulation of Eq 2 where all parameters on the left-hand side (LHS) are determined with the exception of β. We fix different values for β and then perform linear regressions for the 22 datasets to approximate 𝐀 and 𝐝 using snapshots from the calcium imaging time series of all neurons 𝐱(t) acquired from Ref [14].
+
+We perform a parameter sweep for β and select the β value that minimizes a combination of the regression error and the reconstructed derivative error across all datasets and across core neurons (Fig 12A). The regression error, errorregress, is the L2 norm of the difference between the timseries of the left-hand side and right-hand side of Eq 4. The reconstructed derivative error, errorderiv, is the norm of the difference between the time series of the derivative and the reconstruction of the derivative, Eq 2. The hybrid error is a combination of the regression error and the derivative error, errorhybrid=errorregress+0.05*errorderiv. The average regression error, derivative error, and hybrid error are shown for varying β values in Fig 12A. As an example of error for individual neurons, the top row of Fig 12B shows the time series data of the left-hand side of Eq 4 with its reconstruction for neurons AVAL and AVBL. The bottom row shows the time series data of the derivatives of AVAL and AVBL along with the derivative reconstructions, Eq 2.
+
+
+## (a) Average hybrid error as a function of β.
+
+The average error is a combination of the regression error and the derivative reconstruction error. Derivative and reconstruction errors are the L2 norm of the difference between the LHS and RHS of Eqs 2 and 4 respectively. (b) Example regression LHS and derivative reconstruction for AVAL and AVBL for β=10.
+
+We observe the hybrid error across datasets and core neurons is minimized at β=10 (Fig 12). We set β=10 and then perform linear regressions for 𝐀 and 𝐝 estimates across the 22 datasets. We use the average of the weights and biases across all datasets as the synaptic weights and biases in the general model.
+
+Whole-brain imaging datasets. We use calcium imaging time series data from Ref [14]. Each dataset consists of calcium imaging time series data for 64–106 labeled neurons [14]. Access to this data is provided through the Worm Wide Web database: https://wormwideweb.org/dataset.html.
+
+
+## Premotor network simulation.
+
+We simulate the dynamics of core neurons by integrating Eq 2, using the time series of signal neurons as input. We perform numerical integration in Julia using the Runge-Kutta-Fehlberg (RKF45) method. We fit the timescale parameter by finding τ such that the simulated neural dynamics have the same reaction times as those observed in the neural recordings across the datasets shown in Fig 14. The closest reaction time results from τ=0.2. Because each dataset contains traces for only a subset of neurons, each simulation is performed with input from a subset of the theoretical input. To help compensate for the missing input, we amplify the existing synaptic input by a magnification factor. We simulate the dynamics using increasingly large magnification factors and find a magnification factor of 1.4x brings the core neurons to the correct activity level.
+
+An example of how τ and the magnification factor affect the simulation is shown in Fig 13. Neural recordings from premotor neurons in dataset 2023-01-23-15 are compared to simulations performed with varying timescale parameters τ and magnification factors for the synaptic input (Fig 13). Decreasing the timescale parameter τ makes the system react quicker to input. Increasing the magnification factor increases the amount of input applied to the neurons which results in higher average activity levels in the neurons. This phenomena is similarly observed in the other datasets. By decreasing the timescale parameter as well as magnifying the input from A we get simulated behavior that more closely matches the premotor neural recordings.
+
+Using a single set of parameters, the general model reproduces the core neural activity observed in many datasets (Fig 14). While the parameter values remain the same, the input provided to the core neurons varies from dataset to dataset, resulting in different network activity.
+
+
+## Locomotion path simulation
+
+We simulate example locomotion paths for the forward/reversal behavior sequences, obtained from the data, using a simplified version of the procedure outlined in Ref [41]. Three sample paths for each dataset are initialized at the red marks. The locomotion cycle consists of a forward run, a reversal, a turn following the reversal, and then the resumption of forward motion. The forward speed is set to 0.15 mm/sec and the reversal speed to 0.075 mm/sec. The probability of a regular turn is 65% while the probability of an omega turn is 35%. Regular turn angles are selected from a uniform distribution ranging from −90∘ to 90∘. Omega turns are deeper turns; they are selected from a uniform distribution ranging from 90∘ to 270∘. Because turn angles are random, the three simulated paths for each dataset differ despite having the same forward/reversal sequences and durations.
+
+
+## Additional simulations
+
+Fig 14 shows the core neuron activity from six different datasets compared to simulated core neuron activity when receiving signal input from these datasets. An experimental heat shock was applied at the 8 minute mark in datasets a-e, which has the effect of increasing the probability of entering the reversal state after the heat shock (Fig 8) [14].
+
+
+## Dataset 2023-01-23-15 promoter and suppressor neurons
+
+Applying the same process as in Fig 5, we ranked the signal neurons in dataset 2023-01-23-15 [14] by the extent to which they excite or inhibit the forward or reversal neurons through synaptic connections and then systematically set the top promotors and suppressors to zero during the simulations (Fig 15). Similar to the results for dataset 2023-01-05-01 (Fig 5), the simulations using dataset 2023-01-23-15 indicate that the switch from reversal to forward is instigated primarily by signal neurons promoting the forward core neurons rather than inhibiting the reversal core neurons (Fig 15A–15B). The switch from forward to reversal appears to be more strongly instigated by forward suppressors rather than reversal promoters for dataset 2023-01-23-15 (Fig 15C–15D). The switch signal is distributed across more neurons for dataset 2023-01-23-15—neutralizing more promoters and suppressors is necessary to reduce the duration and frequency of reversals.
+
+
+## Inferring behavior from core neuron activity
+
+Locomotion state (behavior) is inferred from simulated neural activity by determining which core neuron cluster, forward or reversal, has a higher activity level. We average the five forward neurons and eight reversal neurons in each simulation and dataset to get low-dimensional variables F(t) and R(t) which describe the activity of each cluster. The average forward neuron activity is F(t)=1NF∑i=1NFxFi(t), where xFi(t) are the time series of the forward neurons and NF = 5. The average reversal neuron activity is R(t)=1NR∑i=1NRxRi(t), where xRi(t) are the time series of the reversal neurons and NR = 8. The difference of the cluster averages, z(t)=F(t) − R(t), is a single, low-dimensional variable that is highly correlated with the true velocity of the C. elegans (Fig 16B, 16D). We use the difference of the cluster averages as a proxy for velocity in the simulations. If the difference in the cluster activity is small, –0.5 < z < 0.5, the corresponding behavior is labeled as being in the pause state, while if the difference is larger the behavior is labeled as either forward or reversal.
+
+
+## (a) Forward and reversal neuron average activity levels along with velocity.
+
+(b) Difference of cluster averages and velocity. (c) Behavioral state classification of the difference variable (z(t)) and true velocity. (d) Correlations between the true velocity and measures taken from the neural activity—F(t), R(t), and F(t)–R(t).
+
+
+## Acknowledgments
+
+The majority of this work was done while MM was an NSF Mathematical Sciences Postdoctoral Research Fellow at the Courant Institute of Mathematical Sciences at New York University.
+
+
+## Data Availability
+
+There are no primary data in the paper. The model weights and source code to reproduce the simulations and statistical analysis is available on GitHub at https://github.com/mmtree/Celegans_premotor.
+
+
+## Funding Statement
+
+This work was supported by the National Science Foundation, https://www.nsf.gov, (MM, award no. 2103239 and LSY, grants DMS-1901009 and DMS-2350184). The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
+
+
+## References
+
+
+## Decision Letter 0
+
+1 May 2025
+
+PCOMPBIOL-D-25-00009
+
+A data-driven biophysical network model reproduces C. elegans  premotor neural dynamics
+
+PLOS Computational Biology
+
+Dear Dr. Morrison,
+
+Thank you for submitting your manuscript to PLOS Computational Biology. We apologise for the delay in review of your manuscript, due to waiting for a fully complete review by one invited reviewer. Consequently, I have personally reviewed the manuscript to allow a decision to be made - my comments are included below as Reviewer #3. Should the still outstanding review be completed, we will forward this to you as soon as possible.
+
+After careful consideration, we feel that your manuscript has merit but does not fully meet PLOS Computational Biology's publication criteria as it currently stands. Therefore, we invite you to submit a revised version of the manuscript that addresses the points raised during the review process.
+
+Please submit your revised manuscript within 60 days Jul 01 2025 11:59PM. If you will need more time than this to complete your revisions, please reply to this message or contact the journal office at ploscompbiol@plos.org. When you're ready to submit your revision, log on to https://www.editorialmanager.com/pcompbiol/ and select the 'Submissions Needing Revision' folder to locate your manuscript file.
+
+Please include the following items when submitting your revised manuscript:
+
+* A rebuttal letter that responds to each point raised by the editor and reviewer(s). You should upload this letter as a separate file labeled 'Response to Reviewers'. This file does not need to include responses to formatting updates and technical items listed in the 'Journal Requirements' section below.
+
+* A marked-up copy of your manuscript that highlights changes made to the original version. You should upload this as a separate file labeled 'Revised Manuscript with Track Changes'.
+
+* An unmarked version of your revised paper without tracked changes. You should upload this as a separate file labeled 'Manuscript'.
+
+If you would like to make changes to your financial disclosure, competing interests statement, or data availability statement, please make these updates within the submission form at the time of resubmission. Guidelines for resubmitting your figure files are available below the reviewer comments at the end of this letter
+
+We look forward to receiving your revised manuscript.
+
+Kind regards,
+
+Barbara Webb
+
+Academic Editor
+
+PLOS Computational Biology
+
+Hugues Berry
+
+Section Editor
+
+PLOS Computational Biology
+
+Journal Requirements:
+
+1) Please ensure that the CRediT author contributions listed for every co-author are completed accurately and in full.
+
+At this stage, the following Authors/Authors require contributions: Megan Jean Morrison, and Lai-Sang Young. Please ensure that the full contributions of each author are acknowledged in the "Add/Edit/Remove Authors" section of our submission form.
+
+The list of CRediT author contributions may be found here: https://journals.plos.org/ploscompbiol/s/authorship#loc-author-contributions
+
+2) We ask that a manuscript source file is provided at Revision. Please upload your manuscript file as a .doc, .docx, .rtf or .tex. If you are providing a .tex file, please upload it under the item type u2018LaTeX Source Fileu2019 and leave your .pdf version as the item type u2018Manuscriptu2019.
+
+3) Please upload all main figures as separate Figure files in .tif or .eps format. For more information about how to convert and format your figure files please see our guidelines:
+
+https://journals.plos.org/ploscompbiol/s/figures
+
+4) Please ensure that the funders and grant numbers match between the Financial Disclosure field and the Funding Information tab in your submission form. Note that the funders must be provided in the same order in both places as well.
+
+Reviewers' comments:
+
+Reviewer's Responses to Questions
+
+Comments to the Authors:
+
+Please note here if the review is uploaded as an attachment.
+
+Reviewer #1: Morrison et al reports an ODE model that captures the dynamics of a main subset of the command interneurons in C. elegans. The model is simple and easy to understand, and it reproduces actual neural activity well. Mathematical modeling that follows actual data is very important and should be highly evaluated. Analyzing the model predicted the different role of chemical synapses and gap junctions on neural activities. However, the paper seems to require additional evidence to demonstrate the importance of the model.
+
+Major:
+
+1) The proposed model covers a major subset of the command interneurons, but other neuronal activities are treated as inputs to the model. If these inputs include clear signals that indicate forward or backward movement, it would be easy to switch between forward and backward movement even without the proposed model. In fact, the experimental data used by the authors (Atanas et al 2023) includes experiments in which aversive heat stimulation was applied to induce strong backward movement. It is necessary to examine the properties of the input signal in addition to the presence or absence of such thermal stimulation. For example, as in Figure 7 of Hallinen 2021 (doi: 10.7554/eLife.66135), it may be possible to examine how the neural activity in the model is related to the main components extracted by principal component analysis of the input signal. By separating whether the transitions between the forward and backward states in the model are strongly dependent on the input signal, it becomes easier to understand how the state transitions occur, and it seems to be a good example that shows the importance of the proposed model.
+
+2) The authors claim that "The dynamics produced are complex: they are neither completely random as in the Markov chains models nor are they limit cycles as in earlier dynamical systems models." However, the dynamics of the proposed model are heavily dependent on external forces, so a superficial comparison is not valid. It is necessary to analyze and compare how state transitions occur in the model, independently of the model's input. I would like to see how the state transitions occur in the proposed model, after extracting the time periods when the effect of external forces is weak, as shown in comment 1). In addition, the differences in the roles of individual neurons are also interesting, but they have not been analyzed at all. For example, it is thought that RIM stabilizes the forward and backward states (Sordillo A., et al., 2021, eLife). Also, is AVD, which the authors incorporated into the model, important for switching between forward and backward? To investigate the role of these neurons, it may be useful to perform an ablation study of RIM and AVD in the model. I believe that such additional analysis is essential for the authors' main question, “How do these neurons work together to determine behavior, sustain different behaviors, and switch between them?”
+
+3) The time series used in Figure 5 is the actual data taken from Atanas et al., and it is unclear how the ODE model proposed by the authors contributes to this analysis. In addition, it is known that the duration of forward movement roughly determines whether the animal is dwelling or roaming, so it is necessary to show whether the proposed model can reproduce the distribution of the duration of forward movement.
+
+4) Regarding to Figure 6: The weight from ASEL/R to the downstream circuit is just not visible. In the experimental dataset, there is no obvious input to ASEs, so it would be difficult to correctly estimate the weight to AIB. The apparent weight from ASER to AIB is already report (Sato H., et al., 2021, 10.1016/j.celrep.2021.109177).
+
+Overall, it would be difficult to analyze responses to stimuli based on Atanas' dataset. It seems that a detailed analysis of the heat avoidance experiment conducted by Atanas et al. would be possible, but it is not mentioned at all in this paper. AWC is activated very transiently by thermal stimulation (Figure 7 in Atanas 2023). However, since other thermosensitive neurons are also activated (or inhibited) at the same time by thermal stimulation, it seems difficult to correctly estimate the effect of AWC alone.
+
+5) Regarding to Figure 7: If you want to predict synaptic polarity, you need to refer to the actual measurement values (Randi F., et al., 2023, Nature). The references listed are only guesses and are weak as evidence. The fact that there seems to be no relationship between the number of synapses and the weight of synaptic connections is alrady mentioned in several papers including the NeuroPAL paper (Yemini E., et al., 2021, Cell). Also, since there is a strong correlation between neural activity, it seems necessary to consider multicollinearity for parameter estimation. If you simply estimated the parameters from a small number of real data without taking some measures, such as dimensionality reduction, the estimated values will be inaccurate. You might also want to check the sloppiness (identifiability) of the parameters.
+
+Minor
+
+6) Text in the legend of figure 1 contains more than legend.
+
+7) In figure 3b, the authors estimate the behavioral labels based on the difference between the average neural activity F(t) and R(t). This method is need to be validated. Since the behavioral labels of the real data can be estimated using the same method, it is necessary to show whether they match the real data (velocity in the dataset).
+
+8) In figure 3d, the distribution of RID appears to be different between the real data and the model. Since the distribution across all time is affected by the ratio of different behaviors in each trial, it may be necessary to show a stratified histogram for each behavior label and discuss the consistency.
+
+9) Regarding Figure 5: dwelling and roaming are things that switch over time within the same individual, and they change in about 10 minutes (Flavell S.W., et al., 2013, Cell, doi: 10.1016/j.cell.2013.08.001). The data is obtained from Atanas 2023, but are these really dwelling and roaming? It is possible that you are simply looking at individual differences.
+
+10) Figure 11 may be more appropriate as a supplementary figure.
+
+11) Since there are comprehensive neural and behavioral models such as MetaWorm (currently BAAIworm, https://doi.org/10.1038/s43588-024-00738-w), comparisons with these models may be informative.
+
+12) The conversion between membrane potential and GCaMP values seems to be based on the assumption that the binary state transitions seen in GCaMP measurements are similar to the stationary values of the I-V curve. If there are any evidence that justify this assumption, it would be better to cite the literature.
+
+Reviewer #3: This paper exploits the richness of C. elegans data to take a somewhat novel approach to modelling the neural circuits that underpin switches in behaviour. More specifically, it uses previous identification of premotor neurons, and connectome data, to establish a small circuit model (of core neurons) whose inputs are given by whole brain recordings of upstream neurons (signal neurons). The connectivity parameters in the circuit are fitted using the same neural data, and its dynamic behaviour evaluated.
+
+The main limitation I see in this approach is that it is not clear what, if anything, specific to the core circuit actually accounts for the ability to produce similar dynamic behaviour. That is, it seems possible that a completely generic neural network could be tuned/trained to produce the appropriate (simple) output (a dynamically switching tendency towards forward or backward motion) given the very rich input information.
+
+The presented results make a small start towards exploring this by examining the circuit performance with either gap junctions or synaptic connections left out, and this is the most interesting part of the paper. But a much more thorough examination is needed, e.g., to see what is the minimal circuit that can produce realistic results, to ablate individual neurons in the circuit (not just the inputs) and test the consequences, and to establish what happens as the parameter values are varied.
+
+The model also seems to make a number of other serious compromises with respect to realism, such as no recurrency from core to signal neurons, eliminating some potentially relevant neurons due to lack of data, not modelling motor output or motor feedback, ignoring neuromodulation, etc. Of course, any practical model has to make compromises to be tractable, and some of these limitations are discussed appropriately, but they also limit what can actually be learnt from the model. For example, while it is interesting to see the predicted polarity for neural connections obtained from the data fitting approach, and to discuss how these align with or contradict previous accounts, it seems likely the fitted connection weights, and their polarity, could be very different if any of the above factors were included.
+
+I also felt the paper overall did not give a sufficiently deep embedding of how this work relates to the extensive range of previous models of this system. Instead these tended to be described somewhat briefly and dismissively.
+
+Abstract:
+
+“minimally parameterized, biophysical dynamical systems mode” - I am not sure that I agree that the degree of tuning to data actually used to set the parameters here should be described as “minimally parameterized”. It is also not fully evident in what sense the model is “biophysical”. The only support is in the claim (in the methods) that the cubic approximation for the intrinsic dynamics of the core neurons is similar to the form of models (e.g. Fitzhugh-Nagumo and Hindmarsh-Rose) of neural voltage dynamics. I agree the approximation does capture appear to capture the key properties, but this is not the same as having a biophysical justification for the elements of the equation.
+
+Introduction:
+
+It seems unnecessary to characterize the current state of understanding so negatively, e.g. “The neural mechanisms responsible for producing different behaviors and inducing transitions are not well understood, even in the simplest of organisms”. “relatively little is known” “the mechanisms that govern their collective activity remain to be understood”. I would prefer the authors to provide a clear outline of what is known, what has been hypothesized, and how the problem has been approached to date. From the introduction, a naive reader would be unaware of the extensive range of previous models of this system, as these mostly are referenced only in the discussion.
+
+Line 26 on, it is good in principle to set out your modelling criteria, but other criteria might be advanced, so why are these chosen?
+
+Line 107 on, the explanation for selecting neurons seems somewhat vague. Was there an explicit criteria, e.g., neurons shown to produce locomotion when individually activated (“command neurons”)? Neurons one synapse away from motor neurons (“premotor neurons”)?
+
+Equation 1, the summation terms seem to imply that the inputs are the (W_ij) weighted gap junction inputs from both core and signal neurons, and the (A_ij) weighted inputs from both core and signal neurons; this is also what Fig 2a and 2b seem to show. Yet the text on lines 147-150 describes these terms in the equation as the “influence from all core neurons”. This creates confusion as I read the following parts under the assumption that A_ij is fitted to the data for the core neurons only, but (I believe) in fact it is also fitted to the signal data. It seems this could be sufficient to explain the matches in switching dynamics and higher order statistics shown in the results, irrespective of the structure of the core circuit.
+
+The differential effects of synapses vs. gap junctions seems potentially interesting. But could the correct dynamics be recovered if the parameters were refitted for the circuit without synapses/gap junctions?
+
+Behaviour over longer time durations: I found this hard to follow, particularly how it relates to the model provided here. It seems hardly necessary to provide a model to support the inference that more frequent switching results in shorter runs, and hence less dispersal. This part of the work seems unnecessary to include in the paper.
+
+Lines 359-361, rather than dismissing these mathematical models, it would be more interesting to discuss if the current model gives more support to one of these abstractions over another.
+
+Lline 411, can you comment more on how the accuracy of the model could improve. E.g. In what way would you test for a better fit to the data than that shown in fig 3 for the current model?
+
+For clarity, this review was completed by the editor for this manuscript: Barbara Webb
+
+**********
+
+Have the authors made all data and (if applicable) computational code underlying the findings in their manuscript fully available?
+
+The PLOS Data policy requires authors to make all data and code underlying the findings described in their manuscript fully available without restriction, with rare exception (please refer to the Data Availability Statement in the manuscript PDF file). The data and code should be provided as part of the manuscript or its supporting information, or deposited to a public repository. For example, in addition to summary statistics, the data points behind means, medians and variance measures should be available. If there are restrictions on publicly sharing data or code —e.g. participant privacy or use of data from a third party—those must be specified.
+
+Reviewer #1: Yes
+
+Reviewer #3: Yes
+
+**********
+
+PLOS authors have the option to publish the peer review history of their article (what does this mean?). If published, this will include your full peer review and any attached files.
+
+If you choose “no”, your identity will remain anonymous but your review may still be made public.
+
+Do you want your identity to be public for this peer review? For information about this choice, including consent withdrawal, please see our Privacy Policy.
+
+Reviewer #1: No
+
+Reviewer #3: No
+
+[NOTE: If reviewer comments were submitted as an attachment file, they will be attached to this email and accessible via the submission site. Please log into your account, locate the manuscript record, and check for the action link "View Attachments". If this link does not appear, there are no attachment files.]
+
+Figure resubmission:
+
+While revising your submission, please upload your figure files to the Preflight Analysis and Conversion Engine (PACE) digital diagnostic tool, https://pacev2.apexcovantage.com/. PACE helps ensure that figures meet PLOS requirements. To use PACE, you must first register as a user. Registration is free. Then, login and navigate to the UPLOAD tab, where you will find detailed instructions on how to use the tool. If you encounter any issues or have any questions when using PACE, please email PLOS at figures@plos.org. Please note that Supporting Information files do not need this step. If there are other versions of figure files still present in your submission file inventory at resubmission, please replace them with the PACE-processed versions.
+
+Reproducibility:
+
+To enhance the reproducibility of your results, we recommend that authors of applicable studies deposit laboratory protocols in protocols.io, where a protocol can be assigned its own identifier (DOI) such that it can be cited independently in the future. Additionally, PLOS ONE offers an option to publish peer-reviewed clinical study protocols. Read more information on sharing protocols at https://plos.org/protocols?utm_medium=editorial-email&utm_source=authorletters&utm_campaign=protocols
+
+
+## Author response to Decision Letter 1
+
+Collection date 2025 Dec.
+
+26 Sep 2025
+
+Submitted filename: Response to Reviewers.pdf
+
+
+## Decision Letter 1
+
+28 Oct 2025
+
+PCOMPBIOL-D-25-00009R1
+
+A data-driven biology-based network model reproduces C. elegans  premotor neural dynamics
+
+PLOS Computational Biology
+
+Dear Dr. Morrison,
+
+Thank you for submitting your manuscript to PLOS Computational Biology. After careful consideration, we feel that it has merit but does not fully meet PLOS Computational Biology's publication criteria as it currently stands. Therefore, we invite you to submit a revised version of the manuscript that addresses the points raised during the review process.
+
+Please submit your revised manuscript within 30 days Dec 28 2025 11:59PM. If you will need more time than this to complete your revisions, please reply to this message or contact the journal office at ploscompbiol@plos.org. When you're ready to submit your revision, log on to https://www.editorialmanager.com/pcompbiol/ and select the 'Submissions Needing Revision' folder to locate your manuscript file.
+
+Please include the following items when submitting your revised manuscript:
+
+* A rebuttal letter that responds to each point raised by the editor and reviewer(s). You should upload this letter as a separate file labeled 'Response to Reviewers'. This file does not need to include responses to formatting updates and technical items listed in the 'Journal Requirements' section below.
+
+* A marked-up copy of your manuscript that highlights changes made to the original version. You should upload this as a separate file labeled 'Revised Manuscript with Track Changes'.
+
+* An unmarked version of your revised paper without tracked changes. You should upload this as a separate file labeled 'Manuscript'.
+
+If you would like to make changes to your financial disclosure, competing interests statement, or data availability statement, please make these updates within the submission form at the time of resubmission. Guidelines for resubmitting your figure files are available below the reviewer comments at the end of this letter.
+
+We look forward to receiving your revised manuscript.
+
+Kind regards,
+
+Barbara Webb
+
+Academic Editor
+
+PLOS Computational Biology
+
+Hugues Berry
+
+Section Editor
+
+PLOS Computational Biology
+
+Additional Editor Comments:
+
+I agree with the review below that the additional analyses and revised discussion have substantially clarified the contribution of the paper. But I also agree that a more extended discussion of previous modelling in the introduction, to better set the context for this work, would be more appropriate.
+
+Reviewers' comments:
+
+Reviewer's Responses to Questions
+
+Comments to the Authors:
+
+Please note here if the review is uploaded as an attachment.
+
+Reviewer #1: The authors conducted additional analyses and clarified key features of the model. I am generally satisfied with the manuscript revisions addressing my comments, but I would like to add several minor comments.
+
+1. Regarding the section “Promoter and suppressor signal neurons” added by the authors, the forward-reverse switching in their model appears to be highly dependent on input signals. The authors' response includes the following description:
+
+" In the absence of any stimulus the neurons stabilize at different values with the forward neurons more active than the reversal neurons. Perturbing each neuron induces changes to the state of downstream neurons, as shown in Figure 7(d), emulating the experimental results reproduced in Figure 7(c). "
+
+Including such descriptions not only in the response but also within the main text would likely facilitate readers' understanding of this model. It would also be beneficial to discuss whether experimental evidence supports these findings. Furthermore, if possible, I would like to see a description of what insights this model provides regarding the switching mechanism in real worms. Also, Toyoshima 2024 (doi: 10.1371/journal.pcbi.1011848) constructed a model focusing on neural dynamics based on whole-brain imaging data and structural connectivity, similar to this paper. However, in that model, switching of command interneuron activity occurs solely due to neural activity noise, without requiring any specific stimulus input. If possible, it might be worthwhile to discuss why this difference arises.
+
+2. The response to the issue raised by Reviewer 3 in comment 4, in which the introduction does not address the fundamental differences from past similar mathematical model papers, appears insufficient. The revisions now include two sentences: "There is also a substantial theoretical literature, much of it consisting of phenomenological studies (see Discussion). With all of these available tools, we believe it is time to attempt a more systematic understanding of the neural mechanisms that drive function." However, the term ”phenomenological" alone does not clarify the specific strength of this paper compared to these previous studies, making the explanation insufficient. These differences should be properly explained in the introduction, not merely touched upon in the discussion.
+
+3. The followings seem typos.
+
+Around Line 406, “Signal input from dataset 2023-01-23-15 produces high frequency switches, resulting in shorter forward runs and reversals (Fig. 9(a)).” The dataset number appears to be incorrect.
+
+Around Line 569 "identifiably" -> "identifiability"
+
+**********
+
+Have the authors made all data and (if applicable) computational code underlying the findings in their manuscript fully available?
+
+The PLOS Data policy requires authors to make all data and code underlying the findings described in their manuscript fully available without restriction, with rare exception (please refer to the Data Availability Statement in the manuscript PDF file). The data and code should be provided as part of the manuscript or its supporting information, or deposited to a public repository. For example, in addition to summary statistics, the data points behind means, medians and variance measures should be available. If there are restrictions on publicly sharing data or code —e.g. participant privacy or use of data from a third party—those must be specified.
+
+Reviewer #1: No: The code appears to be in its old state prior to revision.
+
+**********
+
+PLOS authors have the option to publish the peer review history of their article (what does this mean?). If published, this will include your full peer review and any attached files.
+
+If you choose “no”, your identity will remain anonymous but your review may still be made public.
+
+Do you want your identity to be public for this peer review? For information about this choice, including consent withdrawal, please see our Privacy Policy.
+
+Reviewer #1: No
+
+[NOTE: If reviewer comments were submitted as an attachment file, they will be attached to this email and accessible via the submission site. Please log into your account, locate the manuscript record, and check for the action link "View Attachments". If this link does not appear, there are no attachment files.]
+
+Figure resubmission:
+
+While revising your submission, we strongly recommend that you use PLOS’s NAAS tool (https://ngplosjournals.pagemajik.ai/artanalysis) to test your figure files. NAAS can convert your figure files to the TIFF file type and meet basic requirements (such as print size, resolution), or provide you with a report on issues that do not meet our requirements and that NAAS cannot fix.
+
+After uploading your figures to PLOS’s NAAS tool - https://ngplosjournals.pagemajik.ai/artanalysis, NAAS will process the files provided and display the results in the "Uploaded Files" section of the page as the processing is complete. If the uploaded figures meet our requirements (or NAAS is able to fix the files to meet our requirements), the figure will be marked as "fixed" above. If NAAS is unable to fix the files, a red "failed" label will appear above. When NAAS has confirmed that the figure files meet our requirements, please download the file via the download option, and include these NAAS processed figure files when submitting your revised manuscript.
+
+Reproducibility:
+
+To enhance the reproducibility of your results, we recommend that authors of applicable studies deposit laboratory protocols in protocols.io, where a protocol can be assigned its own identifier (DOI) such that it can be cited independently in the future. Additionally, PLOS ONE offers an option to publish peer-reviewed clinical study protocols. Read more information on sharing protocols at https://plos.org/protocols?utm_medium=editorial-email&utm_source=authorletters&utm_campaign=protocols
+
+
+## Author response to Decision Letter 2
+
+Collection date 2025 Dec.
+
+1 Dec 2025
+
+Submitted filename: Response to Reviewers2.pdf
+
+
+## Decision Letter 2
+
+5 Dec 2025
+
+Dear Morrison,
+
+We are pleased to inform you that your manuscript 'A data-driven biology-based network model reproduces C. elegans  premotor neural dynamics' has been provisionally accepted for publication in PLOS Computational Biology.
+
+Before your manuscript can be formally accepted you will need to complete some formatting changes, which you will receive in a follow up email. A member of our team will be in touch with a set of requests.
+
+Please note that your manuscript will not be scheduled for publication until you have made the required changes, so a swift response is appreciated.
+
+IMPORTANT: The editorial review process is now complete. PLOS will only permit corrections to spelling, formatting or significant scientific errors from this point onwards. Requests for major changes, or any which affect the scientific understanding of your work, will cause delays to the publication date of your manuscript.
+
+Should you, your institution's press office or the journal office choose to press release your paper, you will automatically be opted out of early publication. We ask that you notify us now if you or your institution is planning to press release the article. All press must be co-ordinated with PLOS.
+
+Thank you again for supporting Open Access publishing; we are looking forward to publishing your work in PLOS Computational Biology.
+
+Best regards,
+
+Barbara Webb
+
+Academic Editor
+
+PLOS Computational Biology
+
+Hugues Berry
+
+Section Editor
+
+PLOS Computational Biology
+
+***********************************************************
+
+
+## Acceptance letter
+
+PCOMPBIOL-D-25-00009R2
+
+A data-driven biology-based network model reproduces C. elegans  premotor neural dynamics
+
+Dear Dr Morrison,
+
+I am pleased to inform you that your manuscript has been formally accepted for publication in PLOS Computational Biology. Your manuscript is now with our production department and you will be notified of the publication date in due course.
+
+The corresponding author will soon be receiving a typeset proof for review, to ensure errors have not been introduced during production. Please review the PDF proof of your manuscript carefully, as this is the last chance to correct any errors. Please note that major changes, or those which affect the scientific understanding of the work, will likely cause delays to the publication date of your manuscript.
+
+Soon after your final files are uploaded, unless you have opted out, the early version of your manuscript will be published online. The date of the early version will be your article's publication date. The final article will be published to the same URL, and all versions of the paper will be accessible to readers.
+
+For Research, Software, and Methods articles, you will receive an invoice from PLOS for your publication fee after your manuscript has reached the completed accept phase. If you receive an email requesting payment before acceptance or for any other service, this may be a phishing scheme. Learn how to identify phishing emails and protect your accounts at https://explore.plos.org/phishing.
+
+Thank you again for supporting PLOS Computational Biology and open-access publishing. We are looking forward to publishing your work!
+
+With kind regards,
+
+Anita Estes
+
+PLOS Computational Biology | Carlyle House, Carlyle Road, Cambridge CB4 3DN | United Kingdom ploscompbiol@plos.org | Phone +44 (0) 1223-442824 | ploscompbiol.org | @PLOSCompBiol
+
+
+## Associated Data
+
+
+## Supplementary Materials
+
+Submitted filename: Response to Reviewers.pdf
+
+Submitted filename: Response to Reviewers2.pdf
+
+
+## Data Availability Statement
+
+There are no primary data in the paper. The model weights and source code to reproduce the simulations and statistical analysis is available on GitHub at https://github.com/mmtree/Celegans_premotor.

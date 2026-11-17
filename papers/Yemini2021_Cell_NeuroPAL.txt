@@ -1,0 +1,4039 @@
+pmc
+Cell
+Cell
+319
+nihpa
+0413066
+Cell
+0092-8674
+1097-4172
+pmc-is-collection-domain
+yes
+pmc-collection-title
+NIHPA Author Manuscripts
+PMC10494711
+PMC10494711.1
+10494711
+10494711
+NIHMS1925874
+33378642
+10.1016/j.cell.2020.12.012
+NIHMS1925874
+NIHPA1925874
+1
+Article
+NeuroPAL: A Multicolor Atlas for Whole-Brain Neuronal Identification in
+C. elegans
+Yemini
+Eviatar
+1
+7
+*
+Lin
+Albert
+2
+Nejatbakhsh
+Amin
+3
+Varol
+Erdem
+3
+Sun
+Ruoxi
+3
+Mena
+Gonzalo E.
+4
+Samuel
+Aravinthan D.T.
+2
+Paninski
+Liam
+3
+Venkatachalam
+Vivek
+5
+Hobert
+Oliver
+1
+6
+1
+Department of Biological Sciences, Howard Hughes Medical Institute, Columbia University, New York, NY 10027, USA
+2
+Department of Physics, Center for Brain Science, Harvard University, Cambridge, MA 02138, USA
+3
+Departments of Statistics and Neuroscience, Grossman Center for the Statistics of Mind, Center for Theoretical Neuroscience, Zuckerman Institute, Columbia University, New York, NY 10027, USA
+4
+Department of Statistics and Data Science Initiative, Harvard University, Cambridge, MA 02138, USA
+5
+Department of Physics, Northeastern University, Boston, MA 02115, USA
+6
+Senior author
+7
+Lead Contact
+AUTHOR CONTRIBUTIONS
+All authors contributed in writing this manuscript. O.H. initiated the project. E.Y. designed and built NeuroPAL, designed and performed all non-stimulus behavioral phenotyping, traced the EM reconstructions, conducted all metabotropic receptor and mutant experiments, generated the panneuronal GCaMP6s strain, and performed the non-automated identification of activity traces. A.L. designed and performed all chemotactic assays. A.L., A.D.T.S., and V.V. designed and built the whole-brain imaging scope and microfluidic device then, together with E.Y. and O.H., designed the whole-brain imaging experiments that were all conducted in the A.D.T.S. lab. A.L. performed all whole-brain imaging experiments. A.N., E.V., L.P., and V.V. designed and built the software for whole-brain activity imaging that connects neurons with their identities, then extracts, de-mixes, and normalizes neuronal activity traces. A.L., E.Y., and V.V. designed and built the software to analyze the whole-brain imaging data. A.N., E.V., G.E.M., L.P., and R.S. computed the neuronal positional variability atlas, designed the semi-automated identification algorithms and software with accuracy validations, and together with E.Y. built the GUI. E.V. designed and built software to compute coloring for NeuroPAL applications and E.Y. generated the accompanying analysis. E.Y. designed the FlyPAL concept. Correspondence about calcium imaging and physiology is to be addressed to A.L. (
+albertlin@g.harvard.edu
+), V.V. (
+v.venkatachalam@northeastern.edu
+), and E.Y. (
+eiy1@columbia.edu
+). Correspondence about algorithms for semi-automated cell identification is to be addressed to A.N. (
+mn2822@columbia.edu
+), E.V. (
+ev2430@columbia.edu
+), and E.Y. (
+eiy1@columbia.edu
+).
+*
+Correspondence:
+eiy1@columbia.edu
+07
+1
+2021
+29
+12
+2020
+184
+1
+445043
+272
+288.e11
+01
+09
+2023
+11
+09
+2023
+11
+09
+2023
+15
+06
+2024
+This file is available for text mining. It may also be used consistent with the principles of fair use under the copyright law.
+SUMMARY
+Comprehensively resolving neuronal identities in whole-brain images is a major challenge. We achieve this in
+C. elegans
+by engineering a multicolor transgene called NeuroPAL (a neuronal polychromatic atlas of landmarks). NeuroPAL worms share a stereotypical multicolor fluorescence map for the entire hermaphrodite nervous system that resolves all neuronal identities. Neurons labeled with NeuroPAL do not exhibit fluorescence in the green, cyan, or yellow emission channels, allowing the transgene to be used with numerous reporters of gene expression or neuronal dynamics. We showcase three applications that leverage NeuroPAL for nervous-system-wide neuronal identification. First, we determine the brainwide expression patterns of all metabotropic receptors for acetylcholine, GABA, and glutamate, completing a map of this communication network. Second, we uncover changes in cell fate caused by transcription factor mutations. Third, we record brainwide activity in response to attractive and repulsive chemosensory cues, characterizing multimodal coding for these stimuli.
+Graphical Abstract
+In Brief
+The multicolor transgene NeuroPAL allows for nervous-system-wide neuronal identification in
+C. elegans
+using a combination of reporters and colors to generate an invariant color map across individuals and is compatible with reporters for gene expression and neuronal activity.
+pmc-status-qastatus
+0
+pmc-status-live
+yes
+pmc-status-embargo
+no
+pmc-status-released
+yes
+pmc-prop-open-access
+no
+pmc-prop-olf
+no
+pmc-prop-manuscript
+yes
+pmc-prop-open-manuscript
+yes
+pmc-prop-legally-suppressed
+no
+pmc-prop-has-pdf
+yes
+pmc-prop-has-supplement
+yes
+pmc-prop-pdf-only
+no
+pmc-prop-suppress-copyright
+no
+pmc-prop-is-real-version
+no
+pmc-prop-is-scanned-article
+no
+pmc-prop-preprint
+no
+pmc-prop-in-epmc
+yes
+INTRODUCTION
+Whole-brain imaging and molecular profiling are widely used to study nervous system development and brain function (
+Ahrens and Engert, 2015
+;
+Jones et al., 2009
+;
+Lichtman and Denk, 2011
+;
+Zeng and Sanes, 2017
+). One limitation in interpreting whole-brain images is the difficulty of assigning unique identities to every neuron in a volume of densely packed and similarly labeled cells. Identifying neurons is a challenge even in small nervous systems like that of the nematode
+C. elegans
+. Although it is possible to perform multi-neuronal functional imaging with single-cell resolution in
+C. elegans
+(
+Kato et al., 2015
+;
+Kotera et al., 2016
+;
+Nguyen et al., 2016
+;
+Venkatachalam et al., 2016
+), identifying neurons remains laborious and uncertain, requiring substantial expertise, even in light of recent advances (
+Bubnis et al., 2019
+;
+Toyoshima et al., 2020
+). The approach of using separate and sparsely labeled landmark strains is often helpful, but not easily scalable. Many neurons lack well-established reporters, and it is not always possible to cross-validate every neuron of interest in a densely labeled volume, even with a suitable landmark strain. Moreover, although the
+C. elegans
+nervous system is widely regarded as stereotyped, this stereotypy does not extend to the relative positions of cell bodies within ganglia (
+White et al., 1986
+). An invariant color map of all neurons is thus needed to achieve comprehensive cell identification. Here, we leveraged the small size of the worm nervous system and its powerful genetics to develop a method that identifies all neurons in a whole-brain image with a single reagent. We describe the development of a transgene that we call NeuroPAL (a neuronal polychromatic atlas of landmarks).
+The NeuroPAL transgene contains a combination of 41 selectively overlapping neuron-specific reporters, each of which expresses a subset of four distinguishably colored fluorophores. The NeuroPAL combination of reporters and colors generates a comprehensive color-coded atlas for the entire hermaphrodite nervous system. Our approach is fundamentally different from previously described “Brainbow” approaches (
+Livet et al., 2007
+;
+Richier and Salecker, 2015
+;
+Weissman and Pan, 2015
+). In “Brainbow,” multicolor labeling of the nervous system occurs when each neuron randomly expresses a subset of fluorophores. In NeuroPAL, each neuron expresses a stereotyped combination of fluorophores. NeuroPAL yields an invariant color map across individuals, where every neuron is uniquely identified by its color and position. We engineered NeuroPAL to be compatible with widely used reporters for gene expression and neuronal activity. None of the NeuroPAL fluorophores emit in the spectral bands of green, cyan, or yellow fluorescent proteins. Thus, NeuroPAL can be co-expressed with numerous markers—GFP, CFP, YFP, mNeonGreen, or reporters of neuronal dynamics like GCaMP—without affecting its color map.
+We demonstrate the versatility of NeuroPAL in studies of gene expression patterns, cell fate, and whole-brain activity imaging. First, we mapped with single-neuron resolution the complete gene expression patterns of all metabotropic receptors for common neurotransmitters (acetylcholine, GABA, and glutamate) encoded in the
+C. elegans
+genome. Second, we analyzed neuronal fate defects caused by mutations in the highly conserved transcription factors (TFs) EOR-1/PLZF and PAG-3/Gfi. Third, we measured the complete whole-brain activity responses to a gustatory repellent and two olfactory attractants. To facilitate the use of NeuroPAL, we provide an open-source software package that enables semi-automated identification of all neurons in whole-brain images. To extend the NeuroPAL technique for general use, we also provide software that chooses reporter-fluorophore assignments for other tissue and organisms. In conclusion, NeuroPAL now allows the
+C. elegans
+community to easily identify all neurons in whole-brain images for diverse applications.
+RESULTS
+Constructing the Color Palette for Comprehensive Landmarks
+The
+C. elegans
+nervous system contains 302 neurons (organized into 118 different classes) distributed among 11 ganglia throughout the body (
+Sulston, 1983
+;
+White et al., 1986
+). The set of neurons in each ganglion are the same from animal to animal, but the relative location of cell bodies within each ganglion is variable. The largest ganglia contain around 30 neurons. We reasoned that roughly 30 unique colors would be needed to reliably identify all neurons in each ganglion, and thus all neurons in the nervous system. Three spectrally distinct fluorophores, distinguishable at four or more different levels (high, medium, low, and undetectable), yield at least 64 different colors. Thus, three carefully chosen fluorophores should be enough to landmark the entire
+C. elegans
+nervous system (
+Figure 1
+).
+We wanted our landmark reagent to be usable in animals that co-express transgenic reporters for gene expression or neuronal dynamics. The most popular fluorescent reporters include CFP, GFP/GCaMP, and YFP. We did not want our landmark fluorophores to contaminate emission signals from any of these reporters and vice-versa. Therefore, we sought fluorophores with unique excitation/emission profiles that also left free the cyan, green, and yellow emission bands. We tested a wide variety of fluorophores and found mTagBFP2, CyOFP1, mNeptune2.5, and TagRFP-T to be the best available candidates (
+Figure 1A
+;
+STAR Methods
+;
+Chu et al., 2014
+,
+2016
+;
+Shaner et al., 2008
+;
+Subach et al., 2011
+). By pseudo-coloring these fluorophores blue, green, red, and white, respectively, their combinations generate RGB pseudo-colors (
+Figures 1B
+and
+1C
+).
+Given the resolution limitations of light microscopy, we did not want fluorescence signals from neighboring cells to contaminate one another. To minimize spatial overlap in fluorescence emission, we localized fluorophore expression to cell nuclei via nuclear-localization sequences or histone tagging. We assigned one fluorophore, TagRFP-T, to act as a panneuronal label. To minimize differential and variable expression levels associated with many known panneuronal drivers (
+Stefanakis et al., 2015
+), we constructed a synthetic ultra-panneuronal (UPN) driver by fusing the
+cis
+-regulatory elements of four different panneuronally expressed genes (
+Table S1
+). The UPN driver delivered bright, nearly uniform expression of TagRFP-T throughout the nervous system.
+Empirical Assembly of NeuroPAL, a Transgene Combining Neuronal Landmarks
+Next, we sought to differentially express the remaining three fluorophores (mTagBFP2, CyOFP1, and mNeptune2.5) to enable unique neuronal identification (
+Figures 1C
+and
+1D
+). We used two criteria to build a stereotyped cellular color map for unambiguous and comprehensive assignment of identity: (1) each neuron should express a stable amount of each fluorophore, across animals; and (2) nearby neurons in each ganglion should express visually distinguishable amounts of the fluorophores.
+We began with a candidate list of 133 published neuronal reporters known to have differential gene expression patterns. This list included both broad and narrowly expressed reporters (
+Table S1
+). We validated and completed identification of the expression of these candidates by co-expressing them with well-characterized cell-identity reporters. Candidates with variable or weak expression were dropped from further consideration. We then proceeded empirically and iteratively to build a single transgene for comprehensive neuronal identification. We started with a small set of broadly expressed reporters that spanned most of the nervous system. We gradually expanded this initial set, adding and changing reporters so as to target progressively smaller subsets of neurons that needed distinguishable colors. In each iteration, we assessed which neurons could and could not be identified based on color and position. We repeated these steps by trial and error until we found a suitable transgene that colored all neurons distinguishably from every neighboring cell. The final transgene, composed of 41 different reporter-fluorophore fusions, allowed us to unambiguously assign identities to every neuron in
+C. elegans
+based on a stereotyped color map (
+Figure 1E
+;
+Table S1
+;
+Videos S1
+and
+S2
+; NeuroPAL manuals:
+https://www.hobertlab.org/neuropal/
+). We called this transgene NeuroPAL.
+Neuronal Color Verification and Phenotypic Assessment of NeuroPAL Strains
+We integrated the extrachromosomal NeuroPAL transgene into the genome, outcrossed the brightest integrants (
+otls669
+,
+otls670
+, and
+otls696
+) eight times, and confirmed that these transgenes exhibited stable expression for more than 100 generations. The color scheme of the NeuroPAL strains mostly matched our expectations based on the combination of reporter-fluorophore fusions used in their construction. We verified the identity of each neuron by crossing the NeuroPAL integrants to 25 different GFP reporter lines with well-defined expression patterns (
+Table S1
+). The position, color, and identity of all neurons were verified using predominantly two or more GFP reporter lines and multiple NeuroPAL integrants. We found that the NeuroPAL expression pattern was stable, robust, and stereotyped throughout the nervous system over hundreds of scored animals (see NeuroPAL manuals:
+https://www.hobertlab.org/neuropal/
+). A minor exception was four neuron classes that exhibited variable brightness (AVL, RIM, RIS, and PVW). This minor variability did not affect our ability to comprehensively identify all neurons.
+We assessed the general health of our NeuroPAL integrants (
+Figures S1A
+–
+S1G
+;
+Table S2
+). All NeuroPAL integrants were able to be revived from frozen stock and generate progeny from either hermaphrodite or male parents. Thus, every integrant can be combined with other transgenic reporter lines using genetic crosses. We tested all NeuroPAL integrants with standard assays including brood size, growth, morphology, locomotion, and chemotaxis. The brightest integrant was
+otls669
+(strain OH15262). The integrant with locomotion and chemotactic behavior closest to wild-type,
+otls670
+(strain OH15263), is less bright but perhaps more suitable for behavioral analysis and calcium imaging. All NeuroPAL integrants are available at the
+Caenorhabditis
+Genetics Center (CGC).
+Variability in Neuronal Cell Body Positions
+The
+C. elegans
+hermaphrodite nervous system is widely regarded as stereotyped. However, the original electron-micrograph reconstructions (
+White et al., 1986
+) and subsequent analysis (
+Toyoshima et al., 2020
+) have reported variability in the positions of individual cell bodies within each ganglion of the nervous system. Variability in the position of individual cell bodies makes it impossible to assign neuronal identities based on relative position alone (
+Figures 2A
+and
+2B
+), underscoring the need for a reagent like NeuroPAL that disambiguates these identities based on genetic-expression factors. Nevertheless, a probabilistic map of neuronal positions would be useful in many studies. To construct this probabilistic map, we globally aligned neurons in the head and tail of 10 young-adult NeuroPAL hermaphrodites (
+otls669
+) of identical age and measured the spatial coordinates of every neuron (
+Table S3
+;
+Methods S1
+). This map revealed different positional variability across neuron types (
+Figures 2C
+and
+2D
+).
+Expression Maps for All Metabotropic Neurotransmitter Receptors
+To showcase NeuroPAL as a tool for expression-pattern analysis, we focused on neurotransmitter-signaling maps. Maps of neurotransmitter expression have been determined for the entire
+C. elegans
+nervous system (
+Gendrel et al., 2016
+;
+Pereira et al., 2015
+;
+Serrano-Saiz et al., 2013
+). Postsynaptic neurons receive neurotransmitter signals by either ionotropic or metabotropic receptors. However, the map of neurotransmitter receptor expression remains largely unknown, leaving their communication networks incomplete. We used NeuroPAL to map the complete expression of all metabotropic neurotransmitter receptors. The worm genome predicts three cholinergic metabotropic receptors (
+gar-1
+,
+gar-2
+, and
+gar-3
+), three glutamatergic metabotropic receptors (
+mgl-1
+,
+mgl-2
+, and
+mgl-3
+), and two GABAergic metabotropic receptors (
+gbb-1
+and
+gbb-2
+) (
+Hobert, 2013
+;
+Figures 3
+and
+4A
+). Crossing primarily fosmid-based
+gfp
+reporter transgenes into a NeuroPAL background, we find that these receptors are expressed in 97% of all neurons: 70% express GARs, 54% express MGLs, and 89% express GBBs (
+Figure 4C
+;
+Table S4
+). Previous work identified all presynaptic GABAergic neurons as well as all postsynaptic ionotropic GABA
+A
+receptor-expressing neurons (
+Bamber et al., 1999
+;
+Beg and Jorgensen, 2003
+;
+Gendrel et al., 2016
+;
+Jobson et al., 2015
+). Thus, our GBB map (the identity of every GABA
+B
+receptor-expressing neuron) has completed the GABA communication network in
+C. elegans
+(
+Figure 4B
+).
+We compared the GABA communication network to the synaptic connectivity between all cells as predicted by the recently updated
+C. elegans
+wiring diagram (
+Figures 4B
+and
+4G
+;
+Cook et al., 2019
+). We found that every postsynaptic partner of every GABA-releasing neuron expresses one of the two GABA
+B
+receptors. In contrast, only 60% of postsynaptic partners of GABAergic neurons express any of the seven GABA
+A
+receptors (
+Gendrel et al., 2016
+). Metabotropic communication similarly extends broadly over the cholinergic and glutamatergic signaling networks: 76% of the postsynaptic partners of cholinergic neurons express GAR receptors, and 66% of the postsynaptic partners of glutamatergic neurons express MGL receptors (
+Figure 4D
+).
+Surprisingly, we found that a considerable portion of the neurons expressing GABA receptors do not receive any connections from a presynaptic GABAergic neuron (
+Figure 4E
+); 31% of GABA
+A
+and 37% of GABA
+B
+receptor-expressing neurons have no presynaptic GABAergic partner. Moreover, we found 92% of all neurons express GABA receptors, and yet only 10% of neurons release GABA. These results suggest widespread extrasynaptic GABA communication. Such extrasynaptic communication may also be present for the other metabotropic neurotransmitter receptors: 3% of neurons that express GAR receptors and 10% of neurons that express MGL receptors do not receive synaptic inputs from any glutamatergic and cholinergic neurons, respectively (
+Figure 4E
+). Notably, sensory neurons appear to be the most prominent recipients of extrasynaptic communication (
+Figure 4F
+).
+Uncovering Determinants of Cell Fate
+The 41 reporters used to assemble NeuroPAL each serve as indicators of neuronal differentiation and identity. Thus, mutations that affect cell fate can cause informative changes in the NeuroPAL color map as different neuron types acquire different genetic identities. Therefore, NeuroPAL provides a fast method to screen for multiple cell-fate alterations. As an example, the conserved TF PAG-3/Gfi has been shown to orchestrate the fates of the VA and VB ventral motor neuron classes (
+Cameron et al., 2002
+). We crossed NeuroPAL (
+otls669
+) with strains carrying null alleles of
+pag-3
+(
+n3098
+and
+ok488
+). As predicted, the color codes that identify the VA and VB cell types in NeuroPAL are absent in
+pag-3
+mutants (
+Figures 5A
+and
+5B
+;
+Table S5
+). Unexpectedly, we also found color changes in the AVE and PVR interneurons caused by
+pag-3
+mutation. By checking a fosmid-based reporter, we discovered
+pag-3
+expression in neurons that had gone previously unidentified, including AVE and PVR (
+Figure 5C
+;
+Table S5
+).
+NeuroPAL is particularly useful when the expression pattern of presumptive cell fate regulators is either unknown or too broad to easily formulate hypotheses about their effects on cell identity. As an example, we examined EOR-1/PLZF, a ubiquitously expressed and highly conserved TF (
+Howard and Sundaram, 2002
+). Given its ubiquitous expression (
+Figure 5D
+), EOR-1 may be involved in controlling the differentiation program of anywhere between none to all of the worm’s neurons. By crossing
+eor-1
+null mutants (
+cs28
+and
+ok1127
+) to NeuroPAL, we discovered neuron-subtype-specific differentiation defects. The dorsal and ventral RME neurons (RMED/V) lost all their blue coloring but retained their panneuronal label (
+Figures 5E
+and
+5F
+;
+Table S5
+). In contrast, the left and right RME neurons (RMEL/R) exhibited no changes in their color codes. Expression of the blue landmark fluorophore in the RME neurons is driven by three reporters:
+ggr-3
+,
+pdfr-1
+, and
+unc-25/GAD
+(
+Table S1
+). We validated the NeuroPAL color alterations with an endogenously tagged reporter allele of
+unc-25/GAD
+(
+Figures 5E
+and
+5G
+;
+Table S5
+), but at the same time found no defects in UNC-47/VGAT expression. In conclusion we have identified a selective function of the ubiquitously expressed EOR-1 protein in the RME neuron class, a function that would have been impossible to predict based on the ubiquitous expression of EOR-1.
+Whole-Brain Activity Imaging of Gustatory and Olfactory Responses
+A major challenge in analyzing panneuronal calcium imaging data in
+C. elegans
+has been determining neuronal identities (
+Kato et al., 2015
+;
+Nguyen et al., 2016
+;
+Venkatachalam et al., 2016
+). To solve this problem, we combined NeuroPAL with the panneuronally expressed calcium reporter GCaMP6s (strain OH16230). We then used multicolor imaging to comprehensively identify all neurons. We recorded 21 worm heads (189 neurons) and, separately, 21 worm tails (42 neurons), with a median representation of 18 animals per neuron type. We studied brainwide responses, in young-adult hermaphrodites, to a repulsive taste (160 mM NaCl) and two attractive odors (10
+−4
+2-butanone and 10
+−4
+2,3-pentanedione), each previously described to activate different sensory neurons (
+Bargmann et al., 1993
+;
+Bargmann and Horvitz, 1991
+;
+Ward, 1973
+;
+Wes and Bargmann, 2001
+). These stimuli were delivered in chemotaxis buffer to the nose of the animal using a multichannel microfluidic device (
+Figures 6A
+and
+6B
+;
+Table S6
+;
+Videos S3
+and
+S4
+;
+STAR Methods
+;
+Si et al., 2019
+). We subjected each animal to the three chemical stimuli delivered in a randomized order (10-s pulses spaced by 50-s intervals). Using activity traces from all identified neurons, we assembled the mean brainwide response to each stimulus. Brainwide imaging revealed both known and previously unknown neuronal responses to each stimulus, encompassing multiple sensory and interneurons, many of which were not previously implicated in behavioral responses (
+Figure 6C
+). Additionally, we imaged another strain OH15500 (
+otIs669;otIs672
+), self-crossed 23× to drive isogenicity (
+Table S6
+), wherein we used a higher concentration and duration of NaCl (200 mM for 20 s) and delivered stimuli in water instead of buffer. OH15500 results are available in the supplement and not discussed further herein.
+As previously reported (
+Ortiz et al., 2009
+;
+Pierce-Shimomura et al., 2001
+;
+Suzuki et al., 2008
+;
+Thiele et al., 2009
+), NaCl evoked stereotyped left/right (L/R) asymmetric responses in the two ASE neurons. However, ASER exhibited an increase in [Ca
+2+
+] upon NaCl presentation, a result that likely reflects our choice of a much higher repulsive NaCl concentration, compared to previously published experiments (
+Ortiz et al., 2009
+;
+Suzuki et al., 2008
+). We observed many responses in a large number of sensory and interneurons, corresponding to the NaCl stimulus pulse (
+Figures 6C
+–
+6F
+;
+Table S6
+). In particular, we detected significant NaCl responses in six interneurons with no previously known function: AIN, AVF, AVH, AVJ, I2, and MI.
+We found that odors also evoked responses in a large set of both sensory and interneurons, throughout the brain, but exhibited more inhibitory activity (decreasing [Ca
+2+
+]) than seen for NaCl (
+Figure 6C
+). As in previous work (
+Wes and Bargmann, 2001
+), 2-butanone and 2,3-pentanedione evoked stochastically asymmetric responses in the AWC
+ON/OFF
+neuron pair (
+Figure 6D
+);
+srsx-3
+distinguishably colors AWC
+OFF
+in NeuroPAL (
+Bauer Huang et al., 2007
+). The set of neurons activated by all three stimuli was partly overlapping but distinct for each stimulus (
+Figures 6C
+–
+6F
+). For example, the ASJ sensory neurons were excited by NaCl but inhibited by both odors, whereas the RIC interneurons were excited solely by 2,3-pentanedione. Downstream of sensory neurons, we observed significant responses in many interneurons, many with no previously known function (e.g., AIN, AVH, RIF, RIG, and RIR) (
+Figures 6E
+and
+6F
+;
+Table S6
+). In the tail, the PVQ interneurons were significantly excited upon presentation of 2,3-pentanedione, while a mix of sensory and interneurons exhibited significant post-stimulus responses (upon removal of the stimulus from the animal’s nose) to all three stimuli (
+Table S6
+). Many of these post-stimulus responses were observed in interneurons with no previously known behavioral function (LUA, PVN, PVQ, PVR, and PVW).
+Surprisingly, both salt and odors elicited responses across the pharyngeal nervous system (
+Figure 6F
+;
+Table S6
+), a heavily interconnected network of 20 neurons that synapses with the main nervous system through a single interneuron, RIP (
+Cook et al., 2019
+). Recent anatomical re-analysis of the pharyngeal connectome revealed that most neurons in the pharynx have potential sensory endings (
+Cook et al., 2020
+). Thus, our activity recordings suggest that, despite its small size, the worm’s pharyngeal network may encode its own representation of behavioral responses to chemosensory cues.
+We noted that in many animals, the pair of AVF interneurons displayed robust cyclical activity for the entire 4-min recording, irrespective of delivery of gustatory or olfactory stimuli. The frequency of this activity was ~0.3 Hz, similar to the crawling frequency of freely moving worms of this strain (
+Figures S1G
+and
+S1H
+;
+Table S2
+). Previous experiments indicated that neurons in the region of the retrovesicular ganglion (the location of the AVF neurons) likely contribute to the central pattern generator for forward locomotion (
+Fouad et al., 2018
+). AVF ablation has also been shown to abolish forward locomotion (
+Hardaker et al., 2001
+). These results suggest that AVF may be part of the central pattern generator for forward locomotion in
+C. elegans
+. Further experiments will be required to confirm this hypothesis.
+Whole-Brain Neuronal Dynamics and Connectivity
+Exploring network-level dynamics, we computed pairwise correlations between the activities of all identified neurons, in each animal, from our whole-brain activity recordings. We found similar stimulus-specific neuronal correlations across individuals, but each stimulus generated its own brainwide correlation pattern (
+Figures 6G
+–
+6I
+and
+S2C
+–
+S2E
+). Even the two attractive odors produced distinct sets of neuronal correlations among and between sensory and interneurons. These results can be seen in the brainwide neuronal trajectories through low-dimensional PCA-space (
+Figures S2A
+and
+S2B
+). For instance, the AWB sensory neurons and their synaptically connected interneuron partners AUA and AVH exhibit distinct pairwise correlations depending on the stimulus (
+Figures 6D
+and
+6E
+). Thus we find that brain dynamics are stimulus-specific.
+We asked whether a simple relationship exists between these functional correlations and the synaptic counts previously measured from the anatomical connectome (
+Cook et al., 2019
+;
+White et al., 1986
+). To do so, we compared our correlation matrices of pairwise functional activity to the connectome matrix of pairwise synaptic connectivity. These matrices represent functional and structural measures of neuronal communication, respectively. We used the absolute value of the correlation matrices, because the connectome lacks excitatory/inhibitory synaptic information. We found low Pearson correlation between these functional and structural matrices. For electrical connectivity, R
+2
+= 2.8% in the head and R
+2
+= 1.7% in the tail, and for chemical connectivity, R
+2
+= 0.5% in the head and R
+2
+= 1.5% in the tail (
+Figures 6J
+and
+6K
+). We tried multiple variations in our calculations (e.g., thresholding for low sampling, using ranked correlation metrics, log-scaling synaptic counts, and limiting functional activity to only stimulus or non-stimulus delivery periods) but these did not noticeably improve correlation between functional activity and the structural connectome (
+Table S6
+). The low correlation values we measured may intimate contributions from non-synaptic signaling networks (that are not reflected in the anatomical connectome). These non-synaptic signaling networks include: (1) pervasive neuropeptidergic signaling (
+Bargmann and Marder, 2013
+), (2) extensive aminergic signaling (
+Bentley et al., 2016
+), and (3) potential extrasynaptic signaling as hinted by our expression maps of the metabotropic neurotransmitter receptors (see
+Expression Maps for All Metabotropic Neurotransmitter Receptors
+).
+Semi-automated Neuronal Identification
+We developed an instruction guide to help researchers use NeuroPAL (NeuroPAL manuals:
+https://www.hobertlab.org/neuropal/
+). This guide covers a variety of NeuroPAL-compatible microscope configurations and provides instructions on how to identify all neurons using the NeuroPAL color map. However, manual annotation of neurons is laborious and time-consuming. To speed annotation, we developed a software pipeline that partially automates this task (
+Methods S1
+; NeuroPAL ID software:
+https://www.hobertlab.org/neuropal/
+). This software pipeline uses three unsupervised algorithmic steps to automatically annotate neuronal identities in NeuroPAL images (
+Figure 7A
+). First, we filter out non-neuronal fluorescence. Second, we detect the color and position of each neuron. Third, we compute a probabilistic estimate of each neuron’s identity using a statistical atlas of NeuroPAL colors and positions (see
+Variability in Neuronal Cell Body Positions
+) (
+Varol et al., 2020
+). Last, a graphical user interface (GUI) permits manual review and error correction of all steps in our unsupervised pipeline.
+We evaluated the semi-automated neuronal identification performance of our pipeline. To do so, we cross-validated its performance and found our accuracy varied across ganglia (
+Figures 7B
+and
+7C
+). Accuracy was 86% for the head and 94% for the tail. Accuracy largely depended on neuron density; for example, our pipeline achieved high accuracy for all tail ganglia but lower accuracy for the much denser ventral ganglion in the head. Our software incorporates supervised annotation of low-probability neuronal identities to improve the estimated identities of the remaining unlabeled neurons. Adding eight manual annotations, on average, brings the head accuracy above 90% (
+Figure 7B
+).
+Our algorithm also provided a means of assessing the importance of color information in assigning cell identities. When we restricted the model to assign identities only on the basis of location, automated accuracy dropped to 50% for the head and 68% for the tail (
+Methods S1
+). These results confirm a substantial improvement in accuracy with the color information provided by NeuroPAL.
+An Optimal-Coloring Algorithm for Other Tissues and Model Organisms
+We built NeuroPAL empirically, laboriously testing a large variety of reporter-fluorophore combinations. Our method can benefit research into other tissues and model organisms that require cell-specific identification. For example, in
+Figure S3
+, we suggest a design for a general-purpose “FlyPAL” that might be well suited for studying neuronal circuits in
+Drosophila
+. To facilitate the generation of further analogous multicolor landmarking solutions, for any collection of cells in any organism, we developed an algorithm that computes approximately optimal reporter-fluorophore combinations to test
+in vivo
+(
+Methods S2
+; optimal-coloring software:
+https://www.hobertlab.org/neuropal/
+). With our optimal-coloring software, the amount of empirical testing required to construct future multicolor landmarking reagents is significantly reduced.
+As an overview, in order to be individually identifiable, neighboring cells of different types must be distinguishable from each other. Cells that cannot be distinguished by morphology must be distinguished by color and/or intensity differences larger than a discrimination margin. In our software, the user chooses this margin, decides which cells must be distinguishable from each other, specifies the number of landmark fluorophores to use in combination with a list of available reporters that have known expression, and restricts the total number of reporter-fluorophore combinations permitted by their transgenesis techniques. Given these inputs, the algorithm generates multiple approximately optimal solutions (reporter-fluorophore combinations) that minimize the percentage of color violations, defined as neighboring neuron pairs that fall below the discrimination margin.
+We ran our optimal-coloring algorithm using WormBase (a database of worm reporter expression) to generate several NeuroPAL alternatives (
+Methods S2
+). In our simulations, we achieve color violations of 1.7% when using 39 reporters and 10.5% when restricting the solution to only 3 reporters (
+Figures 7D
+and
+7E
+). This low percentage of indistinguishable neurons, in our two simulated NeuroPAL alternatives, indicates that they could prove beneficial for neuronal identification.
+Our algorithmic and FlyPAL examples illustrate how the NeuroPAL-technique can be extended to offer multicolor landmarking solutions for any collection of cells, in any model organism, using similar databases of reporter expression (e.g., using FlyBase for fly, ZFIN for zebrafish, and MGI for mouse). Although transgenesis techniques in other model organisms may restrict the total number of reporters that can be used, we show that despite this limitation, our algorithm can still offer beneficial solutions to devise stereotypic color maps for cellular identification.
+DISCUSSION
+Understanding the nervous system requires an integrated view of its constituent molecular, cellular, and functional signaling networks. A primary bottleneck to mapping these networks across an entire brain has been the difficulty of reliably identifying neuronal cell types. Here, we introduced NeuroPAL, a tool that allows researchers to use a single multicolor landmark strain to determine all neuron identities in the
+C. elegans
+nervous system. NeuroPAL offers comprehensive neuronal identification, and thus substantially improves on a recently published system that identifies, with some uncertainty, less than 60% of all neurons in the
+C. elegans
+nervous system (
+Toyoshima et al., 2020
+).
+One major challenge in understanding the molecular networks that encode the development and function of the nervous system lies in mapping gene-expression patterns that determine cell fates and characterize the effect of genetic perturbations on neuronal fate. We have shown here that NeuroPAL can be used to identify sites of gene expression and, independently, can also be used as a cell-fate marker. By detecting mutation-induced perturbations in the NeuroPAL color map of gene expression, we uncovered a neuron-fate-specific role for EOR-1/PLZF, a ubiquitously expressed and highly conserved TF. We also completed the expression pattern of the well-studied TF PAG-3/Gli, and discovered previously unknown neuronal fate alterations caused by the loss of
+pag-3.
+These findings demonstrate the effectiveness of NeuroPAL in screening for fate-specific roles of TFs. As a next step, we envision NeuroPAL being used to screen larger collections of TF-specific mutations or being used in conjunction with the comprehensive Million Mutation Project (
+Thompson et al., 2013
+) to identify genes involved in neuronal differentiation across the nervous system.
+The synaptic connectivity of the
+C. elegans
+nervous system has been mapped by electron microscopy. However, the pathways of neuronal communication therein cannot be fully understood without corresponding maps of neurotransmitter and receptor expression. We used NeuroPAL to map all neurons that express every type of metabotropic neurotransmitter receptor encoded in the worm genome. We find that the breadth of the metabotropic communication network is far more extensive than previously thought. Metabotropic neurotransmitter receptors cover 97% of all neurons and are able to participate in 75% of all synaptic connections from neurotransmitter-releasing neurons. Our contribution of the map of metabotropic GABA receptor (GABA
+B
+) expression, combined with previous work mapping the ionotropic GABA receptors (GABA
+A
+) (
+Bamber et al., 1999
+;
+Beg and Jorgensen, 2003
+;
+Gendrel et al., 2016
+;
+Jobson et al., 2015
+), completes the GABA communication network with startling results. First, GABA
+B
+receptors are expressed in every postsynaptic partner of all GABA-releasing neurons, whereas GABA
+A
+receptors are expressed in only 60% of these “listeners.” Metabotropic reception may be the most common means of GABA signaling in the worm nervous system. Second, many neurons that express GABA receptors are not postsynaptic partners of any GABAergic neuron. Previous work has shown that extrasynaptic GABA signaling can occur between specific cell types in
+C. elegans
+(
+Jobson et al., 2015
+). Our results suggest that extrasynaptic GABA signaling may be far more prevalent than previously thought. Indeed, GABA signaling may be an important means of integrating circuit activity throughout the nervous system. Only 10% of all worm neurons release GABA but 92% of all neurons express GABA receptors and yet, just 66% of this GABA-signaling network is synaptically connected. These results underscore the need for unbiased and brainwide analysis of how functional activity is shaped by neurotransmitters and receptors. We envision future work, using NeuroPAL, to map expression of the remaining aminergic and ionotropic neurotransmitter receptors (
+Fernandez et al., 2020
+).
+To date, functional networks have been investigated by recording the activity of small subsets of labeled neurons. More recent work has inaugurated whole-brain activity imaging with cellular resolution (
+Ahrens et al., 2013
+;
+Lemon et al., 2015
+;
+Mann et al., 2017
+;
+Schrödel et al., 2013
+). However, the inability to reliably identify all neurons within whole-brain recordings has precluded a full picture with circuit-level details. Thus, principal component analysis (PCA) has been commonly employed to construct low-dimensional representations of brain dynamics in individual animals, but the lack of a common basis has hampered animal-to-animal comparisons (
+Linderman et al., 2019
+). Coupling NeuroPAL with whole-brain activity imaging methods, as described here, permits a unified view of network dynamics, across animals, without sacrificing circuit-level details. Our results show that the set of stimulus-evoked responses engage the nervous system far more broadly than previously realized, extending across many sensory neurons and interneurons, even those in the synaptically isolated pharyngeal nervous system. We discovered interneurons with no previously known functions exhibited significant responses to anywhere from one to all three chemosensory stimuli.
+Comprehensive neuronal identification enabled us to examine the relationship between whole-brain activity and the connectome but we found no strong correlations between them. Unifying functional and anatomical views of the nervous system will require a deeper understanding of the properties of synaptic communication and the neuromodulation of activity patterns; we expect our work to aid in these endeavors (
+Bargmann and Marder, 2013
+;
+Brennan and Proekt, 2019
+;
+Kaplan et al., 2020
+;
+Kato et al., 2015
+). A richer set of network responses, even for simple chemosensory inputs, has broad relevance in understanding sensorimotor processing. Our work indicates that even simple behaviors employ large portions of the worm nervous system, engaging different brainwide neuronal correlations across behaviors.
+Using a stereotyped multicolor landmark strain to easily identify neurons may be extended to other genetically tractable animals including fruit fly and zebrafish. As their brains are considerably larger, generating multiple landmark strains that in aggregate cover their whole brain would require community-wide efforts. However, deterministic multicolor labeling of individual brain regions of interest should be tractable. Important and well-studied brain regions in these systems (e.g., the mushroom body or nerve cord of the fly and the olfactory bulb of the zebrafish) have substantial cellular diversity in a limited number of cells, making them good targets for a tool like NeuroPAL.
+Limitations of Study
+Neuron identification by NeuroPAL is not constrained by microscopy equipment and, with the appropriate optical filters, can be used on multiple imaging platforms. The application of NeuroPAL to whole-nervous-system activity recording is mainly limited by nuclear localization of the GCaMP activity sensor, as this may fail to capture highly localized events in axodendritic compartments. This limitation, combined with potentially incomplete or variable anatomical synaptic annotations, may have contributed to the lack of correlation we observed between functional activity and synaptic connectivity. Incomplete or variable anatomical synaptic annotations may have also contributed to the extent of extrasynaptic communication that we extrapolated from neurotransmitter-receptor expression patterns.
+STAR★METHODS
+Detailed methods are provided in the online version of this paper and include the following:
+RESOURCE AVAILABILITY
+Lead Contact
+Further information and requests for resources and reagents should be directed to and will be fulfilled by the Lead Contact, Eviatar Yemini (
+eiy1@columbia.edu
+).
+Materials Availability
+The extrachromosomal and integrant NeuroPAL transgenes, panneuronal GCaMP6s integrants, extrachromosomal metabotropic neurotransmitter receptor reporters, and several other useful
+C. elegans
+strains generated in this study (
+Tables S1
+and
+S4
+;
+Key Resources Table
+) are available at the
+Caenorhabditis
+Genetics Center (CGC).
+Data and Code Availability
+The accession number for the imaging datasets and whole-brain calcium activity reported in this paper (
+Figures 2C
+–
+2D
+,
+6
+,
+7
+,
+S1H
+, and
+S2
+;
+Tables S3
+and
+S6;
+Methods S1
+and
+S2
+) is Zenodo repository:
+https://doi.org/10.5281/zenodo.3906530
+The code and software generated during this study (
+Figure 7
+;
+Tables S3
+and
+S6;
+Methods S1
+and
+S2
+) use MATLAB (
+MathWorks, 2019
+) and Bio-Formats OME (
+Linkert et al., 2010
+) and are available at:
+https://github.com/amin-nejat/CELL_ID
+https://github.com/Eviatar/Optimal_Coloring
+https://github.com/venkatachalamlab/NeuroPAL-traces/
+https://www.hobertlab.org/neuropal/
+EXPERIMENTAL MODEL AND SUBJECT DETAILS
+Worms and maintenance
+All
+Caenorhabditis elegans
+were raised at 20°C, on nematode growth media (NGM) plates, and fed OP50
+Escherichia coli
+as previously described (
+Brenner, 1974
+), unless otherwise noted. Strains with a
+pha-1
+mutant background were raised at 25°C for selection. Wild-type
+C. elegans
+were Bristol, strain N2. All
+C. elegans
+were L4 or young-adult hermaphrodites, as noted.
+Plasmids and injections
+Fluorophores were ordered from IDT and/or cloned via standard techniques (Gibson, restriction-free, T4 ligase, or QuikChange mutagenesis) into the pPD95.62 Fire vector (a gift from Andrew Fire). The 1.4 kb synthetic ultra-panneuronal driver (UPN) was generated by fusing
+cis
+-regulatory elements from four different panneuronally expressed genes:
+unc-11
+prom8
+,
+rgef-1
+prom2
+,
+ehs-1
+prom7
+,
+ric-19
+prom6
+(
+Stefanakis et al., 2015
+). Fusion was done in a single quadruple PCR promoter fusion (
+Hobert, 2002
+). All cloned NeuroPAL reporters were made via PCR, gel purified, then inserted using standard techniques into the fluorophore vectors. To accommodate the large number of reporters and conserve space in extrachromosomal arrays, in place of plasmid backbones we used linear DNA amplified via PCR. Linear DNA has also been shown to improve expression levels (
+Etchberger and Hobert, 2008
+). Therefore, all injected NeuroPAL reporters were PCR amplified and gel purified to remove their vector backbone. Injection mixes consisted of complex arrays, with sheared bacterial DNA serving as spacers, to minimize potential crosstalk among reporters. Preliminary NeuroPAL strains were injected as complex arrays into
+pha-1(e2123)
+with
+pBX[pha-1(+)]
+to rescue at the selection temperature 25°C (
+Granato et al., 1994
+). Final NeuroPAL strains were injected into the wild-type, N2, without
+pha-1(+)
+. We used the
+rab-3
+reporter to drive panneuronal GCaMP6s expression. We noted that sensory neurons exhibited weaker GCaMP6s expression and thus supplemented the
+rab-3
+reporter with the
+arrd-4
+pansensory reporter. The panneuronal GCaMP6s reporters were injected as complex arrays into N2. Integrations were performed using gamma irradiation. All integrant worms were outcrossed 8x. Non-integrant strains that were used to identify metabotropic and transcription factor expression were injected with
+pAB1[inx-6
+prom18
+::TagRFP-T]
+(an anterior pharyngeal marker) and
+pBX[pha-1(+)]
+into
+pha-1(e2123)
+, then raised at 25°C for selection. All reporters and their injected concentrations are in
+Tables S1
+and
+S4
+.
+Transgenic and mutant strains
+Transgenic and mutant strains used in this study are available in the supplement (
+Tables S1
+,
+S4
+, and
+S5
+) and
+Key Resources Table
+.
+METHOD DETAILS
+Worm phenotyping
+Brood-size quantification, high-resolution behavioral phenotyping, dye-fill with DiO, chemotactic quadrant assays, and drop-test assays (
+Figures S1A
+–
+S1G
+;
+Table S2
+) were performed using standard protocols (
+Bargmann et al., 1993
+;
+Chase and Koelle, 2004
+;
+Hedgecock et al., 1985
+;
+Hilliard et al., 2002
+;
+Yemini et al., 2013
+). High-resolution behavioral phenotyping was performed using L4 hermaphrodites. Dye-filling was observed in L4 to adult hermaphrodites. All chemotaxis and drop-test assays were performed on young-adult hermaphrodites. These studies were not blinded.
+Electron micrograph reconstruction
+Electron micrographs (
+Figure 2A
+) were obtained from WormAtlas (
+Hall and Altun, 2007
+) and reconstructed using Fiji (
+Schindelin et al., 2012
+) and TrakEM2 (
+Cardona et al., 2012
+).
+NeuroPAL imaging
+NeuroPAL imaging can be performed using a wide variety of microscopes as further detailed in the manual “Configuring Your Microscope for NeuroPAL” (NeuroPAL Manuals:
+https://www.hobertlab.org/neuropal/
+). We imaged strains with a Zeiss LSM880, equipped with 7 laser lines: 405, 458, 488, 514, 561, 594, and 633 nm. Our standard configuration employed 405, 488, 561, and 633 nm to excite mTagBFP2, GFP/GCaMP + CyOFP1, TagRFP-T, and mNeptune2.5, respectively. The 8-color emission spectra (below) was captured using strains that expressed each fluorophore individually.
+For these, we used the LSM880’s “lambda mode,” employing its 32-channel spectral detector to capture color spectra from 391–727nm, at ~10 nm color resolution – several fluorophores were imaged by exciting them with wavelengths below peak excitation and significantly increasing both the laser power and gain. To that end, for the 8-color emission spectra, we used: 405 nm to excite mTagBFP2, CFP, GFP, and CyOFP1; 488 nm to excite YFP and mNeonGreen; and, 561 nm to excite TagRFP-T and mNeptune2.5. All NeuroPAL, reporter crosses, and mutant crosses (
+Figures 1E
+,
+2B
+–
+2D
+,
+3
+, and
+5
+;
+Videos S1
+and
+S2
+) were imaged with the same scope. When not performing a DIC overlay, gamma correction of ~0.5 was applied to images so as to improve color visibility. Occasionally, histograms were adjusted to balance colors for visibility. These image adjustments are necessary and suggested for NeuroPAL identification in order to deal with a variable range of GFP/CFP/YFP reporters and color alterations in mutant backgrounds.
+Identifying neuronal sites of gene expression
+To identify neuronal sites of gene expression, we used L4 and young-adult hermaphrodites. When available we used translational fosmid reporters (
+eor-1
+,
+gar-1
+,
+gar-2
+,
+gbb-1
+,
+gbb-2
+,
+mgl-1
+,
+mgl-3
+,
+pag-3
+–
+Figures 3
+and
+5
+;
+Tables S4
+and
+S5
+) (
+Sarov et al., 2012
+). The
+eor-1
+,
+gbb-2
+, and
+pag-3
+fosmid reporters are chromosomally integrated versions of extrachromosomal arrays that had been previously reported (
+Fernandez et al., 2020
+;
+Zhong et al., 2010
+). The
+gar-1
+,
+gar-2
+,
+gbb-1
+,
+mgl-1
+, and
+mgl-3
+fosmid reporters were generated by modENCODE (
+Sarov et al., 2012
+). We injected these reporters with
+pAB1[inx-6
+prom18
+::TagRFP-T]
+and
+pBX[pha-1(+)]
+into
+otIs669[NeuroPAL]
+;
+pha-1(e2123)
+(strain OH15430) (
+Table S1
+), then raised the worms at 25°C for selection. When fosmid reporters were too dim or unavailable, we used cytoplasmic 5′ transcriptional reporters (
+gar-3
+,
+mgl-2
+) (
+Figure 3
+;
+Table S4
+). The
+gar-3
+transcriptional reporter included 8.5kb of the 13.3kb intergenic region 5′ to its open reading frame (ORF) (
+Chan et al., 2013
+) and the
+mgl-2
+transcriptional reporter included the entire 7.9kb intergenic region 5′ to its ORF.
+Brainwide imaging with microfluidic stimuli
+To record whole-brain neuronal activity, while presenting an animal with chemosensory stimuli, we employed a modified version of a microfluidic system that delivers multiple odors to
+Drosophila
+larvae (
+Si et al., 2019
+). We adapted this system for use with
+C. elegans
+(
+Chronis et al., 2007
+). This microfluidic chip allowed us to record intact animals while presenting precisely timed stimuli (
+Figures 6A
+and
+6B
+;
+Videos S3
+and
+S4
+). To control for the age of the animals used in these experiments, we picked young-adult hermaphrodites with ≤ 2 visible eggs in their uterus. OH16230 were washed in M9 buffer containing 1 mM tetramisole hydrochloride to minimize motion, then placed in CTX buffer and loaded into the microfluidic chip (
+Larsch et al., 2013
+). For each animal, we first obtained a high-resolution 4-color landmark volume for neuronal identification. We then observed a 2-minute unilluminated waiting period to allow the animal to recover from its exposure to laser light. Lastly, we performed a 4-minute, single-channel recording to capture nuclear GCaMP6s activity, at a frequency of ~4 Hz. We used a 488 nm laser to continuously excite GCaMP6s throughout the recording. Similar to previous experimenters (
+Zaslaver et al., 2015
+), we noted that the onset of the 488 nm laser correlates with neuronal activity and that this activity rapidly habituates toward a visible neuronal baseline. Thus, we waited 1-minute before delivering our chemical stimuli in this constant 488 nm laser background. In each experiment, we presented all three stimuli separated by 1-minute intervals. At the end of every minute, we presented a 10 s pulse of either 160mM NaCl, 10
+−4
+2-butanone, or 10
+−4
+2,3-pentanedione. Stimuli were presented in CTX buffer maintaining a constant pH 6 and 350 mOsm/L across stimulus and non-stimulus presentation. The order of stimulus presentation was rotated periodically to avoid sampling order-dependent stimulus responses.
+Brainwide imaging of neuronal activity traces
+After the whole-brain neuronal activity experiments concluded, we identified as many neurons as possible within the 4-color identification volumes. Neuronal identification was limited by our field of view (FOV), thus neurons like I1L/R and DB1 have fewer samples. Also, on occasion a few neurons that were furthest from the lens were too dim to identify, but due to the variety of animal orientations imaged in our microfluidic chip this small reduction in sampling was distributed between many neurons. We correlated identified neurons in the landmark volume to their GCaMP6s recordings, and extracted their traces (
+Table S6
+;
+https://zenodo.org/record/3906530
+) using deformable non-negative matrix factorization (dNMF) (
+Nejatbakhsh et al., 2020
+). To avoid any potential camera issues related to recording initiation and termination, we removed the first 1 s and last frame of every recording. To facilitate comparison of neuronal activity across animals, we downsampled recordings to the lowest frame rate observed within their group, 4 Hz for OH16230 heads and 3.87 Hz for OH16230 tails. ΔF/F
+0
+was computed as follows: a) for ΔF we approximated the GCaMP6s bleach curve by fitting a 1
+st
+order exponential decay to each neuron, then subtracted this bleach curve from the neuron’s activity trace; b) for F
+0
+we calculated the 5
+th
+percentile for each neuron’s activity trace; and c) ΔF/F
+0
+was computed, per neuron, as the ratio of these two values. Neurons within 5 μm distance of each other, whose traces showed at least 95% correlation, were deemed too similar and removed. Neurons with N ≤ 3 where not evaluated due to insufficient sampling. When comparing neuronal activity across animals, we used dNMF to normalize activity traces per neuron class. In the supplement we present similar experiments performed using OH15500 animals (
+Table S6
+;
+https://zenodo.org/record/3906530
+). For OH15500 we used DI water instead of CTX buffer, the three stimuli remained the same but NaCl was presented for 20 s at 200 mM, neuronal traces were extracted using a previous method that predates dNMF (
+https://github.com/venkatachalamlab/NeuroPAL-traces/
+) (
+Venkatachalam et al., 2016
+), and visual inspection was used to identify and remove traces from neighboring neurons that exhibited mixed signals. OH15500 heads were downsampled to 4.1 Hz.
+QUANTIFICATION AND STATISTICAL ANALYSIS
+Statistical analysis
+Statistical details of experiments can be found in the following section. Statistical data is reported in the main text, figures, and tables as noted. For all statistical analyses, N represents the number of worms sampled. Significance adheres to the common standard, after adjusting for multiple testing, of p or q ≤ 0.05. The symbols *, **, ***, and **** refer to p or q ≤ 0.05, 0.01, 0.001, and 0.0001, respectively.
+Mutant analysis
+Statistical analysis of NeuroPAL-color alterations, for four neuron classes, in two
+pag-3(−)
+mutant backgrounds was Bonferroni corrected for eight tests (
+Figure 5B
+;
+Table S5
+). We used a One-Sided Fischer’s Exact Test to analyze mutant-induced changes in PVR, VA2, and VB3. We used a One-Sided Rank Sum Test to analyze mutant-induced changes in AVE, scoring 0 if no changes were observed, 1 if either AVEL or AVER was altered, and 2 if both AVE neurons were altered. Statistical analysis of NeuroPAL color loss and UNC-25 reporter loss, for the RMED and RMEV neurons, in two
+eor-1(−)
+mutant backgrounds was Bonferroni corrected for eight tests (
+Figures 5F
+and
+5G
+;
+Table S5
+). We used a One-Sided Fischer’s Exact Test to analyze mutant-induced loss of RMED/V blue coloring in NeuroPAL. We used a One-Sided Rank Sum Test to analyze mutant-induced changes in the RMED/V UNC-25 reporter expression, scoring 0 if expression was lost, 1 if expression was weak but visible, and 2 if no changes were observed. Mutant analysis studies were not blinded.
+Analysis of brainwide imaging data
+To analyze the whole-brain imaging stimulus responses (
+Figures 6
+,
+S1H
+, and
+S2
+;
+Table S6
+), we reviewed ASE responses to salt and AWC responses to the odors – the primary sensory neurons for these stimuli. Worms were marked as stimulus responsive if either their left or right neuron showed the published response to their corresponding stimuli (ASE excitation for NaCl and AWC inhibition for odors) (
+Chalasani et al., 2007
+;
+Suzuki et al., 2008
+). 21 heads responded to all three stimuli, providing strong internal controls to compare their circuit activity across all stimuli. Additionally, 21 tails were included, without response verification as the heads of these animals were not simultaneously imaged. Premotor interneurons (AVA, AVB, AVD, AVE, PVC) and ventral-cord motor neurons (AS, DA, DB, DD, VA, VB, VC, VD) show spontaneous cyclical activity and thus were excluded from significance testing. For testing that did not compare asymmetries, left/right neuron pairs from the same class were combined; thus the maximum sample size for these tests is either 42 left/right neuron pairs (e.g., AFDL and AFDR) or 21 single-sided neurons (e.g., I6). We used t tests (2-tailed, paired) to compare the mean signal during stimulus presentation with an identical period immediately prior, within the very same neuron (a strong internal control). These p values were corrected for multiple testing using false discovery rate (FDR) adjusted q-values (
+Storey, 2002
+). Post-stimulus responses were identified by first ensuring the neuron’s mean stimulus response exceeded its pre-stimulus mean (to avoid mistaking repolarizing calcium activity for a post-stimulus response), then testing whether the post-stimulus mean exceeded the mean stimulus response (1-tailed, paired t test). Post-stimulus p values were corrected using FDR. To test asymmetric neuron responses we used 2-tailed, two-sample (unpaired) t tests.
+Statistical analysis software
+All statistics and code were run in MATLAB, using standard toolboxes, with the exception of the OME Bio-Formats API (used to read in Zeiss CZI and Nikon ND2 file formats) (
+Linkert et al., 2010
+), dNMF (used to extract whole-brain calcium activity) (
+Nejatbakhsh et al., 2020
+), MATLAB geometry toolbox for 2D/3D geometric computing (
+https://github.com/mattools/matGeom
+), and MathWorks File Exchange functions (
+Methods S1
+).
+Additional Resources
+NeuroPAL imaging can be performed using a wide variety of microscopes, as further detailed in the manual “Configuring Your Microscope for NeuroPAL.” Manuals for microscope setups and cell identification are available online at:
+https://www.hobertlab.org/neuropal/
+.
+Supplementary Material
+Video S2
+Video S1
+Methods S2
+Methods S1
+Table S5
+Table S6
+Table S4
+Table S3
+Table S1
+Table S2
+Figure S3
+A
+Drosophila
+FlyPAL Design Concept, Related to
+Figures 1
+and
+7
+(A) A “Universal-Reporter Line” for flies employing three orthogonal binary-expression systems to independently drive each of the three NeuroPAL landmark fluorophores (
+Brand and Perrimon, 1993
+;
+Kakidani and Ptashne, 1988
+;
+Lai and Lee, 2006
+;
+Potter et al., 2010
+). Optional T2A sequences enable co-expression of GCaMP6s and TagRFP-T to facilitate ratiometric calcium imaging. Genetic insulators are used to insulate the expression of each landmark fluorophore. ΦC31 integration is used to integrate this transgene into the fly genome.
+(B) An “Ecdysis-Specific Driver Line” employs five short enhancer fragments to drive expression of the NeuroPAL landmark fluorophores using their corresponding binary systems (
+Diao et al., 2017
+;
+Kim et al., 2006
+).
+(C) Crossing the Universal Reporter and Ecdysis-Specific Driver lines generates an “Ecdysis FlyPAL” wherein ecdysis-specific neurons can be identified by their color and position. Ecdysis-specific neurons can then be individually identified in calcium activity recordings.
+Figure S4
+Figure S2
+Whole-Brain Neuronal Dynamics and Pairwise Neuronal Correlations in Response to Chemosensory Stimuli, Related to
+Figure 6
+(A) Average phase trajectories (N = 21 animal heads) of whole-brain neuronal activity in response to stimuli (10 s of stimulus application and 20 s thereafter). Trajectories are presented for 160 mM NaCl (yellow), 10
+−4
+2-butanone (orange), and 10
+−4
+2–3-pentanedione (purple), with the standard error of the mean shown as a mesh. The axes shown are the first three principal components of whole-brain activity. The average stimulus trajectories exhibit similarities but remain distinguishable.
+(B) The Pareto chart of variance explained per principal component.
+(C–E) Average pairwise correlations between 189 neurons in the 30 s following onset of (C) NaCl, (D) 2-butanone, and (E) 2,3-pentanedione. All correlation maps are presented on the same axes, determined by clustering the full-time-course correlations, then thresholded for sample sizes of N > 5, 10, and 15 neurons. The set of correlated and anti-correlated neurons differs for each stimulus presentation.
+Figure S1
+NeuroPAL Phenotypes and Continuous Cyclical Activity in AVF Neurons, Related to
+Figures 1
+and
+6
+and
+STAR Methods
+(A–G) NeuroPAL health, behavior, and chemotaxis. (A) Brood size. (B) Dead eggs. (C) Crawling speed. (D-F) Chemotactic preferences for (D) 2-butanone, (E) 2,3-pentanedione, (F) NaCl, and (G) crawling frequency.
+(H) AVF left and right (blue and red) neuronal traces (median filtered at 0.5 s), from five OH16230 worms, display cyclical activity of ~0.3 Hz (counting the number of peaks per 4-minute interval). This cycle is similar to the freely-moving crawling frequency measured in this strain (panel G, enclosed in a black box).
+Video S3
+Video S4
+ACKNOWLEDGMENTS
+We thank Qi Chen for generating transgenic lines. We thank Molly Booth Reilly, Ibnul Rafi, and Emily Berghoff for alpha testing the NeuroPAL software. We thank Eduardo Leyva-Díaz for
+ehs-1
+prom7
+and Michael Koelle for a
+gbb-2
+reporter fosmid. We thank David Hall, Zeynep Altun, and Chris Crocker for use of the WormAtlas N2S/T/U EM reconstructions and Steven Cook for instruction in tracing these EM reconstructions. We thank Michael Z. Lin, Vladislav Verkhusha, and Robert E. Campbell for their considerable help in choosing fluorescent proteins. We thank Benjamin White and Wesley Grueber for their considerable help conceptualizing NeuroPAL applications in
+Drosophila
+; Guangwei Si and Jessleen Kanwal for their advice on microfluidics design and operation; Scott Linderman and Andrew Leifer for many helpful discussions regarding automated neuronal identification; and members of the Hobert, Chalfie, Paninski, and Samuel labs for comments on the manuscript. Some strains were provided by the CGC, which is funded by NIH Office of Research Infrastructure Programs (P40 OD010440). Microfluidics devices were manufactured using the Soft Materials Cleanroom facility of the Harvard MRSEC (DMR-1420570). O.H. was funded by the Howard Hughes Medical Institute and NSF-CRCNS Award (1912194). E.Y. was funded in part by the NIH (5T32DK7328-37, 5T32DK007328-35, 5T32MH015174-38, and 5T32MH015174-37). L.P. was funded by the NIBIB R01 (EB22913), NSF NeuroNex Award (DBI-1707398), NSF-CRCNS Award (1912194), the Simons Collaboration on the Global Brain, and the Gatsby Charitable Foundation. G.E.M. was funded by the Harvard Data Science Initiative Postdoctoral Fellowship. A.D.T.S. was funded by the NIH (1R01NS113119-01) and NSF (IOS-1452593), A.L. by the NSF Physics of Living Systems Graduate Student Research Network (1806818), and V.V. by the Burroughs Wellcome Fund Career Award at the Scientific Interface.
+DECLARATION OF INTERESTS
+The authors declare no competing interests.
+SUPPLEMENTAL INFORMATION
+Supplemental Information
+can be found online at
+https://doi.org/10.1016/j.cell.2020.12.012
+.
+REFERENCES
+Ahrens
+MB
+, and
+Engert
+F
+(
+2015
+).
+Large-scale imaging in small brains
+.
+Curr. Opin. Neurobiol
+.
+32
+,
+78
+–
+86
+.
+25636154
+10.1016/j.conb.2015.01.007
+PMC4955592
+Ahrens
+MB
+,
+Orger
+MB
+,
+Robson
+DN
+,
+Li
+JM
+, and
+Keller
+PJ
+(
+2013
+).
+Whole-brain functional imaging at cellular resolution using light-sheet microscopy
+.
+Nat. Methods
+10
+,
+413
+–
+420
+.
+23524393
+10.1038/nmeth.2434
+Bamber
+BA
+,
+Beg
+AA
+,
+Twyman
+RE
+, and
+Jorgensen
+EM
+(
+1999
+).
+The Caenorhabditis elegans unc-49 locus encodes multiple subunits of a heteromultimeric GABA receptor
+.
+J. Neurosci
+.
+19
+,
+5348
+–
+5359
+.
+10377345
+10.1523/JNEUROSCI.19-13-05348.1999
+PMC6782323
+Bargmann
+CI
+, and
+Horvitz
+HR
+(
+1991
+).
+Chemosensory neurons with overlapping functions direct chemotaxis to multiple chemicals in C. elegans
+.
+Neuron
+7
+,
+729
+–
+742
+.
+1660283
+10.1016/0896-6273(91)90276-6
+Bargmann
+CI
+, and
+Marder
+E
+(
+2013
+).
+From the connectome to brain function
+.
+Nat. Methods
+10
+,
+483
+–
+490
+.
+23866325
+10.1038/nmeth.2451
+Bargmann
+CI
+,
+Hartwieg
+E
+, and
+Horvitz
+HR
+(
+1993
+).
+Odorant-selective genes and neurons mediate olfaction in C. elegans
+.
+Cell
+74
+,
+515
+–
+527
+.
+8348618
+10.1016/0092-8674(93)80053-h
+Bauer Huang
+SL
+,
+Saheki
+Y
+,
+VanHoven
+MK
+,
+Torayama
+I
+,
+Ishihara
+T
+,
+Katsura
+I
+,
+van der Linden
+A
+,
+Sengupta
+P
+, and
+Bargmann
+CI
+(
+2007
+).
+Left-right olfactory asymmetry results from antagonistic functions of voltage-activated calcium channels and the Raw repeat protein OLRN-1 in C. elegans
+.
+Neural Dev
+.
+2
+,
+24
+.
+17986337
+10.1186/1749-8104-2-24
+PMC2213652
+Beg
+AA
+, and
+Jorgensen
+EM
+(
+2003
+).
+EXP-1 is an excitatory GABA-gated cation channel
+.
+Nat. Neurosci
+.
+6
+,
+1145
+–
+1152
+.
+14555952
+10.1038/nn1136
+Bentley
+B
+,
+Branicky
+R
+,
+Barnes
+CL
+,
+Chew
+YL
+,
+Yemini
+E
+,
+Bullmore
+ET
+,
+Vértes
+PE
+, and
+Schafer
+WR
+(
+2016
+).
+The Multilayer Connectome of Caenorhabditis elegans
+.
+PLoS Comput. Biol
+.
+12
+,
+e1005283
+.
+27984591
+10.1371/journal.pcbi.1005283
+PMC5215746
+Brand
+AH
+, and
+Perrimon
+N
+(
+1993
+).
+Targeted gene expression as a means of altering cell fates and generating dominant phenotypes
+.
+Development
+118
+,
+401
+–
+415
+.
+8223268
+10.1242/dev.118.2.401
+Brennan
+C
+, and
+Proekt
+A
+(
+2019
+).
+A quantitative model of conserved macroscopic dynamics predicts future motor commands
+.
+eLife
+8
+,
+e46814
+.
+31294689
+10.7554/eLife.46814
+PMC6624016
+Brenner
+S
+(
+1974
+).
+The genetics of Caenorhabditis elegans
+.
+Genetics
+77
+,
+71
+–
+94
+.
+4366476
+10.1093/genetics/77.1.71
+PMC1213120
+Bubnis
+G
+,
+Ban
+S
+,
+DiFranco
+MD
+, and
+Kato
+S
+(
+2019
+).
+A probabilistic atlas for cell identification
+.
+arXiv, 1903.09227
+.
+Cameron
+S
+,
+Clark
+SG
+,
+McDermott
+JB
+,
+Aamodt
+E
+, and
+Horvitz
+HR
+(
+2002
+).
+PAG-3, a Zn-finger transcription factor, determines neuroblast fate in C. elegans
+.
+Development
+129
+,
+1763
+–
+1774
+.
+11923211
+10.1242/dev.129.7.1763
+Cardona
+A
+,
+Saalfeld
+S
+,
+Schindelin
+J
+,
+Arganda-Carreras
+I
+,
+Preibisch
+S
+,
+Longair
+M
+,
+Tomancak
+P
+,
+Hartenstein
+V
+, and
+Douglas
+RJ
+(
+2012
+).
+TrakEM2 software for neural circuit reconstruction
+.
+PLoS ONE
+7
+,
+e38011
+.
+22723842
+10.1371/journal.pone.0038011
+PMC3378562
+Chalasani
+SH
+,
+Chronis
+N
+,
+Tsunozaki
+M
+,
+Gray
+JM
+,
+Ramot
+D
+,
+Goodman
+MB
+, and
+Bargmann
+CI
+(
+2007
+).
+Dissecting a circuit for olfactory behaviour in Caenorhabditis elegans
+.
+Nature
+450
+,
+63
+–
+70
+.
+17972877
+10.1038/nature06292
+Chan
+JP
+,
+Staab
+TA
+,
+Wang
+H
+,
+Mazzasette
+C
+,
+Butte
+Z
+, and
+Sieburth
+D
+(
+2013
+).
+Extrasynaptic muscarinic acetylcholine receptors on neuronal cell bodies regulate presynaptic function in Caenorhabditis elegans
+.
+J. Neurosci
+.
+33
+,
+14146
+–
+14159
+.
+23986249
+10.1523/JNEUROSCI.1359-13.2013
+PMC3756759
+Chase
+DL
+, and
+Koelle
+MR
+(
+2004
+).
+Genetic analysis of RGS protein function in Caenorhabditis elegans
+.
+Methods Enzymol
+.
+389
+,
+305
+–
+320
+.
+15313573
+10.1016/S0076-6879(04)89018-9
+Chronis
+N
+,
+Zimmer
+M
+, and
+Bargmann
+CI
+(
+2007
+).
+Microfluidics for in vivo imaging of neuronal and behavioral activity in Caenorhabditis elegans
+.
+Nat. Methods
+4
+,
+727
+–
+731
+.
+17704783
+10.1038/nmeth1075
+Chu
+J
+,
+Haynes
+RD
+,
+Corbel
+SY
+,
+Li
+P
+,
+González-González
+E
+,
+Burg
+JS
+,
+Ataie
+NJ
+,
+Lam
+AJ
+,
+Cranfill
+PJ
+,
+Baird
+MA
+,
+(
+2014
+).
+Non-invasive intravital imaging of cellular differentiation with a bright red-excitable fluorescent protein
+.
+Nat. Methods
+11
+,
+572
+–
+578
+.
+24633408
+10.1038/nmeth.2888
+PMC4008650
+Chu
+J
+,
+Oh
+Y
+,
+Sens
+A
+,
+Ataie
+N
+,
+Dana
+H
+,
+Macklin
+JJ
+,
+Laviv
+T
+,
+Welf
+ES
+,
+Dean
+KM
+,
+Zhang
+F
+,
+(
+2016
+).
+A bright cyan-excitable orange fluorescent protein facilitates dual-emission microscopy and enhances bioluminescence imaging in vivo
+.
+Nat. Biotechnol
+.
+34
+,
+760
+–
+767
+.
+27240196
+10.1038/nbt.3550
+PMC4942401
+Cook
+SJ
+,
+Jarrell
+TA
+,
+Brittin
+CA
+,
+Wang
+Y
+,
+Bloniarz
+AE
+,
+Yakovlev
+MA
+,
+Nguyen
+KCQ
+,
+Tang
+LT
+,
+Bayer
+EA
+,
+Duerr
+JS
+,
+(
+2019
+).
+Whole-animal connectomes of both Caenorhabditis elegans sexes
+.
+Nature
+571
+,
+63
+–
+71
+.
+31270481
+10.1038/s41586-019-1352-7
+PMC6889226
+Cook
+SJ
+,
+Crouse
+CM
+,
+Yemini
+E
+,
+Hall
+DH
+,
+Emmons
+SW
+, and
+Hobert
+O
+(
+2020
+).
+The connectome of the Caenorhabditis elegans pharynx
+.
+J. Comp. Neurol
+.
+528
+,
+2767
+–
+2784
+.
+32352566
+10.1002/cne.24932
+PMC7601127
+Diao
+F
+,
+Elliott
+AD
+,
+Diao
+F
+,
+Shah
+S
+, and
+White
+BH
+(
+2017
+).
+Neuromodulatory connectivity defines the structure of a behavioral neural network
+.
+eLife
+6
+,
+e29797
+.
+29165248
+10.7554/eLife.29797
+PMC5720592
+Etchberger
+JF
+, and
+Hobert
+O
+(
+2008
+).
+Vector-free DNA constructs improve transgene expression in C. elegans
+.
+Nat. Methods
+5
+,
+3
+.
+18165801
+10.1038/nmeth0108-3
+Fernandez
+RW
+,
+Wei
+K
+,
+Wang
+EY
+,
+Mikalauskaite
+D
+,
+Olson
+A
+,
+Pepper
+JS
+,
+Christie
+N
+,
+Kim
+S
+, and
+Koelle
+MR
+(
+2020
+).
+Cellular expression and functional roles of all 26 neurotransmitter GPCRs in the C. elegans egg-laying circuit
+.
+bioRxiv
+.
+10.1101/2020.04.23.037242
+.
+PMC7511189
+32847964
+Fouad
+AD
+,
+Teng
+S
+,
+Mark
+JR
+,
+Liu
+A
+,
+Alvarez-Illera
+P
+,
+Ji
+H
+,
+Du
+A
+,
+Bhirgoo
+PD
+,
+Cornblath
+E
+,
+Guan
+SA
+, and
+Fang-Yen
+C
+(
+2018
+).
+Distributed rhythm generators underlie
+Caenorhabditis elegans
+forward locomotion
+.
+eLife
+7
+,
+e29913
+.
+29360037
+10.7554/eLife.29913
+PMC5780042
+Gendrel
+M
+,
+Atlas
+EG
+, and
+Hobert
+O
+(
+2016
+).
+A cellular and regulatory map of the GABAergic nervous system of
+C. elegans
+.
+eLife
+5
+,
+e17686
+.
+27740909
+10.7554/eLife.17686
+PMC5065314
+Granato
+M
+,
+Schnabel
+H
+, and
+Schnabel
+R
+(
+1994
+).
+pha-1, a selectable marker for gene transfer in C. elegans
+.
+Nucleic Acids Res
+.
+22
+,
+1762
+–
+1763
+.
+8202383
+10.1093/nar/22.9.1762
+PMC308061
+Hall
+DH
+, and
+Altun
+Z
+(
+2007
+).
+C. Elegans Atlas
+(
+Cold Spring Harbor Laboratory Press
+).
+Hardaker
+LA
+,
+Singer
+E
+,
+Kerr
+R
+,
+Zhou
+G
+, and
+Schafer
+WR
+(
+2001
+).
+Serotonin modulates locomotory behavior and coordinates egg-laying and movement in Caenorhabditis elegans
+.
+J. Neurobiol
+.
+49
+,
+303
+–
+313
+.
+11745666
+10.1002/neu.10014
+Hedgecock
+EM
+,
+Culotti
+JG
+,
+Thomson
+JN
+, and
+Perkins
+LA
+(
+1985
+).
+Axonal guidance mutants of Caenorhabditis elegans identified by filling sensory neurons with fluorescein dyes
+.
+Dev. Biol
+.
+111
+,
+158
+–
+170
+.
+3928418
+10.1016/0012-1606(85)90443-9
+Hilliard
+MA
+,
+Bargmann
+CI
+, and
+Bazzicalupo
+P
+(
+2002
+).
+C. elegans responds to chemical repellents by integrating sensory inputs from the head and the tail
+.
+Curr. Biol
+.
+12
+,
+730
+–
+734
+.
+12007416
+10.1016/s0960-9822(02)00813-8
+Hobert
+O
+(
+2002
+).
+PCR fusion-based approach to create reporter gene constructs for expression analysis in transgenic C. elegans
+.
+Biotechniques
+32
+,
+728
+–
+730
+.
+11962590
+10.2144/02324bm01
+Hobert
+O
+(
+2013
+).
+The neuronal genome of Caenorhabditis elegans
+.
+WormBook
+,
+1
+–
+106
+.
+10.1895/wormbook.1.161.1
+PMC4781646
+24081909
+Howard
+RM
+, and
+Sundaram
+MV
+(
+2002
+).
+C. elegans EOR-1/PLZF and EOR-2 positively regulate Ras and Wnt signaling and function redundantly with LIN-25 and the SUR-2 Mediator component
+.
+Genes Dev
+.
+16
+,
+1815
+–
+1827
+.
+12130541
+10.1101/gad.998402
+PMC186391
+Jobson
+MA
+,
+Valdez
+CM
+,
+Gardner
+J
+,
+Garcia
+LR
+,
+Jorgensen
+EM
+, and
+Beg
+AA
+(
+2015
+).
+Spillover transmission is mediated by the excitatory GABA receptor LGC-35 in C. elegans
+.
+J. Neurosci
+.
+35
+,
+2803
+–
+2816
+.
+25673867
+10.1523/JNEUROSCI.4557-14.2015
+PMC4323542
+Jones
+AR
+,
+Overly
+CC
+, and
+Sunkin
+SM
+(
+2009
+).
+The Allen Brain Atlas: 5 years and beyond
+.
+Nat. Rev. Neurosci
+.
+10
+,
+821
+–
+828
+.
+19826436
+10.1038/nrn2722
+Kakidani
+H
+, and
+Ptashne
+M
+(
+1988
+).
+GAL4 activates gene expression in mammalian cells
+.
+Cell
+52
+,
+161
+–
+167
+.
+2830021
+10.1016/0092-8674(88)90504-1
+Kaplan
+HS
+,
+Salazar Thula
+O
+,
+Khoss
+N
+, and
+Zimmer
+M
+(
+2020
+).
+Nested Neuronal Dynamics Orchestrate a Behavioral Hierarchy across Timescales
+.
+Neuron
+105
+,
+562
+–
+576.e9
+.
+31786012
+10.1016/j.neuron.2019.10.037
+PMC7014571
+Kato
+S
+,
+Kaplan
+HS
+,
+Schrödel
+T
+,
+Skora
+S
+,
+Lindsay
+TH
+,
+Yemini
+E
+,
+Lockery
+S
+, and
+Zimmer
+M
+(
+2015
+).
+Global brain dynamics embed the motor command sequence of Caenorhabditis elegans
+.
+Cell
+163
+,
+656
+–
+669
+.
+26478179
+10.1016/j.cell.2015.09.034
+Kim
+YJ
+,
+Zitnan
+D
+,
+Galizia
+CG
+,
+Cho
+KH
+, and
+Adams
+ME
+(
+2006
+).
+A command chemical triggers an innate behavior by sequential activation of multiple peptidergic ensembles
+.
+Curr. Biol
+.
+16
+,
+1395
+–
+1407
+.
+16860738
+10.1016/j.cub.2006.06.027
+Kotera
+I
+,
+Tran
+NA
+,
+Fu
+D
+,
+Kim
+JH
+,
+Byrne Rodgers
+J
+, and
+Ryu
+WS
+(
+2016
+).
+Pan-neuronal screening in
+Caenorhabditis elegans
+reveals asymmetric dynamics of AWC neurons is critical for thermal avoidance behavior
+.
+eLife
+5
+,
+e19021
+.
+27849153
+10.7554/eLife.19021
+PMC5142811
+Lai
+SL
+, and
+Lee
+T
+(
+2006
+).
+Genetic mosaic with dual binary transcriptional systems in Drosophila
+.
+Nat. Neurosci
+.
+9
+,
+703
+–
+709
+.
+16582903
+10.1038/nn1681
+Larsch
+J
+,
+Ventimiglia
+D
+,
+Bargmann
+CI
+, and
+Albrecht
+DR
+(
+2013
+).
+High-throughput imaging of neuronal activity in Caenorhabditis elegans
+.
+Proc. Natl. Acad. Sci. USA
+110
+,
+E4266
+–
+E4273
+.
+24145415
+10.1073/pnas.1318325110
+PMC3831453
+Lemon
+WC
+,
+Pulver
+SR
+,
+Höckendorf
+B
+,
+McDole
+K
+,
+Branson
+K
+,
+Freeman
+J
+, and
+Keller
+PJ
+(
+2015
+).
+Whole-central nervous system functional imaging in larval Drosophila
+.
+Nat. Commun
+.
+6
+,
+7924
+.
+26263051
+10.1038/ncomms8924
+PMC4918770
+Lichtman
+JW
+, and
+Denk
+W
+(
+2011
+).
+The big and the small: challenges of imaging the brain’s circuits
+.
+Science
+334
+,
+618
+–
+623
+.
+22053041
+10.1126/science.1209168
+Linderman
+S
+,
+Nichols
+A
+,
+Blei
+D
+,
+Zimmer
+M
+, and
+Paninski
+L
+(
+2019
+).
+Hierarchical recurrent state space models reveal discrete and continuous dynamics of neural activity in C. elegans
+.
+bioRxiv
+.
+10.1101/621540
+.
+Linkert
+M
+,
+Rueden
+CT
+,
+Allan
+C
+,
+Burel
+JM
+,
+Moore
+W
+,
+Patterson
+A
+,
+Loranger
+B
+,
+Moore
+J
+,
+Neves
+C
+,
+Macdonald
+D
+,
+(
+2010
+).
+Metadata matters: access to image data in the real world
+.
+J. Cell Biol
+.
+189
+,
+777
+–
+782
+.
+20513764
+10.1083/jcb.201004104
+PMC2878938
+Livet
+J
+,
+Weissman
+TA
+,
+Kang
+H
+,
+Draft
+RW
+,
+Lu
+J
+,
+Bennis
+RA
+,
+Sanes
+JR
+, and
+Lichtman
+JW
+(
+2007
+).
+Transgenic strategies for combinatorial expression of fluorescent proteins in the nervous system
+.
+Nature
+450
+,
+56
+–
+62
+.
+17972876
+10.1038/nature06293
+Mann
+K
+,
+Gallen
+CL
+, and
+Clandinin
+TR
+(
+2017
+).
+Whole-Brain Calcium Imaging Reveals an Intrinsic Functional Network in Drosophila
+.
+Curr. Biol
+.
+27
+,
+2389
+–
+2396.e4
+.
+28756955
+10.1016/j.cub.2017.06.076
+PMC5967399
+MathWorks
+(
+2019
+).
+MATLAB and Statistics Toolbox Release
+, Vol.
+R2019b
+(
+The MathWorks, Inc.
+).
+Nejatbakhsh
+A
+,
+Varol
+E
+,
+Yemini
+E
+,
+Venkatachalam
+V
+,
+Lin
+A
+,
+Samuel
+A
+, and
+Paninski
+L
+(
+2020
+).
+Extracting neural signals from semi-immobilized animals with deformable non-negative matrix factorization
+.
+bioRxiv
+.
+10.1101/2020.07.07.192120
+.
+Nguyen
+JP
+,
+Shipley
+FB
+,
+Linder
+AN
+,
+Plummer
+GS
+,
+Liu
+M
+,
+Setru
+SU
+,
+Shaevitz
+JW
+, and
+Leifer
+AM
+(
+2016
+).
+Whole-brain calcium imaging with cellular resolution in freely behaving Caenorhabditis elegans
+.
+Proc. Natl. Acad. Sci. USA
+113
+,
+E1074
+–
+E1081
+.
+26712014
+10.1073/pnas.1507110112
+PMC4776509
+Ortiz
+CO
+,
+Faumont
+S
+,
+Takayama
+J
+,
+Ahmed
+HK
+,
+Goldsmith
+AD
+,
+Pocock
+R
+,
+McCormick
+KE
+,
+Kunimoto
+H
+,
+Iino
+Y
+,
+Lockery
+S
+, and
+Hobert
+O
+(
+2009
+).
+Lateralized gustatory behavior of C. elegans is controlled by specific receptor-type guanylyl cyclases
+.
+Curr. Biol
+.
+19
+,
+996
+–
+1004
+.
+19523832
+10.1016/j.cub.2009.05.043
+PMC2730525
+Pereira
+L
+,
+Kratsios
+P
+,
+Serrano-Saiz
+E
+,
+Sheftel
+H
+,
+Mayo
+AE
+,
+Hall
+DH
+,
+White
+JG
+,
+LeBoeuf
+B
+,
+Garcia
+LR
+,
+Alon
+U
+, and
+Hobert
+O
+(
+2015
+).
+A cellular and regulatory map of the cholinergic nervous system of C
+.
+elegans. eLife
+4
+,
+e17686
+.
+10.7554/eLife.12432
+PMC4769160
+26705699
+Pierce-Shimomura
+JT
+,
+Faumont
+S
+,
+Gaston
+MR
+,
+Pearson
+BJ
+, and
+Lockery
+SR
+(
+2001
+).
+The homeobox gene lim-6 is required for distinct chemosensory representations in C. elegans
+.
+Nature
+410
+,
+694
+–
+698
+.
+11287956
+10.1038/35070575
+Potter
+CJ
+,
+Tasic
+B
+,
+Russler
+EV
+,
+Liang
+L
+, and
+Luo
+L
+(
+2010
+).
+The Q system: a repressible binary system for transgene expression, lineage tracing, and mosaic analysis
+.
+Cell
+141
+,
+536
+–
+548
+.
+20434990
+10.1016/j.cell.2010.02.025
+PMC2883883
+Richier
+B
+, and
+Salecker
+I
+(
+2015
+).
+Versatile genetic paintbrushes: Brainbow technologies
+.
+Wiley Interdiscip. Rev. Dev. Biol
+.
+4
+,
+161
+–
+180
+.
+25491327
+10.1002/wdev.166
+PMC4384809
+Sarov
+M
+,
+Murray
+JI
+,
+Schanze
+K
+,
+Pozniakovski
+A
+,
+Niu
+W
+,
+Angermann
+K
+,
+Hasse
+S
+,
+Rupprecht
+M
+,
+Vinis
+E
+,
+Tinney
+M
+,
+(
+2012
+).
+A genome-scale resource for in vivo tag-based protein function exploration in C. elegans
+.
+Cell
+150
+,
+855
+–
+866
+.
+22901814
+10.1016/j.cell.2012.08.001
+PMC3979301
+Schindelin
+J
+,
+Arganda-Carreras
+I
+,
+Frise
+E
+,
+Kaynig
+V
+,
+Longair
+M
+,
+Pietzsch
+T
+,
+Preibisch
+S
+,
+Rueden
+C
+,
+Saalfeld
+S
+,
+Schmid
+B
+,
+(
+2012
+).
+Fiji: an open-source platform for biological-image analysis
+.
+Nat. Methods
+9
+,
+676
+–
+682
+.
+22743772
+10.1038/nmeth.2019
+PMC3855844
+Schrödel
+T
+,
+Prevedel
+R
+,
+Aumayr
+K
+,
+Zimmer
+M
+, and
+Vaziri
+A
+(
+2013
+).
+Brainwide 3D imaging of neuronal activity in Caenorhabditis elegans with sculpted light
+.
+Nat. Methods
+10
+,
+1013
+–
+1020
+.
+24013820
+10.1038/nmeth.2637
+Serrano-Saiz
+E
+,
+Poole
+RJ
+,
+Felton
+T
+,
+Zhang
+F
+,
+De La Cruz
+ED
+, and
+Hobert
+O
+(
+2013
+).
+Modular control of glutamatergic neuronal identity in C. elegans by distinct homeodomain proteins
+.
+Cell
+155
+,
+659
+–
+673
+.
+24243022
+10.1016/j.cell.2013.09.052
+PMC3855022
+Shaner
+NC
+,
+Lin
+MZ
+,
+McKeown
+MR
+,
+Steinbach
+PA
+,
+Hazelwood
+KL
+,
+Davidson
+MW
+, and
+Tsien
+RY
+(
+2008
+).
+Improving the photostability of bright monomeric orange and red fluorescent proteins
+.
+Nat. Methods
+5
+,
+545
+–
+551
+.
+18454154
+10.1038/nmeth.1209
+PMC2853173
+Si
+G
+,
+Kanwal
+JK
+,
+Hu
+Y
+,
+Tabone
+CJ
+,
+Baron
+J
+,
+Berck
+M
+,
+Vignoud
+G
+, and
+Samuel
+ADT
+(
+2019
+).
+Structured Odorant Response Patterns across a Complete Olfactory Receptor Neuron Population
+.
+Neuron
+101
+,
+950
+–
+962.e7
+.
+30683545
+10.1016/j.neuron.2018.12.030
+PMC6756926
+Stefanakis
+N
+,
+Carrera
+I
+, and
+Hobert
+O
+(
+2015
+).
+Regulatory Logic of Pan-Neuronal Gene Expression in C. elegans
+.
+Neuron
+87
+,
+733
+–
+750
+.
+26291158
+10.1016/j.neuron.2015.07.031
+PMC4545498
+Storey
+JD
+(
+2002
+).
+A Direct Approach to False Discovery Rates
+.
+J. R. Stat. Soc. Ser. A Stat. Soc
+.
+64
+,
+479
+–
+498
+.
+Subach
+OM
+,
+Cranfill
+PJ
+,
+Davidson
+MW
+, and
+Verkhusha
+VV
+(
+2011
+).
+An enhanced monomeric blue fluorescent protein with the high chemical stability of the chromophore
+.
+PLoS ONE
+6
+,
+e28674
+.
+22174863
+10.1371/journal.pone.0028674
+PMC3234270
+Sulston
+JE
+(
+1983
+).
+Neuronal cell lineages in the nematode Caenorhabditis elegans
+.
+Cold Spring Harb. Symp. Quant. Biol
+.
+48
+,
+443
+–
+452
+.
+10.1101/sqb.1983.048.01.049
+6586366
+Suzuki
+H
+,
+Thiele
+TR
+,
+Faumont
+S
+,
+Ezcurra
+M
+,
+Lockery
+SR
+, and
+Schafer
+WR
+(
+2008
+).
+Functional asymmetry in Caenorhabditis elegans taste neurons and its computational role in chemotaxis
+.
+Nature
+454
+,
+114
+–
+117
+.
+18596810
+10.1038/nature06927
+PMC2984562
+Thiele
+TR
+,
+Faumont
+S
+, and
+Lockery
+SR
+(
+2009
+).
+The neural network for chemotaxis to tastants in Caenorhabditis elegans is specialized for temporal differentiation
+.
+J. Neurosci
+.
+29
+,
+11904
+–
+11911
+.
+19776276
+10.1523/JNEUROSCI.0594-09.2009
+PMC3376908
+Thompson
+O
+,
+Edgley
+M
+,
+Strasbourger
+P
+,
+Flibotte
+S
+,
+Ewing
+B
+,
+Adair
+R
+,
+Au
+V
+,
+Chaudhry
+I
+,
+Fernando
+L
+,
+Hutter
+H
+,
+(
+2013
+).
+The million mutation project: a new approach to genetics in Caenorhabditis elegans
+.
+Genome Res
+.
+23
+,
+1749
+–
+1762
+.
+23800452
+10.1101/gr.157651.113
+PMC3787271
+Toyoshima
+Y
+,
+Wu
+S
+,
+Kanamori
+M
+,
+Sato
+H
+,
+Jang
+MS
+,
+Oe
+S
+,
+Murakami
+Y
+,
+Teramoto
+T
+,
+Park
+C
+,
+Iwasaki
+Y
+,
+(
+2020
+).
+Neuron ID dataset facilitates neuronal annotation for whole-brain activity imaging of C. elegans
+.
+BMC Biol
+.
+18
+,
+30
+.
+32188430
+10.1186/s12915-020-0745-2
+PMC7081613
+Varol
+E
+,
+Nejatbakhsh
+A
+,
+Yemini
+E
+,
+Sun
+R
+,
+Mena
+GE
+,
+Hobert
+O
+, and
+Paninski
+L
+(
+2020
+).
+Statistical atlas of C. elegans neurons
+. In
+Medical Image Computing and Computer Assisted Intervention-MICCAI 2020
+,
+Martel
+AL
+,
+Abolmaesumi
+P
+,
+Stoyanov
+D
+,
+Mateus
+D
+,
+Zuluaga
+MA
+,
+Zhou
+SK
+,
+Racoceanu
+D
+, and
+Joskowicz
+L
+, eds. (
+Springer, Cham
+.)
+10.1007/978-3-030-59722-1_12
+.
+Venkatachalam
+V
+,
+Ji
+N
+,
+Wang
+X
+,
+Clark
+C
+,
+Mitchell
+JK
+,
+Klein
+M
+,
+Tabone
+CJ
+,
+Florman
+J
+,
+Ji
+H
+,
+Greenwood
+J
+,
+(
+2016
+).
+Pan-neuronal imaging in roaming Caenorhabditis elegans
+.
+Proc. Natl. Acad. Sci. USA
+113
+,
+E1082
+–
+E1088
+.
+26711989
+10.1073/pnas.1507109113
+PMC4776525
+Ward
+S
+(
+1973
+).
+Chemotaxis by the nematode Caenorhabditis elegans: identification of attractants and analysis of the response by use of mutants
+.
+Proc. Natl. Acad. Sci. USA
+70
+,
+817
+–
+821
+.
+4351805
+10.1073/pnas.70.3.817
+PMC433366
+Weissman
+TA
+, and
+Pan
+YA
+(
+2015
+).
+Brainbow: new resources and emerging biological applications for multicolor genetic labeling and analysis
+.
+Genetics
+199
+,
+293
+–
+306
+.
+25657347
+10.1534/genetics.114.172510
+PMC4317644
+Wes
+PD
+, and
+Bargmann
+CI
+(
+2001
+).
+C. elegans odour discrimination requires asymmetric diversity in olfactory neurons
+.
+Nature
+410
+,
+698
+–
+701
+.
+11287957
+10.1038/35070581
+White
+JG
+,
+Southgate
+E
+,
+Thomson
+JN
+, and
+Brenner
+S
+(
+1986
+).
+The structure of the nervous system of the nematode
+Caenorhabditis elegans
+.
+Philos. Trans. R. Soc. Lond. B Biol. Sci
+.
+314
+,
+1
+–
+340
+.
+22462104
+10.1098/rstb.1986.0056
+Yemini
+E
+,
+Jucikas
+T
+,
+Grundy
+LJ
+,
+Brown
+AE
+, and
+Schafer
+WR
+(
+2013
+).
+A database of Caenorhabditis elegans behavioral phenotypes
+.
+Nat. Methods
+10
+,
+877
+–
+879
+.
+23852451
+10.1038/nmeth.2560
+PMC3962822
+Zaslaver
+A
+,
+Liani
+I
+,
+Shtangel
+O
+,
+Ginzburg
+S
+,
+Yee
+L
+, and
+Sternberg
+PW
+(
+2015
+).
+Hierarchical sparse coding in the sensory system of Caenorhabditis elegans
+.
+Proc. Natl. Acad. Sci. USA
+112
+,
+1185
+–
+1189
+.
+25583501
+10.1073/pnas.1423656112
+PMC4313814
+Zeng
+H
+, and
+Sanes
+JR
+(
+2017
+).
+Neuronal cell-type classification: challenges, opportunities and the path forward
+.
+Nat. Rev. Neurosci
+.
+18
+,
+530
+–
+546
+.
+28775344
+10.1038/nrn.2017.85
+Zhong
+M
+,
+Niu
+W
+,
+Lu
+ZJ
+,
+Sarov
+M
+,
+Murray
+JI
+,
+Janette
+J
+,
+Raha
+D
+,
+Sheaffer
+KL
+,
+Lam
+HY
+,
+Preston
+E
+,
+(
+2010
+).
+Genome-wide identification of binding sites defines distinct functions for Caenorhabditis elegans PHA-4/FOXA in development and environmental response
+.
+PLoS Genet
+.
+6
+,
+e1000848
+.
+20174564
+10.1371/journal.pgen.1000848
+PMC2824807
+Figure 1.
+NeuroPAL Method and Images
+(A) The emission for five distinguishable fluorophores. Each fluorophore’s excitation wavelength is listed in parentheses.
+(B) Fluorophores are converted into pseudo colors to construct a primary color palette. Three fluorophores are designated as landmarks and pseudo colored to construct an RGB color palette: mNeptune2.5 is pseudo-colored red, CyOFP1 is pseudo-colored green, and mTagBFP2 is pseudo-colored blue. The fluorophore TagRFP-T is used as a panneuronal marker. The fluorophores GFP/CFP/YFP/GCaMP are reserved for reporters of gene expression or neuronal activity. TagRFP-T and GFP/CFP/YFP/GCaMP are visualized separately from the RGB landmarks to avoid confusion. They can be assigned any pseudo color.
+(C) An example of how to stably pseudo color neurons, across animals. A set of reporters (rows), with stable neuronal expression (columns), are used to drive the fluorophores (table elements). NeuroPAL colors (last row) result from the combined patterns of reporter-fluorophore expression. The panneuronal reporter is expressed in all neurons. The remaining reporters have differential neuronal expression patterns and are used to drive the pseudo-colored landmark fluorophores. Combinations of these differentially expressed reporters assign stable and distinguishable pseudo colors to neurons. For example, reporter 3 drives the red landmark fluorophore (mNeptune2.5), to color neurons 2–4 with distinguishable red intensities and contributes to the blended coloring of several other neurons. In contrast, neuron 1 does not express any of the landmark fluorophores but is still marked by the panneuronal reporter.
+(D) NeuroPAL scales this concept to 41 reporters that, in combination, disambiguate every neuron in
+C. elegans
+and thus generate, a single stereotyped color map across all animals (see
+Table S1
+for data). Seven of the NeuroPAL reporters use a self-cleaving peptide sequence (T2A) to simultaneously drive expression of two different colors.
+(E) Young adult NeuroPAL worms have a deterministic color map that remains identical across all animals (see
+Videos S1
+and
+S2
+for 3D images). Each neuron is distinguishable from its neighbors via color. All worm ganglia are shown.
+All images may employ histogram adjustments to improve visibility. Images without a transmitted light channel (e.g., Nomarski) may further be adjusted with a gamma of ~0.5 to improve visibility on the dark background.
+See also
+Table S1
+and
+Videos S1
+and
+S2
+.
+See
+Figures S1
+and
+Table S2
+for phenotypic analysis.
+Figure 2.
+Neuron Locations and Their Positional Variability
+(A) Neuron locations and variability, in the retrovesicular ganglion, taken from electron micrographs of three adult hermaphrodites N2S, N2T, and N2U (
+Hall and Altun, 2007
+;
+White et al., 1986
+).
+(B) An example of substantial positional variability. The OLL left (OLLL) and right (OLLR) neurons, within a single animal, should share equivalent positions. Instead they show substantial anterior-posterior displacement relative to each other. The transgenic reporters and their pseudo colors are noted on the figure.
+(C and D) Canonical neuron locations (filled circles displaying the NeuroPAL colors) and their positional variability (encircling ellipses with matching colors) for all ganglia, as determined by NeuroPAL (
+otIs669
+, strain OH15262) (see
+Table S3
+for data). Positional variability is shown as the 50% contour for neuronal location (measured as a Gaussian density distribution), sliced within a 2D plane (
+Methods S1
+). We show both the left-right and dorsal-ventral planes to provide a 3D estimation of positional variability. (C) Left, right, and ventral views of the head neuron positions. OLLR exhibits over twice the positional variability of OLLL in its anterior-posterior axis, echoing the displacement seen with the non-NeuroPAL transgene in (B). (D) Left, right, and ventral views of the tail neuron positions.
+See also
+Table S3
+and
+Methods S1
+.
+Figure 3.
+Expression of All Metabotropic Neurotransmitter Receptors
+(A–H) NeuroPAL is used to identify the GFP expression patterns for all metabotropic neurotransmitter receptors (
+Table S4
+): the three acetylcholine receptors (A) GAR-1, (B) GAR-2, and (C) GAR-3; the two GABA receptors (D) GBB-1 and (E) GBB-2; and the three glutamate receptors (F) MGL-1, (G) MGL-2, and (H) MGL-3.
+See also
+Table S4
+.
+Figure 4.
+Metabotropic Neurotransmitter Communication Network
+(A) Expression of the metabotropic neurotransmitter receptors incorporated into the existing, anatomically defined connectome. Rows are presynaptic neurons (organized by neurotransmitter). Columns are postsynaptic neurons (organized by neuron type). Cognate synaptic connections (where the presynaptic neurotransmitter matches the postsynaptic metabotropic receptor) are marked by a colored dot (see legend for neurotransmitter coloring). All other synaptic connections are marked by a black dot. Metabotropic autapses with cognate self-connectivity are circled.
+(B) The complete GABA communication network: all presynaptic GABA neurons and their corresponding postsynaptic ionotropic GABA
+A
+and metabotropic GABA
+B
+expressing neurons. Synaptic connections are marked by a colored dot to indicate postsynaptic GABA
+A
+and/or GABA
+B
+receptors (see legend for receptor-type coloring). GABA autapses are circled. All GABAergic autapses express GABA
+B
+receptors and none express GABA
+A
+receptors.
+(C) Metabotropic (and ionotropic GABA
+A
+) receptor expression as a percentage of all neurons. Metabotropic receptors are expressed in almost all neurons.
+(D) Synaptic connections with cognate neurotransmitter receptors as a percentage of the total synapses associated with each neurotransmitter. Metabotropic communication is extensive and these percentages are robust when removing weak synaptic connections by thresholding for at least 1, 5, or 10 synapses. A polyadic synapse that connects AVF (a neuron with no means of releasing its GABA) onto AIM and several cognate GABA
+B
+expressing neurons, reduces our count of GABA synaptic signaling to just under 100%.
+(E) Neurons expressing a neurotransmitter receptor that have no presynaptic partners expressing their cognate neurotransmitter. The absence of presynaptic GABAergic partners for over 31% of the GABA
+A
+and 37% of the GABA
+B
+receptor-expressing neurons suggests substantial extrasynaptic GABA signaling. For each neurotransmitter, we show the percentage of neurons lacking a cognate presynaptic partner relative to all neurons expressing the neurotransmitter receptor. Removing weak synaptic connections increases the potential for extrasynaptic signaling.
+(F) The types of neurons expressing a neurotransmitter receptor that have no presynaptic partners expressing their cognate neurotransmitter (suggesting extrasynaptic signaling). We show the neuron type percentages. Sensory neurons represent the majority and are robust against removing weak synaptic connections. Neurons are often categorized as multiple types and thus the sum of percentages can exceed 100%.
+(G) Ionotropic versus metabotropic GABA communication. Over 60% of GABA connections share both GABA
+A
+and GABA
+B
+receptors at their postsynaptic sites. The remaining nearly 40% of connections are accounted for solely by metabotropic GABA
+B
+at the postsynaptic sites. These percentages remain robust when removing weak synaptic connections.
+Metabotropic receptor abbreviations: acetylcholine, mAch; glutamate, mGlu; GABA, GABA
+B
+; all, mTotal. The ionotropic GABA receptor is abbreviated GABA
+A
+.
+See
+Table S4
+for data.
+Figure 5.
+Mutant Analysis of the Conserved Transcription Factors PAG-3/Gli and EOR-1/PLZF
+(A and B) Alterations in NeuroPAL coloring reveal neurons with altered fate in
+pag-3
+(−) mutant backgrounds: the AVE pre-motor interneuron gains blue-color expression, the PVR interneuron loses all green-color expression, and the VA and VB motor neurons are missing entirely. Statistical bar graph colors in (B) are sampled from the images in (A).
+(C) PAG-3/Gli expression as assessed with a fosmid reporter (
+wgIs154
+): ADA*, ALM, AQR*, AVD*, AVE*, AVF, AVH*, AVJ*, AVM, BDU, DVC*, I1*, I2*, I6*, PLM, PQR*, PVC*, PVM, PVQ*, PVR*, PVW*, RID*, RIG, RMG*, VA11–12, and URY* (*previously unpublished expression).
+(D) EOR-1/PLZF has broad, likely ubiquitous, expression, as assessed with a fosmid reporter (
+wgIs81
+).
+(E–G) The NeuroPAL blue reporters in RMED/V are
+ggr-3
+,
+pdfr-1
+, and
+unc-25
+.
+(E and F) NeuroPAL exhibits total loss of its RMED/V blue-color expression in
+eor-1
+(−) mutant backgrounds but retains panneuronal marker expression (shown in white), indicating the preservation of RMED/V neuronal fate.
+(G) RMED/V fate analysis in
+eor-1
+(−) mutants with
+unc-25
+(
+otIs514
+) and
+unc-47
+(
+otIs565
+) reporter transgenes.
+See
+Table S5
+for data.
+Figure 6.
+Whole-Brain Neuronal Activity Imaging of Taste and Odor Responses
+(A)
+C. elegans
+were subjected to three chemosensory stimuli: a repulsive taste (160 mM NaCl) and two attractive odors (10
+−4
+2-butanone and 10
+−4
+2,3-pentanedione).
+(B) Animals were immobilized inside a microfluidic chip. Stimuli were delivered in chemotaxis buffer. Each animal was imaged using a spinning disk confocal microscope with four excitation lasers. The NeuroPAL color map was imaged to identify all neurons. Thereafter, brainwide activity was recorded via the panneuronal calcium sensor GCaMP6s (
+Videos S3
+and
+S4
+).
+(C) Peak neuronal activity, before and during stimulus presentation, for 109 head neuron classes and subclasses.
+(D–F) Neuronal activity traces for selected (D) sensory neurons, (E) interneurons, and (F) pharyngeal neurons that responded to stimuli. The 10-s stimulus delivery period is indicated by the vertical colored bar. Black activity traces represent all neurons combined into one representative group. Colored activity traces divide neurons into groups exhibiting known asymmetric responses: stereotyped asymmetries between the ASEL and ASER neuron pair and stochastic asymmetries between the AWC
+ON
+and AWC
+OFF
+neuron pair. Significant responses (p or q ≤ 0.05) are highlighted by bold borders. “Post,” significant post-stimulus response; ns, no significant response.
+(F–I) Average pairwise correlations between 189 neurons in the 30 s following onset of (G) NaCl, (H) 2-butanone, and (I) 2,3-pentanedione. All three correlation maps are presented on the same axes, determined by clustering the full-time-course correlations. The set of correlated and anti-correlated neurons differs for each stimulus presentation.
+(J and K) Comparison of functional activity to the connectome. We observe minimal correspondence between synapse counts and pairwise-functional-activity correlations for the (J) head and (K) tail.
+See
+Table S6
+for primary data. See also
+Figures S1
+and
+S2
+.
+Figure 7.
+NeuroPAL Software: An Algorithm for Semi-automated Neuronal Identification and an Algorithm to Generate Optimal-Coloring Solutions for Cell Identification
+(A–C) The algorithm used for semi-automated neuronal identification. (A) Raw images are filtered to remove non-neuronal fluorescence and neurons are detected in the filtered image. Detected neurons are identified by matching them to a statistical atlas of neuronal colors and positions (
+Table S3
+). (B and C) Semi-automated neuronal identification accuracy begins at 86% for the head and 94% for the tail. Manually identifying eight neurons raises the head accuracy above 90%. Overall accuracy is displayed as a black line. Accuracy for each ganglion is displayed as a dotted, colored line (see legend). Many of the neurons and ganglia have high identification accuracy and confidence. The ventral ganglion is a problematic area, likely due to the density and high positional variance therein.
+(D and E) The algorithm used to generate optimal-coloring solutions for cell identification—for any collection of cells in any organism. We show simulations of two approximately optimal alternatives to NeuroPAL, one that permits as many reporters as NeuroPAL (D) and one that restricts the transgene to only 3 reporters (E). With the exception of the number of reporters, both alternatives were generated using parameters similar to NeuroPAL: three landmark fluorophores, where each fluorophore is distinguishable at three intensities (high, medium, and low). Reporters were chosen by the algorithm from those available in WormBase, a community-curated database of cell-specific reporter expression. Similar databases are available for other model organisms (e.g., fly, fish, and mouse). We evaluated the two NeuroPAL alternatives by computing the percentage of their color violations, defined as neighboring neuron pairs with indistinguishable colors. See
+Methods S1
+and
+S2
+for algorithmic details and validation.
+See also
+Figure S3
+and
+Table S3
+KEY RESOURCES TABLE
+REAGENT or RESOURCE
+SOURCE
+IDENTIFIER
+Chemicals, Peptides, and Recombinant Proteins
+2-butanone
+Sigma-Aldrich
+02469; CAS: 78–93-3
+2,3-pentanedione
+Sigma-Aldrich
+818555; CAS: 600–14-6
+NaCl
+BDH Chemicals
+9286; CAS: 7647–14-5
+Tetramisole hydrochloride
+Sigma-Aldrich
+L9756; CAS: 16595–80-5
+Sodium azide
+Sigma-Aldrich
+71289; CAS: 26628–22-8
+K
+2
+HPO
+4
+EMD Chemicals
+PX1570; CAS: 7758–11-4
+KH
+2
+PO
+4
+EMD Chemicals
+PX1562; CAS: 7778–77-0
+MgSO
+4
+Sigma-Aldrich
+M2643; CAS: 7487–88-9
+CaCl
+2
+Sigma-Aldrich
+C5670; CAS: 10043–52-4
+Sorbitol
+Alfa Aesar
+36404; CAS: 50–70-4
+Invitrogen Vybrant DiO Cell-Labeling Solution
+Thermo Fisher Scientific
+V22886; CAS: 34215–57-1
+Bacterial and Virus Strains
+E. coli
+Caenorhabditis
+Genetics Center (CGC)
+WormBase: OP50; WormBase: WBStrain00041969
+Deposited Data
+Deposited Data
+Imaging datasets and whole-brain calcium activity
+This paper
+https://zenodo.org/record/3906530
+Experimental Models: Organisms/Strains
+C. elegans
+: Strain N2
+Caenorhabditis
+Genetics Center
+WormBase: N2; WormBase:
+WBStrain00000001
+otEx7057[NeuroPAL]
+This paper
+OH15205
+otIs668 [NeuroPAL] V
+This paper
+OH15261
+otIs669 [NeuroPAL] V
+This paper
+OH15262
+otIs670 [NeuroPAL] V
+This paper
+OH15263
+otIs696 [NeuroPAL] not V
+This paper
+OH15495
+otEx7056[rab-3(xATG)::3xNLS::ceGCaMP6s 32ng/ul + arrd-4(1.6K)::3xNLS::ceGCaMP6s 32ng/ul + OP50 55ng/ul]
+This paper
+OH15204
+otIs671[rab-3(xATG)::3xNLS::ceGCaMP6s 32ng/ul + arrd-
+4(1.6K)::3xNLS::ceGCaMP6s 32ng/ul + OP50 55ng/ul]
+This paper
+OH15264
+otIs672[rab-3(xATG)::3xNLS::ceGCaMP6s 32ng/ul + arrd-
+4(1.6K)::3xNLS::ceGCaMP6s 32ng/ul + OP50 55ng/ul]
+This paper
+OH15265
+otIs673[rab-3(xATG)::3xNLS::ceGCaMP6s 32ng/ul + arrd-
+4(1.6K)::3xNLS::ceGCaMP6s 32ng/ul + OP50 55ng/ul]
+This paper
+OH15266
+otIs668[NeuroPAL]; him-5(e1490)
+This paper
+OH15362
+otIs669[NeuroPAL]; him-5(e1490)
+This paper
+OH15363
+otIs670[NeuroPAL]; him-8(e1489)
+This paper
+OH16298
+otIs696[NeuroPAL]; him-5(e1490)
+This paper
+OH15528
+otIs669[NeuroPAL]; otIs672[panneuronal::GCaMP6s]
+This paper
+OH15368
+otIs669[NeuroPAL]; otIs672[panneuronal::GCaMP6s]
+This paper
+OH15500
+otIs670[NeuroPAL]; otIs672[panneuronal::GCaMP6s]
+This paper
+OH16230
+otIs669[NeuroPAL];pha-1(e2123)
+This paper
+OH15430
+otIs670[NeuroPAL ];pha-1(e2123)
+This paper
+OH15431
+otEx7216[gar-1(fosmid)::GFP 5ng/ul + inx-6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15519
+otEx7217[gar-1(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15520
+otEx7218[gar-1(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15521
+otEx7209[gar-2(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15511
+otEx7210[gar-2(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15512
+otEx7211[gar-2(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15513
+otEx7212[gar-2(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15514
+vjEx601[gar-3(8.5kb)::GFP]; otIs669[NeuroPAL]
+This paper
+OH15425
+otEx7201[gbb-1(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15492
+otEx7202[gbb-1(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15493
+otEx7203[gbb-1(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15494
+vsIs267[gbb-2(fosmid)::GFP + lin-15(+)];otIs696 [NeuroPAL];
+This paper
+OH15887
+otEx7204[mgl-1(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15497
+otEx7205[mgl-1(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15498
+otEx7206[mgl-1(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15499
+otEx7243[mgl-2(7.9kb)::GFP 30ng/ul + inx-
+6(prom18)::TagRFP 40ng/ul + pha-1(+) 30ng/ul]; otIs669
+[NeuroPAL]; pha-1(e2123)
+This paper
+OH15554
+otEx7244[mgl-2(7.9kb)::GFP 30ng/ul + inx-
+6(prom18)::TagRFP 40ng/ul + pha-1(+) 30ng/ul]; otIs669
+[NeuroPAL]; pha-1(e2123)
+This paper
+OH15555
+otEx7245[mgl-2(7.9kb)::GFP 30ng/ul + inx-
+6(prom18)::TagRFP 40ng/ul + pha-1(+) 30ng/ul]; otIs669
+[NeuroPAL]; pha-1(e2123)
+This paper
+OH15556
+otEx7213[mgl-3(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15516
+otEx7214[mgl-3(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15517
+otEx7215[mgl-3(fosmid)::GFP 5ng/ul + inx-
+6(prom18)::TagRFP 7ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15518
+otEx7240[maf-1(fosmid)::GFP 7ng/ul + inx-
+6(prom18)::TagRFP 6ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15551
+otEx7241[maf-1(fosmid)::GFP 7ng/ul + inx-
+6(prom18)::TagRFP 6ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15552
+otEx7242[maf-1(fosmid)::GFP 7ng/ul + inx-
+6(prom18)::TagRFP 6ng/ul + pha-1(+) 3ng/ul + OP50 100ng/ul]; otIs669[NeuroPAL]; pha-1(e2123)
+This paper
+OH15553
+otIs669[NeuroPAL];wgIs81[eor-1::TY1::EGFP::3xFLAG + unc-119(+)]
+This paper
+OH15700
+otIs669[NeuroPAL];eor-1(cs28)
+This paper
+OH15753
+otIs669[NeuroPAL];eor-1(ok1127)
+This paper
+OH15701
+otIs514[pMG89 (unc-
+25p(1.8kb)::unc25(UPto6thexon)::GFP::unc54_3
+′
+UTR) + pha-1(+)]; otIs565[fMG1(unc-
+47(fosmid)::SL2::H2B::mCHOPTI) + pha-1(+)]IV; him-
+5(e1490)V
+Gendrel et al., 2016
+OH13334
+eor-1(cs28)IV; otIs514[pMG89 (unc-
+25p(1.8kb)::unc25(UPto6thexon)::GFP::unc54_3
+′
+UTR) + pha-1(+)]; otIs565[fMG1(unc-
+47(fosmid)::SL2::H2B::mCHOPTI) + pha-1(+)]IV
+This paper
+OH15777
+eor-1(ok1127)IV; otIs514[pMG89 (unc-
+25p(1.8kb)::unc25(UPto6thexon)::GFP::unc54_3
+′
+UTR) + pha-1(+)]; otIs565[fMG1(unc-
+47(fosmid)::SL2::H2B::mCHOPTI) + pha-1(+)]IV
+This paper
+OH15769
+otIs669[NeuroPAL];wgIs154[pag-
+3::TY1::EGFP::3xFLAG + unc-119(+)]
+This paper
+OH15729
+otIs669[NeuroPAL];pag-3(n3098)
+This paper
+OH15770
+otIs669[NeuroPAL];pag-3(ok488)
+This paper
+OH15730
+Oligonucleotides
+Primers for fluorescent reporters, see Tables S1 and S4
+This paper
+N/A
+Software and Algorithms
+Worm Tracker v2.0
+Yemini et al., 2013
+https://www.mrc-lmb.cam.ac.uk/wormtracker/
+MATLAB
+MathWorks
+R2019b
+NeuroPAL Automated Cell ID
+This paper
+https://github.com/amin-nejat/CELL_ID
+NeuroPAL Optimal Coloring
+This paper
+https://github.com/Eviatar/Optimal_Coloring
+NeuroPAL Neuronal Traces
+This paper
+https://github.com/venkatachalamlab/NeuroPAL-traces
+dNMF Demixed Neuronal Traces
+Nejatbakhsh et al., 2020
+https://github.com/amin-nejat/dNMF
+OME Bio-Formats MATLAB v6.3.1
+Linkert et al., 2010
+https://www.openmicroscopy.org/bio-formats/downloads/
+Fiji v2
+(
+Schindelin et al., 2012
+)
+https://imagej.net/Fiji
+TrakEM2
+Cardona et al., 2012
+https://imagej.net/TrakEM2
+Other
+Confocal Laser Scanning Microscope
+Zeiss
+LSM 880
+Spinning Disk Confocal
+Nikon
+Ti-e
+EMCCD Camera
+Andor
+iXon Ultra 897
+EMCCD Camera
+Andor
+iXon DU-897
+60x Objective, 1.2 NA
+Nikon
+CFI Plan Apochromat VC 60XC WI
+FF01–445/45–25 Brightline (420–470 nm bandpass)
+Semrock
+FF01–445/45–25
+FF02–525/40–25 Brightline (500–545 nm bandpass)
+Semrock
+FF02–525/40–25
+FF02–617/73–25 Brightline (570–650 nm bandpass)
+Semrock
+FF02–617/73–25
+FF01–731/137–25 Brightline (660–800 nm bandpass)
+Semrock
+FF01–731/137–25
+Highlights
+NeuroPAL: a strain with a stereotyped fluorescent color map to identify all neurons
+NeuroPAL and semi-automated ID software pinpoint patterns of reporter gene expression
+NeuroPAL identifies neuronal differentiation defects in mutant backgrounds
+Dynamic whole-brain neuronal activity patterns defined by NeuroPAL in combination with GCaMP

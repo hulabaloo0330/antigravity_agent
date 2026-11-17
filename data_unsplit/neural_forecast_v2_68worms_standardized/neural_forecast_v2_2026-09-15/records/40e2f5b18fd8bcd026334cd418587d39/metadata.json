@@ -1,0 +1,232 @@
+{
+  "source_format": "wormwideweb-json",
+  "source_record_id": "2022-01-09-01",
+  "source_metadata": {
+    "blake3_analysis_dict": "b6e66580cfae784a81e5a9fcc757eaeec88e61c4f0d271d803fafe0321c18c31",
+    "blake3_fit_results": "1c4bf00c535d814e851a03170542fc30082958f4c063d16789505c6c83989681",
+    "blake3_neuropal_dict": "490da6fe15c58c099edea3f6cbc9d790882c8cf27b4193499667306cf69dff05",
+    "blake3_relative_encoding_strength": "c28384748008c66b4178cc3afaa909263f4d4b4e983763d27442499ee59c77a1",
+    "checksum_h5": "30b424544c758bb771b5716b1cbdd4e4c02f8cc9fd06fdda0bc26c2cff3f23d0",
+    "dataset_type": [
+      "baseline"
+    ],
+    "n_neuron": 126,
+    "paper_id": "atanas_kim_2023",
+    "source_filename": "2022-01-09-01-data.h5",
+    "uid": "2022-01-09-01"
+  },
+  "source_group_id": "source-h5:30b424544c758bb771b5716b1cbdd4e4c02f8cc9fd06fdda0bc26c2cff3f23d0",
+  "animal_id": null,
+  "animal_identity_status": "unknown",
+  "condition": [
+    "baseline"
+  ],
+  "signal_kind": "calcium_reporter_fluorescence",
+  "signal_source_field": "gcamp/trace_array_original",
+  "signal_unit": "source_fluorescence_scale",
+  "source_preprocessing": "Author-provided extracted fluorescence; not raw photons or membrane voltage. Upstream processing is not proven causal.",
+  "normalization_applied_here": "none",
+  "source_author_zscore_uses_future_statistics": "possible; excluded by default loader",
+  "time_unit": "s",
+  "time_unit_evidence": "WormWideWeb JSON schema: timestamp_confocal and mean_timestep",
+  "source_time_origin": 0.0,
+  "event_index_origin": "unknown_preserved_not_converted",
+  "events_source_index": {},
+  "reversal_events_source_index": [
+    [
+      2,
+      14
+    ],
+    [
+      16,
+      23
+    ],
+    [
+      34,
+      37
+    ],
+    [
+      64,
+      67
+    ],
+    [
+      91,
+      93
+    ],
+    [
+      112,
+      123
+    ],
+    [
+      163,
+      165
+    ],
+    [
+      171,
+      173
+    ],
+    [
+      182,
+      188
+    ],
+    [
+      220,
+      222
+    ],
+    [
+      239,
+      261
+    ],
+    [
+      276,
+      284
+    ],
+    [
+      329,
+      345
+    ],
+    [
+      381,
+      584
+    ],
+    [
+      602,
+      606
+    ],
+    [
+      640,
+      646
+    ],
+    [
+      647,
+      661
+    ],
+    [
+      801,
+      805
+    ],
+    [
+      819,
+      830
+    ],
+    [
+      866,
+      875
+    ],
+    [
+      897,
+      936
+    ],
+    [
+      937,
+      939
+    ],
+    [
+      954,
+      958
+    ],
+    [
+      959,
+      966
+    ],
+    [
+      1000,
+      1057
+    ],
+    [
+      1107,
+      1116
+    ],
+    [
+      1121,
+      1140
+    ],
+    [
+      1153,
+      1182
+    ],
+    [
+      1195,
+      1200
+    ],
+    [
+      1248,
+      1271
+    ],
+    [
+      1285,
+      1296
+    ],
+    [
+      1298,
+      1320
+    ],
+    [
+      1331,
+      1344
+    ],
+    [
+      1359,
+      1362
+    ],
+    [
+      1508,
+      1528
+    ],
+    [
+      1536,
+      1548
+    ]
+  ],
+  "behavior_channels": [
+    {
+      "name": "velocity",
+      "source_unit": "0.1 mm/s",
+      "conversion": "identity"
+    },
+    {
+      "name": "head_angle",
+      "source_unit": "rad",
+      "conversion": "identity"
+    },
+    {
+      "name": "angular_velocity",
+      "source_unit": "rad/s",
+      "conversion": "identity"
+    },
+    {
+      "name": "pumping",
+      "source_unit": "1/s",
+      "conversion": "identity"
+    }
+  ],
+  "issues": [
+    "UPSTREAM_CAUSAL_PREPROCESSING_NOT_VERIFIED"
+  ],
+  "source_original_available": true,
+  "control": false,
+  "record_key": "40e2f5b18fd8bcd026334cd418587d39",
+  "parser_version": "neural-v2.0",
+  "signal_sha256": "b4967fcd958deb33e82e499b240b42adc35284df4515d264e0a8b3900985303b",
+  "timestamps_sha256": "91b9b113d045ad8da99e92625ce453c0d872a97a661b03b6bece6b4402920e27",
+  "n_timepoints": 1600,
+  "n_neurons": 126,
+  "n_named_neurons": 0,
+  "finite_fraction": 1.0,
+  "median_dt_s": 0.7375231741079915,
+  "n_segments": 2,
+  "axis_order": [
+    "time",
+    "neuron"
+  ],
+  "dtype": "float32",
+  "mask_definition": "finite numerical values; not a complete biological quality mask",
+  "qc_state": "usable",
+  "training_eligible": true,
+  "evaluation_scope": "chronological within-record forecasting; cross-animal grouping requires identity review",
+  "source": {
+    "source_archive": "C:\\projects\\bio\\source_data\\behavior_forecast_5papers_2026-09-15\\raw\\atanas_kim_2023\\atanas_kim_2023.tar.bz2",
+    "member": "atanas_kim_2023_2022-01-09-01.json",
+    "paper_key": "atanas_kim_2023"
+  }
+}

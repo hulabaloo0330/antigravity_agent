@@ -1,0 +1,14 @@
+{
+  "intervals": [
+    {
+      "start": 0,
+      "stop": 800
+    },
+    {
+      "start": 800,
+      "stop": 1600
+    }
+  ],
+  "indexing": "zero_based_half_open",
+  "gap_threshold": "1.5 * median timestamp interval"
+}

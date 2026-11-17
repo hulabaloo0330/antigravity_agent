@@ -1,0 +1,22 @@
+[
+  {
+    "name": "velocity",
+    "source_unit": "0.1 mm/s",
+    "conversion": "identity"
+  },
+  {
+    "name": "head_angle",
+    "source_unit": "rad",
+    "conversion": "identity"
+  },
+  {
+    "name": "angular_velocity",
+    "source_unit": "rad/s",
+    "conversion": "identity"
+  },
+  {
+    "name": "pumping",
+    "source_unit": "1/s",
+    "conversion": "identity"
+  }
+]

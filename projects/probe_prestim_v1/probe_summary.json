@@ -1,0 +1,1329 @@
+{
+  "experiment_id": "probe_prestim_v1",
+  "verified_date": "2026-11-17",
+  "elapsed_seconds": 62.7,
+  "python_version": "3.12.14",
+  "numpy_version": "2.3.5",
+  "cohorts": [
+    {
+      "dataset_name": "P1a_yang2022_WT_all_5neurons",
+      "modality": "immobilized",
+      "split_scheme": "date_grouped_leave_one_date_out_cv",
+      "n_groups": 21,
+      "n_samples_or_trials": 288,
+      "n_features_design": 17,
+      "n_stim_categories": 14,
+      "causal_cutoff_frame": "frame_100_at_5Hz_strictly_pre_onset",
+      "baselines": {
+        "zero_change": {
+          "delta": {
+            "rmse": 1.2489884825505928,
+            "mse": 1.5599722295440326,
+            "r2": -0.08183493011927756,
+            "pearson_r": 0.0
+          },
+          "post_level": {
+            "rmse": 1.2489884825505928,
+            "mse": 1.5599722295440326,
+            "r2": -0.07737109278792675,
+            "pearson_r": 0.11000676252820328
+          }
+        },
+        "stim_only_post_mean": {
+          "delta": {
+            "rmse": 0.8963807765876974,
+            "mse": 0.8034984966359636,
+            "r2": 0.44277678570394297,
+            "pearson_r": 0.666942618236546
+          },
+          "post_level": {
+            "rmse": 0.8963807765876974,
+            "mse": 0.8034984966359636,
+            "r2": 0.44507598470059184,
+            "pearson_r": 0.6675182747113325
+          }
+        },
+        "population_mean_response": {
+          "delta": {
+            "rmse": 0.8556086160524965,
+            "mse": 0.7320661038632683,
+            "r2": 0.4923148839982243,
+            "pearson_r": 0.7023776064170005
+          },
+          "post_level": {
+            "rmse": 0.8556086160524964,
+            "mse": 0.7320661038632682,
+            "r2": 0.49440968026546095,
+            "pearson_r": 0.7040341829753133
+          }
+        }
+      },
+      "models": {
+        "ridge_prestim": {
+          "delta": {
+            "rmse": 0.836250835290384,
+            "mse": 0.699315459523865,
+            "r2": 0.5150273338478193,
+            "pearson_r": 0.7177989119127889
+          },
+          "post_level": {
+            "rmse": 0.836250835290384,
+            "mse": 0.699315459523865,
+            "r2": 0.5170284146334214,
+            "pearson_r": 0.7191549453278603
+          },
+          "median_alpha": 100.0
+        },
+        "mlp_prestim_backprop": {
+          "delta": {
+            "rmse": 0.7995270029784947,
+            "mse": 0.6392434284917738,
+            "r2": 0.5566870635935988,
+            "pearson_r": 0.7469422046812988
+          },
+          "post_level": {
+            "rmse": 0.7995270029784945,
+            "mse": 0.6392434284917736,
+            "r2": 0.5585162491559319,
+            "pearson_r": 0.7482341564953748
+          },
+          "median_weight_decay": 0.01
+        }
+      },
+      "comparisons": {
+        "ridge_vs_stim_only_post_mean": {
+          "group_mse_reduction_mean": 0.1577696086034758,
+          "paired_perm_p_two_sided": 0.05147426286856572,
+          "r2_gain_boot_ci95": [
+            0.014781938105969847,
+            0.17958840101890977
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.008904884948195267,
+            0.11443014104752366
+          ],
+          "n_groups_improved": 14,
+          "n_groups_total": 21
+        },
+        "ridge_vs_population_mean_delta": {
+          "group_mse_reduction_mean": 0.06946128596489115,
+          "paired_perm_p_two_sided": 0.17491254372813594,
+          "r2_gain_boot_ci95": [
+            -0.03375418431070662,
+            0.06998406662305896
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.018420062649024755,
+            0.05482926867472625
+          ],
+          "n_groups_improved": 11,
+          "n_groups_total": 21
+        },
+        "ridge_vs_zero_change": {
+          "group_mse_reduction_mean": 1.2782369254265795,
+          "paired_perm_p_two_sided": 0.0014992503748125937,
+          "r2_gain_boot_ci95": [
+            0.5026082749580016,
+            0.779083737498351
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.21135773095691934,
+            0.6282380477244578
+          ],
+          "n_groups_improved": 15,
+          "n_groups_total": 21
+        },
+        "mlp_backprop_vs_population_mean_delta": {
+          "group_mse_reduction_mean": 0.07391489899512105,
+          "paired_perm_p_two_sided": 0.624687656171914,
+          "r2_gain_boot_ci95": [
+            -0.12091431909190441,
+            0.1401476276363994
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.069230976548566,
+            0.14377355229758818
+          ],
+          "n_groups_improved": 13,
+          "n_groups_total": 21
+        },
+        "ridge_vs_mlp_backprop": {
+          "group_mse_reduction_mean": -0.004453613030229899,
+          "paired_perm_p_two_sided": 0.975512243878061,
+          "r2_gain_boot_ci95": [
+            -0.10007324071132304,
+            0.11551432659057403
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.10747446076908734,
+            0.07050784890973698
+          ],
+          "n_groups_improved": 8,
+          "n_groups_total": 21
+        }
+      },
+      "leakage_checks": {
+        "future_tamper_invariance": true,
+        "future_tamper_max_diff": 0.0,
+        "scaler_fit_train_only": true,
+        "group_disjoint_folds": true
+      },
+      "conclusion_flag": "null"
+    },
+    {
+      "dataset_name": "P1b_yang2022_WT_sensory_AWB_ASH",
+      "modality": "immobilized",
+      "split_scheme": "date_grouped_leave_one_date_out_cv",
+      "n_groups": 16,
+      "n_samples_or_trials": 139,
+      "n_features_design": 17,
+      "n_stim_categories": 5,
+      "causal_cutoff_frame": "frame_100_at_5Hz_strictly_pre_onset",
+      "baselines": {
+        "zero_change": {
+          "delta": {
+            "rmse": 1.7846949024342278,
+            "mse": 3.1851358947747177,
+            "r2": -0.2799886265335991,
+            "pearson_r": 0.0
+          },
+          "post_level": {
+            "rmse": 1.7846949024342278,
+            "mse": 3.1851358947747177,
+            "r2": -0.21857491455992917,
+            "pearson_r": 0.2525642477634091
+          }
+        },
+        "stim_only_post_mean": {
+          "delta": {
+            "rmse": 1.265576137421588,
+            "mse": 1.601682959610946,
+            "r2": 0.35634269954447595,
+            "pearson_r": 0.5986580739278715
+          },
+          "post_level": {
+            "rmse": 1.265576137421588,
+            "mse": 1.601682959610946,
+            "r2": 0.38722530524932275,
+            "pearson_r": 0.6222978226436348
+          }
+        },
+        "population_mean_response": {
+          "delta": {
+            "rmse": 1.2201571214637477,
+            "mse": 1.4887834010586984,
+            "r2": 0.4017128676194436,
+            "pearson_r": 0.6338559640011141
+          },
+          "post_level": {
+            "rmse": 1.2201571214637477,
+            "mse": 1.4887834010586984,
+            "r2": 0.4304186177049565,
+            "pearson_r": 0.6565508315890831
+          }
+        }
+      },
+      "models": {
+        "ridge_prestim": {
+          "delta": {
+            "rmse": 1.1663552933331953,
+            "mse": 1.360384670286364,
+            "r2": 0.45331158129428406,
+            "pearson_r": 0.6736680757669127
+          },
+          "post_level": {
+            "rmse": 1.166355293333195,
+            "mse": 1.3603846702863638,
+            "r2": 0.47954163083516,
+            "pearson_r": 0.692823163099823
+          },
+          "median_alpha": 100.0
+        },
+        "mlp_prestim_backprop": {
+          "delta": {
+            "rmse": 1.0582484474508098,
+            "mse": 1.1198897765320492,
+            "r2": 0.5499576079991201,
+            "pearson_r": 0.7446296511289509
+          },
+          "post_level": {
+            "rmse": 1.0582484474508098,
+            "mse": 1.1198897765320492,
+            "r2": 0.5715505919251831,
+            "pearson_r": 0.7593677189992222
+          },
+          "median_weight_decay": 0.055
+        }
+      },
+      "comparisons": {
+        "ridge_vs_stim_only_post_mean": {
+          "group_mse_reduction_mean": 0.22334245411671216,
+          "paired_perm_p_two_sided": 0.06746626686656672,
+          "r2_gain_boot_ci95": [
+            0.015815330486705904,
+            0.21410721502858363
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.012784637296983887,
+            0.17557450589412932
+          ],
+          "n_groups_improved": 11,
+          "n_groups_total": 16
+        },
+        "ridge_vs_population_mean_delta": {
+          "group_mse_reduction_mean": 0.11614903753071402,
+          "paired_perm_p_two_sided": 0.13943028485757122,
+          "r2_gain_boot_ci95": [
+            -0.005222556406459864,
+            0.11659353791791954
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.004046913529305176,
+            0.10254755401012855
+          ],
+          "n_groups_improved": 9,
+          "n_groups_total": 16
+        },
+        "ridge_vs_zero_change": {
+          "group_mse_reduction_mean": 1.6940325223605708,
+          "paired_perm_p_two_sided": 0.0034982508745627187,
+          "r2_gain_boot_ci95": [
+            0.5875607337237627,
+            0.9207496999557833
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.3703594800009328,
+            0.8158893840687614
+          ],
+          "n_groups_improved": 12,
+          "n_groups_total": 16
+        },
+        "mlp_backprop_vs_population_mean_delta": {
+          "group_mse_reduction_mean": 0.31002155087495464,
+          "paired_perm_p_two_sided": 0.13843078460769614,
+          "r2_gain_boot_ci95": [
+            -0.006967297286495235,
+            0.21006082084847158
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.005264497896882782,
+            0.28418544747120617
+          ],
+          "n_groups_improved": 8,
+          "n_groups_total": 16
+        },
+        "ridge_vs_mlp_backprop": {
+          "group_mse_reduction_mean": -0.1938725133442406,
+          "paired_perm_p_two_sided": 0.2368815592203898,
+          "r2_gain_boot_ci95": [
+            -0.15224438481011954,
+            0.04757840303560977
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.21353146610379628,
+            0.03956411318061684
+          ],
+          "n_groups_improved": 8,
+          "n_groups_total": 16
+        }
+      },
+      "leakage_checks": {
+        "future_tamper_invariance": true,
+        "future_tamper_max_diff": 0.0,
+        "scaler_fit_train_only": true,
+        "group_disjoint_folds": true
+      },
+      "conclusion_flag": "null"
+    },
+    {
+      "dataset_name": "P1c_yang2022_WT_interneurons_AVA_AIB_RIM",
+      "modality": "immobilized",
+      "split_scheme": "date_grouped_leave_one_date_out_cv",
+      "n_groups": 5,
+      "n_samples_or_trials": 149,
+      "n_features_design": 17,
+      "n_stim_categories": 9,
+      "causal_cutoff_frame": "frame_100_at_5Hz_strictly_pre_onset",
+      "baselines": {
+        "zero_change": {
+          "delta": {
+            "rmse": 0.2094754191822538,
+            "mse": 0.043879951241580936,
+            "r2": -0.4282406937055705,
+            "pearson_r": 0.0
+          },
+          "post_level": {
+            "rmse": 0.2094754191822538,
+            "mse": 0.043879951241580936,
+            "r2": 0.3063113211703724,
+            "pearson_r": 0.7488489074424323
+          }
+        },
+        "stim_only_post_mean": {
+          "delta": {
+            "rmse": 0.23753938832294785,
+            "mse": 0.05642496100484022,
+            "r2": -0.8365659752943533,
+            "pearson_r": 0.4939586817953079
+          },
+          "post_level": {
+            "rmse": 0.23753938832294785,
+            "mse": 0.05642496100484022,
+            "r2": 0.10798996933774496,
+            "pearson_r": 0.3397724767802976
+          }
+        },
+        "population_mean_response": {
+          "delta": {
+            "rmse": 0.14684674206809353,
+            "mse": 0.021563965656013193,
+            "r2": 0.29811833431568446,
+            "pearson_r": 0.5463046003237488
+          },
+          "post_level": {
+            "rmse": 0.14684674206809353,
+            "mse": 0.021563965656013193,
+            "r2": 0.659099920966359,
+            "pearson_r": 0.8393308799917157
+          }
+        }
+      },
+      "models": {
+        "ridge_prestim": {
+          "delta": {
+            "rmse": 0.12254374065175533,
+            "mse": 0.01501696837292467,
+            "r2": 0.5112153792464469,
+            "pearson_r": 0.7171080518976132
+          },
+          "post_level": {
+            "rmse": 0.12254374065175533,
+            "mse": 0.01501696837292467,
+            "r2": 0.7625999880152761,
+            "pearson_r": 0.8732930760241753
+          },
+          "median_alpha": 0.1
+        },
+        "mlp_prestim_backprop": {
+          "delta": {
+            "rmse": 0.1709052678523816,
+            "mse": 0.029208610579694302,
+            "r2": 0.04929415242861046,
+            "pearson_r": 0.5427915580381274
+          },
+          "post_level": {
+            "rmse": 0.1709052678523816,
+            "mse": 0.029208610579694302,
+            "r2": 0.5382473792660665,
+            "pearson_r": 0.8074298376538389
+          },
+          "median_weight_decay": 1.0
+        }
+      },
+      "comparisons": {
+        "ridge_vs_stim_only_post_mean": {
+          "group_mse_reduction_mean": 0.03486113757012597,
+          "paired_perm_p_two_sided": 0.15151515151515152,
+          "r2_gain_boot_ci95": [
+            0.3218867191564112,
+            0.7955234847367589
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.03766956146084148,
+            0.1872902745307219
+          ],
+          "n_groups_improved": 4,
+          "n_groups_total": 5
+        },
+        "ridge_vs_population_mean_delta": {
+          "group_mse_reduction_mean": 0.008021447822056037,
+          "paired_perm_p_two_sided": 0.15151515151515152,
+          "r2_gain_boot_ci95": [
+            0.026084376354262306,
+            0.21071400521618244
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.0056814863017002615,
+            0.05054580326688307
+          ],
+          "n_groups_improved": 4,
+          "n_groups_total": 5
+        },
+        "ridge_vs_zero_change": {
+          "group_mse_reduction_mean": 0.029224644149161864,
+          "paired_perm_p_two_sided": 0.09090909090909091,
+          "r2_gain_boot_ci95": [
+            0.3549270512432269,
+            0.8047191941462294
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.06455108053772865,
+            0.11532106442211819
+          ],
+          "n_groups_improved": 5,
+          "n_groups_total": 5
+        },
+        "mlp_backprop_vs_population_mean_delta": {
+          "group_mse_reduction_mean": -0.005840794978602201,
+          "paired_perm_p_two_sided": 0.3333333333333333,
+          "r2_gain_boot_ci95": [
+            -0.39097113013422347,
+            0.044979134429301716
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.046262016212232304,
+            0.01322117714791099
+          ],
+          "n_groups_improved": 1,
+          "n_groups_total": 5
+        },
+        "ridge_vs_mlp_backprop": {
+          "group_mse_reduction_mean": 0.013862242800658236,
+          "paired_perm_p_two_sided": 0.09090909090909091,
+          "r2_gain_boot_ci95": [
+            0.10439731361619808,
+            0.5543132981079245
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.03669244493011786,
+            0.05992646810777934
+          ],
+          "n_groups_improved": 5,
+          "n_groups_total": 5
+        }
+      },
+      "leakage_checks": {
+        "future_tamper_invariance": true,
+        "future_tamper_max_diff": 0.0,
+        "scaler_fit_train_only": true,
+        "group_disjoint_folds": true
+      },
+      "conclusion_flag": "null"
+    },
+    {
+      "dataset_name": "P2a_atanas2023_heat_named_neurons_19worms",
+      "modality": "freely_moving",
+      "split_scheme": "animal_grouped_leave_one_worm_out_cv",
+      "n_groups": 19,
+      "n_samples_or_trials": 1608,
+      "n_features_design": 19,
+      "n_stim_categories": 57,
+      "causal_cutoff_frame": "event_frame_minus_2_strictly_pre_heat",
+      "baselines": {
+        "zero_change": {
+          "delta": {
+            "rmse": 3.343840989386531,
+            "mse": 11.181272562301496,
+            "r2": -0.004790535476662194,
+            "pearson_r": 0.0
+          },
+          "post_level": {
+            "rmse": 3.343840989386531,
+            "mse": 11.181272562301496,
+            "r2": 0.08899538338284196,
+            "pearson_r": 0.3132864437946406
+          }
+        },
+        "stim_only_post_mean": {
+          "delta": {
+            "rmse": 2.995317342600785,
+            "mse": 8.971925982885029,
+            "r2": 0.19374952516635147,
+            "pearson_r": 0.48331145564377404
+          },
+          "post_level": {
+            "rmse": 2.995317342600785,
+            "mse": 8.971925982885029,
+            "r2": 0.2690039577504665,
+            "pearson_r": 0.5189708845275011
+          }
+        },
+        "population_mean_response": {
+          "delta": {
+            "rmse": 2.817796261386545,
+            "mse": 7.93997577068399,
+            "r2": 0.28648439058754716,
+            "pearson_r": 0.5354185017028318
+          },
+          "post_level": {
+            "rmse": 2.817796261386545,
+            "mse": 7.93997577068399,
+            "r2": 0.3530830643276426,
+            "pearson_r": 0.5972484057318372
+          }
+        }
+      },
+      "models": {
+        "ridge_prestim": {
+          "delta": {
+            "rmse": 2.8378069094549723,
+            "mse": 8.053148055350382,
+            "r2": 0.2763143102252762,
+            "pearson_r": 0.5303706409336637
+          },
+          "post_level": {
+            "rmse": 2.8378069094549723,
+            "mse": 8.053148055350382,
+            "r2": 0.34386224681964206,
+            "pearson_r": 0.5913223086169153
+          },
+          "median_alpha": 100000.0
+        },
+        "mlp_prestim_backprop": {
+          "delta": {
+            "rmse": 2.909443504327656,
+            "mse": 8.464861504874392,
+            "r2": 0.23931621585765062,
+            "pearson_r": 0.5253429584378361
+          },
+          "post_level": {
+            "rmse": 2.909443504327656,
+            "mse": 8.464861504874392,
+            "r2": 0.3103175092998418,
+            "pearson_r": 0.580083651646923
+          },
+          "median_weight_decay": 0.1
+        }
+      },
+      "comparisons": {
+        "ridge_vs_stim_only_post_mean": {
+          "group_mse_reduction_mean": 1.1680969567287427,
+          "paired_perm_p_two_sided": 0.14992503748125938,
+          "r2_gain_boot_ci95": [
+            -0.020456315759489713,
+            0.14697443127597948
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.03682871126085832,
+            0.3469282828737711
+          ],
+          "n_groups_improved": 13,
+          "n_groups_total": 19
+        },
+        "ridge_vs_population_mean_delta": {
+          "group_mse_reduction_mean": -0.0636704340682871,
+          "paired_perm_p_two_sided": 0.8455772113943029,
+          "r2_gain_boot_ci95": [
+            -0.059363444250694945,
+            0.023251700757707643
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.10996690259066506,
+            0.05656530492799911
+          ],
+          "n_groups_improved": 8,
+          "n_groups_total": 19
+        },
+        "ridge_vs_zero_change": {
+          "group_mse_reduction_mean": 3.5453361885256856,
+          "paired_perm_p_two_sided": 0.0009995002498750624,
+          "r2_gain_boot_ci95": [
+            0.14920853567174022,
+            0.3319342182397942
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.24808027768191132,
+            0.7296854133655943
+          ],
+          "n_groups_improved": 15,
+          "n_groups_total": 19
+        },
+        "mlp_backprop_vs_population_mean_delta": {
+          "group_mse_reduction_mean": -0.4765162880448827,
+          "paired_perm_p_two_sided": 0.271864067966017,
+          "r2_gain_boot_ci95": [
+            -0.12067631704759435,
+            0.012716111238563718
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.22711378663097767,
+            0.03046635256244045
+          ],
+          "n_groups_improved": 7,
+          "n_groups_total": 19
+        },
+        "ridge_vs_mlp_backprop": {
+          "group_mse_reduction_mean": 0.41284585397659557,
+          "paired_perm_p_two_sided": 0.13943028485757122,
+          "r2_gain_boot_ci95": [
+            -0.00618045895723954,
+            0.08587665824106164
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.011690927492038117,
+            0.17146131650407126
+          ],
+          "n_groups_improved": 13,
+          "n_groups_total": 19
+        }
+      },
+      "leakage_checks": {
+        "future_tamper_invariance": true,
+        "future_tamper_max_diff": 0.0,
+        "scaler_fit_train_only": true,
+        "group_disjoint_folds": true
+      },
+      "conclusion_flag": "null"
+    },
+    {
+      "dataset_name": "P2b_atanas_heat30_dag_patch6_wholebrain_arousal",
+      "modality": "freely_moving",
+      "split_scheme": "animal_grouped_leave_one_worm_out_cv",
+      "n_groups": 36,
+      "n_samples_or_trials": 36,
+      "n_features_design": 15,
+      "n_stim_categories": 2,
+      "causal_cutoff_frame": "event_frame_minus_2_strictly_pre_stimulus",
+      "baselines": {
+        "zero_change": {
+          "delta": {
+            "rmse": 1.802782988449053,
+            "mse": 3.2500265034412985,
+            "r2": -0.9645785196240619,
+            "pearson_r": 0.0
+          },
+          "post_level": {
+            "rmse": 1.802782988449053,
+            "mse": 3.2500265034412985,
+            "r2": -0.7459626313235497,
+            "pearson_r": 0.352639778037178
+          }
+        },
+        "stim_only_post_mean": {
+          "delta": {
+            "rmse": 1.406648898148009,
+            "mse": 1.978661122661008,
+            "r2": -0.19606259674468474,
+            "pearson_r": -0.19954744667266006
+          },
+          "post_level": {
+            "rmse": 1.406648898148009,
+            "mse": 1.9786611226610076,
+            "r2": -0.06296621783263556,
+            "pearson_r": -0.2657061709790123
+          }
+        },
+        "population_mean_response": {
+          "delta": {
+            "rmse": 1.3264827299185067,
+            "mse": 1.759556432772054,
+            "r2": -0.0636180253392058,
+            "pearson_r": -0.23029554701641927
+          },
+          "post_level": {
+            "rmse": 1.3264827299185067,
+            "mse": 1.759556432772054,
+            "r2": 0.05474008409714415,
+            "pearson_r": 0.23521529034211605
+          }
+        }
+      },
+      "models": {
+        "ridge_prestim": {
+          "delta": {
+            "rmse": 1.3288093437088708,
+            "mse": 1.7657342719279998,
+            "r2": -0.06735241030210148,
+            "pearson_r": -0.22680822317779512
+          },
+          "post_level": {
+            "rmse": 1.3288093437088708,
+            "mse": 1.7657342719279998,
+            "r2": 0.051421256913061986,
+            "pearson_r": 0.2303843024290061
+          },
+          "median_alpha": 10000.0
+        },
+        "mlp_prestim_backprop": {
+          "delta": {
+            "rmse": 16.327104112512743,
+            "mse": 266.57432870083056,
+            "r2": -160.13905517211265,
+            "pearson_r": 0.10784511099803216
+          },
+          "post_level": {
+            "rmse": 16.327104112512743,
+            "mse": 266.57432870083056,
+            "r2": -142.20769873383819,
+            "pearson_r": 0.11521423461218128
+          },
+          "median_weight_decay": 1.0
+        }
+      },
+      "comparisons": {
+        "ridge_vs_stim_only_post_mean": {
+          "group_mse_reduction_mean": 0.21292685073300774,
+          "paired_perm_p_two_sided": 0.00399800099950025,
+          "r2_gain_boot_ci95": [
+            0.030550651652624113,
+            0.5689265099127306
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.02789045778304906,
+            0.22047337671560097
+          ],
+          "n_groups_improved": 24,
+          "n_groups_total": 36
+        },
+        "ridge_vs_population_mean_delta": {
+          "group_mse_reduction_mean": -0.006177839155945627,
+          "paired_perm_p_two_sided": 0.46026986506746626,
+          "r2_gain_boot_ci95": [
+            -0.02421494326416713,
+            0.015943353822519563
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.010004588900053896,
+            0.005733389213488611
+          ],
+          "n_groups_improved": 22,
+          "n_groups_total": 36
+        },
+        "ridge_vs_zero_change": {
+          "group_mse_reduction_mean": 1.4842922315132983,
+          "paired_perm_p_two_sided": 0.0004997501249375312,
+          "r2_gain_boot_ci95": [
+            0.49936857669541185,
+            2.721334705099563
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.3483793246474877,
+            0.7172729287269142
+          ],
+          "n_groups_improved": 27,
+          "n_groups_total": 36
+        },
+        "mlp_backprop_vs_population_mean_delta": {
+          "group_mse_reduction_mean": -264.81477226805845,
+          "paired_perm_p_two_sided": 0.0004997501249375312,
+          "r2_gain_boot_ci95": [
+            -1304.8553730052329,
+            -1.4037260180386382
+          ],
+          "rmse_reduction_boot_ci95": [
+            -27.37639185723446,
+            -0.6920792976650598
+          ],
+          "n_groups_improved": 9,
+          "n_groups_total": 36
+        },
+        "ridge_vs_mlp_backprop": {
+          "group_mse_reduction_mean": 264.80859442890255,
+          "paired_perm_p_two_sided": 0.0004997501249375312,
+          "r2_gain_boot_ci95": [
+            1.3995075572800832,
+            1304.8763844136854
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.6905014300203572,
+            27.369151794383825
+          ],
+          "n_groups_improved": 28,
+          "n_groups_total": 36
+        }
+      },
+      "leakage_checks": {
+        "future_tamper_invariance": true,
+        "future_tamper_max_diff": 0.0,
+        "scaler_fit_train_only": true,
+        "group_disjoint_folds": true
+      },
+      "conclusion_flag": "null"
+    },
+    {
+      "dataset_name": "P3a_yemini2021_21worms_all_shared_head_neurons",
+      "modality": "immobilized",
+      "split_scheme": "animal_grouped_leave_one_worm_out_cv",
+      "n_groups": 21,
+      "n_samples_or_trials": 10335,
+      "n_features_design": 19,
+      "n_stim_categories": 516,
+      "causal_cutoff_frame": "f_on_minus_1_at_4Hz_strictly_pre_odor_onset",
+      "baselines": {
+        "zero_change": {
+          "delta": {
+            "rmse": 2.528423151449704,
+            "mse": 6.392923632786852,
+            "r2": -0.021155339573495358,
+            "pearson_r": 0.0
+          },
+          "post_level": {
+            "rmse": 2.528423151449704,
+            "mse": 6.392923632786852,
+            "r2": 0.5693267371237773,
+            "pearson_r": 0.7619987850143204
+          }
+        },
+        "stim_only_post_mean": {
+          "delta": {
+            "rmse": 3.763042085370244,
+            "mse": 14.160485736267637,
+            "r2": -1.2618846166695845,
+            "pearson_r": 0.20967210785331877
+          },
+          "post_level": {
+            "rmse": 3.763042085370244,
+            "mse": 14.160485736267637,
+            "r2": 0.046047951414043276,
+            "pearson_r": 0.23606626887517815
+          }
+        },
+        "population_mean_response": {
+          "delta": {
+            "rmse": 2.2615894032589594,
+            "mse": 5.114786628933217,
+            "r2": 0.18300421263793099,
+            "pearson_r": 0.42927555885018276
+          },
+          "post_level": {
+            "rmse": 2.2615894032589594,
+            "mse": 5.114786628933216,
+            "r2": 0.6554312278812437,
+            "pearson_r": 0.8110862434182424
+          }
+        }
+      },
+      "models": {
+        "ridge_prestim": {
+          "delta": {
+            "rmse": 2.0968811773224134,
+            "mse": 4.396910671809031,
+            "r2": 0.29767207180164734,
+            "pearson_r": 0.5468984114588489
+          },
+          "post_level": {
+            "rmse": 2.0968811773224134,
+            "mse": 4.396910671809031,
+            "r2": 0.7037925095973979,
+            "pearson_r": 0.8392666267843697
+          },
+          "median_alpha": 0.1
+        },
+        "mlp_prestim_backprop": {
+          "delta": {
+            "rmse": 2.1912591657078773,
+            "mse": 4.8016167312987825,
+            "r2": 0.23302750894683433,
+            "pearson_r": 0.49635641090059623
+          },
+          "post_level": {
+            "rmse": 2.1912591657078773,
+            "mse": 4.8016167312987825,
+            "r2": 0.676528602008649,
+            "pearson_r": 0.8280521735805872
+          },
+          "median_weight_decay": 0.01
+        }
+      },
+      "comparisons": {
+        "ridge_vs_stim_only_post_mean": {
+          "group_mse_reduction_mean": 9.920253448169989,
+          "paired_perm_p_two_sided": 0.0004997501249375312,
+          "r2_gain_boot_ci95": [
+            0.35957257462651626,
+            0.8431548369129993
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.6148225922731168,
+            3.1619552599773546
+          ],
+          "n_groups_improved": 21,
+          "n_groups_total": 21
+        },
+        "ridge_vs_population_mean_delta": {
+          "group_mse_reduction_mean": 0.7262718420211607,
+          "paired_perm_p_two_sided": 0.0009995002498750624,
+          "r2_gain_boot_ci95": [
+            0.008886561668133175,
+            0.15112288424162792
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.042876316673069,
+            0.37633722850176077
+          ],
+          "n_groups_improved": 19,
+          "n_groups_total": 21
+        },
+        "ridge_vs_zero_change": {
+          "group_mse_reduction_mean": 2.0158865244264326,
+          "paired_perm_p_two_sided": 0.0004997501249375312,
+          "r2_gain_boot_ci95": [
+            0.055313187562118185,
+            0.30633855508635965
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.2707379534964104,
+            0.6488190284079834
+          ],
+          "n_groups_improved": 19,
+          "n_groups_total": 21
+        },
+        "mlp_backprop_vs_population_mean_delta": {
+          "group_mse_reduction_mean": 0.31595591847501414,
+          "paired_perm_p_two_sided": 0.743128435782109,
+          "r2_gain_boot_ci95": [
+            -0.021326053162406784,
+            0.12824609150451416
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.09803717842920198,
+            0.305397227556308
+          ],
+          "n_groups_improved": 13,
+          "n_groups_total": 21
+        },
+        "ridge_vs_mlp_backprop": {
+          "group_mse_reduction_mean": 0.41031592354614643,
+          "paired_perm_p_two_sided": 0.001999000499750125,
+          "r2_gain_boot_ci95": [
+            0.015386371534878204,
+            0.04686987318045931
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.03328963449506804,
+            0.1738971668297557
+          ],
+          "n_groups_improved": 17,
+          "n_groups_total": 21
+        }
+      },
+      "leakage_checks": {
+        "future_tamper_invariance": true,
+        "future_tamper_max_diff": 0.0,
+        "scaler_fit_train_only": true,
+        "group_disjoint_folds": true
+      },
+      "conclusion_flag": "positive"
+    },
+    {
+      "dataset_name": "P3b_yemini2021_21worms_chemosensory_command_circuit",
+      "modality": "immobilized",
+      "split_scheme": "animal_grouped_leave_one_worm_out_cv",
+      "n_groups": 21,
+      "n_samples_or_trials": 1677,
+      "n_features_design": 19,
+      "n_stim_categories": 84,
+      "causal_cutoff_frame": "f_on_minus_1_at_4Hz_strictly_pre_odor_onset",
+      "baselines": {
+        "zero_change": {
+          "delta": {
+            "rmse": 3.504708933288998,
+            "mse": 12.282984707075707,
+            "r2": -0.034632072431295846,
+            "pearson_r": 0.0
+          },
+          "post_level": {
+            "rmse": 3.504708933288998,
+            "mse": 12.282984707075707,
+            "r2": 0.03857836352968547,
+            "pearson_r": 0.28264651879420843
+          }
+        },
+        "stim_only_post_mean": {
+          "delta": {
+            "rmse": 2.859236404643912,
+            "mse": 8.175232817641044,
+            "r2": 0.3113759990394034,
+            "pearson_r": 0.5820645828525859
+          },
+          "post_level": {
+            "rmse": 2.859236404643912,
+            "mse": 8.175232817641044,
+            "r2": 0.36010294716604596,
+            "pearson_r": 0.6001885135838806
+          }
+        },
+        "population_mean_response": {
+          "delta": {
+            "rmse": 2.6030240268151843,
+            "mse": 6.775734084177137,
+            "r2": 0.4292599099535498,
+            "pearson_r": 0.6556099380172022
+          },
+          "post_level": {
+            "rmse": 2.6030240268151843,
+            "mse": 6.775734084177137,
+            "r2": 0.4696454072970849,
+            "pearson_r": 0.6853531170078224
+          }
+        }
+      },
+      "models": {
+        "ridge_prestim": {
+          "delta": {
+            "rmse": 2.586305394903222,
+            "mse": 6.68897559570551,
+            "r2": 0.436567833627565,
+            "pearson_r": 0.6610118996203723
+          },
+          "post_level": {
+            "rmse": 2.586305394903222,
+            "mse": 6.68897559570551,
+            "r2": 0.4764362232065139,
+            "pearson_r": 0.6908209297066195
+          },
+          "median_alpha": 1000.0
+        },
+        "mlp_prestim_backprop": {
+          "delta": {
+            "rmse": 2.60295381447641,
+            "mse": 6.775368560297295,
+            "r2": 0.42929069910930817,
+            "pearson_r": 0.6613571203775033
+          },
+          "post_level": {
+            "rmse": 2.60295381447641,
+            "mse": 6.775368560297295,
+            "r2": 0.4696740178160351,
+            "pearson_r": 0.6886533088021483
+          },
+          "median_weight_decay": 0.01
+        }
+      },
+      "comparisons": {
+        "ridge_vs_stim_only_post_mean": {
+          "group_mse_reduction_mean": 1.5032117742439879,
+          "paired_perm_p_two_sided": 0.0004997501249375312,
+          "r2_gain_boot_ci95": [
+            0.062234815219264696,
+            0.1842489219068749
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.14242296227844328,
+            0.42500875621349044
+          ],
+          "n_groups_improved": 17,
+          "n_groups_total": 21
+        },
+        "ridge_vs_population_mean_delta": {
+          "group_mse_reduction_mean": 0.09471165622616765,
+          "paired_perm_p_two_sided": 0.22688655672163918,
+          "r2_gain_boot_ci95": [
+            -0.0050118400409839255,
+            0.015579099508515666
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.011503915830267308,
+            0.04056079351984549
+          ],
+          "n_groups_improved": 13,
+          "n_groups_total": 21
+        },
+        "ridge_vs_zero_change": {
+          "group_mse_reduction_mean": 5.741340759736936,
+          "paired_perm_p_two_sided": 0.0004997501249375312,
+          "r2_gain_boot_ci95": [
+            0.3634085595021151,
+            0.5089699386952806
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.7030381377457141,
+            1.1150506380815337
+          ],
+          "n_groups_improved": 18,
+          "n_groups_total": 21
+        },
+        "mlp_backprop_vs_population_mean_delta": {
+          "group_mse_reduction_mean": -0.0035801219036304503,
+          "paired_perm_p_two_sided": 0.9920039980009995,
+          "r2_gain_boot_ci95": [
+            -0.05384653750638606,
+            0.037125700703135964
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.12198127405661587,
+            0.09849174560470768
+          ],
+          "n_groups_improved": 11,
+          "n_groups_total": 21
+        },
+        "ridge_vs_mlp_backprop": {
+          "group_mse_reduction_mean": 0.09829177812979813,
+          "paired_perm_p_two_sided": 0.7161419290354822,
+          "r2_gain_boot_ci95": [
+            -0.027680945377297057,
+            0.05301098668459219
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.07039443608872496,
+            0.11720474493598661
+          ],
+          "n_groups_improved": 11,
+          "n_groups_total": 21
+        }
+      },
+      "leakage_checks": {
+        "future_tamper_invariance": true,
+        "future_tamper_max_diff": 0.0,
+        "scaler_fit_train_only": true,
+        "group_disjoint_folds": true
+      },
+      "conclusion_flag": "null"
+    },
+    {
+      "dataset_name": "P3c_yemini2021_21worms_interneurons_only",
+      "modality": "immobilized",
+      "split_scheme": "animal_grouped_leave_one_worm_out_cv",
+      "n_groups": 21,
+      "n_samples_or_trials": 1053,
+      "n_features_design": 19,
+      "n_stim_categories": 54,
+      "causal_cutoff_frame": "f_on_minus_1_at_4Hz_strictly_pre_odor_onset",
+      "baselines": {
+        "zero_change": {
+          "delta": {
+            "rmse": 1.3907730404492427,
+            "mse": 1.934249650040431,
+            "r2": -3.699014841385129e-05,
+            "pearson_r": 0.0
+          },
+          "post_level": {
+            "rmse": 1.3907730404492427,
+            "mse": 1.934249650040431,
+            "r2": 0.5165016916511755,
+            "pearson_r": 0.7190529050374364
+          }
+        },
+        "stim_only_post_mean": {
+          "delta": {
+            "rmse": 1.9320766379587546,
+            "mse": 3.7329201349460046,
+            "r2": -0.9299774546361079,
+            "pearson_r": 0.1072194438474063
+          },
+          "post_level": {
+            "rmse": 1.9320766379587546,
+            "mse": 3.732920134946004,
+            "r2": 0.06689368127328754,
+            "pearson_r": 0.27192035917274154
+          }
+        },
+        "population_mean_response": {
+          "delta": {
+            "rmse": 1.3374158272803216,
+            "mse": 1.7886810950599072,
+            "r2": 0.07522420458926338,
+            "pearson_r": 0.28545574975869914
+          },
+          "post_level": {
+            "rmse": 1.3374158272803216,
+            "mse": 1.788681095059907,
+            "r2": 0.5528890060189952,
+            "pearson_r": 0.7439965415343656
+          }
+        }
+      },
+      "models": {
+        "ridge_prestim": {
+          "delta": {
+            "rmse": 1.2129840057094659,
+            "mse": 1.4713301981069813,
+            "r2": 0.23929952744278937,
+            "pearson_r": 0.4994292330301187
+          },
+          "post_level": {
+            "rmse": 1.2129840057094659,
+            "mse": 1.4713301981069813,
+            "r2": 0.6322162127353124,
+            "pearson_r": 0.7952491080196574
+          },
+          "median_alpha": 1.0
+        },
+        "mlp_prestim_backprop": {
+          "delta": {
+            "rmse": 1.2220508647776596,
+            "mse": 1.4934083161038256,
+            "r2": 0.22788479891007685,
+            "pearson_r": 0.4866483863877203
+          },
+          "post_level": {
+            "rmse": 1.2220508647776596,
+            "mse": 1.4934083161038254,
+            "r2": 0.6266974149406344,
+            "pearson_r": 0.7926540600758366
+          },
+          "median_weight_decay": 0.1
+        }
+      },
+      "comparisons": {
+        "ridge_vs_stim_only_post_mean": {
+          "group_mse_reduction_mean": 2.266195213486395,
+          "paired_perm_p_two_sided": 0.0004997501249375312,
+          "r2_gain_boot_ci95": [
+            0.4483805373762421,
+            0.6950854481541809
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.48235005016107135,
+            0.9900710138334827
+          ],
+          "n_groups_improved": 19,
+          "n_groups_total": 21
+        },
+        "ridge_vs_population_mean_delta": {
+          "group_mse_reduction_mean": 0.3305430189196286,
+          "paired_perm_p_two_sided": 0.0769615192403798,
+          "r2_gain_boot_ci95": [
+            0.008722209721999339,
+            0.13051069918582295
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.011076200824023314,
+            0.22774419296060883
+          ],
+          "n_groups_improved": 16,
+          "n_groups_total": 21
+        },
+        "ridge_vs_zero_change": {
+          "group_mse_reduction_mean": 0.47967238683070007,
+          "paired_perm_p_two_sided": 0.02948525737131434,
+          "r2_gain_boot_ci95": [
+            0.03371861814988004,
+            0.17683950499144324
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.048665983399109734,
+            0.295960643995099
+          ],
+          "n_groups_improved": 16,
+          "n_groups_total": 21
+        },
+        "mlp_backprop_vs_population_mean_delta": {
+          "group_mse_reduction_mean": 0.3088756902838761,
+          "paired_perm_p_two_sided": 0.0544727636181909,
+          "r2_gain_boot_ci95": [
+            0.018106343230494433,
+            0.11631559435630705
+          ],
+          "rmse_reduction_boot_ci95": [
+            0.021183075146779334,
+            0.22050046821307437
+          ],
+          "n_groups_improved": 13,
+          "n_groups_total": 21
+        },
+        "ridge_vs_mlp_backprop": {
+          "group_mse_reduction_mean": 0.021667328635752454,
+          "paired_perm_p_two_sided": 0.8065967016491754,
+          "r2_gain_boot_ci95": [
+            -0.033028125512021375,
+            0.04675159518746704
+          ],
+          "rmse_reduction_boot_ci95": [
+            -0.061343982197167524,
+            0.0667831721985646
+          ],
+          "n_groups_improved": 12,
+          "n_groups_total": 21
+        }
+      },
+      "leakage_checks": {
+        "future_tamper_invariance": true,
+        "future_tamper_max_diff": 0.0,
+        "scaler_fit_train_only": true,
+        "group_disjoint_folds": true
+      },
+      "conclusion_flag": "null"
+    }
+  ]
+}

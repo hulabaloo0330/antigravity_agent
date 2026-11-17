@@ -1,0 +1,354 @@
+{
+  "source_format": "wormwideweb-json",
+  "source_record_id": "2023-01-19-15",
+  "source_metadata": {
+    "blake3_analysis_dict": "b6e66580cfae784a81e5a9fcc757eaeec88e61c4f0d271d803fafe0321c18c31",
+    "blake3_fit_results": "1c4bf00c535d814e851a03170542fc30082958f4c063d16789505c6c83989681",
+    "blake3_neuropal_dict": "490da6fe15c58c099edea3f6cbc9d790882c8cf27b4193499667306cf69dff05",
+    "blake3_relative_encoding_strength": "c28384748008c66b4178cc3afaa909263f4d4b4e983763d27442499ee59c77a1",
+    "checksum_h5": "8b55cdaea4e02b1287ab194a0e790ddb48c1ca6be8cf0342e128f7d0aa7dbdae",
+    "dataset_type": [
+      "baseline",
+      "neuropal"
+    ],
+    "n_neuron": 144,
+    "paper_id": "atanas_kim_2023",
+    "source_filename": "2023-01-19-15-data.h5",
+    "uid": "2023-01-19-15"
+  },
+  "source_group_id": "source-h5:8b55cdaea4e02b1287ab194a0e790ddb48c1ca6be8cf0342e128f7d0aa7dbdae",
+  "animal_id": null,
+  "animal_identity_status": "unknown",
+  "condition": [
+    "baseline",
+    "neuropal"
+  ],
+  "signal_kind": "calcium_reporter_fluorescence",
+  "signal_source_field": "gcamp/trace_array_original",
+  "signal_unit": "source_fluorescence_scale",
+  "source_preprocessing": "Author-provided extracted fluorescence; not raw photons or membrane voltage. Upstream processing is not proven causal.",
+  "normalization_applied_here": "none",
+  "source_author_zscore_uses_future_statistics": "possible; excluded by default loader",
+  "time_unit": "s",
+  "time_unit_evidence": "WormWideWeb JSON schema: timestamp_confocal and mean_timestep",
+  "source_time_origin": 1463641.5886809973,
+  "event_index_origin": "unknown_preserved_not_converted",
+  "events_source_index": {},
+  "reversal_events_source_index": [
+    [
+      1,
+      8
+    ],
+    [
+      22,
+      27
+    ],
+    [
+      29,
+      42
+    ],
+    [
+      57,
+      67
+    ],
+    [
+      91,
+      96
+    ],
+    [
+      103,
+      117
+    ],
+    [
+      129,
+      143
+    ],
+    [
+      144,
+      155
+    ],
+    [
+      167,
+      173
+    ],
+    [
+      184,
+      186
+    ],
+    [
+      193,
+      202
+    ],
+    [
+      205,
+      212
+    ],
+    [
+      217,
+      229
+    ],
+    [
+      239,
+      250
+    ],
+    [
+      256,
+      268
+    ],
+    [
+      279,
+      299
+    ],
+    [
+      305,
+      316
+    ],
+    [
+      330,
+      339
+    ],
+    [
+      347,
+      354
+    ],
+    [
+      393,
+      396
+    ],
+    [
+      404,
+      418
+    ],
+    [
+      437,
+      454
+    ],
+    [
+      456,
+      470
+    ],
+    [
+      482,
+      490
+    ],
+    [
+      515,
+      520
+    ],
+    [
+      521,
+      531
+    ],
+    [
+      551,
+      561
+    ],
+    [
+      575,
+      583
+    ],
+    [
+      598,
+      606
+    ],
+    [
+      622,
+      632
+    ],
+    [
+      647,
+      660
+    ],
+    [
+      676,
+      681
+    ],
+    [
+      693,
+      697
+    ],
+    [
+      706,
+      716
+    ],
+    [
+      733,
+      756
+    ],
+    [
+      770,
+      775
+    ],
+    [
+      801,
+      811
+    ],
+    [
+      822,
+      827
+    ],
+    [
+      856,
+      874
+    ],
+    [
+      891,
+      903
+    ],
+    [
+      958,
+      970
+    ],
+    [
+      994,
+      1001
+    ],
+    [
+      1013,
+      1022
+    ],
+    [
+      1055,
+      1057
+    ],
+    [
+      1068,
+      1072
+    ],
+    [
+      1083,
+      1090
+    ],
+    [
+      1100,
+      1106
+    ],
+    [
+      1113,
+      1128
+    ],
+    [
+      1160,
+      1169
+    ],
+    [
+      1192,
+      1203
+    ],
+    [
+      1224,
+      1245
+    ],
+    [
+      1265,
+      1267
+    ],
+    [
+      1291,
+      1296
+    ],
+    [
+      1303,
+      1313
+    ],
+    [
+      1335,
+      1340
+    ],
+    [
+      1349,
+      1358
+    ],
+    [
+      1381,
+      1391
+    ],
+    [
+      1397,
+      1402
+    ],
+    [
+      1406,
+      1423
+    ],
+    [
+      1445,
+      1450
+    ],
+    [
+      1470,
+      1474
+    ],
+    [
+      1478,
+      1485
+    ],
+    [
+      1509,
+      1511
+    ],
+    [
+      1513,
+      1525
+    ],
+    [
+      1526,
+      1528
+    ],
+    [
+      1550,
+      1569
+    ]
+  ],
+  "behavior_channels": [
+    {
+      "name": "velocity",
+      "source_unit": "0.1 mm/s",
+      "conversion": "identity"
+    },
+    {
+      "name": "head_angle",
+      "source_unit": "rad",
+      "conversion": "identity"
+    },
+    {
+      "name": "angular_velocity",
+      "source_unit": "rad/s",
+      "conversion": "identity"
+    },
+    {
+      "name": "pumping",
+      "source_unit": "1/s",
+      "conversion": "identity"
+    }
+  ],
+  "issues": [
+    "UPSTREAM_CAUSAL_PREPROCESSING_NOT_VERIFIED"
+  ],
+  "source_original_available": true,
+  "control": false,
+  "record_key": "3359b328caabc68a3d75272f931e9ed0",
+  "parser_version": "neural-v2.0",
+  "signal_sha256": "9678a84f247ef2df6b0991273cd5442507c16b7f668b97ed8986addb738ffc66",
+  "timestamps_sha256": "e7a886a381316d467ecebfd2f1d7bf3c883ce410a0c63150334e5fab25152d42",
+  "n_timepoints": 1600,
+  "n_neurons": 144,
+  "n_named_neurons": 64,
+  "finite_fraction": 1.0,
+  "median_dt_s": 0.6000188668258488,
+  "n_segments": 1,
+  "axis_order": [
+    "time",
+    "neuron"
+  ],
+  "dtype": "float32",
+  "mask_definition": "finite numerical values; not a complete biological quality mask",
+  "qc_state": "usable",
+  "training_eligible": true,
+  "evaluation_scope": "chronological within-record forecasting; cross-animal grouping requires identity review",
+  "source": {
+    "source_archive": "C:\\projects\\bio\\source_data\\behavior_forecast_5papers_2026-09-15\\raw\\atanas_kim_2023\\atanas_kim_2023.tar.bz2",
+    "member": "atanas_kim_2023_2023-01-19-15.json",
+    "paper_key": "atanas_kim_2023"
+  }
+}

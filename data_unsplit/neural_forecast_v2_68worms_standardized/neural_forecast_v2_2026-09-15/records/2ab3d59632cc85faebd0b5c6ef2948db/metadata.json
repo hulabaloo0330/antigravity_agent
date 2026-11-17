@@ -1,0 +1,304 @@
+{
+  "source_format": "wormwideweb-json",
+  "source_record_id": "2021-10-26-01",
+  "source_metadata": {
+    "blake3_analysis_dict": "b6e66580cfae784a81e5a9fcc757eaeec88e61c4f0d271d803fafe0321c18c31",
+    "blake3_fit_results": "1c4bf00c535d814e851a03170542fc30082958f4c063d16789505c6c83989681",
+    "blake3_neuropal_dict": "490da6fe15c58c099edea3f6cbc9d790882c8cf27b4193499667306cf69dff05",
+    "blake3_relative_encoding_strength": "c28384748008c66b4178cc3afaa909263f4d4b4e983763d27442499ee59c77a1",
+    "checksum_h5": "d3ffbb2d47a417f4c4dd0c52849efc83d132ea96bad85dced60cac889f95204d",
+    "dataset_type": [
+      "baseline"
+    ],
+    "n_neuron": 150,
+    "paper_id": "atanas_kim_2023",
+    "source_filename": "2021-10-26-01-data.h5",
+    "uid": "2021-10-26-01"
+  },
+  "source_group_id": "source-h5:d3ffbb2d47a417f4c4dd0c52849efc83d132ea96bad85dced60cac889f95204d",
+  "animal_id": null,
+  "animal_identity_status": "unknown",
+  "condition": [
+    "baseline"
+  ],
+  "signal_kind": "calcium_reporter_fluorescence",
+  "signal_source_field": "gcamp/trace_array_original",
+  "signal_unit": "source_fluorescence_scale",
+  "source_preprocessing": "Author-provided extracted fluorescence; not raw photons or membrane voltage. Upstream processing is not proven causal.",
+  "normalization_applied_here": "none",
+  "source_author_zscore_uses_future_statistics": "possible; excluded by default loader",
+  "time_unit": "s",
+  "time_unit_evidence": "WormWideWeb JSON schema: timestamp_confocal and mean_timestep",
+  "source_time_origin": 0.0,
+  "event_index_origin": "unknown_preserved_not_converted",
+  "events_source_index": {},
+  "reversal_events_source_index": [
+    [
+      9,
+      13
+    ],
+    [
+      21,
+      23
+    ],
+    [
+      68,
+      75
+    ],
+    [
+      93,
+      100
+    ],
+    [
+      145,
+      154
+    ],
+    [
+      174,
+      181
+    ],
+    [
+      191,
+      196
+    ],
+    [
+      204,
+      212
+    ],
+    [
+      225,
+      235
+    ],
+    [
+      245,
+      247
+    ],
+    [
+      270,
+      278
+    ],
+    [
+      290,
+      301
+    ],
+    [
+      314,
+      321
+    ],
+    [
+      332,
+      341
+    ],
+    [
+      347,
+      352
+    ],
+    [
+      359,
+      371
+    ],
+    [
+      382,
+      384
+    ],
+    [
+      387,
+      392
+    ],
+    [
+      404,
+      411
+    ],
+    [
+      424,
+      435
+    ],
+    [
+      443,
+      445
+    ],
+    [
+      452,
+      466
+    ],
+    [
+      474,
+      486
+    ],
+    [
+      503,
+      521
+    ],
+    [
+      535,
+      543
+    ],
+    [
+      558,
+      571
+    ],
+    [
+      581,
+      587
+    ],
+    [
+      599,
+      617
+    ],
+    [
+      625,
+      627
+    ],
+    [
+      636,
+      642
+    ],
+    [
+      706,
+      718
+    ],
+    [
+      760,
+      771
+    ],
+    [
+      803,
+      813
+    ],
+    [
+      827,
+      837
+    ],
+    [
+      863,
+      882
+    ],
+    [
+      892,
+      894
+    ],
+    [
+      905,
+      926
+    ],
+    [
+      927,
+      932
+    ],
+    [
+      955,
+      971
+    ],
+    [
+      972,
+      979
+    ],
+    [
+      1000,
+      1020
+    ],
+    [
+      1029,
+      1032
+    ],
+    [
+      1045,
+      1059
+    ],
+    [
+      1081,
+      1089
+    ],
+    [
+      1091,
+      1097
+    ],
+    [
+      1134,
+      1155
+    ],
+    [
+      1190,
+      1207
+    ],
+    [
+      1233,
+      1246
+    ],
+    [
+      1319,
+      1329
+    ],
+    [
+      1331,
+      1341
+    ],
+    [
+      1389,
+      1413
+    ],
+    [
+      1447,
+      1462
+    ],
+    [
+      1485,
+      1510
+    ],
+    [
+      1523,
+      1546
+    ]
+  ],
+  "behavior_channels": [
+    {
+      "name": "velocity",
+      "source_unit": "0.1 mm/s",
+      "conversion": "identity"
+    },
+    {
+      "name": "head_angle",
+      "source_unit": "rad",
+      "conversion": "identity"
+    },
+    {
+      "name": "angular_velocity",
+      "source_unit": "rad/s",
+      "conversion": "identity"
+    },
+    {
+      "name": "pumping",
+      "source_unit": "1/s",
+      "conversion": "identity"
+    }
+  ],
+  "issues": [
+    "UPSTREAM_CAUSAL_PREPROCESSING_NOT_VERIFIED"
+  ],
+  "source_original_available": true,
+  "control": false,
+  "record_key": "2ab3d59632cc85faebd0b5c6ef2948db",
+  "parser_version": "neural-v2.0",
+  "signal_sha256": "f9a3bc9768680f221b0ece486b21654c729bd10ec9033ba93177f797d7bcb0f2",
+  "timestamps_sha256": "9ef5122ef911876f575fd32bd8382de78a24cdcef9e72ac7269f7dbbc4c43887",
+  "n_timepoints": 1600,
+  "n_neurons": 150,
+  "n_named_neurons": 0,
+  "finite_fraction": 1.0,
+  "median_dt_s": 0.6068371635919902,
+  "n_segments": 2,
+  "axis_order": [
+    "time",
+    "neuron"
+  ],
+  "dtype": "float32",
+  "mask_definition": "finite numerical values; not a complete biological quality mask",
+  "qc_state": "usable",
+  "training_eligible": true,
+  "evaluation_scope": "chronological within-record forecasting; cross-animal grouping requires identity review",
+  "source": {
+    "source_archive": "C:\\projects\\bio\\source_data\\behavior_forecast_5papers_2026-09-15\\raw\\atanas_kim_2023\\atanas_kim_2023.tar.bz2",
+    "member": "atanas_kim_2023_2021-10-26-01.json",
+    "paper_key": "atanas_kim_2023"
+  }
+}

@@ -1,0 +1,403 @@
+
+## Decomposed Linear Dynamical Systems (dLDS) models reveal instantaneous, context-dependent dynamic connectivity in C. elegans
+
+Corresponding author.
+
+
+## Abstract
+
+Mounting evidence indicates that neural “tuning” can be highly variable within an individual across time and across individuals. Furthermore, modulatory effects can change the relationship between neurons as a function of behavioral or other conditions, meaning that the changes in activity (the derivative) may be as important as the activity itself. Current computational models cannot capture the nonstationarity and variability of neural coding, preventing the quantitative evaluation of these effects. We therefore present a novel approach to analyze these effects in a well-studied organisms, C. elegans, leveraging recent advances in dynamical systems modeling: decomposed Linear Dynamical Systems (dLDS). Our approach enables the discovery of multiple parallel neural processes on different timescales using a set of linear operators that can be recombined in different ratios. Our model identifies “dynamic connectivity”, describing patterns of dynamic neural interactions in time. We use these patterns to identify instantaneous, contextually-dependent, hierarchical roles of neurons; discover the underlying variability of neural representations even under seemingly discrete behaviors; and learn an aligned latent space underlying multiple worms’ activity. By analyzing individual worms and neurons, we found that (1) changes in interneuron connectivity mediate efficient task-switching and (2) changes in sensory neuron connectivity show a mechanism of adaptation.
+
+Subject terms: Dynamical systems, Network models
+
+Dynamic connectivity maps from decomposed linear dynamical systems models of C. elegans reveal how sensory neuron connectivity shifts throughout adaptation and large-scale connectivity shifts in interneurons during changes in environment and behavior.
+
+Received 2025 Jul 3; Accepted 2025 Jul 25; Collection date 2025.
+
+
+## Introduction
+
+Neural systems must continuously adapt to the ever-changing and multifaceted environments that animals navigate. Such modulation of activity has been observed across species and occurs on timescales from milliseconds to minutes. Understanding how systems modulate their internal dynamics to adapt their computation and match novel experiences is thus critical in learning how the brain flexibly and robustly drives behaviors. However, models of time-varying activity-based population-level interactions remain limited, in part due to the complexity of estimating ever-changing interaction terms in large-scale data1–3. C. elegans, whose small size and transparency have enabled scientists to capture its “whole-brain” activity and create a wealth of literature on individual neurons’ functions, thus offers a unique opportunity to study the modulation of neural coding.
+
+Using only 302 neurons, C. elegans can pirouette, navigate mazes, adapt to stimuli, and even learn associations1,4–7. These sensorimotor and cognitive processes all occur in parallel with other homeostatic functions. C. elegans is also an incredibly well-mapped organism. The anatomical connectome and proposed functions for almost all of its 302 neurons are available8–12. While the time-averaged neural activity required to execute its complex repertoire of behaviors appears as a stable connectome, the anatomical scaffold alone is insufficient to understand the mechanisms that C. elegans implements. Analysis over time within one animal13 or between animals13–15 reveals variability in C. elegans population neural coding. This is not noise; this variability is required for adaptation and reflects worm individuality in behavioral tendencies.
+
+Recent work has revealed that the diversity of signaling mechanisms and timescales in C. elegans may be the reason why the stationary, i.e., time-averaged, anatomical connectome doesn’t tell the full story. Randi et al.12 showed a number of discrepancies between the functional connections recorded from pairs of neurons and the activity predicted based on the anatomical path lengths between them12. Moreover, the connectome of long-distance chemical messengers (e.g., neuropeptides) is being mapped16,17, and its concordance with the anatomical connectome appears limited, or at least complex1,18. For one, C. elegans neurons can communicate both with and without traditional action potentials—consider the nociceptor ASH, which can generate graded responses to stimuli. Action potentials in the traditional sense are not required for signaling from ASH to AVA, a key interneuron19. Instead, synaptic communication is predominantly based on graded potentials. For another, pairs of cells can communicate with each other on multiple timescales, from milliseconds across gap junctions, to seconds for action potentials, to minutes across gap junctions again, with neuromodulators concurrently playing a role on the timescale of seconds to minutes. For example, these overlapping timescales of signaling are present in the defecation-related pacemaker signal20,21.
+
+It is particularly difficult to map function onto the C. elegans anatomical connectome because direct, synaptic signaling and long-distance chemical messengers may operate on similar timescales to each other in this species12. Therefore, either a multi-hop connection directly across neurons or a neuropeptide could reasonably implement a seconds-long functional response that is relevant to a seconds-timescale behavior. Moreover, multiple processes happen on overlapping timescales in C. elegans, including homeostatic processes such as managing energy levels and attention22, and even its most clearly annotated neural pathways are used in slightly different ratios throughout behavioral motifs23. All of these factors contribute to the challenge of determining each neuron’s function in C. elegans, even if those functions were stable and universal across worms and conditions.
+
+However, C. elegans also generates nonstationary cognitive processes and behaviors. In fact, Atanas et al.24 showed that 20 to 30% of C. elegans neurons changed their behavior encodings between the first and second halves of a single recording period, either via gain modulation, changes in tuning, or simply changing which behaviors they encoded. These encodings are also known to be context-dependent, e.g., the AIA neuron’s sensory-context-dependent role in roaming vs. dwelling behavior depending on food in the environment25; BAG’s behavioral-context-dependent role in self-produced (reafferent) oxygen sensing26; RIM’s context-dependent role in mechanosensation during turns vs. other behaviors27; AWC’s context-dependent role in deciding whether the worm will be attracted to an odor, or will avoid it28; and context-dependent differences in nervous system-wide sensory-interneuron-motor interactions during male-hermaphrodite C. elegans mating29. The mechanisms governing these internal neural states seem to be largely neuromodulatory30, as opposed to purely synaptic, thus requiring neural population-level analysis. In particular, the context-dependent roles of interneurons are especially difficult to pin down — existing models do not have the granularity to describe their complex and changing roles in neural encoding.
+
+Moreover, the species has demonstrated associative and non-associative learning (e.g., habituation, sensitization)31,32 via chemosensation, mechanosensation, and proprioception, with short-term memory shown to persist over minutes5 and long-term memory over hours7 to up to a day33–35. Because learning can occur over the course of a minute-long trial in this species, stationary functional connectomes averaged across trials are meaningful for understanding the general functions of certain networks of neurons, but they are insufficient for understanding how neurons create behavioral changes over the seconds-to-minutes timescale. Finally, even without nonstationarity, behaviors that appear stereotyped are not completely so; each worm’s neural dynamics are unique14,15. For example, some worms simply tend to roam more than other worms do14, and worms can also develop these differences throughout development13.
+
+To address these gaps in mechanistic understanding, multiple groups have characterized aspects of C. elegans’ stationary functional connectome12,16. For example, recent work has described functional connectivity modes via principal component analysis (PCA)24, and has used topologically motivated analyses36 to conclude that the redundancy and flexibility of C. elegans neural circuitry means that only perturbing certain hub neurons has a significant impact on function. Moreover, another recent PCA-based linear time-invariant low-dimensional manifold model of C. elegans37 showed that behavior-related brain states have wide-reaching effects across the C. elegans nervous system, creating global brain states that hierarchically gate neuron activity and allow for distributed coding. These examples show the mechanistic insights about C. elegans neural coding that can be derived from time-averaged models.
+
+However, to track time-varying relationships between cognitive states or processes both within and across individuals, we need dynamical systems models. Such models reinterpret high-dimensional time series data, such as neural population activity, as noisy manifestations of underlying, lower-dimensional processes that evolve within certain constraints in the state space, e.g., on a manifold. The manifold can be shared across individuals, representing a common functional landscape of cognitive processes. The evolution between latent states can be described by trajectories, i.e., dynamics. With such a model, it is possible to represent latent functional states at each time point and map those back to the neural activity patterns for each subject to examine dynamic connectivity.
+
+To date, time-varying models of C. elegans neural dynamics have primarily employed switching linear dynamical systems (SLDS)38–40. Such models assign a single, discrete state to each time point or time window, but the states are nonstationary, unlike in dynamic mode decomposition, for example41. SLDS models are locally linear and hierarchical, with continuous latent states being controlled by discrete overall neural population states. These have shown strong concordance between model-inferred neural states and experimentally labeled behavioral states. However, such models are limited by the assumption that the entire neural population is experiencing the same overall state, and that these overall states transition abruptly from one to the other.
+
+A non-switching, nonlinear model of C. elegans also found whole-worm neural dynamics reflecting two primary behavior states, forward and reverse crawling, as two loops on a low-dimensional manifold15. This model successfully predicts neural activity and behavior across individuals. However, the authors acknowledged that the worms had a high degree of individuality, both in terms of which neurons were identified in each recording and in terms of their behavior and utilization of neurons to execute similar behaviors. Because the gross behaviors could be decoded from almost any individual neuron with some fidelity, it was possible to build a shared dynamics model across worms. Moreover, this model is nonlinear, which makes its components and their interactions less interpretable than a linear model. Thus, there remains a need for linear models that do not abstract away from worm individuality in order to help researchers understand the mechanisms of how individual worms adjust their neural activity and connectivity in order to adapt to their environments, or even to learn.
+
+Not all dynamical systems models capture time-varying dynamics. A linear time-invariant model42 demonstrated the value of anatomical-connectome-constrained models in recapitulating the expected effects of optogenetically stimulating one neuron at a time and recording from other neurons. This paper claimed that while multi-hop, indirect, extrasynaptic connections do exist in the worm, the effects of single neurons on the system are well-modeled using what we know about C. elegans synaptic connections. However, this paper’s definitions of function, causality, and anatomical connectivity are time-averaged. While interpretable due to linearity and the anatomical-connectome-based restrictions on the weights, these constraints prevent the model from accounting for adaptation and learning, which also relies on extrasynaptic signaling.
+
+We address these gaps in available modeling frameworks with our recently developed decomposed linear dynamical systems (dLDS) model (Fig. 1; more details in Section “dLDS model architecture” and Methods Section “Decomposed Linear Dynamical Systems (dLDS)”). dLDS allows for locally linear, nonstationary dynamics that can be active simultaneously in different continuous ratios, and that can transition continuously without such hierarchical state constraints43. The coefficients that describe the time-varying utilization of these dynamics can show differences between instances of a behavior within a trial while still containing decodable information about behavior-related latent neural processes. The dynamics operators (DOs) themselves describe relationships between latent neural processes that can be mapped back to functional relationships between neurons. Furthermore, these operators can be linearly recombined in different ratios, as regulated by a set of coefficients that capture when different dynamics turn on and to what extent, enabling the modeling of gradual transitions in neural dynamic connectivity throughout behavior.
+
+
+## Modeling latent manifolds from neuroimaging data.
+
+A Recorded neural activity y relates to latent neural states on the manifold x via observation model (matrix) D. Neural dynamics (trajectories) on the manifold operate in the tangent space. These linear operators can be summed linearly. The manifold depicted here is an illustration; we do not constrain the model to a particular manifold, nor do we define a particular manifold in the process of learning the dLDS model. B Graphical model depicting the relationships between data y and model parameters from time point to time point (dynamics coefficients c, DO dictionary of matrices f, latent states x, and observation model D). Dynamics coefficients c describe DO use over time. C–E Example of a dLDS decomposition of a nonautonomous dynamical system - the Duffing oscillator, reproduced from Mudrik et al.43. dLDS can recover the activity of a simple nonautonomous system (E) using dynamics coefficients (C) dynamics operators (D) that represent its linear and nonlinear components.
+
+In addition, we present an across-worm aligned extension of dLDS. (Note: we use the term “aligned” in this paper to mean that the latent states are inferred across individuals such that they have shared relationships with each other, i.e., a shared set of dynamics operators. We do not refer to “alignment” in the machine learning sense of alignment to human values44.) Worms may not only exhibit individuality in their behavior and neural encodings of behavior and internal states, but also have slightly different recorded neurons, trial durations, experimental conditions, and frequencies, durations, and qualities of performed behaviors. In order to identify shared vs. individual mechanisms of neural signaling across worms, it is necessary to have a common framework or space of operators for comparing them.
+
+Using dLDS models learned for individual C. elegans (per-worm) models and the across-worm aligned model extension we develop here, we discover the dynamic (i.e., nonstationary, anatomy-unconstrained functional) connectivity maps from learned DOs. These maps represent dynamic connections beyond anatomy or one-to-one direct stimulation-induced stationary functional connections and reveal key nonstationary properties of neurons in C. elegans. For one, the dynamic connectivity maps reveal how stereotyped discrete behavior has a neural basis that, while patterned, is also variable across repetitions of the same behavior and across individuals. We further show that our model’s decomposition of the dynamics underlying these maps disentangles concurrent processes within a trial, such as adaptation to varying aversive oxygen levels while performing a repetitive behavior.
+
+This variability in latent neural dynamics underlying discrete behavioral states can highlight functional networks related to latent neural processes that can be otherwise difficult to observe, isolate, and test. These difficulties arise because such circuits can be the result of internal processes separate from the measured behavior and environmental variables, or because they reflect those variables indirectly, e.g., in the form of intermediary computations bridging sensing and behavior. In other words, even when activity levels of a neuron look similar across behaviors, the dynamic connectivity of those neurons with the rest of the network differs, indicating new roles for neurons with and without known functions. We are thus able to characterize the dynamic roles of interneurons such as AVFR, RIS, and RIGL, which show evidence of different dynamic encodings when modulated strongly by sensory vs. motor information, as well as the sensory BAG neurons, the motor neuron RMED, and the interneuron/motor neuron SABD, which strongly reflect both behavior and stimulation state and the interactions between their levels. These results complement and extend the extensive study of the stationary properties of neurons in C. elegans, bringing a new analysis of their nonstationary properties.
+
+
+## Results
+
+
+## dLDS model architecture
+
+Our analysis builds on the recently developed decomposed linear dynamical systems (dLDS) formulation43, which is a dynamical systems model whose learned parameters reflect latent, concurrent neural processes through a generative model. In dLDS, the observed neural fluorescence yt at time t is modeled by latent states xt through a linear generative model, i.e.,
+
+where D describes to what extent each latent dimension represents each recorded trace. Specifically, each column of D contains a consistantly co-active group of neurons representative of one latent dimension (a single entry of xt). In dLDS, we assume a constant latent state representation D for each individual worm. dLDS then models the brain dynamics as a dynamical system over the latent state xt.
+
+Two key aspects drive the form of the dynamical systems model in dLDS: the need to capture concurrent processes, and the need to capture time-varying changes to the network interactions. The former aims to model the fact that independent systems, such as sensory and motor networks, can be independently recruited. The latter aims to model adaptation via neuromodulation as an implicit change in the network behavior. To capture these effects, dLDS models the trajectory of the latent state as a time-varying linear dynamical system, i.e.,
+
+where the time varying linear system Ft is modeled as a linear combination of stereotyped interconnection patterns that drive the full dynamics. Specifically,
+
+where the set of M dynamics operators {fm}m=1,...,M are system properties (i.e., patterns of interconnection between neurons that are reused) and the coefficients cmt represent when different interconnections drive the neural dynamics at each time t (i.e., when cmt ≠ 0) and how much influence they have. To induce greater interpretability and independence in terms of the use of different interconnectivity patterns over time, we further assume that the cmt coefficients are mostly zero at each time step, i.e., the temporally local dynamics are most heavily driven by only few connectivity patterns. We refer to the set of {fm}m=1,...,M operators as dynamics operators (DOs) and cmt ≠ 0 as dynamics coefficients.
+
+In other words, the vocabulary of the dLDS model consists of DOs, and the grammar that regulates how they work together to generate latent neural states consists of the dynamics coefficients. Then, we use D to translate from the language of latent states to the language of observable neural activity.
+
+We fit the DOs in a data-driven way through an expectation maximization43,45,46 algorithm that approximates the Maximum Likelihood of the data given the DOs {fm}m=1,...,M and the latent state representation D. The learning procedure strongly resembles an iterative dictionary learning optimization which iterates between updating estimates for the unknown variables xt and ct, and updating the estimates for the model parameters {fm}m=1,...,M and D (for more details, see Methods Section “Decomposed Linear Dynamical Systems (dLDS)”). Experimental model reconstruction performance and parameters are explained in detail in Tables 1 and 2.
+
+dLDS performance in terms of R2
+
+Meaning of key dLDS parameters, heuristics for setting them, and settings used for C. elegans models
+
+
+## Validation: dLDS characterizes the dynamics of nonautonomous dynamical systems
+
+To validate dLDS, we demonstrate its ability to capture nonlinear behavior on a simulated dynamical system modulated by an external driving force. Specifically, we tested dLDS on the Duffing oscillator, a classic example of a nonlinear, nonautonomous dynamical system. The Duffing oscillator is characterized by the second-order differential equation,
+
+which generates a dynamical system that can be both damped and driven. In this version of the equation, y=x°, which leads to a discrete-time matrix version of the Duffing equation as
+
+Our prior work43 demonstrated that, across initializations, dLDS can recover a Duffing oscillator’s behavior and coefficients. Specifically, the dynamics operators learned by dLDS separated out the linear (DO 1) and nonlinear (DO 2) components of the discrete-time version of the Duffing equation (e.g., an example reproduced from43 for γ = − 1 is shown in Fig. 1). Thus, dLDS recovers a meaningful decomposition of this nonautonomous dynamical system. Additional demonstrations of dLDS on Lorenz attractors, Fitz Hugh Nagumo models, and other examples can be found in Mudrik et al. 202443.
+
+
+## Assessment and validation of dLDS fits to C. elegans dynamics
+
+We applied the dLDS model to C. elegans calcium imaging data from Kato et al. 20154. This dataset was collected from 12 worms (Table 3). Five of the worms experienced hyperoxia for 18 minutes (NoStim trials) to spontaneously elicit a pirouetting behavior, i.e., a sequence of forward crawling, turns, and reverse crawling. Seven of the worms were exposed to hyperoxia (21% oxygen) for the first half of the experiment, and alternating bouts of hypo- and hyperoxia (4% vs. 21% oxygen) for the second half in order to entrain the pirouettes to the oxygen levels (Stim trials). Approximately 100 calcium traces, imaged at 3 Hz, were identified from the imaging data per worm. Of these traces, only approximately 40 were labeled as originating from one or more known neurons, some with multiple neurons per trace and with some neurons appearing as labels for multiple traces. Moreover, once the protocol was established, the calcium imaging recordings were actually performed in immobilized worms.
+
+C. elegans data characteristics
+
+Despite this limitation of immobilization23, Kato et al.4 also provided expert labels for the discrete fictive pirouetting behavioral states by inferring their behavior from the activity of key neurons. These were coarse-grained for the Stim experiments (1: ‘FWD’ forward crawling, 2: ‘REV’ reverse crawling, 3: ‘REVSUS’ sustained reverse crawling, 4: ‘TURN’ post reversal turn) and fine-grained for the NoStim experiments (1: ‘FWD’ forward crawling, 2: ‘SLOW’ forward slowing, 3: ‘DT’ dorsal post reversal turn, 4: ‘VT’ ventral post reversal turn, 5: ‘REV1’ reverse crawling, 6: ‘REV2’ reverse crawling, 7: ‘REVSUS’ sustained reverse crawling, ‘NOSTATE’ - ambiguous). We then applied dLDS to each individual worm’s normalized (dF/F) traces.
+
+We fit the dLDS model to each worm’s neural activity, using 10 dynamical operators and 10 latent states (see Methods Section “Decomposed Linear Dynamical Systems (dLDS)”). We first validate that dLDS learns meaningful representations of the C. elegans dynamics by comparing the temporal and spatial statistics to known properties.
+
+We can make inferences about the features of systems that generate that neural activity, and therefore the behavior, using the interpretable locally-linear properties (i.e., that the dynamics at each time point and the latent generative model are linear) of the dLDS model. All neurally-generated variables should be encoded in neural activity, representing a noisy version of discrete behavioral states. Therefore, the learned model parameters should reflect quantitative information such as speed of movement or modulation in response to sensory stimuli, as well as other background cognitive processes, e.g., hunger, wakefulness, etc. We thus test dLDS’s capabilities to capture these simultaneously active neural processes and variables by characterizing the dynamics of C. elegans neural activity.
+
+The dLDS DO coefficients c reflect the utilization of DOs to generate latent neural states. Qualitatively, we observed that, for each worm, the same coefficients appeared in similar patterns (“motifs”) during the same C. elegans behaviors. These combinations of latent processes were discrete in that similar sets of DOs appeared every time. However, the DOs were also continuous because they appeared in slightly different ratios, which changed gradually over time or shifted in response to environmental variables such as stimulation protocols without switching completely. We also successfully decoded behavior states from the dynamics coefficients (see t-SNE and Isomap clustering by behavior states and linear discriminant analysis classification by behavior states in Fig. 2, Supplementary Figs. 1, 2 and 3).
+
+
+## Model coefficients vs. behavior.
+
+A Sample of time traces of behavior, dynamics (DO) coefficients, latent states, and fluorescence data. textbfB, C Behavior decoding from dynamics coefficients for Stim Worm 1 and NoStim Worm 1. Behavior labels: Stim 1 FWD forward crawling, 2 TURN post-reversal turn, 3 REV reverse crawling, 4 REVSUS sustained reverse crawling; NoStim 1 FWD forward crawling, 2 SLOW forward slowing, 3 DT dorsal post-reversal turn, 4 VT ventral post-reversal turn, 5 REV1 and 6 REV2 reverse crawling, 7 REVSUS reverse sustained crawling, 8 NOSTATE ambiguous. B.i, B.ii Isomap finds a ring-like 2D embedding of the DO coefficients themselves, well clustered by behavior state (more examples in Supplementary Figs. 1, 2, 3). Each dot represents a time point in DO coefficient trace; see Methods Section “Decomposed Linear Dynamical Systems (dLDS)” and Table 3 for model parameter settings and counts. While biased toward the two behavior states with the highest base rates (1-FWD and 3-REVSUS in Stim, 1-FWD and 7-REVSUS in NoStim), linear discriminant analysis (LDA, C.i, C.ii) achieved high decoding performance on the DO coefficients.
+
+To observe these behavior-related encodings in the DO coefficients c more quantitatively, we performed clustering analyses using t-distributed stochastic neighbor embedding (t-SNE) and Isomap, and classification vs. behavioral states using Support Vector Machine (SVM) models. Thus, from the dLDS DO utilization coefficients c and from their first derivative dcdt, it was possible to decode the behavioral state labels inferred by Kato et al.4 (Fig. 2—Stim Worm 1 and NoStim Worm 1 shown in detail; Isomap for c only for all others, Supplementary Figs. 1, 2, 3; note: there is some bias due to the base rates of forward and reverse crawling vs. relatively short bouts of turning). By clustering and coloring by behavioral states, t-SNE appears to show a continuum from forward to backward crawling (DO coefficients’ first derivative dcdt), while Isomap embedding reveals a ring-like structure from state to state (with additional loops) in the coefficients and a spoke-like structure in the first derivative. Via linear discriminant analysis, it is also possible to classify at least the two major behavioral states from the DO coefficients alone (Fig. 2—Stim Worm 1 and NoStim Worm 1). The observations above were similar when decoding from the latent states x. In sections “Novel capabilities: dLDS identifies instantaneous dynamic connectivity between neurons”,“Biological findings: Dynamics learned from dLDS help identify dynamic roles for interneurons and connectivity adaptation for sensory neurons”, and “Validation: Decoding other variables from dLDS outputs” and Supplementary Figs. 4, 5, 6, and 7, we also investigated the behavioral and environmental context-dependent differences in DO utilization and what the DOs mean in the neural space.
+
+
+## Novel capabilities: dLDS identifies instantaneous dynamic connectivity between neurons
+
+Having found evidence that the DO coefficients reflect behaviorally-relevant, continuous patterns in the neural activity, we then set out to quantify how the DOs themselves affect the neural activity and connectivity. Given that dLDS DOs transition smoothly (e.g., Fig. 3, Supplementary Figs. 8, 9, 10, 11, 12, 13), it is important to understand which neurons corresponding to those DOs are active and correlated at each time point in order to interpret the gradual effects of these DOs. This is even more important because these smooth transitions might reflect gradual changes in neural activity during or between behavioral states or other time-varying factors, such as oxygen levels. We created dynamic connectivity maps that can tie latent states and dynamics operators back to the neural space by simulating the effects of any linear combination of DOs at any time point (or the effects when applied to an impulse function of latent states). The dynamic connectivity maps essentially capture the correlational structure of an equivalent linear time-invariant system with the dynamics coefficients cmt frozen for all time (see Methods Section). By tracking how the dynamic connectivity maps change over time with the changes in cmt, we can track the dynamic networks active across all the recorded neurons.
+
+
+## Continuous transition between DOs during behavior.
+
+DOs 8 and 9 in Stim Worm 1 are active during behavior state 3 (REVSUS). As DO 8 transitions to DO 9, connectivity between a core set of interneurons and the sensory neurons as well as motor neurons evolves in terms of which neurons are involved as well as in terms of strength and quantity. Here we show these two DOs linearly combined in different ratios, from 100% DO 8, to 50% DO 8 and 50% DO 9 (negative coefficient), all the way to 100% DO 9. We show the connection strengths (above a threshold) in the circle graphs in the right column, with a large percentage of neurons unlabeled.
+
+As described in Section “Assessment and validation of dLDS fits to C. elegans dynamics”, the results abounded with occurrences of repeated motifs of simultaneously active DOs (often corresponding to behavior states) that appeared similarly but in slightly different ratios at different times throughout the trial and also gradually evolved during the course of a behavior state. In Fig. 3, we show a generative example of the effects of different ratios of two DOs in combination. These two DOs appeared in combination during reverse sustained crawling in Stim Worm 1, but did not merely turn on when the reverse sustained crawling behavior started and turn off when it ended—their dynamics coefficients increased and decreased in magnitude gradually throughout the behavior. We see a small, gradual transition in which neurons participate most strongly as we move from one operator to another—for example, the SABV neurons and RIFR, cholinergic motor/interneurons47, become less connected and less active. This suggests that while most of the circuit participating in this behavior stays constant throughout the behavior, gradual changes at the neuron interaction level might also occur throughout the course of the behavior. Such continuous changes to the latent dynamics throughout behavior states are perhaps needed to generate preparation to change to the next behavior or other internal processes.
+
+
+## Biological findings: dynamics learned from dLDS help identify dynamic roles for interneurons and connectivity adaptation for sensory neurons
+
+In order to study how different classes of neurons (sensory, motor, and interneurons) use dynamic encoding to generate behavior in a changing environment, we used dLDS to reconstruct individual neurons’ estimated activity and connectivity from time point to time point throughout the trial. Given the alternating hypoxia/hyperoxia oxygen stimulation protocol (second half of the Stim experiments), we investigated if and how some DO coefficients were different in the two halves of the Stim experiments, how the differently-utilized DOs might feature oxygen-sensing neurons in their corresponding dynamic connectivity maps, and how interneurons reflect behavior and stimulation. We found that most of the neurons studied, in terms of activity and connectivity to and from the neuron, had a significant relationship with stimulation state, behavior state, and the interaction of the two. Thus, we observed that we could recover global behavior- or stimulation-related low-dimensional manifold states, similar to the global manifold gating effects reported by Fieseler et al.37, i.e., there do appear to be some global brain states that strongly modulate the activity of a broad range of neurons. However, dLDS does not have to time-average across such brain states; we can observe instantaneous dynamics for each neuron and observe how its connectivity creates or responds to such brain states.
+
+Digging deeper, each neuron class shows different patterns in the ways each uses its connectivity to fulfill its functions. First, connections to and from the oxygen-sensing BAG neurons (Fig. 4) were strongest during acute hypoxia and are fairly system-wide, which was to be expected given their known oxygen-sensing function. Importantly, these connections can adapt over time, using different neurons, not just less activity, as the worm habituates to hypoxia. Sensory neurons were also shown to be sensitive to motor information, which recent experimental work has shown is related to reafferent perception26,37.
+
+
+## Reconstructed activity and dynamic connectivity to and from BAGR.
+
+A Behavior state labels, with vertical lines indicating switches in the oxygen stimulation protocol. B Measured BAGR activity vs. reconstructed BAGR activity (y^). C, D Dynamic connectivity to vs. from BAGR at each time point. E Instantaneous dynamic connectivity maps at time points of strong BAGR connectivity before and during hypoxia. While BAGR sent out strong connections during the first bout of hypoxia, its connections shifted more strongly to motor/proprioceptive neurons in later bouts.
+
+In comparison, connections to and from the RMED motor neuron (Fig. 5) were more stable throughout the experiment. However, these connections were also correlated both with bouts of pirouetting and with hypoxia. In fact, there were qualitatively different patterns and strengths of RMED inputs (“connectivity to”) depending on behavior state and hypoxia leading to RMED operating in two separate (positive vs. negative) regimes during most of the trial vs. during hypoxia. These context-dependent dynamics might even indicate a hierarchy between the standard pirouetting behavior and the hypoxia “alert” overriding it.
+
+
+## Stim Worm 1 RMED motor neuron reconstructed activity and connectivity, as depicted in Fig. 4.
+
+A Behavior state labels, with vertical lines indicating switches in the oxygen stimulation protocol. B Measured RMED activity vs. reconstructed RMED activity (y^), with smoothing vs. without Savitzky-Golay filtering59. C, D Dynamic connectivity to vs. from RMED at each time point.
+
+Finally, we show an example interneuron, AVFR, whose function is less clear from the literature—unsurprisingly, it is more difficult to classify interneurons’ roles because they exist between sensory and motor neurons and seem to account for internal computation. While the noisy motor and interneurons were not as well-reconstructed as the BAG neurons, we saw a distinct pattern of behavior-dependent connectivity, interspersed with what seems to be an overriding hypoxia alert, as in the motor neuron. Importantly, the connectivity completely changed for short periods of time during hypoxia–the interneuron changed its connectivity, and thus its function, over time to relay information to different circuits, rather than always using the same mixed selectivity, irrespective of task variables. Thus, we can use dLDS dynamic connectivity to describe at each time step how even an interneuron’s role in its circuits is evolving.
+
+
+## BAGL and BAGR neurons and their circuits
+
+The BAG neurons are known to be involved in sensing increased carbon dioxide or decreased oxygen6,47,48, making this pair of neurons a natural candidate for evaluating how sensory neurons can use their connectivity to adapt and habituate to changes in their environment. We put forward two possible hypotheses: all DOs might feature BAG relatively equally in order to make them all accommodate for the change in experimental conditions while creating the stereotyped behaviors, regardless of which half of the experiment they were in; or some DOs might feature BAG more strongly in a nonstationary way, possibly to account for hypoxia, separating out the underlying BAG-dependent circuits that are simultaneously active with the circuits that produce the stereotyped behaviors that persist throughout the experiment. This second hypothesis could not be explored with a switched linear dynamical system, where only one operator would represent each state at each time point.
+
+What we found was even more nuanced and supports recent reports of the context-dependent function of BAG26. We observed that, while at the start of the alternating hypoxia/hyperoxia protocol (second half of the Stim experiments), there was a large spike in BAG activity, this was followed by smaller spikes. This led us to investigate whether the relationship between earlier and later BAG activity was merely a quantitative difference in activity of the same neurons, or whether habituation, and changes to connectivity, were leading to different responses to hypoxia over time. Using instantaneous dynamic connectivity, we quantitatively showed evidence of the latter. When hypoxia starts (around 360 s), BAG connectivity was strong to a large range of sensory, motor, and interneurons. Later in the trial, when hypoxia occurred again, connections from BAG were still present, but some of this sensory role shifted from external sensing (from BAG) to internal sensing (e.g., proprioceptive/motor neurons VB and DB).
+
+Furthermore, based on the proportions of connectivity maps that most strongly featured the BAG neurons across the Stim worms, we found evidence that the BAG-featuring DOs were used in a nonstationary way throughout the experiments, potentially in relation to the alternating hypoxia/hyperoxia levels (Section “BAGL/R dynamic connectivity tally”, Table 4, Supplementary Figs. 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30). We also observed that BAG-featuring DOs were only up to approximately half of the DOs active during the two major behavioral states (forward crawling and reverse sustained crawling), potentially with context-dependent bias toward one or the other major behavioral state. This indicates that there might be multiple interrelated but distinct circuits, some of which are BAG-related and some of which are more specific to generating the behaviors, that are active simultaneously, and that dLDS can separate them.
+
+Tally of BAGR or BAGL presence in dynamic connectivity maps across conditions
+
+These results were supported by χ2, ANOVA, and MANOVA tests (Supplementary Data 1, 2, 3) on the reconstructed activity and connectivity, in a hierarchical way: at a low threshold for “active” or “connected”, the BAG neurons were more significantly influenced by behavior states, but at a high threshold, the stimulation protocol’s effects on their activity and connectivity were significant, which aligns with the visual patterns in Fig. 4 and Supplementary Fig. 31.
+
+
+## RMED neuron
+
+For comparison, we identified another forward crawling-biased neuron, RMED, a motor neuron with limited function documentation in the WormAtlas47. Shen et al.49 proposed that the RME neurons regulate the amplitude of head-bending during locomotion. RMED-featuring DOs also showed some nonstationarity but were generally utilized in a more balanced way between halves of the experiment than the BAG neurons (Table 5, Supplementary Figs. 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30).
+
+Tally of RMED presence in dynamic connectivity maps across conditions
+
+To further complicate the story, the χ2 tests of RMED only showed significant relationships between the connectivity to and from RMED and stimulation state or behavior, even though these are clear visually (Fig. 5 - Stim Worm 1 as an example), but they did show a consistently significant relationship between RMED reconstructed activity and both stimulation and behavior. As with BAGL and BAGR, the ANOVA results showed significant effects of behavior and usually significant effects of the stimulation setting. A possible mechanistic interpretation of the significant stimulation effects is that RMED appears to play a more direct role in sensorimotor circuits than otherwise previously indicated, and plays a different role during strong sensory signaling. Moreover, this degree of variability in terms of how RMED contributes to generating behavior could be another example of worm individuality, as shown in Fig. 1D in Brennan and Proekt (2019)15.
+
+
+## Other neurons for comparison: AVFR, RIGL, RIS, SABD
+
+We selected four interneurons—AVFR, RIGL, RIS, and SABD—for further analysis based both on their limited function documentation in the Worm Atlas47 and on the consistency with which they were uniquely and distinctly labeled across the 7 worms (AVFR in all 7, RIS in worms 1-6, RIGL in worms 2,3,4, and 6, and SABD in worm 1; See Fig. 6 and Supplementary Figs. 32, 33 for the activity and connectivity of the Stim Worm 1 neurons). Through an ANOVA analysis, we observed significant effects of oxygen stimulation on AVFR, RIS, and RIGL reconstructed activity in most of the worms (Supplementary Data 2) but persistently significant effects on connectivity across all of the worms (Supplementary Data 3).
+
+
+## Stim Worm 1 AVFR interneuron reconstructed activity and connectivity, as depicted in Fig. 4.
+
+A Behavior state labels, with vertical lines indicating switches in the oxygen stimulation protocol. B Measured AVFR activity vs. reconstructed AVFR activity (y^), with smoothing vs. without Savitzky-Golay filtering59. C, D Dynamic connectivity to vs. from AVFR at each time point.
+
+Considering the example of the interneuron AVFR (Fig. 6), we saw evidence of how these behavior and stimulation effects play out differently compared to sensory and motor neurons, and that dynamic encoding of behavior in this interneuron really depended on the overall, dynamic state of the animal. Whereas the connectivity to and from sensory neuron BAGR was somewhat correlated with behavior and was strongly correlated with sensory information (Fig. 4), AVFR’s connectivity appeared to correlate strongly with behavior cycles, but transitioned into a different regime (negative values) during the acute hypoxia periods, where connectivity to and from AVFR was also strongly influenced by the stimulation. Likewise, whereas the connectivity to motor neuron RMED was hierarchically correlated to behavior state and stimulation state but strongly sent out behavior-related connectivity, the connectivity to and from interneuron AVFR was strongly correlated to both behavior and stimulation. Thus, we can hypothesize that AVFR participates strongly in relaying both sensory and motor information, and can dynamically change functional regimes.
+
+
+## Validation: dLDS dynamic connectivity maps identify novel connections compared to stationary anatomical and functional connectivity atlases
+
+While the C. elegans anatomical connectome has been available for over a decade8, questions remain as to context-dependent functions, nonlinear relationships, and differences between individuals in terms of how those neurons work together. More recently, the pairwise stationary functional connectome has been mapped by stimulating each neuron and observing the responses of every other neuron individually12. Along with greater understanding of the role of long-range neuropeptide signaling16,18, this functional connectome work has revealed novel relationships that are not mediated by direct synapses.
+
+Using dLDS, we investigated dynamic connectivity, which we define as the graph where each vertex is a single neuron and each edge from nodes i to j is the directional local influence of neuron i on neuron j. As dLDS is a nonstationary model, this definition of connectivity allows each edge to be time-varying and to capture the changes in network structure across behaviors. Moreover, the ability of dLDS to represent nonlinear dynamics can further capture effects such as two or more neurons needing to be active to activate another downstream neuron (AND gate)—an effect that cannot be determined from one-to-one stationary functional connectomes.
+
+We compared the dynamic connections found by the subset of C. elegans head neurons recorded in this dataset to the aforementioned anatomical and functional connectomes. The magnitudes of dynamic connections that were also found in the respective reference were kept positive (red), while connections that were unique to the dLDS model were given a negative coefficient (blue). We observed that, across the Stim and NoStim worms, a majority of the connections identified by dLDS did not match those in the anatomical or functional connectivity reference atlases, although some connections did (Supplementary Figs. 34, 35, 36, 37). These dLDS-only connections could be avenues for future exploration.
+
+
+## Novel capabilities: dLDS enables the alignment of latent manifolds across individuals
+
+Per-worm models are useful for characterizing the dynamics of individual worms and even show some commonalities in terms of the dynamic connectivity maps across worms corresponding to different behavioral states or environmental variables. However, we wanted to investigate how a shared latent neural manifold might reflect more general principles of dynamic connectivity across worms. We modified dLDS to learn one set of DOs across all 7 Stim worms, with an individual observation matrix for each worm, resulting in one aligned model per worm (Fig. 7). We kept all the same hyperparameters as for the individual models, with the exception of allowing 70 DOs (thus permitting the possibility of 10 completely unique operators per worm).
+
+
+## Aligned latent manifold and Stim Worm 1 example.
+
+A We learn a shared set of DOs and latent dimensions, but a unique observation matrix and set of latent states and DO coefficients for each worm. B, C We compare the connectivity maps for DO 8 in the per-worm model and the aligned DOs that co-occur with it. D, E The DO coefficients themselves.
+
+We found that, while the aligned models’ inferred DO coefficients were sparser than the total possible number of DOs, they were usually less sparse than the per-worm models (Supplementary Figs. 8, 9, 13); this was as expected, given that we did not scale up the sparsity hyperparameters for this larger model.
+
+We also investigated whether each DO had a different “meaning” in terms of neuron-space dynamic connectivity in each worm, since each worm had a different projection out from the latent space (i.e., the per-worm representations D). (e.g., DO 29 in Supplementary Figs. 38,39,40, 41, 42, 43, 44, and correlations between DOs vs. coefficients in Supplementary Figs. 45, 46). We thus tested whether the aligned DOs were washing out any structure, splitting up dynamic connectivity maps in space, or subdividing the activity of the per-worm operators in time, reflecting nonstationarity in a finer-grained way. By tallying features of the aligned DO dynamic connectivity maps (e.g., BAG and RMED participation), we observed that the aligned model operators shared key dynamic connectivity map features with the per-worm models. Therefore, even though the aligned model DOs used the same directions on the shared manifold to generate different connectivity maps, the aligned DOs overall for each worm still captured important and similar trends in which neurons were coactive and the relationships between them through time (e.g., Supplementary Figs. 38,39,40, 41, 42, 43, 44). We also observed smooth transitions in the middle of behavioral states in the aligned models, reminiscent of those in the per-worm models. This led us to reject the hypothesis that the aligned model with 70 DOs was washing out structure entirely.
+
+Then, for each pair of per-worm and aligned DO coefficient traces, we calculated the probability of the intersection of their activity divided by the activity of one of the two DOs (e.g., Stim Worm 1, Supplementary Fig. 47). We saw a marked asymmetry: each aligned DO represented a small percentage of a per-worm DO utilization probability, but whenever an aligned DO was active, it was strongly coactive with at least one per-worm DO, and sometimes multiple. This indicated that the aligned DOs split up the per-worm DOs utilization patterns in time, as well as subdividing and reusing in multiple ways the dynamic connectivity maps associated with the per-worm DOs. In conclusion, when aligning dynamics across individuals using dLDS, model size can have an impact on how key dynamics are split up and represented, but the key dynamics will still be decipherable and will still represent key latent neural processes such that shared activity patterns across individuals are preserved.
+
+
+## Discussion, limitations, and future work
+
+In this work, we study the time-varying and contextual nature of C. elegans neural function. We focused on the novel characterization afforded by recent advances in time-varying dyanmical systems estimation—decomposed linear dynamical systems (dLDS)43,50—to identify instantaneous “dynamic connectivity” that was able to track changing functional connections across behaviors. The decomposed nature of dLDS was able to uncover simultaneous neural processes, the dynamic operators (DOs) where each DO represents one fundamental set of interconnections that ebb, flow, and combine to represent the complex nature of moment-by-moment neural dynamics across the full imaged population. We found that the DOs strongly corresponded to either specific motor or sensory tasks, and recombined in different ways across trials and across individuals to capture a diverse set of nonstationary interactions.
+
+A key contribution is the combination of the instantaneous nature of our modeling framework with an interpretable locally linear dynamics model. These properties enabled us to define the dynamic connectivity, i.e., the moment-by-moment directional interactions between the full set of neurons. By interpreting directional dynamics in the latent state via their effects in the natural neural space, we reveal evidence that changes in instantaneous, dynamic connectivity can be the mechanism for sensory neuron adaptation and interneuron function across multiple circuits and task variables.
+
+In general, understanding context-dependent functions or nonlinear relationships between neurons has been a challenging endeavor in systems neuroscience. Specifically, context-dependent relationships can overlay and interact with context-independent operators, interacting in ways that would be impossible to unravel in current RNNs or switched dynamical systems. We demonstrate that exploring the neural interactions through the dLDS dynamic connectivity maps across behavioral states or conditions can reveal these context-dependent functions or nonlinear relationships. Using the dLDS-derived dynamic connectivity, we identified many novel connections not mapped by direct anatomical synapses or one-to-one functional connections, emphasizing the possibility that neurons also communicate indirectly and nonlinearly with other neurons (e.g., as AND, OR, XOR gates, etc.). Moreover, we developed an extension to dLDS that allows latent neural processes to be aligned across individuals. This model extension enables greater generalizability of the learned models.
+
+Our analysis’ unique perspective results in the following findings:
+
+Neurons can have dynamic functional roles in circuits, rather than a single or stable function or set of functions: All of the neurons highlighted in this paper (sensory neurons BAGL and BAGR, interneurons AVFR, RIGL, RIS, interneuron/motor neuron SABD, and motor neuron RMED) are active and connected in both a behavioral and environmental context-dependent way.
+
+Changes in interneuron connectivity mediate efficient task-switching: Some interneurons (e.g., AVFR) may rapidly change their connectivity in different regimes based on the task-related sensory vs. motor information they receive, without obvious changes to their activity levels. While this looks like mixed selectivity when time-averaged, instantaneous dynamic connectivity shows that they act as relay stations that may rapidly switch connectivity regimes, instead. Thus, these highly connected neurons can efficiently reuse their connections to relay information from different circuits. In general, principles of efficient interneuron connectivity and task-selective function are an important question because interneurons are highly connected and they only constitute 27% of the C. elegans nervous system51 and only 20-30% of primate cortical neurons52.
+
+Changes in sensory neuron connectivity show a mechanism of adaptation: Sensory neurons (e.g., BAG) may change their dynamic connectivity to adapt to stimuli over time, first signaling broadly to many neurons, and then signaling more to a small number of connected interneurons, motor neurons and proprioceptive neurons. Moreover, using the connectivity strengths at each time point, we can quantitatively measure the connectivity shift from external sensing to proprioception as the worm adapts to the experimental protocol.
+
+Worm individuality must be modeled to understand adaptation: Despite the many features shared by these worms, their similar responses to stimuli, and the similar reconstruction performance achieved by the per-worm and aligned dLDS models, the data were nevertheless not identical, and no aligned model used the dynamic connectivity in the same way. We posit that these individual differences are not noise; they are essential to understand worm adaptation to their environments. Worm individuality and adaptation (or even learning) is supported by prior work5,7,13–15,31–35.
+
+These findings based on the Kato et al. data4 can also lead to new avenues for experimentation. Contextual time-varying neural connectivity patterns across individuals during adaptation can be further investigated across species with perturbation experiments, e.g., using a mixture of new protocols and optical stimulation.
+
+Taken together, our results show that dLDS can be used to reveal a detailed story of lower-dimensional latent neural processes such as sensation that are hierarchically overlaid on those latent neural processes regulating motor behavior states, and the complex roles of interneurons in between. We can use dLDS to gain insight into internal cognitive processes that are otherwise difficult to disentangle. Our analysis complements prior and concurrent work to show, in a data-driven way without time-averaging across behavioral or experimental conditions, that distributed coding in C. elegans instantaneously changes to create behavior-related neural activity, and that the connections effecting these changes adapt throughout a trial, even across outwardly similar behaviors.
+
+While not explored in this study due to the confounding variable of behavior-based rates potentially impacting nonstationarity in addition to environmental variables, it is possible that the amplitude of DO coefficients might reflect habituation or sensitization to a sensory stimulus, evidence accumulation, a change in wakefulness or attention, etc. Future attempts at applying dLDS to neural data to interpret quantitative differences in the DO coefficients would also benefit from detailed, quantitative measures of behavior and environment variables.
+
+More generally, dLDS complements the space of current models by enabling both interpretability and expressivity. Switched LDS models can model nonstationary processes in terms of temporally local linear systems, but only one system can be active at a time. dLDS enables the flexibility to put together a combination of linear operators, which allows us to track continuously varying changes in the network even with single behavioral bouts. Moreover, it allows the modeling of simultaneous parallel processes, such as if an animal is monitoring for potential threats while also navigating its environment for food—or in our case turning while being puffed with oxygen.
+
+
+## Methods
+
+
+## Decomposed linear dynamical systems (dLDS)
+
+In our framework43, we rely on the neural manifold hypothesis, that is, that neural activity comes from an underlying low-dimensional space that evolves characteristically in time via trajectories, which we call dynamics. We observe neural activity during behavior as neural time series traces y∈R, which are modeled as a linear function of the latent neural states x via the observation matrix D. (Note that here we define a neural latent “state” as a larger process in the brain that can occur simultaneously with other processes, as opposed to one whole-brain or whole-animal state at a time.) If trajectories in latent space are a useful model of neural processes, it is necessary to understand them as traversing a manifold. If we look at the tangent space at each latent state time point, we can break down the dynamics trajectories into a linear combination of operators G in continuous time. However, the matrix exponential becomes cumbersome to compute with even a small number of dimensions, so we use the discrete time approximation of this model to work with real neural data.
+
+dLDS uses an expectation maximization algorithm to alternate between jointly inferring the latent states x and the dynamics coefficients c, and updating the randomly initialized dynamics dictionary F and observation matrix D via projected gradient descent43,45,46. Inputs from the user are just the neural activity y and some parameters, including the hypothesized latent dimensionality and number of operators, as well as some regularization terms for sparsity and smoothness of the latent states and dynamics (Table 2). Sparsity is important because it helps with interpretability–it constrains the model to use a small number of linear operators to represent each time point.
+
+Randomly initialize F and D.
+
+Infer x and c via LASSO (Equations (6) and (7)):6xt=Ftxt−1=∑m=1Mcmtfmxt−1=∑m=1M[fmxt−1]cmt=Ft~ct,7x^t,c^t=argminxt,ctyt−Dxt22+λ0xt−F~tct22+λ1∥xt∥1+λ2∥ct∥1+λ3∥ct−c^t−1∥22.
+
+Update D and F via projected gradient descent (Equations (8), (9)):8D^←ΠCDD−ηD∇D∑t=1Tyt−Dxt2=ΠCDD+ηD∑t=1T(yt−Dxt)xtT,9f^m←ΠCfmf^m−ηf∇fm ∑t=2Txt−∑m=1Mcmtfmxt−12210=ΠCfmf^m+ηf ∑t=2Tcmtxt−F~tctxt−1T.
+
+Repeat steps 2 and 3 until D and F each converge.
+
+In the aligned model, we modify this procedure by inferring and storing x, c, and D separately for each worm on each update iteration, whereas F is updated using a cell array containing the data from all of the worms, essentially concatenated as one trial after another.
+
+We applied dLDS to each worm delta fluorescence trace individually on the CIS cluster. Preprocessing was minimal–negative values (up to 3% of each trace) were set to 0 because calcium-based imaging is a non-negative measure of activity. All values were scaled between 0 and 1 (maximum fluorescence value per worm) to promote even reconstruction performance.
+
+We first ran 3000 iterations of dLDS and observed that after 500 iterations, all of the models achieved change in D and change in F on the order of 10−3. D and F were stored and used to perform inference one last time after dynamics learning to obtain the latent states (x) and dynamics coefficients (c). The number of latent dimensions and dynamics were initialized heuristically as 10 because there were 4-8 behavioral states labeled and because the median number of dynamics active at a time converged to 3-8 with a range of dimensionalities (6, 8, 10, 20), so an intermediate value (10) was chosen in favor of the smallest stable number of coefficients without artificially constraining the median number of active coefficients at any given time (Table 2). Similarly, a range of regularization parameters was explored (from near 0 to greater than 1) before settling on the fairly strong regularization for the smoothness of the states and coefficients. Since D and F are randomly initialized, multiple examples were generated for three of the worms and compared visually.
+
+rSLDS was also run for 500 iterations on each worm with 10 latent dimensions and 4 output states for the Stim worms (or 8 for the NoStim worms).
+
+For the reconstructions (Table 1), the product of D with the latent states was rescaled back to the original dF/F range (R2 between 0.7 and 0.9 for each of the worms). The dynamics coefficients were also compared in terms of their utilization during the experimental settings of the experiment (histograms) and during various behavioral states.
+
+
+## C. elegans data
+
+C. elegans calcium imaging data was obtained from53 (Table 3).
+
+
+## Validation: decoding other variables from dLDS outputs
+
+We validated the decoding of other additional variables, such as speed or oxygen concentration, from the DO coefficients or latent states. First, we trained an SVM to predict nonstationarity, i.e., whether individual time points were in the first or second half of the trial based on either 1) the DO coefficients (“c vals”) or 2) the latent states (“x vals”) at only that time point. These SVMs correctly classified at 85% mean accuracy for the DO coefficients and 87% mean accuracy for the latent states (Supplementary Figs. 4, 5). However, we saw slightly decreased mean accuracy (84% for the DO coefficients, 85% for the latent states) in the prediction of precise oxygen levels (detailed stimulation times in the Stim experiments only, rather than first half vs. second half), where 4% oxygen times were primarily misclassified as 21% oxygen (Supplementary Fig. 6). This is not entirely surprising, as it is not possible to change the oxygen concentration in a chamber uniformly and instantaneously, and the base rate of 21% oxygen exposure was higher in these experiments. Despite these confounds, the latent states and DO coefficients are clearly nonstationary between the two halves of all the Stim experiments and 4 out of the 5 NoStim experiments in a way that an SVM can decode (Supplementary Figs. 4, 5). Since nonstationarity was also observed in the NoStim worms, dLDS may be picking up on nonstationarity in the data not only due to the oxygen protocol, but also likely due to other time-dependent factors.
+
+As far as classifying speed (forward crawling vs. forward slowing), SVMs trained on either the DO coefficients or the latent state values were also successful (mean accuracy: 83% for the DO coefficients, 82% for the latent states), but were mostly biased toward the forward slowing states (Supplementary Fig. 7). Overall, we found, qualitatively and quantitatively, that the DO coefficients do encode features of the latent neural states that reflect both the discrete and continuous nature of the behaviors they generate.
+
+
+## Computing dynamic connectivity
+
+In this paper we feature dynamic connectivity maps based on neuron location in the C. elegans head, which also show time-averaged simulated activity of the neurons of interest. We also use circular dynamic connectivity graphs54 that only show connections, without activity.
+
+
+## Connectivity mapped to C. elegans head
+
+Each labeled neural trace was matched to a three-dimensional location in the worm and a class, as labeled by Randi et al.12. The connections between neurons were calculated as a covariance matrix between traces (from rows to columns). Recall that in a latent dynamics model where yt = Dxt, D is the mapping from the latent space to the ambient (e.g., neural recording) space. In typical connectivity maps, the system (i.e., F=∑m=1Mfmcm) is considered stationary, but because of the time-varying DO coefficients ct in dLDS, the system can be modeled in a time-dependent way. Our dynamic connectivity maps can show not only the dynamic (i.e., time-varying) connectivity (via lines between neurons), but also the reconstructed time-averaged or instantaneous activity of those neurons (via neuron opacity) resulting from that particular linear combination of DOs. For any linear combination of DOs F, the correlations in the ambient space of an equivalent linear time-invariant dynamical system are calculated as D*F*DT. To produce the time-averaged simulated fluorescence values x^ generated only by a particular combination of DOs of interest, simulated latent states were calculated by applying an impulse function (vector of ones) to the combined DO F, taking the dot product iteratively for 500 time points, and then taking the mean reconstructed neural activity for each neuron. To produce stable combined DOs, F was rescaled to unit norm (after linearly combining the component DOs, but before applying the impulse function). Then the simulated latent states were multiplied by D to produce the simulated fluorescence.
+
+The dynamic connectivity maps were produced for only the labeled traces (less than 50% of the recorded traces). If multiple neurons were present in that trace, the activity of that trace was plotted redundantly in each of the locations associated with the corresponding component neurons. The simulated fluorescences plotted were the mean for each trace. Strong thresholding on both the fluorescence values and the connectivity was performed to declutter the plotting - i.e., only the strongest 0.1 -0.5% of connections are shown. Thresholding was also performed on the automatic neuron trace labels so that the strongest activity and strongest connections were labeled.
+
+
+## Circular connectivity graphs
+
+The circular connectivity graphs54 are another way of visualizing the dynamic connectivity, without spatial information or information about neuron activity. The lines go from source to target neuron (or neuron combination, or unlabeled trace). The color of each line denotes its source.
+
+
+## BAGL/R dynamic connectivity tally
+
+For each behavior or experimental condition context analyzed, the corresponding active DO traces were visually selected for each worm model. Then a dynamic connectivity map was made for each trace, and the presence of key neurons was tallied across those maps, both in terms of their appearance in DOs across worms and whether they appeared in each worm model (Tables 4, 5).
+
+Table 4 is a tally of strong connectivity with or activity in BAGL and/or BAGR across the worms’ dynamic connectivity maps for each DO. In the per-worm models, BAGL and BAGR were strongly present in DOs that were only active in the second half of the trials (alternative oxygen levels) in more than half of the worms and in DOs that were mostly active in the second half in more than a third of the worms (Supplementary Figs. 16, 19, Table 4). Furthermore, they were present in none of the operators that were exclusively or mostly in the first half (Supplementary Figs. 21, 24).
+
+We also observed that BAGL and BAGR were not evenly used between behavioral states; DOs featuring BAGL/R utilized during forward crawling were present in all 7 Stim worms (Fig. 27), but only during reverse sustained crawling in 2 out of 7 worms (Fig. 30). This brings up the question of whether BAGL/R activity and connectivity is dependent on behavioral context. This bias of BAG-featuring DOs toward forward crawling could be a result of the base rates of those two behavioral states, which were biased toward forward crawling in the second half of the experiments, indicating that BAGL/R utilization is independent of behavior and is simply more present during forward crawling because forward crawling occurred more often during hypoxia. However, the bias of BAG-featuring DOs toward forward crawling states could indicate context-dependent BAG utilization. This also called into question whether nonstationarity generally was a side effect of when forward crawling was occurring.
+
+
+## χ2 tests
+
+In order to test the independence of individual neuron activity and connectivity levels (on/off) from categorical variables such as oxygen stimulation settings and behavior states, we conducted χ2 tests55 for each Stim worm per-worm model (Supplementary Data 1). The null hypothesis of the χ2 test is that there is no difference in expected value of the observed variable (in our case, reconstructed activity or connectivity) between groups (behavior states, stimulation states - in the stim half of the trial or not, or a detailed readout of either of those categories). Rejecting the null hypothesis reflects a significant difference in observed vs. expected values, indicating that that category significantly impacts the observed values. Most tests were found to be significant, even when the alpha value for rejection was set at an extremely conservative 9e-5, based on a Bonferroni correction from 0.05 by the number of tests per worm.
+
+First, we compared behavior states to stimulation levels and found that the stimulation times significantly impacted the behavior states in most of the worms, which validates the idea that the stimulation protocol could be used to entrain worm behavior (see “bhv” and “FWD” vs. “stimTimes” and “stimTimesDetailed” in Supplementary Data 1). For most of the 7 Stim worms, in terms of reconstructed activity (y^), at a weak threshold for “active” (above median value), both BAGL and BAGR were influenced by state 3 (REVSUS), but at a strong threshold (median plus 3 standard deviations), BAGL was most influenced by state 1 (FWD). At both levels, they were most active during the second half of the experiments (alternating oxygen stimulation protocol (“Stim” = 1)). The stimulation protocol results and the strong threshold results align with the visual observations from the connectivity maps above, which only showed the strongest activity levels and connections. As far as the connections to and from BAGR and BAGL, the χ2 test results were inconclusive as far as whether they were dependent on stimulation protocol state at the lower threshold for “connected”, but at the higher threshold, connectivity to and from BAGR and BAGR in most worms significantly interacted with both the stimulation protocol states and behavior states.
+
+
+## ANOVA and MANOVA tests
+
+In order to test effects of categorical factors such as oxygen stimulation settings and behavior states on individual neuron activity and connectivity, we conducted ANOVA and MANOVA tests (with Roy’s Largest Root, which most consistently returned non-NaN or Inf values, and which only uses the variance from the dimension of greatest separation between the groups to create the test statistic)56,57 for each Stim worm per-worm model (p-values in Supplementary Data 2, 3). All of the tests with connectivity to and from each neuron were found to be significant for Behavior (1-4), Stimulation (0 or 1, i.e., 21% oxygen first half vs. alternating oxygen levels second half), and interaction between the levels of Behavior and Stimulation. Most of the activity tests were also significant to varying degrees (α = 1*10−4 to 0.05, depending on the correction for multiple tests).
+
+All of the neurons, including BAGL and BAGR, showed significant effects of Behavior and Stimulation levels on the connectivity to and from across all 7 Stim worms. As far as reconstructed neural activity, BAGL showed consistently significant effects of both the behavior levels, stimulation protocol, and the interaction between the two, with the exception of Worm 2’s BAGR activity, despite affecting the connectivity.
+
+
+## RMED dynamic connectivity tally
+
+Table 5 is a tally of strong connectivity with or activity in RMED across the worms’ dynamic connectivity maps for each DO. RMED was utilized in 22/31 forward crawling DOs and during forward crawling in 6/7 Stim worms, but only in 4/36 reverse sustained crawling DOs and during reverse sustained crawling in 3/7 worms (Supplementary Figs. 27, 30, Table 5). RMED-featuring DOs were not at all present in the small number of DOs exclusively active in the first half of the experiments and were present in DOs exclusively active in the second half in 4/7 worms, but otherwise they were utilized in a more balanced way between halves of the experiment (Supplementary Figs. 16, 19, 21, 24). Notably, this relationship between RMED and forward crawling was even stronger in the NoStim worms, which were not exposed to hypoxia. It would seem that RMED should have shown the opposite bias (toward the first half of the Stim experiment) if its nonstationarity were being affected by the oxygenation levels; this observed bias toward the second half of the experiment could be a result of the corresponding bias in the base rates of the forward crawling state(s).
+
+
+## Reporting summary
+
+Further information on research design is available in the Nature Portfolio Reporting Summary linked to this article.
+
+
+## Supplementary information
+
+Supplementary Information
+
+Description of Additional Supplementary Materials
+
+Supplementary Data 1
+
+Supplementary Data 2
+
+Supplementary Data 3
+
+Reporting Summary
+
+
+## Acknowledgements
+
+E.Y. and A.S.C. were supported in part by NSF CAREER award 2340338 and N.M. was supported by a Kavli Fellowship. We would like to acknowledge Sue Ann Koay for the original version of the manifold illustration in Fig. 1 and Francesco Randi for the advice on how to use the Leifer Lab repositories. We would further like to thank Andrew Gordus for his helpful review of our paper and literature recommendations, our reviewers for their guidance, and Olya Hakobyan, Esther Whang, and Matthew Creamer for their comments on our manuscript.
+
+
+## Author contributions
+
+E.Y. and A.C. originated the idea. E.Y. and A.C. planned analyses and statistical tests. E.Y. led the data analysis and model development and coding. N.M. assisted in the use of the dLDS model. E.Y. created figures and ran statistical tests with input from A.C. and N.M. A.C. supervised the project. All authors contributed to the writing of the manuscript.
+
+
+## Peer review
+
+
+## Peer review information
+
+This manuscript has been previously reviewed at another Nature Portfolio journal. The manuscript was considered suitable for publication without further review at Communications Biology. Primary Handling Editor: Jasmine Pan.
+
+
+## Data availability
+
+The C. elegans calcium imaging data that support the findings of this study are available in the “Kato2015 whole brain imaging data” repository with the identifier 10.17605/osf.io/2395t4,53. Model outputs from dLDS and scripts to generate main figures in this paper are available in the “Data and scripts for Decomposed Linear Dynamical Systems (dLDS) models reveal instantaneous, context-dependent dynamic connectivity in C. elegans” repository with the identifier 10.17605/OSF.IO/35HY2at https://osf.io/35hy2/.
+
+
+## Code availability
+
+The code for both the discrete and the continuous models can be found at https://github.com/dLDS-Decomposed-Linear-Dynamics(10.5281/zenodo.15866270). The code used to run the C. elegans data can be found at https://github.com/dLDS-Decomposed-Linear-Dynamics/dLDS-Discrete-Matlab-Model. The discrete code can also be pip-installed using the dLDS-discrete Python package, as described in https://pypi.org/project/dLDS-discrete-2022/. The SSM Python package from the Linderman lab was used to run rSLDS58. The code for generating the circular dynamic connectivity graphs is available from the MATLAB File Exchange54.
+
+
+## Competing interests
+
+The authors declare no competing interests.
+
+
+## Footnotes
+
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+
+
+## Supplementary information
+
+The online version contains supplementary material available at 10.1038/s42003-025-08599-3.
+
+
+## References
+
+
+## Associated Data
+
+
+## Supplementary Materials
+
+Supplementary Information
+
+Description of Additional Supplementary Materials
+
+Supplementary Data 1
+
+Supplementary Data 2
+
+Supplementary Data 3
+
+Reporting Summary
+
+
+## Data Availability Statement
+
+The C. elegans calcium imaging data that support the findings of this study are available in the “Kato2015 whole brain imaging data” repository with the identifier 10.17605/osf.io/2395t4,53. Model outputs from dLDS and scripts to generate main figures in this paper are available in the “Data and scripts for Decomposed Linear Dynamical Systems (dLDS) models reveal instantaneous, context-dependent dynamic connectivity in C. elegans” repository with the identifier 10.17605/OSF.IO/35HY2at https://osf.io/35hy2/.
+
+The code for both the discrete and the continuous models can be found at https://github.com/dLDS-Decomposed-Linear-Dynamics(10.5281/zenodo.15866270). The code used to run the C. elegans data can be found at https://github.com/dLDS-Decomposed-Linear-Dynamics/dLDS-Discrete-Matlab-Model. The discrete code can also be pip-installed using the dLDS-discrete Python package, as described in https://pypi.org/project/dLDS-discrete-2022/. The SSM Python package from the Linderman lab was used to run rSLDS58. The code for generating the circular dynamic connectivity graphs is available from the MATLAB File Exchange54.

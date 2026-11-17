@@ -1,0 +1,179 @@
+{
+  "source_format": "wormwideweb-json",
+  "source_record_id": "2023-04-25-04",
+  "source_metadata": {
+    "blake3_neuropal_dict": "f58c40bd6a7420a263a1e5ac32f23d87a71c6065b22df7c10836caaec1a35d9b",
+    "checksum_h5": "2fff442c7d53bba439b5785b6f863c87e2effa4711a08551bbe48bc600fab600",
+    "dataset_type": [
+      "neuropal",
+      "sickness"
+    ],
+    "n_neuron": 147,
+    "paper_id": "pradhan_madan_2025",
+    "source_filename": "2023-04-25-04-data.h5",
+    "uid": "2023-04-25-04"
+  },
+  "source_group_id": "source-h5:2fff442c7d53bba439b5785b6f863c87e2effa4711a08551bbe48bc600fab600",
+  "animal_id": null,
+  "animal_identity_status": "unknown",
+  "condition": [
+    "neuropal",
+    "sickness"
+  ],
+  "signal_kind": "calcium_reporter_fluorescence",
+  "signal_source_field": "gcamp/trace_array_original",
+  "signal_unit": "source_fluorescence_scale",
+  "source_preprocessing": "Author-provided extracted fluorescence; not raw photons or membrane voltage. Upstream processing is not proven causal.",
+  "normalization_applied_here": "none",
+  "source_author_zscore_uses_future_statistics": "possible; excluded by default loader",
+  "time_unit": "s",
+  "time_unit_evidence": "WormWideWeb JSON schema: timestamp_confocal and mean_timestep",
+  "source_time_origin": 2749562.940274038,
+  "event_index_origin": "unknown_preserved_not_converted",
+  "events_source_index": {},
+  "reversal_events_source_index": [
+    [
+      17,
+      30
+    ],
+    [
+      53,
+      67
+    ],
+    [
+      119,
+      124
+    ],
+    [
+      139,
+      160
+    ],
+    [
+      196,
+      216
+    ],
+    [
+      226,
+      231
+    ],
+    [
+      235,
+      257
+    ],
+    [
+      280,
+      285
+    ],
+    [
+      312,
+      312
+    ],
+    [
+      319,
+      324
+    ],
+    [
+      341,
+      341
+    ],
+    [
+      350,
+      352
+    ],
+    [
+      360,
+      379
+    ],
+    [
+      411,
+      415
+    ],
+    [
+      426,
+      455
+    ],
+    [
+      460,
+      514
+    ],
+    [
+      521,
+      523
+    ],
+    [
+      547,
+      614
+    ],
+    [
+      645,
+      694
+    ],
+    [
+      701,
+      731
+    ],
+    [
+      734,
+      741
+    ],
+    [
+      748,
+      764
+    ],
+    [
+      774,
+      800
+    ]
+  ],
+  "behavior_channels": [
+    {
+      "name": "velocity",
+      "source_unit": "0.1 mm/s",
+      "conversion": "identity"
+    },
+    {
+      "name": "head_angle",
+      "source_unit": "rad",
+      "conversion": "identity"
+    },
+    {
+      "name": "angular_velocity",
+      "source_unit": "rad/s",
+      "conversion": "identity"
+    },
+    {
+      "name": "pumping",
+      "source_unit": "1/s",
+      "conversion": "identity"
+    }
+  ],
+  "issues": [
+    "UPSTREAM_CAUSAL_PREPROCESSING_NOT_VERIFIED"
+  ],
+  "source_original_available": true,
+  "control": false,
+  "record_key": "25f4de980524710e4877fd77c527b7e9",
+  "parser_version": "neural-v2.0",
+  "signal_sha256": "4da5258294ab83b32915561768d30484a387de2892946bc125c715926ea4b5ea",
+  "timestamps_sha256": "9d8abaa0659bd721d0a3588d3bd20f2769323d0f02a44c1ca745358f8b7ea9a9",
+  "n_timepoints": 800,
+  "n_neurons": 147,
+  "n_named_neurons": 42,
+  "finite_fraction": 1.0,
+  "median_dt_s": 0.6000188747420907,
+  "n_segments": 1,
+  "axis_order": [
+    "time",
+    "neuron"
+  ],
+  "dtype": "float32",
+  "mask_definition": "finite numerical values; not a complete biological quality mask",
+  "qc_state": "usable",
+  "training_eligible": true,
+  "evaluation_scope": "chronological within-record forecasting; cross-animal grouping requires identity review",
+  "source": {
+    "source_archive": "C:\\projects\\bio\\source_data\\behavior_forecast_5papers_2026-09-15\\raw\\pradhan_madan_2025\\pradhan_madan_2025.tar.bz2",
+    "member": "pradhan_madan_2025_2023-04-25-04.json",
+    "paper_key": "pradhan_madan_2025"
+  }
+}

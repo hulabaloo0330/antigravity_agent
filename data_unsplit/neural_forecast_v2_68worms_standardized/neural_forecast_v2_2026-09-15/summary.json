@@ -1,0 +1,25 @@
+{
+  "records": 89,
+  "eligible_records": 86,
+  "timepoints": 129500,
+  "neuron_time_values": 17840352,
+  "named_neuron_record_pairs": 4887,
+  "records_with_neuron_names": 55,
+  "issues": [
+    {
+      "paper": "dag_nwabudike_kang_2023",
+      "member": "dag_nwabudike_kang_2023_2022-05-02-01.json",
+      "reason": "NEURAL_TIME_SHAPE_MISMATCH"
+    },
+    {
+      "paper": "pradhan_madan_2025",
+      "member": "pradhan_madan_2025_2023-03-16-01.json",
+      "reason": "NEURAL_TIME_SHAPE_MISMATCH"
+    }
+  ],
+  "scope": "Standardized calcium-recording tensors, not a trained model or validated causal simulator",
+  "eligible_timepoints": 124756,
+  "eligible_neuron_time_values": 17303072,
+  "eligible_records_with_neuron_names": 55,
+  "distinct_source_groups": 86
+}

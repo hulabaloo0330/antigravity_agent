@@ -1,0 +1,5142 @@
+pmc
+Sci Adv
+Sci Adv
+2850
+sciadv
+101653440
+sciadv
+Science Advances
+2375-2548
+American Association for the Advancement of Science
+PMC11006214
+PMC11006214.1
+11006214
+11006214
+38598630
+10.1126/sciadv.adk0002
+adk0002
+1
+Research Article
+Neuroscience
+SciAdv r-articles
+Biophysics
+Neuroscience
+Neuroscience
+A tonically active master neuron modulates mutually exclusive motor states at two timescales
+Control of motors states by a single neuron
+https://orcid.org/0000-0002-4165-8496
+Meng
+Jun
+Conceptualization
+Data curation
+Formal analysis
+Investigation
+Methodology
+Project administration
+Resources
+Validation
+Visualization
+Writing - original draft
+Writing - review & editing
+1
+2
+†
+https://orcid.org/0000-0002-1405-3539
+Ahamed
+Tosif
+Conceptualization
+Data curation
+Formal analysis
+Investigation
+Methodology
+Project administration
+Resources
+Software
+Supervision
+Validation
+Visualization
+Writing - original draft
+Writing - review & editing
+2
+‡
+*
+https://orcid.org/0000-0002-2907-2169
+Yu
+Bin
+Investigation
+Validation
+3
+§
+https://orcid.org/0000-0001-8488-7638
+Hung
+Wesley
+Conceptualization
+Formal analysis
+Investigation
+Methodology
+Resources
+Validation
+2
+EI Mouridi
+Sonia
+Conceptualization
+Formal analysis
+Investigation
+Methodology
+Resources
+Validation
+Visualization
+Writing - original draft
+Writing - review & editing
+4
+¶
+https://orcid.org/0009-0006-1401-9871
+Wang
+Zezhen
+Resources
+5
+Zhang
+Yongning
+Resources
+3
+https://orcid.org/0000-0003-0268-8403
+Wen
+Quan
+Conceptualization
+Funding acquisition
+Resources
+Validation
+5
+https://orcid.org/0000-0002-1734-1915
+Boulin
+Thomas
+Conceptualization
+Funding acquisition
+Investigation
+Methodology
+Project administration
+Resources
+Supervision
+Validation
+Writing - review & editing
+4
+https://orcid.org/0000-0001-5431-4628
+Gao
+Shangbang
+Conceptualization
+Formal analysis
+Funding acquisition
+Investigation
+Methodology
+Project administration
+Resources
+Validation
+Visualization
+Writing - review & editing
+3
+*
+https://orcid.org/0000-0003-0086-9622
+Zhen
+Mei
+Conceptualization
+Data curation
+Formal analysis
+Funding acquisition
+Investigation
+Methodology
+Project administration
+Resources
+Supervision
+Validation
+Visualization
+Writing - original draft
+Writing - review & editing
+1
+2
+*
+1
+Department of Physiology, University of Toronto, Toronto, ON, Canada.
+2
+Lunenfeld-Tanenbaum Research Institute, Mount Sinai Hospital, Toronto, ON, Canada.
+3
+College of Life Science and Technology, Huazhong University of Science and Technology, Wuhan 430074, China.
+4
+University Claude Bernard Lyon 1, MeLiS, CNRS UMR 5284, INSERM U1314, 69008 Lyon, France.
+5
+Division of Life Sciences and Medicine, University of Science and Technology of China, Hefei, Anhui, China.
+*
+Corresponding author. Email:
+ahamedt@hhmi.org
+(T.A.);
+sgao@hust.edu.cn
+(S.G.);
+meizhen@lunenfeld.ca
+(M.Z.)
+†
+Present address: Department of Biology, KU Leuven, Leuven, Belgium.
+‡
+Present address: HHMI Janelia Research Campus, Ashburn, VA, USA.
+§
+Present address: Innovation Academy for Precision Measurement Science and Technology, Chinese Academy of Sciences, Wuhan, China.
+¶
+Present address: King Abdullah University of Science and Technology (KAUST), Biological and Environmental Science and Engineering Division (BESE), KAUST Environmental Epigenetics Program (KEEP), Thuwal 23955-6900, Saudi Arabia.
+12
+4
+2024
+10
+4
+2024
+10
+15
+459755
+eadk0002
+27
+7
+2023
+07
+3
+2024
+10
+04
+2024
+11
+04
+2024
+24
+03
+2026
+Copyright © 2024 The Authors, some rights reserved; exclusive licensee American Association for the Advancement of Science. No claim to original U.S. Government Works. Distributed under a Creative Commons Attribution NonCommercial License 4.0 (CC BY-NC).
+2024
+The Authors
+https://creativecommons.org/licenses/by-nc/4.0/
+This is an open-access article distributed under the terms of the
+Creative Commons Attribution-NonCommercial license
+, which permits use, distribution, and reproduction in any medium, so long as the resultant use is
+not
+for commercial advantage and provided the original work is properly cited.
+Continuity of behaviors requires animals to make smooth transitions between mutually exclusive behavioral states. Neural principles that govern these transitions are not well understood.
+Caenorhabditis elegans
+spontaneously switch between two opposite motor states, forward and backward movement, a phenomenon thought to reflect the reciprocal inhibition between interneurons AVB and AVA. Here, we report that spontaneous locomotion and their corresponding motor circuits are not separately controlled. AVA and AVB are neither functionally equivalent nor strictly reciprocally inhibitory. AVA, but not AVB, maintains a depolarized membrane potential. While AVA phasically inhibits the forward promoting interneuron AVB at a fast timescale, it maintains a tonic, extrasynaptic excitation on AVB over the longer timescale. We propose that AVA, with tonic and phasic activity of opposite polarities on different timescales, acts as a master neuron to break the symmetry between the underlying forward and backward motor circuits. This master neuron model offers a parsimonious solution for sustained locomotion consisted of mutually exclusive motor states.
+Mutually exclusive motor states are governed by a single neuron acting at two timescales in
+C. elegans
+.
+http://dx.doi.org/10.13039/100010663
+H2020 European Research Council
+337702-K
+http://dx.doi.org/10.13039/501100000038
+Natural Sciences and Engineering Research Council of Canada
+RGPIN2017-06738
+http://dx.doi.org/10.13039/501100001809
+National Natural Science Foundation of China
+31871069
+Canadian institute of Health Research
+FDN154274
+the key International (Regional) Joint Research Project
+32020103007
+the key International (Regional) Joint Research Project
+32020103007
+pmc-status-qastatus
+0
+pmc-status-live
+yes
+pmc-status-embargo
+no
+pmc-status-released
+yes
+pmc-prop-open-access
+yes
+pmc-prop-olf
+no
+pmc-prop-manuscript
+no
+pmc-prop-legally-suppressed
+no
+pmc-prop-has-pdf
+yes
+pmc-prop-has-supplement
+yes
+pmc-prop-pdf-only
+no
+pmc-prop-suppress-copyright
+no
+pmc-prop-is-real-version
+no
+pmc-prop-is-scanned-article
+no
+pmc-prop-preprint
+no
+pmc-prop-in-epmc
+yes
+pmc-license-ref
+CC BY-NC
+Copyeditor
+Lou Notario
+INTRODUCTION
+Animal behaviors are displayed as a sequence of discrete, often mutually exclusive motor states (
+1
+–
+11
+), such as forward and backward locomotion. Prevailing models for selecting and switching between mutually exclusive circuit activity patterns include the winner-take-all and reciprocal inhibitory networks (
+12
+–
+16
+). However, at shorter timescales, gradual transitions observed between successive motor states may also require continuous, albeit rapid modulation of dynamical variables. For example, locomotion velocity undergoes a continuous change in magnitude, not just a sudden change in sign, when switching between forward and backward movement (
+11
+,
+17
+–
+20
+). Limb movement is correlated with rotational, instead of alternating spinal neural network activity dynamics (
+21
+). However, circuit solutions for continuous modulation that underlie smooth behavioral state transitions are not well understood.
+Caenorhabditis elegans
+exhibits two mutually exclusive motor states: forward movement and backward movement, propelled by the posteriorly and anteriorly propagating undulatory bending waves, respectively (
+22
+). In isotropic environments, they spontaneously switch between the forward and backward motor states (
+22
+). The long-standing model for selecting and switching between these motor states involves a reciprocally inhibitory circuit motif between two separate modules (
+Fig. 1A
+) (
+5
+). In non-isotropic environments, sensory and interneuron inputs modify the activity of this circuit motif to evoke switches (
+5
+,
+23
+,
+24
+).
+Fig. 1.
+AVA and AVB have distinct membrane potential ranges and dynamics.
+(
+A
+) Top: Schematics of the adult anatomic wiring diagram for premotor interneurons and motor neurons implicated in directional movement, adapted from (
+25
+,
+27
+,
+59
+). Bottom: Schematics of functional relationship of these neurons, as proposed (
+28
+–
+32
+) (left) and concluded from our study (right). (
+B
+) Example traces of spontaneous membrane potential of AVA and AVB neurons by in situ whole-cell intracellular recording configuration. (
+C
+) The dynamic range of spontaneous membrane potential for AVB and AVA is represented by the distribution of spontaneous membrane voltage and its derivatives. Asterisk (*) denotes regimes of membrane potentials that might correlate with bistability described in previous studies (
+38
+,
+42
+,
+44
+). AVB potential drifts over a wider range than AVA (
+X
+axis) and exhibits more frequent but smaller transients than AVA (
+Y
+axis). (
+D
+) Cumulative curves of the distribution of spontaneous membrane potential of AVB and AVA. AVA holds more depolarized membrane potential than AVB.
+n
+= 8 AVB and 7 AVA; each neuron was recorded for 60 to 200 s.
+Anatomically, two groups of non-spiking premotor interneurons, AVB and AVA, make dominant synaptic inputs onto two groups of motor neurons that separately execute the forward and backward movements (
+Fig. 1A
+, top) (
+25
+–
+27
+). On the basis of these connectivity patterns, it has been assumed that AVA and AVB also independently control backward and forward movement (
+28
+–
+33
+). Synaptic connectivity between these modules (
+Fig. 1A
+) is thought to regulate transitions and dwell times in each behavioral state (
+5
+). This forms the base of a phenomenological model, where the forward and backward states are treated as binary outcomes of two symmetrically wired and functionally independent circuits (
+5
+), and transitions between forward and backward states occur stochastically or are driven by external input (
+5
+).
+While a reciprocal inhibition-based neuron model (
+Fig. 1A
+, bottom left) is intuitive, previous measurements of
+C. elegans
+locomotion have revealed other features not easily captured by modeling motor patterns through strictly reciprocal inhibition. Examples include the continuous decay of forward speed before the transition into backward movement (
+18
+,
+22
+), the period of poststimulus arousal during which animals exhibit a higher forward velocity after an evoked escape response (
+34
+,
+35
+), and the observation that reducing the activity of premotor interneurons of the backward module decreases both backward and forward speed (
+36
+).
+We sought relationships between the forward and backward motor circuits, specifically, when animals perform spontaneous locomotion. By examining the animal’s spontaneous motor pattern and the electrophysiological recording and calcium imaging data for AVA and AVB, we found that our experimental data can be integrated into a simple dynamical systems model. Critically, both the experimental data and the dynamical systems model reveal that AVA and AVB cannot be functionally equivalent, independent controllers for the forward and backward motor states. Instead of being strictly reciprocally inhibitory, AVA and AVB neurons exhibit a master-slave configuration, where AVA controls AVB with opposite polarities at different timescales.
+Specifically, we found that, while AVA inhibits AVB at fast, effectively instantaneous timescale, AVA also excites AVB at slow, minute-long timescale. The former results in transient backward movement (
+Fig. 1A
+, bottom right). The latter promotes a default bias toward the forward motor state by the motor circuit as a whole and ensures transitions from the backward to forward movement in particular.
+We further demonstrated that, mechanistically, the slow excitation of AVB results from the tonic acetylcholine release from AVA due to its depolarized membrane potential, and the fast inhibition of AVB requires the phasic activity of AVA. In this context, “tonic” refers to AVA’s constitutive, albeit weak, influence on AVB, while “phasic” denotes AVA’s strong, albeit transient, modulation of AVB’s activity.
+AVA neuron has been considered to play a dedicated role in the backward motor state (
+28
+–
+30
+,
+32
+,
+33
+), commonly viewed to simply trigger a backward movement. This is likely an oversimplification due to the multi-functionality of neurons that constitute a compact nervous system. Previously, we showed that AVA both inhibits and promotes backward movement (
+29
+). Here, we further revealed that it functions as a master neuron for not only the backward motor states but also forward motor states and transitions between them.
+Conceptually, our studies establish an inherent asymmetry in a motor circuit that allows it to underlie spontaneous switches between two mutually exclusive motor states. As shown in the Discussion, the parsimonious circuit model has important implications for further studies of additional or alternative mechanisms for spontaneous or evoked switches. In Discussion, we further describe the model’s potential relevance for the general configuration of decision-making circuits.
+RESULTS
+Asymmetry in AVA and AVB’s membrane excitability
+To begin exploring their relationships, we first examined AVA and AVB’s membrane potential by in situ electrophysiological recording (Materials and Methods) (
+37
+,
+38
+). Like most
+C. elegans
+neurons, AVA and AVB do not fire all-or-none action potentials (
+5
+,
+38
+–
+43
+). Instead, their membrane potentials fluctuate in an analog fashion (
+Table 1
+). We observed that both AVA and AVB maintain its membrane potential at multiple stable states (
+Fig. 1B
+). This makes it nontrivial to estimate a single value for their “resting” membrane potentials and for their changes.
+For a more appropriate presentation of the membrane property of non-spiking neurons, we summarized the neuron’s voltage range by the cumulative distribution function (
+Fig. 1D
+) and applied a histogram estimate of the phase-space distribution—the joint probability distribution of the membrane voltage and its time derivative—to quantify the transient dynamics of the membrane voltage (
+Fig. 1C
+) (see also Materials and Methods).
+Table 1.
+Summary of the membrane potentials (MP) of
+C. elegans
+neurons.
+Neuron class
+Neuron
+Approximate “rest” MP
+Sensory neuron
+AFD
+−40 mV (
+84
+,
+104
+) and −80 mV (
+92
+)
+Sensory neuron
+AWA
+−75 mV (
+92
+,
+105
+)
+Sensory neuron
+PLM
+−60 mV (
+83
+)
+Sensory neuron
+ASE
+−55 mV (
+39
+) and −60 mV (
+106
+)
+Sensory neuron
+ASH
+−60 mV (
+95
+)
+Interneuron
+AIY
+−55 mV (
+92
+)
+Interneuron
+AIA
+−80 mV (
+107
+)
+Premotor interneuron
+AVA
+−20 to −30 mV (
+38
+,
+41
+,
+42
+)
+Premotor interneuron
+AVB
+−75 to −55 mV (this study)
+A
+sra-11
+–expressed neuron
+Unsure
+−20 mV (
+108
+)
+Motor neuron
+RMD
+−70 and −35 mV (
+42
+)
+Motor neuron
+RIM
+−40 mV (
+92
+)
+Enteric motor neuron
+DVB
+−60 mV (
+93
+)
+Enteric motor neuron
+AVL
+−40 mV (
+93
+)
+Motor neuron
+VA5
+−70 mV (
+44
+)
+Motor neuron
+VB6
+−50 mV (
+44
+)
+Motor neuron
+VD5
+−45 mV (
+44
+)
+Our quantification of our AVA whole-cell patch clamp recording supports and expands the previous conclusion (
+38
+,
+42
+,
+44
+) that AVA maintains a depolarized potential at multiple stable states. Specifically, AVA’s potential ranged from ~−30 to −10 mV (median, −23 mV) (
+Fig. 1, C and D
+). Its fluctuation exhibits two stable regimes where the time derivatives are close to zero: one from −30 to −20 mV and the other from −15 to −10 mV (
+Fig. 1C
+).
+Our whole-cell patch clamp recording showed that AVB also exhibits multiple stable states. However, AVB’s membrane potential resides at a much hyperpolarized range, from ~−75 to −10 mV (median, −57 mV) (
+Fig. 1D
+). Moreover, AVB exhibits larger changes in the time derivative of its membrane voltage compared to AVA. This is seen most prominently in the range from −75 to −45 mV (
+Fig. 1C
+), where the magnitude of time derivative is two to three times larger when compared to that of AVA.
+These membrane potential characteristics implicates that AVA, but not AVB, is tonically active such that it always releases synaptic vesicles. Even at its baseline, AVA’s membrane potential is higher than most defined neurons (
+Table 1
+) and near the opening threshold of UNC-2 (
+45
+), a high voltage-gated, P/Q/N-type calcium channel that promotes synaptic vesicular release (
+46
+–
+48
+). The distinct membrane potential characteristics between AVA and AVB further raises the possibility of their asymmetric roles in motor control.
+Endogenous manipulation of AVA’s membrane excitability
+Each neuron’s distinct membrane excitability is regulated by its inward Na
++
+conductance and outward K
++
+leak conductance (
+Fig. 2A
+). Most
+C. elegans
+neurons exhibit analog membrane activity that is likely fine-tuned by a large family of the two-pore domain K
++
+leak channel, K2P (
+Fig. 2A
+). To endogenously perturb AVA’s membrane potential, we genetically engineered TWK-40 (
+Fig. 2B
+), a K2P channel that we found to exhibit detectable expression from its endogenous genomic locus in three neuron classes, AVA, AVB, and DVA, with AVA expression level being the highest (
+Fig. 2C
+).
+Fig. 2.
+An endogenous regulator of AVA’s spontaneous membrane potential.
+(
+A
+) Schematics of the inward sodium and outward potassium leak currents and respective leak channels that contribute to a cell’s membrane potential. (
+B
+) Predicted topology of a potassium leak channel (K2P), TWK-40, denoted with genetic mutations that abolish (LF) or increase (GF) potassium leak. M, transmembrane domain; P, pore domain; SF, selection filter; LF, loss of function; null, an allele (
+hp834
+) with a 7-bp deletion that leads to truncation after the M1 domain; GF, gain of function; L181N, an allele (
+bln336
+) with an activating mutation that promotes the potassium conductance of all K2P channels. (
+C
+) Expression pattern of endogenously tagged TWK-40::tag RFP. Top: Confocal images of immunostained TWK-40::TagRFP (anti-TagRFP). Dashed lines outline the animal body; circles denote somas. The arrowhead labels axonal processes in the ventral nerve cord. Scale bars, 2 μm. Bottom: TWK-40::TagRFP (anti-TagRFP) co-localizes with a plasma membrane marker PM-GPI (anti-GFP).
+r
+, Pearson’s correlation. (
+D
+) Top: Representative step currents from HEK293 cells carrying respective heterologous expression vectors by whole-cell voltage-clamp recording. Bottom: Current-voltage relation (
+I
+-
+V
+) curves for respective cells. Quantification showed mean currents and 95% confidence interval (CI) at +80 mV. Left: cells expressing wild-type (WT) TWK-40 (
+n
+= 13 biological replicates) showed a small outward current compared to the cell with empty vector (
+n
+= 12). Right: Cells expressing TWK-40(GF) showed a large outward current (
+n
+= 10 biological replicates), which was diminished by reducing intracellular K
++
+concentration (
+n
+= 7 biological replicates). ***
+P
+< 0.001 by the Mann-Whitney
+U
+tests, with
+P
+< 0.05 considered to be statistically significant.
+TWK-40 forms a functional K
++
+leak channel. Heterologous expression of TWK-40 in the human embryonic kidney (HEK) 293T cells led to a small increase of the host cell’s outward leak current (
+Fig. 2D
+), similar to a few mammalian K2P channels (
+49
+–
+51
+). A gain-of-function (gf) form, which carries a mutation (L181N) that universally increases K2P channel activity (
+52
+,
+53
+), led to a large increase in the outward leak current that depends on the intracellular K
++
+(
+Fig. 1D
+).
+We generated and then examined the effect of both loss-of-function (lf) and gf mutations in the
+twk-40
+genomic locus (
+Fig. 2B
+and Materials and Methods). As expected, AVA exhibited a decreased and increased outward leak current in
+twk-40(lf)
+and
+twk-40(gf)
+mutants, respectively (
+Fig. 3A
+, left). Consistent with the effect of changing outward K
++
+leak, AVA’s membrane potential became further depolarized in
+twk-40(lf)
+mutant (~−25 to 0 mV; median, −20 mV), and hyperpolarized in
+twk-40(gf)
+(−40 to −10 mV; median, −35 mV) mutant (
+Fig. 3A
+, right, and fig. S1). An exogenous promoter-driven AVA-specific restoration of TWK-40 led to increased outward leak current (
+Fig. 3A
+, left), hyperpolarization of AVA with reduced dynamic changes (
+Fig. 3A
+, right, and fig. S1). A change into a more hyperpolarized membrane potential range, with a two- to threefold reduction of voltage-time derivative denote AVA’s reduced excitability in these animals. These findings establish an experimental paradigm of a bidirectional, fine-tuned manipulation of AVA’s excitability through its endogenous K
++
+leak.
+Fig. 3.
+AVA’s depolarized membrane potential maintains forward movement.
+(
+A
+) Left: AVA’s leak currents recorded in whole-cell patch clamp with ramping potential from −60 to +90 mV. Black traces and gray areas denote mean currents and full range, respectively.
+n
+(biological replicates) = 5 (wild-type), 8 [
+twk-40(lf)
+], 7 [
+twk-40(lf)
+; AVA-TWK-40], and 7 [
+twk-40(gf)
+]. WT versus
+twk-40(lf)
+,
+P
+= 0.0157; WT versus
+twk-40(lf)
+; AVA-TWK-40,
+P
+= 0.7914; WT versus
+twk-40(gf)
+,
+P
+= 0.0028. Right: AVA’s spontaneous potential in respective genotypes.
+n
+= 7 (wild-type), 9 [
+twk-40(lf)
+], 9 [
+twk-40(lf)
+; AVA-TWK-40], and 13 [
+twk-40(gf)
+] biological replicates. Changing TWK-40’s conductance specifically in AVA led to corresponding changes in outward leak currents. (
+B
+) Left: Representative kymograph of bending angles of animals of denoted genotype. Regions between dashed lines denote the body. Arrows illustrate the forward or backward movements. AVA-specific decrease or increase of TWK-40 led to increased or decreased forward movement, respectively. Right: Quantification of absolute bending angles (
+n
+= 10 biological replicates) and centroid speed during forward (fwd) movement [WT versus AVA-TWK-40(lf),
+P
+= 0.4002].
+n
+(biological replicates) = 10 (wild-type), 9 [AVA-TWK-40(lf)], and 11 [AVA-TWK-40(gf)]. (
+C
+) All-trans retinal (ATR), a cofactor for opsins. Left: Representative kymographs of animals with AVA-specific constitutive optogenetic activation (+ATR). Controls (−ATR) were animals subjected to the same stimulation protocol but without the supply of ATR. Right: Quantification of bending angles [
+n
+= 13 (+ATR) and 10 (−ATR) biological replicates] and centroid speed during forward movement [
+P
+= 0.6665,
+n
+= 14 (+ATR) and 10 (−ATR) biological replicates]. (
+D
+) Left: Representative kymograph of bending angles of animals subjected to AVA-specific optogenetic inhibition. Right: Quantification of absolute bending angles (
+P
+= 0.0032) and centroid speed during forward movement in non-stimulated (−ATR,
+n
+= 28 biological replicates) and stimulated (+ATR,
+n
+= 25 biological replicates) animals. *
+P
+< 0.05, **
+P
+< 0.01, and ***
+P
+< 0.001 by the Mann-Whitney
+U
+tests.
+P
+< 0.05 is considered statistically significant.
+Depolarization of AVA potentiates both backward and forward movements
+To determine the physiological consequence of AVA’s depolarized membrane potential, we applied CRISPR-Cas9 genome editing (
+54
+) and a repurposed ubiquitin-protease system–mediated protein degradation system (
+55
+) to achieve depletion of the endogenous TWK-40 activity specifically in the AVA neurons (Materials and Methods and fig. S2). We address the role of AVA’s depolarized membrane potential, in the context of an intact motor circuit and spontaneous locomotion.
+In the absence of explicit sensory stimuli, a wild-type
+C. elegans
+spontaneously switches between forward and backward movements (
+22
+,
+56
+). Depleting TWK-40 from AVA alone [AVA-TWK-40(lf)] (Materials and Methods) produced overall increased motor activity (movie S1). As expected, depleting TWK-40 from AVA increased the backward locomotion: more frequent transitions into the backward motor state (fig. S3A), with prolonged (fig. S3A) and increased bending (fig. S3A) during backward movement (movie S1). Unexpectedly, depleting TWK-40 from AVA also potentiated forward locomotion: notably increased bending during forward movement (
+Fig. 3B
+and movie S1). These motor phenotypes were similar to
+twk-40(lf)
+genetic mutant animals (fig. S3B and movie S1). An increase in the animal’s overall motor activity upon an increased AVA membrane potential indicates AVA’s positive modulation of the forward motor circuit, instead of a strictly inhibitory role as proposed in the reciprocal inhibitory model.
+Key support for the strictly reciprocal model was the previous observation that optogenetic depolarization of AVA resulted in instantaneous initiation and sustenance of backward movements (
+57
+,
+58
+). In our strain that expresses an activating opsin (Chrimson) specifically in AVA (Materials and Methods), we recapitulated this result. Specifically, in the presence of all-trans retinal (ATR), an obligatory cofactor to activate the opsin in
+C. elegans
+(see Materials and Methods), acute light stimulation of AVA alone led to instantaneous and sustained reversals (fig. S4A and movie S2).
+A potential explanation for the discrepancy between the behavioral outcome of optogenetic and genetic depolarization of the AVA neuron is that the optogenetic stimulation protocol induced strong and acute depolarization that temporarily locks animals into the backward motor state. To address this possibility, we designed a different optogenetic stimulation protocol that more closely mimics genetic fine-tuned and constitutive membrane depolarization (Materials and Methods). Constitutive and moderate optogenetic activation of AVA potentiated forward movement, an effect that was dependent on the presence of the opsin activation cofactor ATR (
+Fig. 3C
+and movie S2).
+Hyperpolarization of AVA decreases both backward and forward movements
+Mirroring our observation with the AVA-specific reduction of K
++
+leak, AVA-specific increase of K
++
+leak [AVA-TWK-40(gf)] (Materials and Methods) exerts a potent inhibitory effect on both forward (
+Fig. 3B
+) and backward (fig. S3A) motor states, a behavior similar to that of
+twk-40(gf)
+mutant animals (fig. S3, A and B, and movie S1).
+AVA-specific TWK-40(gf) and
+twk-40(gf)
+mutants not only exhibit markedly reduced overall motility but also share the characteristics where the backward motor state exhibiting slightly higher sensitivity: Forward movement was markedly reduced (
+Fig. 3B
+and fig. S3B) when backward movement was already fully abolished (fig. S3A).
+These defects could not be attributed, at least not fully to a potential developmental effect of constitutive hyperpolarization. When applying an inhibitory opsin (GtACR)–induced, AVA-specific acute silencing (Materials and Methods), we also observed strong inhibition of both the forward movement (
+Fig. 3D
+and movie S3) and backward movement (fig. S4B).
+Together, these results implicate that AVA’s depolarized membrane potential sustains the animal’s motility, during not only backward but also forward movements.
+AVA unidirectionally regulates AVB during spontaneous forward movement
+AVA has no direct synaptic input to the major motor neuron classes that execute forward movement (
+26
+,
+59
+,
+60
+). To investigate the circuit mechanism that underlies AVA’s potentiation of forward movement, we examined the effect of ablating other interneurons that potentiate the executive motor neurons for forward movement (AVB and PVC) (
+30
+,
+61
+) or partition the forward and backward motor states (RIM) (
+62
+–
+67
+). PVC and RIM neurons are of further interest because they form stereotypic anatomic wiring with both AVA and AVB (fig. S5A) (
+25
+,
+27
+) and thus might facilitate indirect AVA-AVB communication.
+We found that the ablation of AVB (fig. S5B and movie S4), but not of PVC or RIM (fig. S5A and movie S5), notably attenuated the spontaneous forward movement of wild-type animals. Ablating AVB in AVA-TWK-40(lf) mutants also significantly reduced their forward movement (fig. S5C and movie S4).
+These results concurred with the conclusion from previous studies that AVB has a dominant role in potentiating the executive motor neurons for forward movement (
+30
+,
+58
+,
+68
+). These results further indicate a potentially direct potentiation from AVA to AVB. This was unexpected because of the lack of stereotypic anatomic wiring from AVA to AVB (
+25
+,
+27
+).
+To directly assess this possibility, we examined the effect of AVA perturbation on AVB’s membrane potential through in situ electrophysiological recording (
+Fig. 4, C and D
+). When AVA became further depolarized, AVB exhibited a substantial increase in the amplitude of its potential changes [
+Fig. 4C
+; AVA-TWK-40(lf)] and a more depolarized membrane potential (~−50 to −10 mV; median, −32 mV) (
+Fig. 4D
+). Conversely, when AVA became hyperpolarized, AVB’s potential changes were markedly reduced [
+Fig. 4C
+; AVA-TWK-40(gf)], with a modest hyperpolarization of the range of membrane potential (~−75 to −30 mV; median, −58 mV) (
+Fig. 4D
+).
+Fig. 4.
+AVA potentiation of AVB is largely unidirectional.
+(
+A
+) Distribution of the voltage derivative across the AVB membrane potential range and dynamics in respective genotypes. In AVA-specific TWK-40(lf) (
+n
+= 7 biological replicates) and AVA-specific TWK-40(
+gf
+) (
+n
+= 7 biological replicates) mutant animals, AVB exhibited an increased and decreased voltage dynamic range, respectively, compared to wild-type animals (
+n
+= 8 biological replicates). (
+B
+) Cumulative curves of the AVB membrane potential range and dynamics, where the AVB neuron exhibited a more depolarized and hyperpolarized potential range in AVA-specific TWK-40(lf) (
+n
+= 7 biological replicates) and AVA-specific TWK-40(gf) (
+n
+= 7 biological replicates) mutant animals, respectively, compared to wild-type animals (
+n
+= 7 biological replicates). Each AVB neuron was recorded for 60 to 200 s. (
+C
+) Quantification of mean velocity upon optogenetic inhibition of AVB by opsin (GtACR2). Silencing AVB led to decreased forward speed without affecting backward speed [
+n
+= 11 (+ATR) biological replicates] compared to non-stimulated animals [
+n
+= 5 (−ATR) biological replicates] [fwd,
+P
+= 0.0055; backward (bwd),
+P
+= 0.3773]. (
+D
+) Left: AVA calcium activity in immobilized animals upon optogenetic inhibition of AVB by GtACR2. Inactivation of AVB [
+n
+= 28 (+ATR) biological replicates] did not lead to consistent changes in AVA calcium dynamics compared to un-stimulated animals [
+n
+= 19 (−ATR) biological replicates]. Right: AVB calcium activity in immobilized animals upon optogenetic inhibition of AVA. Inactivation of AVA [
+n
+= 23 (+ATR) biological replicates] led to reduced AVB calcium dynamics compared to unstimulated animals [
+n
+= 23 (−ATR) biological replicates]. Lines and shaded bars denote the median and 95% confidence interval, respectively. Insets: The experimental setup. ATR, a cofactor exogenously supplied to activate opsins expressed by transgenic
+C. elegans
+.
+We asked whether this effect is reciprocal. Specifically, whether AVB could also potentiate AVA. First, we examined the effect of AVB inhibition on the backward movement. As expected, optogenetic silencing of AVB reduced the forward locomotion in freely moving animals (
+Fig. 4A
+) and decreased AVB’s calcium activity in immobilized animals (fig. S6A and movie S6). In these animals, the backward movement (
+Fig. 4A
+) and AVA’s activity pattern were similar with or without AVB silencing (
+Fig. 4B
+and movie S6).
+The lack of a notable effect of AVB silencing on AVA contrasted the effect of AVA silencing on AVB (
+Fig. 4D
+). Consistent with our observation that silencing AVA activity alone led to attenuated forward movement (
+Fig. 3
+), AVA-specific optogenetic silencing reduced the calcium activity in not only AVA (fig. S6B and movie S6) but also AVB (
+Fig. 4B
+and movie S6) in immobilized animals.
+These experimental findings reveal an asymmetry between the forward motor circuit and backward motor circuit. Reflected by the relationship between AVA and AVB, during spontaneous locomotion, communication is predominantly from AVA to AVB, instead of a strict reciprocal inhibition.
+A two-timescale model predicts AVA’s regulation of AVB
+Collectively, above results raised the need to examine the relationship between AVA and AVB neuronal activity, which has not been simultaneously analyzed in freely moving animals in previous studies (
+5
+,
+29
+,
+43
+).
+We performed simultaneous calcium imaging of AVA and AVB during spontaneous locomotion (Materials and Methods). For both neurons, the largest activity transients occurred during motor state transitions. As reported (
+29
+,
+30
+,
+43
+,
+63
+,
+69
+–
+72
+), each epoch of AVA transients aligned with a transition event. The initiation of a backward movement coincided with the onset of AVA’s calcium rise, whereas the exit from a backward movement coincided with the onset of AVA’s calcium decay (figs. S7 and S8A, left). During this period, AVB’s calcium change was anticorrelated with that of AVA (fig. S8B, left).
+However, this relationship changed after animals began an exit from the backward movement. While AVA’s activity rapidly decayed to a steady baseline, AVB showed a continued rise as the animal exited the backward movement, followed by a slow decay after the animal entered forward movement (figs. S7 and S8A, left). During subsequent forward movement, AVA maintained its baseline calcium signals (figs. S7 and S8A, left).
+We sought the simplest mathematical model to describe this dynamic relationship. Because the functional communication between these two neurons was largely unidirectional during spontaneous locomotion (
+Fig. 4
+and fig. S6), we considered an input-output model where AVA is treated as the input to AVB. The calcium imaging data (
+Fig. 5A
+and fig. S8A) suggested a model with two timescales: a fast input during backward movements, and a slower one during post-backward movements, to account for two phases of AVB activity dynamics. This led to a simple linear dynamical system model (
+Fig. 5B
+)
+x
+AVB
+=
+a
+·
+x
+AVA
++
+b
+·
+y
+(1)
+dy
+dt
+=
+−
+1
+τ
+·
+y
++
+x
+AVA
+(2)
+where
+x
+AVB
+and
+x
+AVA
+represent the activity of AVB and AVA, respectively; and
+y
+represents the slow input from AVA (
+Eq. 1
+), given by the leaky-integrator in
+Eq. 2
+.
+Fig.5.
+A two-timescale model predicts AVA and AVB’s relationship.
+(
+A
+) Representative calcium traces of co-imaged AVA and AVB during spontaneous movements by a wild-type animal. (
+B
+) Left: AVB activity is modeled as a weighted sum of two copies of AVA’s activity. A fast copy with a proportionality constant
+a
+and a slow copy integrated with a timescale τ and proportionality constant
+b
+. Right: The fast-slow (F-S) model is a better fit for AVB’s post-backward movement activity compared to a model without the slow timescale. (
+C
+) Example calcium traces of AVA and AVB from AVA-specific TWK-40(lf) mutant animals show that the fast-slow model also explains AVB’s activity when AVA was further depolarized. (
+D
+) Left: Model
+R
+2
+values comparing the fast-slow model with the fast only models, for both wild-type and AVA-specific TWK-40(lf) animals. Removing the slow timescale input decreases model performance in both cases. Right: Comparison of the estimated value for parameters for
+a
+,
+b
+, and τ between wild-type and AVA-specific TWK-40(lf) traces. Biologically, the two-timescale model suggests a fast inhibition (negative
+a
+) and a slow excitation (positive
+b
+) from AVA to AVB.
+n
+= (wild-type) 11 epochs of backward movement from 11 biological replicates and [AVA-specific TWK-40(lf)] 10 epochs of backward movement from biological replicates. Box-whisker plot displayed the 90th/10th and 75th/25th percentiles, respectively. ***
+P
+< 0.001 by the Mann-Whitney
+U
+tests.
+P
+< 0.05 is considered statistically significant. (
+E
+) Sample traces of the fast-slow model prediction of the velocity of (left) wild-type animals and (right) AVA-specific TWK-40(lf) mutant animals from AVA calcium activity. Parameters: Wild-type:
+a
+= −0.51,
+b
+= 0.02, and τ = 3.5s; AVA-specific TWK-40(gf):
+a
+= −0.38,
+b
+= 0.004, and τ = 16.6s. (
+F
+) Representative calcium activity traces of co-imaged AVA and AVB by a freely moving AVA-specific TWK-40(gf) mutant animal. Both neurons showed strong reduction in activity.
+This model has three free parameters: the strength of the fast, instantaneous input,
+a
+, the strength of the slow input,
+b
+, and the timescale for the slow input, τ. We used the framework of linear systems identification to fit these parameters to our calcium imaging data (
+Fig. 5C
+and Materials and Methods). The best-fit parameters set the strength of the fast input
+a
+to a negative value and the slow input
+b
+to a positive value with the timescale in the order of a minute (
+Fig. 5D
+, wild-type).
+Biologically, this could be interpreted as the forward motor circuit receiving inputs from AVA at two timescales with opposite polarities: a fast inhibitory input and a slow excitatory input. In other words, AVA maintains a constitutive and excitatory input on AVB, in addition to AVB receiving a strong, but activation-mediated inhibitory input from AVA during transitions into the backward movement. Without the slow excitatory input, the one-timescale model cannot predict the gradual decay of AVB activity after a backward movement (
+Fig. 5, B and D
+, wild-type). With different parameter values, this two-timescale model could also predict the animal’s spontaneous velocity from AVA’s activity (
+Fig. 5E
+, wild-type), thus capturing the continuous modulation of behavior during spontaneous state transitions.
+Together, our experimental data and data-driven modeling lead to a revised model, where AVA functions as a master regulator of spontaneous locomotion by exerting bidirectional regulation of AVB activity at different timescales. A transient but strong depolarization of AVA leads to phasic inhibition during backward movements, while a persistent but weak depolarization of AVA provides tonic excitation to AVB that promotes forward movement between backward movements.
+Depolarized membrane potential is necessary for AVA to function as the master regulator
+This model led us to ask whether AVA’s depolarized membrane potential is required for this master regulator role. We co-imaged AVA and AVB calcium activity in freely behaving AVA-TWK-40(lf) and AVA-TWK-40(gf) mutants and examined the effect of altered AVA membrane potential on their relationships.
+We found that, with a further membrane depolarization, AVA’s time-dependent relationships with AVB neuron and animal’s spontaneous velocity are maintained [fig. S8, A to C, AVA-TWK-40(lf);
+Fig. 5B
+, AVA-TWK-40(lf)]. The two-timescale model was sufficient to predict AVB calcium activity [
+Fig. 5, C and D
+, AVA-TWK-40(lf)] and velocity [
+Fig. 5E
+, AVA-TWK-40(lf)] from AVA’s calcium signals. Parameters for both inputs showed a trend of further increase but with a slightly higher value for the fast input
+a
+[
+Fig. 5D
+, AVA-TWK-40(lf)].
+Biologically, this suggests that, with further depolarization, AVA maintains and might strengthen both fast-inhibitory and slow-excitatory inputs to AVB. This is consistent with the behavior, a potentiation of both forward and backward movement, of these animals.
+In AVA-TWK-40(gf) mutants, the relationship between AVA and AVB activity changed completely such that a model was no longer applicable [fig. S8C, AVA-TWK-40(gf)]. Reflecting the attenuation of locomotion upon hyperpolarization of AVA membrane potential, both neurons exhibited markedly reduced calcium signals with little dynamical changes [
+Fig. 5F
+and figs. S7 and S8A, AVA-TWK-40(gf)]. These results suggest that the two-timescale model for AVA’s master regulator role is contingent on its depolarized membrane potential.
+AVA’s tonic excitation of the forward motor state requires cholinergic transmission
+AVA’s constitutive input onto the forward circuit, which depends on a maintained depolarized membrane potential, implicates its tonic activation. We further evaluated this possibility with a dosage-dependent chemogenetic hyperpolarization by a histamine-gated chloride channel (HisCl) (
+36
+). We reproduced results from a previous study: Exposing animals that ectopically express HisCl in AVA led to a histamine-dependent reduction of backward speed, as well as spontaneous forward speed (
+36
+). We further noted that the backward motor circuit exhibited higher sensitivity to histamine: At 2 mM histamine, while the backward movement was fully blocked (
+Fig. 6A
+, left), the forward movement was only modestly reduced (
+Fig. 6A
+, middle). With further increased histamine concentration, the forward movement progressively declined (
+Fig. 6A
+, middle). An implication of such behavioral response is that, with sequential membrane hyperpolarization, AVA rapidly loses its ability of transient activation (which underlies its phasic inhibitory input onto the forward circuit) but gradually loses its constitutive activation (which underlies its excitatory input onto the forward circuit), thus separating tonic excitation and phasic inhibition of the forward movement.
+Fig. 6.
+Tonic acetylcholine release from AVA potentiates forward movement.
+(
+A
+) Left: Backward movement probability upon AVA’s inhibition by HisCl at different histamine concentrations. Histamine impaired spontaneous backward movement in a dosage-dependent manner.
+n
+= 15 biological replicates at each concentration. Middle: Centroid forward speed upon AVA’s inhibition by HisCl at different histamine concentrations (0 mM versus 1 mM,
+P
+= 0.0117; 1 mM versus 2 mM,
+P
+= 0.0238; 2 mM versus 5 mM,
+P
+= 0.0246; 5 mM versus 10 mM,
+P
+= 04862). The forward speed exhibited a gradual reduction upon increased histamine.
+n
+= 15 biological replicates per concentration. Right: Mean AVA-SNB-1::pHluorin signals upon AVA inhibition by HisCl at different histamine concentrations (0 mM versus 1 mM,
+P
+= 0.7748; 1 mM versus 2 mM,
+P
+= 0.0209; 2 mM versus 5 mM,
+P
+= 0.5668; 5 mM versus 10 mM,
+P
+= 0.0037). While the spontaneous backward movement was already fully blocked at 2 mM histamine, fluorescent signals persisted, decreasing with increased histamine.
+n
+= 30 (0 mM), 29 (1 mM), 30 (2 mM), 31 (5 mM), and 28 (10 mM) biological replicates. Shaded areas denote histamine’s concentration range where spontaneous backward movement was abolished. Quantification shows median and 95% confidence interval. (
+B
+) Left: Absolute bending angles and (right) centroid speed during forward movement with AVA’s synaptic release blocked (AVA-TeTx) or cholinergic transmission blocked (AVA-
+cha-1
+RNAi). Forward movements were reduced by AVA-specific TeTx and AVA-
+cha-1
+RNAi. Bending angle:
+n
+(biological replicates) = 23 (wild-type), 17 (AVA-specific TeTx), and 13 (AVA-
+cha-1
+RNAi); speed:
+n
+(biological replicates) = 22 (wild-type), 22 (AVA-specific TeTx), and 13 (AVA-
+cha-1
+RNAi). (
+C
+) Left: Representative calcium traces of AVA and AVB in moving animals. Right: Mean cross-correlations of AVA and AVB activity in wild-type and AVA-specific TeTx animals. Negative correlation was reduced in AVA-specific TeTx animals.
+n
+(biological replicates) = 32 epochs from 10 AVA-specific TeTx animals and 21 epochs from 11 wild-type animals. *
+P
+< 0.05, **
+P
+< 0.01, and ***
+P
+< 0.001 by the Mann-Whitney
+U
+tests.
+P
+< 0.05 is considered statistically significant.
+Consistent with AVA being tonically excitatory, synaptic vesicle exocytosis from AVA, visualized by SNB-1::pHluorin, was reduced but remained at 2 mM histamine when the phasic inhibition was fully blocked (
+Fig. 6, A, right, and B
+). In alignment with SNB-1::pHluorin signal level reflecting AVA activity, depolarization and hyperpolarization of AVA by
+twk-40(lf)
+and
+twk-40(gf)
+genetic mutations, respectively, led to a respective increase and decrease of SNB-1::pHluorin signal from the AVA neuron (fig. S6A).
+Last, we asked whether AVA’s constitutive inputs to the forward motor circuit requires acetylcholine, as AVA not only functions primarily as a cholinergic neuron but also synthesizes many neuropeptides (
+73
+–
+75
+). Tetanus toxin (TeTx) potently blocked synaptic vesicle–mediated transmission in AVA (fig. S9A), but much less so with dense core vesicle–mediated transmission (fig. S9, B to D). AVA-specific expression of TeTx (AVA-TeTx) led to a substantial decrease in spontaneous forward movement, in both wild-type animals (
+Fig. 6B
+, AVA-TeTx) and
+twk-40(lf)
+mutants (fig. S10B, AVA-TeTx). AVA-TeTx also fully blocked AVA-mediated optogenetic potentiation of forward movement (fig. S10C).
+These results indicate that AVA’s potentiation of the forward motor circuit might primarily depend on synaptic vesicle–mediated transmission. This was corroborated by the effect of reducing vesicular loading of acetylcholine through AVA-specific RNA interference (RNAi) (
+76
+) against the acetyltransferase CHA-1 (Materials and Methods) (
+77
+). AVA-
+cha-1
+RNAi led to a characteristically similar but more moderate reduction of forward movement when compared to AVA-TeTx (
+Fig. 6B
+).
+Consistent with its behavioral effect, AVA-TeTx disrupted relationships between the AVA and AVB activity (
+Fig. 6C
+and fig. S10D). In AVA-TeTx animals, AVA continued to exhibit calcium transients (
+Fig. 6C
+). However, the correlation between AVA and AVB calcium dynamics, during both the positive and negative phases, was attenuated (
+Fig. 6, C and D
+).
+In summary, we conclude that the tonically active premotor interneuron AVA functions as a master neuron of the
+C. elegans
+motor circuit. During spontaneous locomotion, AVA contributes to both constitutive activation and transient inhibition of the forward motor circuit, which requires cholinergic signaling. Together with AVA’s dual regulation of the backward motor circuit (
+28
+,
+29
+,
+66
+), these results lead to an elegant mechanistic model for a spontaneously continuous motility that consists of dynamic transitions between two mutually opposing motor states (
+Fig. 7
+and Discussion).
+Fig. 7.
+A master neuron configuration for continuous modulation and transitions between directional movements.
+AVA functions as a master regulator to coordinate the forward and backward movement and their smooth transitions. This modulatory neuron depends on cyclic changes of AVA activity. (
+Left
+) At its lower activity state, AVA actively shunts the backward motor neurons A by gap junction coupling (
+29
+). At this state, AVA’s tonic potentiation of AVB, which activates the forward motor neurons B (
+30
+,
+68
+), dominates. This ensures sustained forward movement. (
+Right
+) At its high activity state, AVA phasically activates the backward motor neurons A by chemical synaptic transmission (
+29
+). At this state, AVA exerts phasic inhibition of AVB, which initiates and sustains the backward movement. Arrows between the low and high AVA states denote continuous modulations of AVA activity during transitions between the mutually exclusive forward and backward motor states. Dashed and solid lines denote extrasynaptic (indirect) and synaptic connectivity, respectively; thickness denotes communication strength.
+DISCUSSION
+Locomotion is composed of continuous modulation of different behavioral motifs and transitions between them (
+1
+–
+11
+). Here, we address how a neural system enables continuous modulation and transition. Below, we summarize a model, where a tonically active premotor interneuron serves this role through a master-slave configuration. We further discuss several potential general biological and evolutionary implications offered by this model.
+A master-slave model for continuous motor behaviors
+C. elegans
+intrinsically switches between the forward and backward motor states (
+22
+). Previously, we found that AVA exerts dual modulation of the backward circuit via its mixed chemical-electrical synaptic configuration with executor motor neurons (A) for backward movement (
+28
+,
+29
+,
+66
+): At “rest,” AVA reduces spontaneous backward movement through gap junctional-mediated shunting of the A class motor neurons but initiates backward movement by activating the same motor neurons with chemical synapses when “activated” (
+Fig. 7
+, middle). Our finding that AVA also exerts dual modulation of the forward circuit at different timescales (
+Fig. 7
+, side panels) reveals the other side of the same coin. Together, it offers a parsimonious circuit solution: overall motor control by a single neuron.
+In this model, AVA is tonically active but switches between a high and low activity state. At its high state, its chemical synapse simultaneously excites the backward circuit and inhibits the forward circuit, which leads to backward movement. As AVA’s activity decreases, its chemical synapse’s sustained excitation of the forward circuit and its gap junction’s sustained inhibition of the backward circuit prevail, leading to the exit of backward movement and transition into the forward movement. This model makes AVA the master neuron that continuously regulates two opposing motor motifs, mediating their intrinsic transitions without risking losing overall motility.
+Asymmetries between the forward and backward motor states
+This configuration breaks the assumed structural and functional symmetries between the forward and backward motor circuits. Two inherent asymmetries—the backward circuit is innately more potent but is wired to become less frequently activated than the forward circuit—explain several long-noted behavioral characteristics. During spontaneous locomotion,
+C. elegans
+preferentially sustains forward movement (
+22
+). The shorter backward movement, however, exhibits greater vigor than the forward movement (
+78
+). Backward movement is more frequently evoked and prolonged when animals encounter repulsive stimuli or attempt to escape (
+22
+,
+78
+,
+79
+). Evoked backward movement potently modifies the forward state that follows. A prolonged backward movement is more likely followed by a turn, a form of forward movement that steers away from the original trajectory, whereas a shorter backward movement is more likely followed by forward movement in a similar trajectory (
+22
+,
+56
+,
+80
+,
+81
+), which resembles most spontaneous backward movement. Evoked backward movement further increases the forward speed, potentiating the forward state for up to several minutes (
+34
+,
+35
+).
+Backward movement thus represents an intrinsically more robust but actively suppressed motor state. Its activation modifies the subsequent forward state.
+Anatomic wiring does not fully account for AVA’s functional connectivity
+AVA’s function during spontaneous locomotion only partially correlates with its anatomical wiring (
+25
+,
+27
+,
+59
+). Anatomically, AVA makes extensive chemical and electrical wiring with motor neurons that execute backward movement (
+25
+,
+27
+,
+59
+). This synaptic connectivity correlates with AVA’s dual regulation of the backward circuit (
+28
+,
+29
+,
+33
+,
+41
+,
+61
+,
+66
+,
+67
+).
+In contrast, AVA’s dual modulation of the forward circuit cannot be predicted by its anatomical wiring. AVA tonically activates AVB, which contributes to not only sustained forward movement but also inherently brief backward movement. AVA also phasically inhibits AVB. However, AVA does not have direct synaptic inputs to AVB, whereas AVB makes direct inputs to AVA (
+Fig. 1A
+) (
+25
+,
+27
+).
+AVA’s tonic excitation requires its depolarized membrane potential and its cholinergic synaptic transmission. Our results suggest a mechanism in which its depolarized membrane allows constitutive acetylcholine release as a facilitation of extra-synaptic accumulation and potentiation of the forward motor circuit. In the developing larvae, extra-synaptic cholinergic transmission from premotor interneurons provides the tonic potentiation of ventral muscles that functionally substitute for the entire missing ventral subcircuit (
+82
+). AVA-mediated phasic inhibition of AVB also requires acetylcholine release; however, the precise mechanism remains unknown.
+Our study joins an expanding report on the lack of a straight-forward correlation between anatomic wiring, population neuronal activity, and behaviors, across systems (
+83
+–
+87
+). Significant inconsistency between functional and anatomical neuronal connectivity implies the necessity of studying other forms of functional communication: ephaptic coupling, extrasynaptic transmission, and modulatory signaling (
+88
+–
+91
+).
+However, a further and more interesting intuition from our study is that, in a small neural system, with limited numbers of anatomic wiring, the form of “invisible” wiring might be preferentially used for spontaneous behavioral states, whereas anatomic wirings, such as AVB to AVA, are built mainly for contextual recruitment for decision-making or evoked behaviors. Essentially, the functional-anatomic connectivity discrepancy might reflect the extent of economical wiring, as the size and cellular complexity of neural systems evolve.
+A parsimonious role of the backward motor circuit: An evolutionary perspective
+Behaviorally,
+C. elegans
+spends most of its time in the forward state. It is thus intriguing that AVA, the regulator of overall motor control, is the premotor interneuron that is anatomically wired to gate motor neurons that execute the backward movement.
+We posit that a motor circuit might be built first to generate robust escape responses, which are crucial for survival. The escape circuit is then actively suppressed and repurposed for forward locomotion. In other words, the motor system finds an economical solution by using the same tonic drive to shunt backward and potentiate forward locomotion. Its tonic excitatory input to the forward circuit, an integrated history of its activity, might further serve as the short-term memory of the internal states and environment.
+Dynamic regulation of a non-spiking neural network by the membrane potential
+With a few exceptions (
+92
+,
+93
+), the
+C. elegans
+neural system consists primarily of non-spiking neurons (
+23
+,
+39
+,
+42
+,
+44
+,
+83
+,
+84
+,
+94
+,
+95
+). This neural network generates behaviors that are stable, flexible, and adaptive, as those that function through regenerative potentials.
+AVA’s functional model suggests that precise and dynamic regulation of the activity of non-spiking neurons and a network consisted primarily by non-spiking neurons can be achieved through the precise modulation of individual membrane potentials.
+When a neuron functions through graded potential changes, it is particularly suited for a K2P conductance to regulate its activity range and form of responses to stimuli (
+85
+,
+86
+).
+C. elegans
+exceptional expansion of K
++
+channels, particularly the 47 K
++
+leak channels (
+52
+,
+86
+,
+87
+,
+96
+), is consistent with this role. With 47 K2P genes expressed by overlapping subgroups of 300 neurons (
+74
+), these channels could define the unique computational properties of each neuron.
+Alternative mechanisms and unsolved questions: Future studies
+Our study has focused exclusively on spontaneous locomotion. In particular, our model is intended to represent the simplest possible dynamical system that explains AVA-AVB calcium recordings during spontaneous locomotion. All experimental data in this study are consistent with our model. However, this does not exclude more complex and alternative models or mechanisms.
+For example, reciprocal feedback between AVA and AVB via proprioception, indirect communications between AVA and AVB via other neurons (such as RIM and PVC), or independent modulation of AVA and/or AVB activity via upstream neurons (such as the sensory neurons) (
+23
+,
+64
+) could be involved, especially during goal-oriented navigation and escape responses. External stimuli and adaptive behaviors change not only the ratio but also the form of motor state transition by a probabilistic addition of a turning module (
+56
+,
+97
+), a feature that we did not attempt to model.
+Regardless of the involvement of other neurons, however, the observation that a small hyperpolarization of AVA membrane potential paralyzes overall motor activity indicates that their effects involve modulation of AVA’s membrane potential.
+We revealed the necessity of alternation between AVA’s membrane potentials to sustain locomotion with spontaneous motor state transitions, without addressing how such alternation takes place. We speculate that AVA’s membrane potential might change intrinsically and be modified by inputs from other neurons (
+23
+,
+64
+).
+We revealed the importance of cholinergic transmission from AVA, without knowing the identity of genes that underlie its effects on AVB. This is not a trivial task. The
+C. elegans
+nervous system has a large number of cholinergic receptors that belong to multiple classes and exhibit substantial functional redundancy (
+98
+). Similar cholinergic receptor complexes are reiteratively applied, present in interneurons, excitatory motor neurons, inhibitory motor neurons, and body wall muscles (
+74
+,
+98
+). Together, they raise considerable technical challenges toward pinpointing a cell-specific role. Future studies would be required to address these unsolved issues.
+MATERIAL AND METHODS
+Constructs and strains
+A full list of constructs and stains used in this study is shown in Table 2. Constructs and strains are available at the Addgene, the Caenorhabditis Genetics Center, or upon request. All
+C. elegans
+strains were cultured on the standard Nematode Growth Medium (NGM) plates seeded with the standardized bacterial species
+Escherichia coli
+(OP50) and maintained at 22.5°C unless specified. The wild-type animal refers to the Bristol N2 strain or control animals as specified in the figure legends. The fourth larval (L4) stage hermaphrodites were used for all experiments unless specified otherwise.
+Isolation, cloning, and generation of
+twk-40
+mutants and AVA-specific TWK-40 alleles
+The first
+twk-40 lf
+allele,
+hp733
+, was isolated in a genetic screen on the basis of altered motor behavior.
+hp733
+was isolated with exaggerated amplitude in both forward and reverse movement as well as a tendency to form a backward coil.
+hp733
+mutation was mapped to the left arm of chromosome III past the SNP marker W06F12 at ~−21. Whole-genome sequencing revealed a single missense mutation TWK-40(E36K) in
+hp733
+animals. Fosmids and plasmids containing the wild-type
+twk-40
+coding sequence fully rescued the motor phenotypes of
+hp733
+. We subsequently generated another
+twk-40
+lf allele,
+hp834
+, using CRISPR gene editing.
+hp834
+mutant allele harbors a 7–base pair (bp) deletion in between exon 1 and the following intron [base 3378-3384 (GTTCGAG) of T28A8.1b], resulting in a frameshift mutation of
+twk-40
+coding sequence that is predicted to translate only the first 12 amino acids of the channel.
+Twk-40(hp834)
+mutant animals displayed motor behaviors of similar characteristics but more severe than that of
+twk-40(hp733)
+mutants.
+hp834
+was the canonical
+lf
+allele used for all experiments shown in this study.
+gf allele,
+bln336(L181N)
+was engineered by CRISPR-Cas9 editing by mutating the 4298-4299 base of T28A8.1b from CT to AA (
+52
+). Cell-specific TWK-40 degradation was generated by a repurposed ZIF E3 ligase degradation system (
+55
+).
+bln282 (twk-40::TagRFP::ZF)
+was generated by CRISPR-Cas9 genome editing to insert an C-terminal TWK-40 in frame TagRFP::ZF fusion at base pair 5785 at T28A8.1b (
+87
+).
+AVA-specific TWK-40(lf) animals were generated by expressing the ZIF E3 ligase specifically in AVA using the
+Prig-3
+or
+Pnmr-1
+/
+Prig-3
+combination (
+Prig-3 FRT zif-1 sl2 eBFP FRT; Pnmr-1-FLP
+) via the Flp (Flippase)-mediated site-directed recombination system in
+bln282 (twk-40::Tag RFP::ZF)
+.
+AVA-specific TWK-40(gf) animals were generated by expressing TWK-40(L181N)::GFP specifically in AVA by P
+flp-18
+/P
+twk-40
+combination (
+Pflp-18-LoxP stop LoxP twk-40(gf)::GFP; Ptwk-40-cre
+) via the Cre-LoxP recombination system in the N2 background, or P
+rig-3
+/P
+nmr-1
+combination [
+Prig-3-FRT stop FRT twk-40(gf)::GFP; Pnmr-1-FLP
+] via the FRT-FLP recombination system or [
+Pflp-18-LoxP stop LoxP twk-40(gf)::GFP; Ptwk-40-cre
+] via the Cre-Lox recombination system in N2 background. AVA-specific TWK-40 rescue was generated by expressing wild-type TWK-40(WT)::GFP specific in AVA by
+Prig-3
+/P
+nmr-1
+combination (
+Prig-3 FRT Stop FRT twk-40::GFP; Pnmr-1-FLP
+) via the FRT-FLP recombination system in
+twk-40(lf)
+background.
+Spontaneous locomotion analyses
+A single L4 animal was collected and transferred to an NGM plate with a thin layer of evenly spread OP50. After 30 s, it was recorded on a tracking microscope using an in-house developed ImageJ plugin (
+29
+)
+.
+A 3-min movie for each animal was recorded at 10 frames per second (fps). At least 10 animals for each genotype were recorded on the same day using the same condition. Movies were analyzed as previously described (
+29
+,
+67
+). Briefly, the animal contour was divided into 33 segments by its centerline along the longitudinal axis. Bending angel in radian was calculated between adjacent segments for segments 5-32. Velocity was calculated by the displacement of the centroid.
+Electrophysiology
+Exogenous TWK-40 channel whole-cell patch recording in HEK293 cells
+HEK293 cells were cultured in the Dulbecco’s modified Eagle’s medium with 10% fetal bovine serum and 1% double antibody at 5% CO
+2
+and 37°C. TWK-40 expression construct was generated by reverse transcription polymerase chain reaction (PCR) amplification of the
+twk-40b
+cDNA isoform and inserting into the BstX I and Nhe I sites of the pCDNA3.1 vector. After 24 hours of transfection of the plasmid with the liposome ExFect2000 (Vazyme, China), cells were patched using 4- to 6-megaohm resistant borosilicate pipettes (1B100F-4, World Precision Instruments, USA). Pipettes were pulled by micropipette puller P-1000 (Sutter, USA), and fire-polished by microforge MF-830 (Narishige, Japan). Membrane currents and current-voltage relation (
+I
+-
+V
+) curve were recorded and plotted in the whole-cell configuration by pulse software with the EPC-9 amplifier (HEKA, Germany) and processed with the Igor Pro (WaveMetrics, USA) and Clampfit 10 software (Axon Instruments, Molecular Devices, USA).
+I
+-
+V
+curve was recorded at a holding potential from −80 to 80 mV with 20-mV step voltages. Data were digitized at 10 to 20 kHz and filtered at 2.6 kHz. The pipette solution contained 140 mM KCl, 1 mM MgCl
+2
+, 10 mM EGTA, 10 mM Hepes 10, and 4 mM Na
+2
+ATP (pH 7.3) with KOH of ~300 mOsm. The bath solution consisted of 140 mM NaCl, 3.6 mM KCl, 2.5 mM CaCl
+2
+, and 1 mM MgCl
+2
+(pH 7.3) with NaOH of ~310 mOsm. For low intracellular K
++
+recording, the pipette solution contained 14 mM KCl 14, 126 mM CsCl, 1 mM MgCl
+2
+, 10 mM EGTA, 10 mM Hepes, and 4 mM Na
+2
+ATP (pH 7.3) with CsOH of ~300 mOsm. Chemicals were obtained from Sigma-Aldrich unless stated otherwise. Experiments were performed at room temperatures (20° to 22°C).
+In situ whole-cell patch clamp of C. elegans neurons AVA and AVB
+Premotor interneuron whole-cell patch clamp recording was performed using a strain with fluorescent labeling of AVA and AVB neurons, a configuration as previously described (
+29
+,
+38
+), which was modified from previous reports (
+42
+,
+47
+,
+99
+).
+Briefly, 1- or 2-day-old hermaphrodite adults were glued (Histoacryl Blue, Braun) to a sylgard-coated cover glass covered with bath solution (Sylgard 184, Dowcorning) under a stereoscopic microscope (M50, Leica). After clearing the viscera by suction through a glass pipette, the cuticle flap was turned and gently glued down using WORMGLU (GluStitch Inc.) to expose the soma of AVA and AVB neurons. Neurons were patched using ~20-megaohm resistant borosilicate pipettes (1B100F-4; World Precision Instruments). Pipettes were pulled by micropipette puller P-1000 (Sutter) and fire-polished by microforge MF-830 (Narishige). Membrane currents and potentials were collected in the whole-cell configuration by pulse software with an EPC9 amplifier (HEKA, Germany). Data were digitized at 10 kHz and filtered at 2.6 kHz. The recording pipette solution consisted of 25 mM KCl, 115 mM K-gluconate, 0.1 mM CaCl
+2
+, 5 mM MgCl
+2
+, 1 mM 1,2-bis(2-aminophenoxy)ethane-
+N
+,
+N
+,
+N
+′,
+N
+′-tetraacetic acid, 10 mM Hepes, 5 mM Na
+2
+ATP, 0.5 mM Na
+2
+GTP, 0.5 mM cyclic adenosine 3′,5′-monophosphate (cAMP), and 0.5 mM cyclic guanosine 3′,5′-monophosphate (cGMP) (pH 7.2) with KOH of ~320 mOsm. cGMP and cAMP were included to increase the longevity of the preparation (
+38
+,
+100
+). The bath solution consisted of 5 mM KCl, 150 mM NaCl, 5 mM CaCl
+2
+, 1 mM MgCl
+2
+, 10 mM glucose, 5 mM sucrose, and 15 mM Hepes (pH 7.3) with NaOH of ~330 mOsm. The K
++
+current was recorded at a holding potential from −60 mV and followed a ramp voltage stimulation from −90 to 90 mV. Experiments were performed at room temperatures (20° to 22°C). Each recording lasted 60 to 200 s, with >90% at 200 s.
+Membrane voltage recording was performed at 0 pA for at least 30 s before data collection. Healthy preparations were selected on the basis of the following criteria: whole-cell capacitance (1 to 1.5 pF) and steady-state leak current (−20 to 0 pA at −60 mV). As in our previous recordings, cAMP and cGMP were included in the pipette solution to maintain the activity and longevity of the preparation. Short traces (up to 200 s) without obvious rundown or resealing were used for analyses.
+Cell ablation by miniSOG
+Strains expressing miniSOG (
+101
+) in AVB (and other neurons) or RIM (specifically) were used for ablation by exposing the respective L2 larvae to blue light-emitting diode (LED) light as described in previous studies (
+28
+,
+67
+,
+82
+). Briefly, cells expressing miniSOG were co-labeled with red fluorescent protein (RFP). Animals were treated with 30- to 40-min blue light using a homemade LED device and allowed to recover for 1 day. L4 animals were recorded for behavioral analyses. For PVC ablation, L2 transgenic animals that express miniSOG in multiple premotor interneurons, including but not exclusive to PVC, were anesthetized by sodium azide and mounted onto a 2% agarose pad with a coverslip. The tail region, where PVC resides, was exposed to a blue laser for 30 min, and animals were allowed to recover for 2 days before recording at the L4 stage. Only healthy animals were recorded and analyzed. The ablation efficiency and specificity (for PVC) for all experiments were confirmed by the disappearance or distortion of the soma fluorescence and fragmentation of neurites.
+Optogenetic stimulation for behavioral and calcium imaging
+Strains
+Strains that express AVA-specific Chrimson or GtACR2 strains were used for AVA-specific stimulation and inhibition, respectively. The specificity of AVA-specific GtACR2 was verified by AVA ablation using
+Pnmr-1
+-miniSOG. The AVA-ablated animal no longer exhibited light-induced inhibition during forward and backward movement.
+C. elegans
+does not produce ATR, an obligatory cofactor for opsin function. Opsins expressed by transgenic
+C. elegans
+require exogenously supplied ATR. Transgenic animals were cultured on ATR plates in darkness for two generations. The second-generation L4-stage animals were analyzed for behavior and calcium activities. Controls were animals of the same genotypes, cultured, and treated similarly, except with no ATR included on culture plates.
+Behaviors upon stimulation
+An individual L4-stage animal was transferred to an imaging plate with a thin layer of evenly spread OP50. LED light stimulation was applied to inhibit or activate AVA, by activating GtACR2 or Chrimson, respectively as below.
+GtACR2-mediated AVA inactivation
+Animals were cultured on with or without ATR-supplemented NGM plates for 2 hours. During stimulation, L4-stage animals were exposed to 470-nm LED light (Thorlabs) at low intensity [4 of 63 arbitrary units (A.U.)] with a 10-s pre-stimulation, 10-s stimulation, and 10-s post-stimulation cycle.
+GtACR2-mediated AVB inactivation
+L4-stage AVB-specific GtACR2 animals were incubated on plates with or without −ATR or +ATR (1 ml of OP50/5 μl of 50 μM ATR) plates for 2 hours and then subjected to behavior recording with a constant 470-nm LED light (Thorlabs) exposure at low intensity (4 of 63 A.U.) for 800 s.
+Chrimson-mediated AVA activation
+Animals were cultured on with or without ATR-supplemented NGM plates for at least 1 day for behavior recording. During stimulation, L4-stage animals were exposed to 574-nm LED light (Thorlabs) at low intensity (63 of 63 A.U.) with a 10-s pre-stimulation, 10-s stimulation, and 10-s post-stimulation cycle.
+Constitutive, moderate Chrimson-mediated AVA activation
+With or without ATR-supplemented NGM, plates were seeded with regular OP50 supplemented with ATR (1 ml of OP50/0.5 μl of 50 μm ATR). Animals were cultured on plates for at least 1 day for behavior recording. Before recording, (L4 stage) AVA were constitutively activated by 544-nm green LED light for up to 5 min (Zeiss V16), followed by recording at 595-nm LED (Thorlabs) at low intensity (4 of 63 A.U.).
+Simultaneous calcium recording and optogenetic stimulation
+The experiment process was previously described (
+82
+). Briefly, L4-stage animals carrying AVA and AVB calcium reporters and either AVA-specific GtACR2 or AVB-specific GtACR2 were incubated on −ATR or +ATR plates for 2 hours. They were immobilized on dry agarose pads in M9 buffer and subjected to full spectrum light illumination for simultaneous calcium imaging and GtACR2-mediated inhibition at 10 fps or 20 fps for 6 to 20 s.
+Behavioral analyses upon chemogenetic manipulation
+Animals of the L4 stage carrying an integrated chromosomal array for
+Prig-3
+HisCl::mCherry (
+36
+) were incubated on 0, 2, 5, or 10 mM histamine plates with OP50 for 1 hour before being individually placed on the behavioral imaging plates for spontaneous behavior recording and quantification.
+Immunofluorescent staining and imaging
+Mixed stages of animals with endogenously tagged
+twk-40
+(
+twk-40
+::TagRFP::ZF), with or without the plasma marker (
+Prgef
+-1-GPI::YFP), and animals with an integrated
+twk-40::GFP
+fosmid were fixed in 2% paraformaldehyde at 4°C for 1 hour and processed as previously described (
+102
+). Primary antibodies against TagRFP (Thermo Fisher Scientific,
+R10367
+, rabbit) and/or green fluorescent protein (GFP) (Roche, mouse) were used at 1:500 and 1:200 dilution, respectively. Secondary antibodies of goat–anti-rabbit (Alexa Fluor 488) and/or goat anti-mouse (Alexa Fluor 594) were used at 1:5000 dilution. L4 larvae and adults were imaged with a Nikon spinning disc confocal microscope with a 63× objective and reconstructed by maximum intensity projection. Single layers of acquired images from animals co-expressing TWK-40::TagRFP::ZF and GPI::YFP were examined for subcellular colocalization using an ImageJ plugin (JACoP).
+Live fluorescence microscopy of GFP and pHluorin
+Live L4 larvae were immobilized on dry agarose pads in a small drop of M9 buffer. Fluorescence signals were captured using Nikon Eclipse 90i confocal microscope and Nikon Eclipse T12 with Yokogawa CSU-X1 spinning disc field scanning confocal system. For pHluorin imaging, all images were acquired within 10 min after dry pad preparation. All fluorescent images were analyzed by the in-house developed puncta analyzer (
+103
+) or ImageJ intensity analyzer.
+Calcium imaging of premotor interneurons in moving animals
+For AVA [left (L) or right (R)] and AVB (L or R) co-imaging, an individual transgenic L3-stage animal expressing the GCaMP6s calcium sensor in AVA and AVB (
+hpIs819
+) was mounted on a 2% NGM gel pad with ~1 μl of M9 buffer so that it could move under a coverslip. Mounted animals were allowed to recover for 3 min on the pad before recording. The recording was performed using a 20× objective on Nikon spinning disc confocal microscope. Animals were centered in the field of view by manual tracking. AVB soma was manually kept in focus at the RFP channel during recording. The initiation of each epoch of backward to forward locomotion transition was defined by the alignment between velocity and AVA-AVB calcium activity (GCaMP6s intensity) using in-house–developed MATLAB scripts (
+82
+).
+Cell-specific perturbation of neurotransmission
+AVA-specific TeTx was achieved by the Cre-LoxP recombination system. AVA-specific
+cha-1
+RNAi was generated using the combination of P
+flp-18
+and P
+twk-40
+promoter combination to drive the sense and antisense strands of
+cha-1
+genomic DNA, respectively. The following primers and templates were used: (A) P
+flp-18
+: OZM6199 (GATGGATACGCTAACAACTTGG (OZM6199) and OZM6200 (CTACAACGGCAGCGTATTCGATCCCGTCTAACCCTGAAA) amplified from pJH4631; (B)
+cha-1
+exon: OZM6201 (GAATACGCTGCCGTTGTAG) and OZM6240 (GTCGAGTGCTCTATGCACAACC) amplified from N2 genomic DNA; (C) P
+twk-40s
+: OZM6199 (GATGGATACGCTAACAACTTGG) and OZM6253 (GTATGATGCGACTATTCAGCTGT-GAATATTCATCACTCGATATTCCA) amplified from pJH4608; and (D)
+cha-1
+exon: OZM6201 (GAATACGCTGCCGTTGTAG) and OZM6202 (CAGCTGAATAGTCGCATCATAC) amplified from N2 genomic DNA.
+PCR fusion was performed to obtain sense and antisense
+cha-1
+by following primers: P
+flp-18-cha-1
+(sense): OZM6203 (AGCTTAGCCGGAATAGGGTCA) and OZM6202 (CAGCTGAATAGTCGCATCATAC) amplified from mixed PCR product (A + B); and P
+twk-40-cha-1
+(antisense): OZM3543 (AATGCGGCCGCTCTAATCACTATCACGT GGGATCTGGATAA) and OZM6254 (CGTAG-GCCAGAAAGCCTCAC) from mixed PCR product (C + D). Mixed PCR products were injected into the wild-type N2 animals.
+Modeling
+Our approach is to find the simplest phenomenological model (i.e., a nonmechanistic model with as few free parameters as possible) that explains the observed calcium activity patterns of AVA and AVB, as opposed to a detailed, more biologically realistic model. A more realistic model will have several parameters, the estimation of which will require assumptions or experiments to fix.
+We first note that our experiments suggest that the communication between AVB and AVA is largely unidirectional, with AVA affecting AVB’s activity and very little effect in the opposite direction. Consequently, we start with the following equation for the calcium activity of AVB,
+x
+AVB
+d
+x
+AVB
+dt
+=
+−
+1
+τ
+AVB
+·
+x
+AVB
++
+w
+AVA
+·
+σ
+(
+x
+AVA
+)
++
+Σ
+i
+w
+i
+σ
+(
+z
+i
+)
++
+c
+where
+x
+AVA
+is the calcium activity of AVA,
+z
+i
+is the activity of all other input neurons of AVB,
+w
+i
+is the synaptic weight of each input,
+c
+is the bias input, and σ denotes the activation function for the synapse. Typically, the activation function is a sigmoidal function. However, to simplify the model, we restrict our attention to the linear case, where σ is simply the identity function, σ(
+x
+) =
+x
+.
+Next, we make a key simplification to the model above based on our experiments. Our results show that AVA forms the dominant input on to AVB. Specifically, AVA-twk-40(gf) animals cannot sustain their forward motion (
+Fig. 2B
+), and AVB’s calcium is significantly reduced in this background (
+Fig. 3D
+). This suggests that we can ignore the input from other neurons in the model. Thus, we set
+w
+i
+= 0 for all neurons other than AVA. Giving us the following leaky-integrator differential equation
+1
+w
+AVA
+d
+x
+AVB
+dt
+=
+−
+1
+τ
+AVB
+.
+w
+AVA
+·
+x
+AVB
++
+x
+AVA
++
+c
+As a final simplification, we assume that the direct input from AVA is faster than the kinetics of the calcium sensor, such that any activity in AVA is immediately reflected in AVB. Thus, we consider the limit
+1
+w
+AVA
+→
+0
+. Giving us the final simplified model as
+x
+AVB
+=
+a
+·
+x
+AVA
++
+c
+where
+a
+=
+1
+τ
+AVB
+.
+w
+AVA
+is a dimensionless multiplier. As seen in
+Fig. 5B
+, this model with
+a
+< 0 (black dotted line) can predict the anticorrelated activity pattern between AVA and AVB during a backward movement but is unable to explain AVB’s activity after the backward movement.
+To capture the slow decay of AVB, we add an additional slower input from AVA to AVB (as shown in the schematic in
+Fig. 5A
+). Giving us the following system of equations with just three free parameters
+x
+AVB
+=
+a
+·
+x
+AVA
++
+b
+·
+y
+dy
+dt
+=
+−
+1
+τ
+·
+y
++
+x
+AVA
+where
+a
+and
+b
+are the coefficients for the fast and slow inputs, respectively, and τ is the integration time constant for the slow component of AVA. To fit the parameters from calcium imaging data, we used procest function from MATLAB’s system identification toolbox, which estimates the transfer function for the equation above. Laplace transforming the system of equations above results in the following transfer function
+X
+AVB
+(
+s
+)
+X
+AVA
+(
+s
+)
+=
+[
+(
+a
++
+b
+·
+τ
+)
++
+(
+a
+·
+τ
+)
+·
+s
+1
++
+τ
+·
+s
+]
+which has one zero and one pole. The number of zeros and poles form the input to procest, along with the calcium traces of AVB calcium (set as output signal) and AVA calcium (set as the input signal). To get a distribution over model parameters and performances, we do a cross-validation procedure where the parameters are estimated from a single recording and then tested on the remaining recordings. The model
+R
+2
+showed in
+Fig. 5C
+shows the distribution from the models thus estimated. The same setup was used to model the velocity from AVA’s calcium activity (
+Fig. 5E
+) using procest (i.e., a single-pole, single-zero transfer function), with AVA’s activity being set as the input signal and velocity forming the output signal.
+Statistical analyses
+Electrophysiological analyses
+The cumulative distributions for the membrane voltage of AVA and AVB were calculated using MATLAB’s ecdf function. To compute the joint histogram (figs. S1 and S2), we first computed the derivative of membrane potential with a finite difference (preceded by smoothing with a Gaussian kernel) and then used MATLAB’s bivariate histogram histogram2 to perform the histogram estimation. Like most
+C. elegans
+neurons, AVA and AVB do not spike. In this case, the standard current balance equations are written in terms of the derivative of the membrane voltage
+C
+dV
+dt
+=
+I
+1
++
+I
+2
++
+…
+where
+C
+is the membrane capacitance,
+V
+is the membrane voltage, and
+I
+1
+,
+I
+2
+… are the different ionic and synaptic currents. Thus, the different currents directly affect the derivative of the membrane voltage, which, in turn, determines the absolute membrane voltage. In spiking neurons, with limited subthreshold activity, the derivative is not as relevant as most of the information about a neuron’s activity is captured by its resting membrane potential and spiking rate; the derivative of the membrane voltage is either close to zero (rest) or very large (spiking). However, these
+C. elegans
+neurons do not spike; consequently, the derivative of the membrane voltage is also a relevant variable containing information about the overall excitability of a neuron, as can be seen in
+Figs. 1
+and
+4
+and fig. S1.
+HEK cell recording, behavioral analyses, and fluorescence staining
+Mann-Whitney
+U
+tests were used to quantify data of box and whisker plots.
+Calcium imaging
+Error bars in
+Fig. 4
+and fig. S4 were computed as a 95% confidence interval of the mean bootstrapped over 1000 resamples.
+P
+value less than 0.05 is considered to be statistically significant. *
+P
+< 0.05, **
+P
+< 0.01, and ***
+P
+< 0.001.
+Acknowledgments
+We are in debt to Y. Wang and Y. Li for technical support; A. Samuel for discussions and reconstruction of the manuscript; B. Mulcahy, M. Goodman, and C. Bargmann for comments.
+Funding:
+This work was supported by the Canadian Institute of Health Research (FDN154274) and the Natural Sciences and Engineering Research Council of Canada (RGPIN2017-06738) (M.Z.), the Key International (Regional) Joint Research Project (32020103007) (S.G. and Q.W.), the National Natural Science Foundation of China (31871069) (S.G.), and the European Research Council (337702-Kelegans) (T.B.).
+Author contributions:
+Conceptualization: J.M., T.A., S.G., and M.Z. Data curation: J.M., T.A., W.H., S.G., and M.Z. Formal analysis and investigation: J.M., T.A., B.Y., W.H., S.E.M., S.G., T.A., and M.Z. Funding acquisition: T.B., S.G., and M.Z. Methodology: J.M., W.H., T.A., S.G., and M.Z. Project administration and supervision: M.Z. Resources: J.M., W.H., S.E.M., Z.W., Y.Z., T.A., T.B., and Q.W. Validation: J.M., T.A., S.G., and M.Z. Visualization: J.M., T.A., S.G., and M.Z. Writing—original draft: J.M., T.A., and M.Z. Writing—review and editing: All authors.
+Competing interests:
+The authors declare that they have no competing interests.
+Data and materials availability:
+All data needed to evaluate the conclusions in the paper are present in the paper and/or the Supplementary Materials.
+Supplementary Materials
+This PDF file includes:
+Figs. S1 to S10
+Table S1
+Legends for movies S1 to S6
+Legends for datasets S1 to S10
+References
+Other Supplementary Material for this manuscript includes the following:
+Movies S1 to S6
+Datasets S1 to S10
+REFERENCES AND NOTES
+1
+A.
+Carreira-Rosario
+,
+A. A.
+Zarin
+,
+M. Q.
+Clark
+,
+L.
+Manning
+,
+R. D.
+Fetter
+,
+A.
+Cardona
+,
+C. Q.
+Doe
+,
+MDN brain descending neurons coordinately activate backward and inhibit forward locomotion
+.
+eLife
+7
+,
+e38554
+(
+2018
+).
+30070205
+10.7554/eLife.38554
+PMC6097840
+2
+K. L.
+Briggman
+,
+W. B.
+Kristan
+Jr.
+,
+Imaging dedicated and multifunctional neural circuits generating distinct behaviors
+.
+J. Neurosci.
+26
+,
+10925
+–
+10933
+(
+2006
+).
+17050731
+10.1523/JNEUROSCI.3265-06.2006
+PMC6674766
+3
+K. L. Briggman, W. B. Kristan, Multifunctional pattern-generating circuits. [Preprint] (2008).
+10.1146/annurev.neuro.31.060407.125552
+.
+18558856
+4
+J. M.
+Ramirez
+,
+K. G.
+Pearson
+,
+Generation of motor patterns for walking and flight in motoneurons supplying bifunctional muscles in the locust
+.
+J. Neurobiol.
+19
+,
+257
+–
+282
+(
+1988
+).
+3373206
+10.1002/neu.480190307
+5
+W. M.
+Roberts
+,
+S. B.
+Augustine
+,
+K. J.
+Lawton
+,
+T. H.
+Lindsay
+,
+T. R.
+Thiele
+,
+E. J.
+Izquierdo
+,
+S.
+Faumont
+,
+R. A.
+Lindsay
+,
+M. C.
+Britton
+,
+N.
+Pokala
+,
+C. I.
+Bargmann
+,
+S. R.
+Lockery
+,
+A stochastic neuronal model predicts random search behaviors at multiple spatial scales in C. elegans
+.
+eLife
+5
+,
+e12572
+(
+2016
+).
+26824391
+10.7554/eLife.12572
+PMC4798983
+6
+A.
+Berkowitz
+,
+Both shared and specialized spinal circuitry for scratching and swimming in turtles
+.
+J. Comp. Physiol. A Neuroethol. Sens. Neural Behav. Physiol.
+188
+,
+225
+–
+234
+(
+2002
+).
+11976891
+10.1007/s00359-002-0297-7
+7
+Q.
+Gaudry
+,
+N.
+Ruiz
+,
+T.
+Huang
+,
+W. B.
+Kristan
+III
+,
+W. B.
+Kristan
+Jr.
+,
+Behavioral choice across leech species: Chacun à son goût
+.
+J. Exp. Biol.
+213
+,
+1356
+–
+1365
+(
+2010
+).
+20348348
+10.1242/jeb.039495
+PMC2846166
+8
+M.
+Koyama
+,
+F.
+Minale
+,
+J.
+Shum
+,
+N.
+Nishimura
+,
+C. B.
+Schaffer
+,
+J. R.
+Fetcho
+,
+A circuit motif in the zebrafish hindbrain for a two alternative behavioral choice to turn left or right
+.
+eLife
+5
+,
+e16808
+(
+2016
+).
+27502742
+10.7554/eLife.16808
+PMC4978520
+9
+I. R.
+Popescu
+,
+W. N.
+Frost
+,
+Highly dissimilar behaviors mediated by a multifunctional network in the marine mollusk Tritonia diomedea
+.
+J. Neurosci.
+22
+,
+1985
+–
+1993
+(
+2002
+).
+11880529
+10.1523/JNEUROSCI.22-05-01985.2002
+PMC6758888
+10
+S. R.
+Soffe
+,
+Two distinct rhythmic motor patterns are driven by common premotor and motor neurons in a simple vertebrate spinal cord
+.
+J. Neurosci.
+13
+,
+4456
+–
+4469
+(
+1993
+).
+8410198
+10.1523/JNEUROSCI.13-10-04456.1993
+PMC6576385
+11
+L.
+Mazzucato
+,
+Neural mechanisms underlying the temporal organization of naturalistic animal behavior
+.
+eLife
+11
+,
+e76577
+(
+2022
+).
+35792884
+10.7554/eLife.76577
+PMC9259028
+12
+L.
+Itti
+,
+C.
+Koch
+,
+Computational modelling of visual attention
+.
+Nat. Rev. Neurosci.
+2
+,
+194
+–
+203
+(
+2001
+).
+11256080
+10.1038/35058500
+13
+G. J.
+Goodhill
+,
+Contributions of theoretical modeling to the understanding of neural map development
+.
+Neuron
+56
+,
+301
+–
+311
+(
+2007
+).
+17964247
+10.1016/j.neuron.2007.09.027
+14
+T.
+Kohonen
+,
+Self-organized formation of topologically correct feature maps
+.
+Biol. Cybern.
+43
+,
+59
+–
+69
+(
+1982
+).
+15
+N. Lynch MIT, C. Musco, M. Parter, Winner-Take-All Computation in Spiking Neural Networks. arXiv (2019).
+https://arxiv.org/abs/1904.12591
+.
+16
+Y.
+Chen
+,
+Mechanisms of winner-take-all and group selection in neuronal spiking networks
+.
+Front. Comput. Neurosci.
+11
+,
+20
+(
+2017
+).
+28484384
+10.3389/fncom.2017.00020
+PMC5399521
+17
+B.
+Szigeti
+,
+A.
+Deogade
+,
+B.
+Webb
+,
+Searching for motifs in the behaviour of larval
+Drosophila melanogaster
+and
+Caenorhabditis elegans
+reveals continuity between behavioural states
+.
+J. R. Soc. Interface
+12
+, (
+2015
+).
+10.1098/rsif.2015.0899
+PMC4707863
+26609067
+18
+G. J.
+Stephens
+,
+B.
+Johnson-Kerner
+,
+W.
+Bialek
+,
+W. S.
+Ryu
+,
+Dimensionality and dynamics in the behavior of
+C. elegans
+.
+PLOS Comput. Biol.
+4
+,
+e1000028
+(
+2008
+).
+18389066
+10.1371/journal.pcbi.1000028
+PMC2276863
+19
+A.
+Gomez-Marin
+,
+G. J.
+Stephens
+,
+A. E. X.
+Brown
+,
+Hierarchical compression of
+Caenorhabditis elegans
+locomotion reveals phenotypic differences in the organization of behaviour
+.
+J. R. Soc. Interface
+13
+,
+20160466
+(
+2016
+).
+27581484
+10.1098/rsif.2016.0466
+PMC5014070
+20
+T.
+Ahamed
+,
+A. C.
+Costa
+,
+G. J.
+Stephens
+,
+Capturing the continuous complexity of behaviour in
+Caenorhabditis elegans
+.
+Nat. Phys.
+17
+,
+275
+–
+283
+(
+2021
+).
+21
+H.
+Lindén
+,
+P. C.
+Petersen
+,
+M.
+Vestergaard
+,
+R. W.
+Berg
+,
+Movement is governed by rotational neural dynamics in spinal motor networks
+.
+Nature
+610
+,
+526
+–
+531
+(
+2022
+).
+36224394
+10.1038/s41586-022-05293-w
+22
+N. A.
+Croll
+,
+Components and patterns in the behaviour of the
+nematodeCaenorhabditis elegans
+.
+J. Zool.
+176
+,
+159
+–
+176
+(
+1975
+).
+23
+T. H.
+Lindsay
+,
+T. R.
+Thiele
+,
+S. R.
+Lockery
+,
+Optogenetic analysis of synaptic transmission in the central nervous system of the nematode
+C. elegans
+.
+Nat. Commun.
+2
+,
+306
+(
+2011
+).
+21556060
+10.1038/ncomms1304
+PMC3935721
+24
+B. J.
+Piggott
+,
+J.
+Liu
+,
+Z.
+Feng
+,
+S. A.
+Wescott
+,
+X. Z. S.
+Xu
+,
+The neural circuits and synaptic mechanisms underlying motor initiation in C. elegans
+.
+Cell
+147
+,
+922
+–
+933
+(
+2011
+).
+22078887
+10.1016/j.cell.2011.08.053
+PMC3233480
+25
+J.
+White
+,
+E.
+Southgate
+,
+J.
+Thomson
+,
+The structure of the nervous system of the nematode Caenorhabditis elegans
+.
+Philos. Trans. R Soc. Lond. B Biol. Sci.
+314
+,
+1
+–
+340
+(
+1986
+).
+22462104
+10.1098/rstb.1986.0056
+26
+B. L.
+Chen
+,
+D. H.
+Hall
+,
+D. B.
+Chklovskii
+,
+Wiring optimization can relate neuronal structure and function
+.
+Proc. Natl. Acad. Sci. U.S.A.
+103
+,
+4723
+–
+4728
+(
+2006
+).
+16537428
+10.1073/pnas.0506806103
+PMC1550972
+27
+D.
+Witvliet
+,
+B.
+Mulcahy
+,
+J. K.
+Mitchell
+,
+Y.
+Meirovitch
+,
+D. R.
+Berger
+,
+Y.
+Wu
+,
+Y.
+Liu
+,
+W. X.
+Koh
+,
+R.
+Parvathala
+,
+D.
+Holmyard
+,
+R. L.
+Schalek
+,
+N.
+Shavit
+,
+A. D.
+Chisholm
+,
+J. W.
+Lichtman
+,
+A. D. T.
+Samuel
+,
+M.
+Zhen
+,
+Connectomes across development reveal principles of brain maturation
+.
+Nature
+596
+,
+257
+–
+261
+(
+2021
+).
+34349261
+10.1038/s41586-021-03778-8
+PMC8756380
+28
+S.
+Gao
+,
+S. A.
+Guan
+,
+A. D.
+Fouad
+,
+J.
+Meng
+,
+T.
+Kawano
+,
+Y.-C.
+Huang
+,
+Y.
+Li
+,
+S.
+Alcaire
+,
+W.
+Hung
+,
+Y.
+Lu
+,
+Y. B.
+Qi
+,
+Y.
+Jin
+,
+M.
+Alkema
+,
+C.
+Fang-Yen
+,
+M.
+Zhen
+,
+Excitatory motor neurons are local oscillators for backward locomotion
+.
+eLife
+7
+,
+e29915
+(
+2018
+).
+29360035
+10.7554/eLife.29915
+PMC5780044
+29
+T.
+Kawano
+,
+M. D.
+Po
+,
+S.
+Gao
+,
+G.
+Leung
+,
+W. S.
+Ryu
+,
+M.
+Zhen
+,
+An imbalancing act: Gap junctions reduce the backward motor circuit activity to bias
+C. elegans
+for forward locomotion
+.
+Neuron
+72
+,
+572
+–
+586
+(
+2011
+).
+22099460
+10.1016/j.neuron.2011.09.005
+30
+T.
+Xu
+,
+J.
+Huo
+,
+S.
+Shao
+,
+M.
+Po
+,
+T.
+Kawano
+,
+Y.
+Lu
+,
+M.
+Wu
+,
+M.
+Zhen
+,
+Q.
+Wen
+,
+Descending pathway facilitates undulatory wave propagation in
+Caenorhabditis elegans
+through gap junctions
+.
+Proc. Natl. Acad. Sci. U.S.A.
+115
+,
+E4493
+–
+E4502
+(
+2018
+).
+29686107
+10.1073/pnas.1717022115
+PMC5948959
+31
+C.
+Fang-Yen
+,
+M. J.
+Alkema
+,
+A. D. T.
+Samuel
+,
+Illuminating neural circuits and behaviour in
+Caenorhabditis elegans
+with optogenetics
+.
+Philos. Trans. R Soc. Lond. B Biol. Sci.
+370
+,
+20140212
+(
+2015
+).
+26240427
+10.1098/rstb.2014.0212
+PMC4528824
+32
+M.
+Chalfie
+,
+J. E.
+Sulston
+,
+J. G.
+White
+,
+E.
+Southgate
+,
+J.
+Nichol Thomson
+,
+S.
+Brenner
+,
+The neural circuit for touch sensitivity in Caenorhabditis elegans
+.
+J. Neurosci.
+5
+,
+956
+–
+964
+(
+1985
+).
+3981252
+10.1523/JNEUROSCI.05-04-00956.1985
+PMC6565008
+33
+J. M.
+Gray
+,
+J. J.
+Hill
+,
+C. I.
+Bargmann
+,
+A circuit for navigation in
+Caenorhabditis elegans
+.
+Proc. Natl. Acad. Sci. U.S.A.
+102
+,
+3184
+–
+3191
+(
+2005
+).
+15689400
+10.1073/pnas.0409009101
+PMC546636
+34
+J. B.
+Rodgers
+,
+W. S.
+Ryu
+,
+Targeted thermal stimulation and high-content phenotyping reveal that the
+C. elegans
+escape response integrates current behavioral state and past experience
+.
+PLOS ONE
+15
+,
+e0229399
+(
+2020
+).
+32218560
+10.1371/journal.pone.0229399
+PMC7100941
+35
+A.
+Mohammadi
+,
+J.
+Byrne Rodgers
+,
+I.
+Kotera
+,
+W. S.
+Ryu
+,
+Behavioral response of
+Caenorhabditis elegans
+to localized thermal stimuli
+.
+BMC Neurosci.
+14
+,
+66
+(
+2013
+).
+23822173
+10.1186/1471-2202-14-66
+PMC3703451
+36
+N.
+Pokala
+,
+Q.
+Liu
+,
+A.
+Gordus
+,
+C. I.
+Bargmann
+,
+Inducible and titratable silencing of
+Caenorhabditis elegans
+neurons in vivo with histamine-gated chloride channels
+.
+Proc. Natl. Acad. Sci. U.S.A.
+111
+,
+2770
+–
+2775
+(
+2014
+).
+24550306
+10.1073/pnas.1400615111
+PMC3932931
+37
+S.
+Gao
+,
+M.
+Zhen
+,
+Action potentials drive body wall muscle contractions in
+Caenorhabditis elegans
+.
+Proc. Natl. Acad. Sci. U.S.A.
+108
+,
+2557
+–
+2562
+(
+2011
+).
+21248227
+10.1073/pnas.1012346108
+PMC3038695
+38
+L.
+Xie
+,
+S.
+Gao
+,
+S. M.
+Alcaire
+,
+K.
+Aoyagi
+,
+Y.
+Wang
+,
+J. K.
+Griffin
+,
+I.
+Stagljar
+,
+S.
+Nagamatsu
+,
+M.
+Zhen
+,
+NLF-1 delivers a sodium leak channel to regulate neuronal excitability and modulate rhythmic locomotion
+.
+Neuron
+77
+,
+1069
+–
+1082
+(
+2013
+).
+23522043
+10.1016/j.neuron.2013.01.018
+39
+M. B.
+Goodman
+,
+D. H.
+Hall
+,
+L.
+Avery
+,
+S. R.
+Lockery
+,
+Active currents regulate sensitivity and dynamic range in
+C. elegans
+neurons
+.
+Neuron
+20
+,
+763
+–
+772
+(
+1998
+).
+9581767
+10.1016/s0896-6273(00)81014-4
+PMC4444786
+40
+M. B.
+Goodman
+,
+T. H.
+Lindsay
+,
+S. R.
+Lockery
+,
+J. E.
+Richmond
+,
+Electrophysiological methods for
+C. elegans
+neurobiology
+.
+Methods Cell Biol.
+107
+,
+409
+(
+2012
+).
+22226532
+10.1016/B978-0-12-394620-1.00014-X
+PMC3959639
+41
+P.
+Liu
+,
+B.
+Chen
+,
+R.
+Mailler
+,
+Z. W.
+Wang
+,
+Antidromic-rectifying gap junctions amplify chemical transmission at functionally mixed electrical-chemical synapses
+.
+Nat. Commun.
+8
+,
+14818
+(
+2017
+).
+28317880
+10.1038/ncomms14818
+PMC5364397
+42
+J.
+Mellem
+,
+P.
+Brockie
+,
+D.
+Madsen
+,
+A.
+Maricq
+,
+Action potentials contribute to neuronal signaling in
+C. elegans
+.
+Nat. Neurosci.
+11
+,
+865
+–
+867
+(
+2008
+).
+18587393
+10.1038/nn.2131
+PMC2697921
+43
+S.
+Kato
+,
+H. S.
+Kaplan
+,
+T.
+Schrödel
+,
+S.
+Skora
+,
+T. H.
+Lindsay
+,
+E.
+Yemini
+,
+S.
+Lockery
+,
+M.
+Zimmer
+,
+Global brain dynamics embed the motor command sequence of
+Caenorhabditis elegans
+.
+Cell
+163
+,
+656
+–
+669
+(
+2015
+).
+26478179
+10.1016/j.cell.2015.09.034
+44
+P.
+Liu
+,
+B.
+Chen
+,
+Z.-W.
+Wang
+,
+SLO-2 potassium channel is an important regulator of neurotransmitter release in
+Caenorhabditis elegans
+.
+Nat. Commun.
+5
+,
+5155
+(
+2014
+).
+25300429
+10.1038/ncomms6155
+PMC4197135
+45
+Y. C.
+Huang
+,
+J. K.
+Pirri
+,
+D.
+Rayes
+,
+S.
+Gao
+,
+B.
+Mulcahy
+,
+J.
+Grant
+,
+Y.
+Saheki
+,
+M. M.
+Francis
+,
+M.
+Zhen
+,
+M. J.
+Alkema
+,
+Gain-of-function mutations in the UNC-2/CaV2α channel lead to excitation-dominant synaptic transmission in
+C. elegans
+.
+eLife
+8
+,
+e45905
+(
+2019
+).
+31364988
+10.7554/eLife.45905
+PMC6713474
+46
+Y.
+Saheki
+,
+C. I.
+Bargmann
+,
+Presynaptic CaV2 calcium channel traffic requires CALF-1 and the alpha(2)delta subunit UNC-36
+.
+Nat. Neurosci.
+12
+,
+1257
+–
+1265
+(
+2009
+).
+19718034
+10.1038/nn.2383
+PMC2805665
+47
+J. E.
+Richmond
+,
+E. M.
+Jorgensen
+,
+One GABA and two acetylcholine receptors function at the
+C. elegans
+neuromuscular junction
+.
+Nat. Neurosci.
+2
+,
+791
+–
+798
+(
+1999
+).
+10461217
+10.1038/12160
+PMC2585773
+48
+K. H.
+Oh
+,
+M. D.
+Krout
+,
+J. E.
+Richmond
+,
+H.
+Kim
+,
+UNC-2 CaV2 channel localization at presynaptic active zones depends on UNC-10/RIM and SYD-2/Liprin-α in
+Caenorhabditis elegans
+.
+J. Neurosci.
+41
+,
+4782
+–
+4794
+(
+2021
+).
+33975919
+10.1523/JNEUROSCI.0076-21.2021
+PMC8260173
+49
+F.
+Lesage
+,
+TWIK-1, a ubiquitous human weakly inward rectifying K+ channel with a novel structure
+.
+EMBO J.
+15
+,
+1004
+–
+1011
+(
+1996
+).
+8605869
+PMC449995
+50
+F.
+Cluzeaud
+,
+R.
+Reyes
+,
+B.
+Escoubet
+,
+M.
+Fay
+,
+M.
+Lazdunski
+,
+J. P.
+Bonvalet
+,
+F.
+Lesage
+,
+N.
+Farman
+,
+Expression of TWIK-1, a novel weakly inward rectifying potassium channel in rat kidney
+.
+Am. J. Physiol. Cell Physiol.
+275
+,
+C1602
+–
+C1609
+(
+1998
+).
+10.1152/ajpcell.1998.275.6.C1602
+9843722
+51
+R.
+Chavez
+,
+A.
+Gray
+,
+B.
+Zhao
+,
+C.
+Kindler
+,
+M. J.
+Mazurek
+,
+Y.
+Mehta
+,
+J. R.
+Forsayeth
+,
+C. S.
+Yost
+,
+TWIK-2, a new weak inward rectifying member of the tandem pore domain potassium channel family
+.
+J. Biol.
+275
+,
+7887
+–
+7892
+(
+1999
+).
+10.1074/jbc.274.12.7887
+10075682
+52
+I.
+Ben Soussia
+,
+S.
+El Mouridi
+,
+D.
+Kang
+,
+A.
+Leclercq-Blondel
+,
+L.
+Khoubza
+,
+P.
+Tardy
+,
+N.
+Zariohi
+,
+M.
+Gendrel
+,
+F.
+Lesage
+,
+E. J.
+Kim
+,
+D.
+Bichet
+,
+O.
+Andrini
+,
+T.
+Boulin
+,
+Mutation of a single residue promotes gating of vertebrate and invertebrate two-pore domain potassium channels
+.
+Nat. Commun.
+10
+,
+787
+(
+2019
+).
+30770809
+10.1038/s41467-019-08710-3
+PMC6377628
+53
+P.
+Aryal
+,
+F.
+Abd-Wahab
+,
+G.
+Bucci
+,
+M.
+Sansom
+,
+S. P.
+Tucker
+,
+A hydrophobic barrier deep within the inner pore of the TWIK-1 K2P potassium channel
+.
+Nat. Commun.
+5
+,
+4377
+(
+2014
+).
+25001086
+10.1038/ncomms5377
+PMC4102122
+54
+F. A.
+Ran
+,
+P. D.
+Hsu
+,
+J.
+Wright
+,
+V.
+Agarwala
+,
+D. A.
+Scott
+,
+F.
+Zhang
+,
+Genome engineering using the CRISPR-Cas9 system
+.
+Nat. Protoc.
+8
+,
+2281
+–
+2308
+(
+2013
+).
+24157548
+10.1038/nprot.2013.143
+PMC3969860
+55
+S. T.
+Armenti
+,
+L. L.
+Lohmer
+,
+D. R.
+Sherwood
+,
+J.
+Nance
+,
+Repurposing an endogenous degradation system for rapid and targeted depletion of
+C. elegans
+proteins
+.
+Development
+141
+,
+4640
+–
+4647
+(
+2014
+).
+25377555
+10.1242/dev.115048
+PMC4302935
+56
+Y.
+Wang
+,
+X.
+Zhang
+,
+Q.
+Xin
+,
+W.
+Hung
+,
+J.
+Florman
+,
+J.
+Huo
+,
+T.
+Xu
+,
+Y.
+Xie
+,
+M. J.
+Alkema
+,
+M.
+Zhen
+,
+Q.
+Wen
+,
+Flexible motor sequence generation during stereotyped escape responses
+.
+eLife
+9
+,
+e56942
+(
+2020
+).
+32501216
+10.7554/eLife.56942
+PMC7338056
+57
+C.
+Schmitt
+,
+C.
+Schultheis
+,
+S.
+Husson
+,
+J.
+Liewald
+,
+Specific expression of channelrhodopsin-2 in single neurons of
+Caenorhabditis elegans
+.
+PLOS ONE
+7
+,
+e43164
+(
+2012
+).
+22952643
+10.1371/journal.pone.0043164
+PMC3431400
+58
+S.
+Gao
+,
+L.
+Xie
+,
+T.
+Kawano
+,
+M. D.
+Po
+,
+J. K.
+Pirri
+,
+S.
+Guan
+,
+M. J.
+Alkema
+,
+M.
+Zhen
+,
+The NCA sodium leak channel is required for persistent motor circuit activity that sustains locomotion
+.
+Nat. Commun.
+6
+,
+6323
+(
+2015
+).
+25716181
+10.1038/ncomms7323
+59
+B.
+Mulcahy
+,
+D. K.
+Witvliet
+,
+J.
+Mitchell
+,
+R.
+Schalek
+,
+D. R.
+Berger
+,
+Y.
+Wu
+,
+D.
+Holmyard
+,
+Y.
+Lu
+,
+T.
+Ahamed
+,
+A. D. T.
+Samuel
+,
+A. D.
+Chisholm
+,
+J. W.
+Lichtman
+,
+M.
+Zhen
+,
+Post-embryonic remodeling of the C. elegans motor circuit
+.
+Curr. Biol.
+32
+,
+4645
+–
+4659.e3
+(
+2022
+).
+36283410
+10.1016/j.cub.2022.09.065
+60
+J. G.
+White
+,
+E.
+Southgate
+,
+J. N.
+Thomson
+,
+S.
+Brenner
+,
+The structure of the ventral nerve cord of
+Caenorhabditis elegans
+.
+Philos. Trans. R. Soc. Lond. B Biol. Sci.
+275
+,
+327
+–
+348
+(
+1976
+).
+8806
+10.1098/rstb.1976.0086
+61
+Y.
+Zheng
+,
+P. J.
+Brockie
+,
+J. E.
+Mellem
+,
+D. M.
+Madsen
+,
+A. V.
+Maricq
+,
+Neuronal control of locomotion in
+C. elegans
+is modified by a dominant mutation in the GLR-1 ionotropic glutamate receptor
+.
+Neuron
+24
+,
+347
+–
+361
+(
+1999
+).
+10571229
+10.1016/s0896-6273(00)80849-1
+62
+J. K.
+Pirri
+,
+A. D.
+McPherson
+,
+J. L.
+Donnelly
+,
+M. M.
+Francis
+,
+M. J.
+Alkema
+,
+A Tyramine-gated chloride channel coordinates distinct motor programs of a
+Caenorhabditis elegans
+escape response
+.
+Neuron
+62
+,
+526
+–
+538
+(
+2009
+).
+19477154
+10.1016/j.neuron.2009.04.013
+PMC2804440
+63
+N.
+Ji
+,
+V.
+Venkatachalam
+,
+H.
+Rodgers
+,
+W.
+Hung
+,
+T.
+Kawano
+,
+C. M.
+Clark
+,
+M.
+Lim
+,
+M. J.
+Alkema
+,
+M.
+Zhen
+,
+A. D. T.
+Samuel
+,
+Corollary discharge promotes a sustained motor state in a neural circuit for navigation
+.
+eLife
+10
+,
+e68848
+(
+2021
+).
+33880993
+10.7554/eLife.68848
+PMC8139836
+64
+A.
+Gordus
+,
+N.
+Pokala
+,
+S.
+Levy
+,
+S. W.
+Flavell
+,
+C. I.
+Bargmann
+,
+Feedback from network states generates variability in a probabilistic olfactory circuit
+.
+Cell
+161
+,
+215
+–
+227
+(
+2015
+).
+25772698
+10.1016/j.cell.2015.02.018
+PMC4821011
+65
+D. A.
+Wagh
+,
+T. M.
+Rasse
+,
+E.
+Asan
+,
+A.
+Hofbauer
+,
+I.
+Schwenkert
+,
+H.
+Dürrbeck
+,
+S.
+Buchner
+,
+M. C.
+Dabauvalle
+,
+M.
+Schmidt
+,
+G.
+Qin
+,
+C.
+Wichmann
+,
+R.
+Kittel
+,
+S. J.
+Sigrist
+,
+E.
+Buchner
+,
+Bruchpilot, a protein with homology to ELKS/CAST, is required for structural integrity and function of synaptic active zones in Drosophila
+.
+Neuron
+49
+,
+833
+–
+844
+(
+2006
+).
+16543132
+10.1016/j.neuron.2006.02.008
+66
+A.
+Sordillo
+,
+C. I.
+Bargmann
+,
+Behavioral control by depolarized and hyperpolarized states of an integrating neuron
+.
+eLife
+10
+,
+e67723
+(
+2021
+).
+34738904
+10.7554/eLife.67723
+PMC8570696
+67
+J.
+Chitturi
+,
+W.
+Hung
+,
+A. M. A.
+Rahman
+,
+M.
+Wu
+,
+M. A.
+Lim
+,
+J.
+Calarco
+,
+R.
+Baran
+,
+X.
+Huang
+,
+J. W.
+Dennis
+,
+M.
+Zhen
+,
+The UBR-1 ubiquitin ligase regulates glutamate metabolism to generate coordinated motor pattern in
+Caenorhabditis elegans
+.
+PLOS Genet.
+14
+,
+e1007303
+(
+2018
+).
+29649217
+10.1371/journal.pgen.1007303
+PMC5931689
+68
+A. D.
+Fouad
+,
+S.
+Teng
+,
+J. R.
+Mark
+,
+A.
+Liu
+,
+P.
+Alvarez-Illera
+,
+H.
+Ji
+,
+A.
+Du
+,
+P. D.
+Bhirgoo
+,
+E.
+Cornblath
+,
+S. A.
+Guan
+,
+C.
+Fang-Yen
+,
+Distributed rhythm generators underlie
+Caenorhabditis elegans
+forward locomotion
+.
+eLife
+7
+,
+e29913
+(
+2018
+).
+29360037
+10.7554/eLife.29913
+PMC5780042
+69
+K. S.
+Kindt
+,
+K. B.
+Quast
+,
+A. C.
+Giles
+,
+S.
+De
+,
+D.
+Hendrey
+,
+I.
+Nicastro
+,
+C. H. H.
+Rankin
+,
+W. R.
+Schafer
+,
+Dopamine mediates context-dependent modulation of sensory plasticity in
+C. elegans
+.
+Neuron
+55
+,
+662
+–
+676
+(
+2007
+).
+17698017
+10.1016/j.neuron.2007.07.023
+70
+J. P.
+Nguyen
+,
+F. B.
+Shipley
+,
+A. N.
+Linder
+,
+G. S.
+Plummer
+,
+M.
+Liu
+,
+S. U.
+Setru
+,
+J. W.
+Shaevitz
+,
+A. M.
+Leifer
+,
+Whole-brain calcium imaging with cellular resolution in freely behaving
+Caenorhabditis elegans
+.
+Proc. Natl. Acad. Sci. U.S.A.
+113
+,
+E1074
+–
+E1081
+(
+2016
+).
+26712014
+10.1073/pnas.1507110112
+PMC4776509
+71
+J.
+Ben Arous
+,
+Y.
+Tanizawa
+,
+I.
+Rabinowitch
+,
+D.
+Chatenay
+,
+W. R.
+Schafer
+,
+Automated imaging of neuronal activity in freely behaving
+Caenorhabditis elegans
+.
+J. Neurosci. Methods
+187
+,
+229
+–
+234
+(
+2010
+).
+20096306
+10.1016/j.jneumeth.2010.01.011
+72
+V.
+Venkatachalam
+,
+N.
+Ji
+,
+X.
+Wang
+,
+C.
+Clark
+,
+J. K.
+Mitchell
+,
+M.
+Klein
+,
+C. J.
+Tabone
+,
+J.
+Florman
+,
+H.
+Ji
+,
+J.
+Greenwood
+,
+A. D.
+Chisholm
+,
+J.
+Srinivasan
+,
+M.
+Alkema
+,
+M.
+Zhen
+,
+A. D. T.
+Samuel
+,
+Pan-neuronal imaging in roaming
+Caenorhabditis elegans
+.
+Proc. Natl. Acad. Sci. U.S.A.
+113
+,
+E1082
+–
+E1088
+(
+2016
+).
+26711989
+10.1073/pnas.1507109113
+PMC4776525
+73
+A.
+Bhardwaj
+,
+S.
+Thapliyal
+,
+Y.
+Dahiya
+,
+K.
+Babu
+,
+FLP-18 functions through the G-protein-coupled receptors NPR-1 and NPR-4 to modulate reversal length in
+Caenorhabditis elegans
+.
+J. Neurosci.
+38
+,
+4641
+–
+4654
+(
+2018
+).
+29712787
+10.1523/JNEUROSCI.1955-17.2018
+PMC5965667
+74
+S. R.
+Taylor
+,
+G.
+Santpere
+,
+A.
+Weinreb
+,
+A.
+Barrett
+,
+M. B.
+Reilly
+,
+C.
+Xu
+,
+E.
+Varol
+,
+P.
+Oikonomou
+,
+L.
+Glenwinkel
+,
+R.
+McWhirter
+,
+A.
+Poff
+,
+M.
+Basavaraju
+,
+I.
+Rafi
+,
+E.
+Yemini
+,
+S. J.
+Cook
+,
+A.
+Abrams
+,
+B.
+Vidal
+,
+C.
+Cros
+,
+S.
+Tavazoie
+,
+N.
+Sestan
+,
+M.
+Hammarlund
+,
+O.
+Hobert
+,
+D. M.
+Miller
+,
+Molecular topography of an entire nervous system
+.
+Cell
+184
+,
+4329
+–
+4347.e23
+(
+2021
+).
+34237253
+10.1016/j.cell.2021.06.023
+PMC8710130
+75
+M.
+Hammarlund
+,
+O.
+Hobert
+,
+D. M.
+Miller
+,
+N.
+Sestan
+,
+The CeNGEN project: The complete gene expression map of an entire nervous system
+.
+Neuron
+99
+,
+430
+–
+433
+(
+2018
+).
+30092212
+10.1016/j.neuron.2018.07.042
+PMC6576255
+76
+C. M.
+Hammell
+,
+G. J.
+Hannon
+,
+Inducing RNAi in
+Caenorhabditis elegans
+by injection of dsRNA
+.
+Cold Spring Harb. Protoc.
+2016
+,
+80
+–
+85
+(
+2016
+).
+10.1101/pdb.prot086306
+26729904
+77
+A.
+Ghezzi
+,
+B. J.
+Liebeskind
+,
+A.
+Thompson
+,
+N. S.
+Atkinson
+,
+H. H.
+Zakon
+,
+Ancient association between cation leak channels and Mid1 proteins is conserved in fungi and animals
+.
+Front. Mol. Neurosci.
+7
+,
+15
+(
+2014
+).
+24639627
+10.3389/fnmol.2014.00015
+PMC3945613
+78
+B.
+Zhao
+,
+P.
+Khare
+,
+L.
+Feldman
+,
+J. A.
+Dent
+,
+Reversal frequency in
+Caenorhabditis elegans
+represents an integrated response to the state of the animal and its environment
+.
+J. Neurosci.
+23
+,
+5319
+–
+5328
+(
+2003
+).
+12832557
+10.1523/JNEUROSCI.23-12-05319.2003
+PMC6741178
+79
+J. T.
+Pierce-Shimomura
+,
+T. M.
+Morse
+,
+S. R.
+Lockery
+,
+The fundamental role of pirouettes in
+Caenorhabditis elegans
+chemotaxis
+.
+J. Neurosci.
+19
+,
+9557
+–
+9569
+(
+1999
+).
+10531458
+10.1523/JNEUROSCI.19-21-09557.1999
+PMC6782915
+80
+L.
+Chen
+,
+Y.
+Liu
+,
+P.
+Su
+,
+W.
+Hung
+,
+H.
+Li
+,
+Y.
+Wang
+,
+Z.
+Yue
+,
+M. H.
+Ge
+,
+Z. X.
+Wu
+,
+Y.
+Zhang
+,
+P.
+Fei
+,
+L. M.
+Chen
+,
+L.
+Tao
+,
+H.
+Mao
+,
+M.
+Zhen
+,
+S.
+Gao
+,
+Escape steering by cholecystokinin peptidergic signaling
+.
+Cell Rep.
+38
+,
+110330
+(
+2022
+).
+35139370
+10.1016/j.celrep.2022.110330
+81
+K. M.
+Huang
+,
+P.
+Cosman
+,
+W. R.
+Schafer
+,
+Machine vision based detection of omega bends and reversals in
+C. elegans
+.
+J. Neurosci. Methods
+158
+,
+323
+–
+336
+(
+2006
+).
+16839609
+10.1016/j.jneumeth.2006.06.007
+82
+Y.
+Lu
+,
+T.
+Ahamed
+,
+B.
+Mulcahy
+,
+J.
+Meng
+,
+D.
+Witvliet
+,
+S. A.
+Guan
+,
+D.
+Holmyard
+,
+W.
+Hung
+,
+Q.
+Wen
+,
+A. D.
+Chisholm
+,
+A. D. T.
+Samuel
+,
+M.
+Zhen
+,
+Extrasynaptic signaling enables an asymmetric juvenile motor circuit to produce symmetric undulation
+.
+Curr. Biol.
+32
+,
+4631
+–
+4644.e5
+(
+2022
+).
+36182701
+10.1016/j.cub.2022.09.002
+PMC9643663
+83
+R.
+O’Hagan
+,
+M.
+Chalfie
+,
+M. B.
+Goodman
+,
+The MEC-4 DEG/ENaC channel of
+Caenorhabditis elegans
+touch receptor neurons transduces mechanical signals
+.
+Nat. Neurosci.
+8
+,
+43
+–
+50
+(
+2005
+).
+15580270
+10.1038/nn1362
+84
+D.
+Ramot
+,
+B. L.
+MacInnis
+,
+M. B.
+Goodman
+,
+Bidirectional temperature-sensing by a single thermosensory neuron in
+C. elegans
+.
+Nat. Neurosci.
+11
+,
+908
+–
+915
+(
+2008
+).
+18660808
+10.1038/nn.2157
+PMC2587641
+85
+L.
+Salkoff
+,
+A.
+Butler
+,
+G.
+Fawcett
+,
+M.
+Kunkel
+,
+C.
+McArdle
+,
+G.
+Paz-y-Mino
+,
+M.
+Nonet
+,
+N.
+Walton
+,
+Z. W.
+Wang
+,
+A.
+Yuan
+,
+A.
+Wei
+,
+Evolution tunes the excitability of individual neurons
+.
+Neuroscience
+103
+,
+853
+–
+859
+(
+2001
+).
+11301195
+10.1016/s0306-4522(01)00079-3
+86
+L. Salkoff, A. Wei, B. Baban, A. Butler, G. Fawcett, S. M. Santi, Potassium channels in
+C. elegans
+. 1–15 (2005).
+10.1895/wormbook.1.42.1
+PMC4781360
+18050399
+87
+S.
+El Mouridi
+,
+C.
+Lecroisey
+,
+P.
+Tardy
+,
+M.
+Mercier
+,
+A.
+Leclercq-Blondel
+,
+N.
+Zariohi
+,
+T.
+Boulin
+,
+Reliable CRISPR/Cas9 genome engineering in
+Caenorhabditis elegans
+using a single efficient sgRNA and an easily recognizable phenotype
+.
+G3
+7
+,
+1429
+–
+1437
+(
+2017
+).
+28280211
+10.1534/g3.117.040824
+PMC5427500
+88
+L. R. Sánchez, J. Watteyne, H. Sun, R. Fernandez, S. R. Taylor, A. Weinreb, M. Hammarlund, D. M. Miller, O. Hobert, I. Beets, P. E. Vértes, W. R. Schafer, The neuropeptidergic connectome of C. elegans. bioRxiv (2022).
+www.biorxiv.org/content/10.1101/2022.10.30.514396v2
+.
+89
+B.
+Bentley
+,
+R.
+Branicky
+,
+C. L.
+Barnes
+,
+Y. L.
+Chew
+,
+E.
+Yemini
+,
+E. T.
+Bullmore
+,
+P. E.
+Vértes
+,
+W. R.
+Schafer
+,
+The multilayer connectome of
+Caenorhabditis elegans
+.
+PLOS Comput. Biol.
+12
+,
+e1005283
+(
+2016
+).
+27984591
+10.1371/journal.pcbi.1005283
+PMC5215746
+90
+C. I.
+Bargmann
+,
+Beyond the connectome: How neuromodulators shape neural circuits
+.
+Bioessays
+34
+,
+458
+–
+465
+(
+2012
+).
+22396302
+10.1002/bies.201100185
+91
+E.
+Marder
+,
+Neuromodulation of neuronal circuits: Back to the future
+.
+Neuron
+76
+,
+1
+–
+11
+(
+2012
+).
+23040802
+10.1016/j.neuron.2012.09.010
+PMC3482119
+92
+Q.
+Liu
+,
+P. B.
+Kidd
+,
+M.
+Dobosiewicz
+,
+C. I.
+Bargmann
+,
+C. elegans
+AWA olfactory neurons fire calcium-mediated all-or-none action potentials
+.
+Cell
+175
+,
+57
+–
+70.e17
+(
+2018
+).
+30220455
+10.1016/j.cell.2018.08.018
+93
+J.
+Jiang
+,
+Y.
+Su
+,
+R.
+Zhang
+,
+H.
+Li
+,
+L.
+Tao
+,
+Q.
+Liu
+,
+C. elegans
+enteric motor neurons fire synchronized action potentials underlying the defecation motor program
+.
+Nat. Commun.
+13
+,
+1
+–
+15
+(
+2022
+).
+35589790
+10.1038/s41467-022-30452-y
+PMC9120479
+94
+Q.
+Liu
+,
+G.
+Hollopeter
+,
+E. M.
+Jorgensen
+,
+Graded synaptic transmission at the
+Caenorhabditis elegans
+neuromuscular junction
+.
+Proc. Natl. Acad. Sci. U.S.A.
+106
+,
+10823
+–
+10828
+(
+2009
+).
+19528650
+10.1073/pnas.0903570106
+PMC2705609
+95
+S. L.
+Geffeney
+,
+J. G.
+Cueva
+,
+D. A.
+Glauser
+,
+J. C.
+Doll
+,
+T. H.-C.
+Lee
+,
+M.
+Montoya
+,
+S.
+Karania
+,
+A. M.
+Garakani
+,
+B. L.
+Pruitt
+,
+M. B.
+Goodman
+,
+DEG/ENaC but not TRP channels are the major mechanoelectrical transduction channels in a
+C. elegans
+nociceptor
+.
+Neuron
+71
+,
+845
+–
+857
+(
+2011
+).
+21903078
+10.1016/j.neuron.2011.06.038
+PMC3170654
+96
+C. elegans Sequencing Consortium
+,
+Genome sequence of the nematode
+C. elegans
+: A platform for investigating biology
+.
+Science
+282
+,
+2012
+–
+2018
+(
+1998
+).
+9851916
+10.1126/science.282.5396.2012
+97
+J. L.
+Donnelly
+,
+C. M.
+Clark
+,
+A. M.
+Leifer
+,
+J. K.
+Pirri
+,
+M.
+Haburcak
+,
+M. M.
+Francis
+,
+A. D. T.
+Samuel
+,
+M. J.
+Alkema
+,
+Monoaminergic orchestration of motor programs in a complex
+C. elegans
+behavior
+.
+PLOS Biol.
+11
+,
+e1001529
+(
+2013
+).
+23565061
+10.1371/journal.pbio.1001529
+PMC3614513
+98
+J. B. Rand, “Acetylcholine” in
+WormBook
+(2007), pp 1–21.
+10.1895/wormbook.1.131.1
+PMC4781110
+18050502
+99
+J. E.
+Richmond
+,
+W. S.
+Davis
+,
+E. M.
+Jorgensen
+,
+Unc-13 is required for synaptic vesicle fusion in
+C. elegans
+.
+Nat. Neurosci.
+2
+,
+959
+–
+964
+(
+1999
+).
+10526333
+10.1038/14755
+PMC2585767
+100
+P. J.
+Brockie
+,
+J. E.
+Mellem
+,
+T.
+Hills
+,
+D. M.
+Madsen
+,
+A. V.
+Maricq
+,
+The C. elegans glutamate receptor subunit NMR-1 is required for slow NMDA-activated currents that regulate reversal frequency during locomotion
+.
+Neuron
+31
+,
+617
+–
+630
+(
+2001
+).
+11545720
+10.1016/s0896-6273(01)00394-4
+101
+Y.
+Qi
+,
+E.
+Garren
+,
+X.
+Shu
+,
+Photo-inducible cell ablation in
+Caenorhabditis elegans
+using the genetically encoded singlet oxygen generating protein miniSOG
+.
+Proc. Natl. Acad. Sci. U.S.A.
+109
+,
+7499
+–
+7504
+(
+2012
+).
+22532663
+10.1073/pnas.1204096109
+PMC3358873
+102
+J.
+Meng
+,
+X.
+Ma
+,
+H.
+Tao
+,
+X.
+Jin
+,
+D.
+Witvliet
+,
+J.
+Mitchell
+,
+M.
+Zhu
+,
+M. Q.
+Dong
+,
+M.
+Zhen
+,
+Y.
+Jin
+,
+Y. B.
+Qi
+,
+Myrf ER-bound transcription factors drive
+C. elegans
+synaptic plasticity via cleavage-dependent nuclear translocation
+.
+Dev. Cell
+41
+,
+180
+–
+194.e7
+(
+2017
+).
+28441531
+10.1016/j.devcel.2017.03.022
+PMC5493483
+103
+E.
+Yeh
+,
+T.
+Kawano
+,
+R. M.
+Weimer
+,
+J. L.
+Bessereau
+,
+M.
+Zhen
+,
+Identification of genes involved in synaptogenesis using a fluorescent active zone marker in
+Caenorhabditis elegans
+.
+J. Neurosci.
+25
+,
+3833
+–
+3341
+(
+2005
+).
+15829635
+10.1523/JNEUROSCI.4978-04.2005
+PMC6724931
+104
+M. B.
+Goodman
+,
+P.
+Sengupta
+,
+The extraordinary AFD thermosensor of
+C. elegans
+.
+Pflugers Arch.
+470
+,
+839
+(
+2018
+).
+29218454
+10.1007/s00424-017-2089-5
+PMC5945307
+105
+M.
+Nicoletti
+,
+A.
+Loppini
+,
+L.
+Chiodo
+,
+V.
+Folli
+,
+G.
+Ruocco
+,
+S.
+Filippi
+,
+Biophysical modeling of
+C. Elegans
+neurons: Single ion currents and whole-cell dynamics of AWCon and RMD
+.
+PLOS ONE
+14
+,
+e0218738
+(
+2019
+).
+31260485
+10.1371/journal.pone.0218738
+PMC6602206
+106
+T.
+Shindou
+,
+M.
+Ochi-Shindou
+,
+T.
+Murayama
+,
+E.
+Saita
+,
+Y.
+Momohara
+,
+J. R.
+Wickens
+,
+I. N.
+Maruyama
+,
+Active propagation of dendritic electrical signals in
+C. elegans
+.
+Sci. Rep.
+9
+,
+3430
+(
+2019
+).
+30837592
+10.1038/s41598-019-40158-9
+PMC6401061
+107
+M.
+Dobosiewicz
+,
+Q.
+Liu
+,
+C. I.
+Bargmann
+,
+Reliability of an interneuron response depends on an integrated sensory state
+.
+eLife
+8
+,
+e50566
+(
+2019
+).
+31718773
+10.7554/eLife.50566
+PMC6894930
+108
+S.
+Faumont
+,
+T.
+Lindsay
+,
+S.
+Lockery
+,
+Neuronal microcircuits for decision making in
+C. elegans
+.
+Curr. Opin. Neurobiol.
+22
+,
+580
+–
+591
+(
+2012
+).
+22699037
+10.1016/j.conb.2012.05.005
+PMC3593597
+109
+R. I.
+Hoogstraaten
+,
+L.
+van Keimpema
+,
+R. F.
+Toonen
+,
+M.
+Verhage
+,
+Tetanus insensitive VAMP2 differentially restores synaptic and dense core vesicle fusion in tetanus neurotoxin treated neurons
+.
+Sci. Rep.
+10
+,
+10913
+(
+2020
+).
+32616842
+10.1038/s41598-020-67988-2
+PMC7331729
+110
+G. G.
+Schiavo
+,
+F.
+Benfenati
+,
+B.
+Poulain
+,
+O.
+Rossetto
+,
+P. P.
+De Laureto
+,
+B. R.
+Dasgupta
+,
+C.
+Montecucco
+,
+Tetanus and botulinum-B neurotoxins block neurotransmitter release by proteolytic cleavage of synaptobrevin
+.
+Nature
+359
+,
+832
+–
+835
+(
+1992
+).
+1331807
+10.1038/359832a0

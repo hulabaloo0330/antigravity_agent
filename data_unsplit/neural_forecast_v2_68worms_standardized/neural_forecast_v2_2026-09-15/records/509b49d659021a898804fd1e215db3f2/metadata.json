@@ -1,0 +1,203 @@
+{
+  "source_format": "wormwideweb-json",
+  "source_record_id": "2023-03-08-03",
+  "source_metadata": {
+    "blake3_neuropal_dict": "f58c40bd6a7420a263a1e5ac32f23d87a71c6065b22df7c10836caaec1a35d9b",
+    "checksum_h5": "c308bc45ccb819397a018393b1dfff77e0235af0e271284a2a652ec572dbceb5",
+    "dataset_type": [
+      "neuropal",
+      "sickness"
+    ],
+    "n_neuron": 141,
+    "paper_id": "pradhan_madan_2025",
+    "source_filename": "2023-03-08-03-data.h5",
+    "uid": "2023-03-08-03"
+  },
+  "source_group_id": "source-h5:c308bc45ccb819397a018393b1dfff77e0235af0e271284a2a652ec572dbceb5",
+  "animal_id": null,
+  "animal_identity_status": "unknown",
+  "condition": [
+    "neuropal",
+    "sickness"
+  ],
+  "signal_kind": "calcium_reporter_fluorescence",
+  "signal_source_field": "gcamp/trace_array_original",
+  "signal_unit": "source_fluorescence_scale",
+  "source_preprocessing": "Author-provided extracted fluorescence; not raw photons or membrane voltage. Upstream processing is not proven causal.",
+  "normalization_applied_here": "none",
+  "source_author_zscore_uses_future_statistics": "possible; excluded by default loader",
+  "time_unit": "s",
+  "time_unit_evidence": "WormWideWeb JSON schema: timestamp_confocal and mean_timestep",
+  "source_time_origin": 2606613.8793068617,
+  "event_index_origin": "unknown_preserved_not_converted",
+  "events_source_index": {},
+  "reversal_events_source_index": [
+    [
+      1,
+      2
+    ],
+    [
+      14,
+      20
+    ],
+    [
+      25,
+      37
+    ],
+    [
+      52,
+      62
+    ],
+    [
+      82,
+      96
+    ],
+    [
+      106,
+      137
+    ],
+    [
+      145,
+      152
+    ],
+    [
+      168,
+      184
+    ],
+    [
+      197,
+      209
+    ],
+    [
+      220,
+      234
+    ],
+    [
+      240,
+      253
+    ],
+    [
+      293,
+      316
+    ],
+    [
+      326,
+      326
+    ],
+    [
+      352,
+      356
+    ],
+    [
+      361,
+      363
+    ],
+    [
+      365,
+      422
+    ],
+    [
+      435,
+      443
+    ],
+    [
+      471,
+      478
+    ],
+    [
+      486,
+      510
+    ],
+    [
+      519,
+      519
+    ],
+    [
+      550,
+      550
+    ],
+    [
+      555,
+      557
+    ],
+    [
+      560,
+      563
+    ],
+    [
+      571,
+      610
+    ],
+    [
+      615,
+      615
+    ],
+    [
+      656,
+      689
+    ],
+    [
+      697,
+      726
+    ],
+    [
+      764,
+      771
+    ],
+    [
+      779,
+      787
+    ]
+  ],
+  "behavior_channels": [
+    {
+      "name": "velocity",
+      "source_unit": "0.1 mm/s",
+      "conversion": "identity"
+    },
+    {
+      "name": "head_angle",
+      "source_unit": "rad",
+      "conversion": "identity"
+    },
+    {
+      "name": "angular_velocity",
+      "source_unit": "rad/s",
+      "conversion": "identity"
+    },
+    {
+      "name": "pumping",
+      "source_unit": "1/s",
+      "conversion": "identity"
+    }
+  ],
+  "issues": [
+    "UPSTREAM_CAUSAL_PREPROCESSING_NOT_VERIFIED"
+  ],
+  "source_original_available": true,
+  "control": false,
+  "record_key": "509b49d659021a898804fd1e215db3f2",
+  "parser_version": "neural-v2.0",
+  "signal_sha256": "564ad3805fe89ef93739c4b85842d3ee4d51280cd8d360efa8da31968f5cec06",
+  "timestamps_sha256": "57e2abff8c48a5337edebf085f11af02399a9b152c44697b1060815a51f6e57f",
+  "n_timepoints": 800,
+  "n_neurons": 141,
+  "n_named_neurons": 87,
+  "finite_fraction": 1.0,
+  "median_dt_s": 0.6000188710168004,
+  "n_segments": 1,
+  "axis_order": [
+    "time",
+    "neuron"
+  ],
+  "dtype": "float32",
+  "mask_definition": "finite numerical values; not a complete biological quality mask",
+  "qc_state": "usable",
+  "training_eligible": true,
+  "evaluation_scope": "chronological within-record forecasting; cross-animal grouping requires identity review",
+  "source": {
+    "source_archive": "C:\\projects\\bio\\source_data\\behavior_forecast_5papers_2026-09-15\\raw\\pradhan_madan_2025\\pradhan_madan_2025.tar.bz2",
+    "member": "pradhan_madan_2025_2023-03-08-03.json",
+    "paper_key": "pradhan_madan_2025"
+  }
+}

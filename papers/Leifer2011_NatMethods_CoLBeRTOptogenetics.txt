@@ -1,0 +1,993 @@
+Nat Methods
+Nat. Methods
+319
+nihpa
+101215604
+Nature methods
+1548-7091
+1548-7105
+pmc-is-collection-domain
+yes
+pmc-collection-title
+NIHPA Author Manuscripts
+PMC3032981
+PMC3032981.1
+3032981
+3032981
+NIHMS259056
+21240279
+10.1038/nmeth.1554
+NIHMS259056
+NIHPA259056
+1
+Article
+Optogenetic manipulation of neural activity in freely moving
+Caenorhabditis elegans
+Leifer
+Andrew M
+1
+*
+Fang-Yen
+Christopher
+1
+2
+*
+Gershow
+Marc
+1
+Alkema
+Mark J
+3
+Samuel
+Aravinthan D T
+1
+1
+Department of Physics & Center for Brain Science, Harvard University, 17 Oxford Street Cambridge, MA 02138 USA
+2
+Department of Bioengineering, University of Pennsylvania, 210 S. 33
+rd
+Street, Philadelphia, PA 19104 USA
+3
+Department of Neurobiology, University of Massachusetts Medical School, 364 Plantation Street, Worcester, MA 01605 USA
+To Whom Correspondence Should be Addressed, Christopher Fang-Yen
+fangyen@seas.upenn.edu
+, Aravinthan Samuel
+samuel@physics.harvard.edu
+*
+Equal contributions
+16
+1
+2011
+2
+2011
+8
+2
+193933
+147
+152
+26
+01
+2011
+01
+08
+2011
+01
+08
+2011
+06
+06
+2024
+Users may view, print, copy, download and text and data- mine the content in such documents, for the purposes of academic research, subject always to the full Conditions of use:
+http://www.nature.com/authors/editorial_policies/license.html#terms
+We present an optogenetic illumination system capable of real-time light delivery with high spatial resolution to specified targets in freely moving
+Caenorhabditis elegans
+. A tracking microscope records the motion of an unrestrained worm expressing Channelrhodopsin-2 or Halorhodopsin/NpHR in specific cell types. Image processing software analyzes the worm’s position within each video frame, rapidly estimates the locations of targeted cells, and instructs a digital micromirror device to illuminate targeted cells with laser light of the appropriate wavelengths to stimulate or inhibit activity. Since each cell in an unrestrained worm is a rapidly moving target, our system operates at high speed (~50 frames per second) to provide high spatial resolution (~30 µm). To demonstrate the accuracy, flexibility, and utility of our system, we present optogenetic analyses of the worm motor circuit, egg-laying circuit, and mechanosensory circuits that were not possible with previous methods.
+pmc-status-qastatus
+0
+pmc-status-live
+yes
+pmc-status-embargo
+no
+pmc-status-released
+yes
+pmc-prop-open-access
+yes
+pmc-prop-olf
+no
+pmc-prop-manuscript
+yes
+pmc-prop-open-manuscript
+yes
+pmc-prop-legally-suppressed
+no
+pmc-prop-has-pdf
+yes
+pmc-prop-has-supplement
+yes
+pmc-prop-pdf-only
+no
+pmc-prop-suppress-copyright
+no
+pmc-prop-is-real-version
+no
+pmc-prop-is-scanned-article
+no
+pmc-prop-preprint
+no
+pmc-prop-in-epmc
+yes
+Introduction
+Systems neuroscience aims to understand how neural dynamics create behavior. Optogenetics has accelerated progress in this area by making it possible to stimulate or inhibit neurons that express light-activated proteins – e.g., Channelrhodopsin-2 (ChR2) and Halorhodopsin (Halo/NpHR) – by illuminating them with light
+1
+–
+7
+. The nematode
+C. elegans
+is particularly amenable to optogenetics owing to its optical transparency, compact nervous system, and ease of genetic manipulation
+8
+–
+11
+.
+Being able to deliver light to one cell with spatial selectivity is essential for targeted optogenetic perturbation in the many cases in
+C. elegans
+where genetic methods do not provide adequate specificity. In the worm motor circuit, for example, promoters are not available to drive expression of light-activated proteins in only one or a few neurons of the ventral nerve cord. Optogenetics has been applied to the mechanosensory circuit in
+C. elegans
+, but only by simultaneously stimulating all touch receptor neurons because promoters specific to each neuron are unavailable
+1
+. Laser killing allows one to study the contribution of single touch receptor neurons to overall behavior by removing neurons, but it is often preferable to work with intact circuits
+13
+–
+15
+. Recently it has been shown that a digital micromirror device (DMD) can be used to deliver light with high spatial selectivity in immobilized
+C. elegans
+10
+and immobilized zebrafish
+12
+, as each element of a DMD may be independently controlled to deliver light to a corresponding pixel of a microscope's field of view. In many cases, however, the normal operation of neural circuits can only be studied in freely behaving animals, requiring a more sophisticated instrument.
+Here, we describe an optogenetic illumination system that allows perturbations of neural activity with high spatial and temporal resolution in an unrestrained animal, enabling us to
+co
+ntrol
+l
+ocomotion and
+be
+havior in
+r
+eal
+t
+ime (CoLBeRT) in
+C. elegans
+. In the CoLBeRT system, a video camera follows a worm under dark field illumination, and a motorized stage keeps the animal centered in the camera’s field of view. Machine-vision algorithms estimate the coordinates of targeted cells within the worm body and generate an illumination pattern that is projected onto the worm by a DMD with laser light, and the cycle repeats itself for the next frame. Because the worm is a moving target, the faster an image can be captured and translated into DMD directives, the more accurately an individual cell can be targeted. The CoLBeRT system performs all of these functions in ~20 ms, providing ~30 micrometer spatial resolution in optogenetic control for freely swimming
+C. elegans
+. Here, we carry out studies of the motor circuit and mechanosensory circuit of unrestrained animals that illustrate the performance of the CoLBeRT system, a new tool for
+C. elegans
+neurophysiology.
+Results
+Experimental setup
+To stimulate neurons using channelrhodopsin-2 (ChR2) or inhibit neurons using Halorhodopsin (Halo/NpHR), we employed a 473 nm or 532 nm wavelength diode-pumped solid state (DPSS) laser, respectively (
+Fig. 1a
+). Either laser was incident onto a DMD with 1024x768 elements. Laser light was reflected onto the specimen only when an individual micromirror is turned to the ‘on’ position. We illuminated the specimen under dark-field by red light to avoid exciting ChR2 or Halo/NpHR. Filter cubes reflected the wavelengths for optogenetic illumination from the DMD onto the sample, while passing longer wavelengths for dark-field illumination to a camera. A motorized stage keeps the specimen in the field of view.
+To accelerate real-time image analysis of worm posture, we developed the MindControl software package using the open-source OpenCV computer vision library
+16
+. An intuitive graphical user interface (GUI) enables the user to dynamically target specific regions of freely moving animals. The MindControl software and documentation are freely available for download (
+Supplementary Software
+and
+http://github.com/samuellab/mindcontrol-analysis
+).
+The MindControl software performs a sequence of image analysis operations on each frame received from the camera (
+Fig. 1b
+). An image is captured by the computer, filtered, and thresholded. Next, the boundary of the worm is calculated, and head and tail are identified as local maxima of boundary curvature (the head is blunt and the tail is sharp). The worm centerline is calculated and the body is divided into 100 evenly spaced segments. These segments define a worm coordinate system invariant to worm posture or orientation, within which the user may define target positions. The software maps the position of targets onto the coordinates of the real image, and finally sends the appropriate pattern to the DMD for illumination.
+For our current system, the total latency between image acquisition and DMD illumination is 20 ms: image exposure, 2 ms; data transfer to computer, 3 ms; image analysis, 10 ms; and data transfer to DMD, 5 ms. Given the size and speed of a swimming worm at 10x magnification, our system working at ~50 fps delivers optogenetic illumination with ~30 micrometer spatial resolution, not far from the spatial resolution limit imposed by the pixel density of the DMD (~5 micrometers at 10x magnification).
+Spatial resolution of the illumination system
+First, we confirmed that illumination is restricted to the targeted area. We examined a transgenic worm expressing
+Halo/NpHR::CFP
+in all body wall muscles. Whole animal illumination of transgenic P
+myo-3::Halo/NpHR
+worms causes all muscles to relax
+6
+. We placed individual swimming worms in the CoLBeRT system, and used green light (532 nm, 10 mW mm
+−2
+) to alternately illuminate the entire region outside and inside the worm boundary (
+Fig. 1c
+and
+Supplementary Video 1
+). Illuminating the entire region outside the worm boundary had no effect as bending waves propagated from head to tail at normal speed. Illuminating the entire region inside the worm boundary, however, arrested locomotion as the body relaxed and the speed of bending waves dropped to zero.
+To quantify the spatial resolution of the CoLBeRT system, we measured its targeting accuracy in evoking egg-laying events by stimulating the HSN motor neurons. We used transgenic worms expressing ChR2 under the
+egl-6
+promoter, which drives expression in the bilaterally symmetric HSN neurons (HSNL and HSNR) as well as glia-like cells in the worm’s head
+17
+. Optogenetic stimulation of the HSN neurons, which innervate the vulval musculature, evokes egg-laying behavior (L. Emtage and N. Ringstad, personal communication).
+The two HSN neurons lie on top of one another when the worm is viewed laterally, so our system targets both neurons. We projected a thin stripe of blue light (473 nm, 5 mW mm
+−2
+) on the body of swimming P
+egl-6::ChR2
+transgenic worms. The long axis of the stripe was orthogonal to the worm centerline and spanned its diameter. The stripe width corresponded to 2% of the anterior-posterior length of the worm centerline (i.e., ~20 micrometers of the ~1 mm long young adult worm). We used narrow stripes so that our illumination would be less likely to stimulate HSN when illuminating its process. We slowly moved the illumination stripe along the centerline of swimming worms while recording egg-laying events. Of 14 animals studied, we observed 13 egg-laying events, eight in which the stripe started at the head and five in which the stripe started at the tail. Egg-laying frequency displayed a sharp peak when the center of the stripe coincided with the centerline coordinate of the HSN cell bodies, or 49.6% of the total distance from the anterior to the posterior of the body with 3.2% standard deviation (
+Fig. 1d
+and
+Supplementary Video 2
+). The width of this distribution suggests that the CoLBeRT system provides at least ~30 micrometers of spatial resolution.
+Optogenetic manipulation of muscle cells
+In
+C. elegans
+, forward movement is driven by motor neurons in the ventral nerve cord (VNC) which coordinate the activity of 95 body wall muscle cells along its dorsal and ventral sides
+18
+. The circuit for worm locomotion remains poorly understood in comparison to that of other undulatory animals like the leech and lamprey
+19
+–
+21
+. Because the normal operation of this circuit is only likely to occur during normal movement, technology like the CoLBeRT system has been desired to dissect cellular activity in unrestrained animals.
+We used the CoLBeRT system to suppress muscle activity in a region of the body in
+myo-3::Halo/NpHR::CFP
+transgenic animals (
+Fig. 2
+and
+Supplementary Video 3
+). This perturbation of undulatory dynamics can be shown graphically using a red-blue color map to represent the curvature of the body centerline in non-dimensional units (i.e., the curvature calculated at each point along the centerline, κ, multiplied by worm length,
+L
+) as a function of time and fractional distance along the centerline,
+s
+, from head (
+s
+= 0) to tail (
+s
+= 1) (
+Fig. 2a
+). Interestingly, hyperpolarizing muscle cells in one segment had no effect on undulatory dynamics anterior to the segment, but lowered the amplitude of the bending wave posterior to the illuminated segment (
+Fig. 2b
+). Thus, the bending of posterior body segments appears to be coupled to the bending of anterior body segments. One possibility is that muscle activity in posterior segments is directly promoted by muscle activity in anterior segments, perhaps by gap junction coupling between muscle cells
+22
+. Another possibility is that the motor circuit contains a proprioceptive mechanism that makes the activity of posterior segments directly sensitive to the bending of anterior segments.
+Optogenetic manipulation of cholinergic motor neurons
+The cell bodies of motor neurons in
+C. elegans
+are distributed along the ventral nerve cord
+13
+,
+18
+. Ventral muscles are innervated by the cholinergic VA, VB, and VC motor neurons and GABAergic VD motor neurons. Dorsal muscles are innervated by the cholinergic DA, DB, and AS motor neurons and GABAergic DD motor neurons
+23
+,
+24
+. A current model is that VA and DA drive muscle contraction during backward locomotion, VB and DB drive muscle contraction during forward locomotion; and VD and DD motor neurons drive muscle relaxation during both forward and backward locomotion
+13
+,
+18
+,
+25
+. A repeating motif of synaptic connectivity between the motor neurons runs along the worm body and allows for contralateral inhibition
+18
+. During forward locomotion, for example, the DB (or VB) motor neurons can simultaneously excite a dorsal (or ventral) muscle cell while exciting the GABAergic VD (or DD) motor neurons that inhibit the opposing ventral (or dorsal) muscle cell
+23
+,
+24
+. However, how this network drives the rhythmic undulatory wave remains poorly understood.
+We analyzed the contributions of cholinergic neurons to forward locomotion using transgenic worms expressing Halo/NpHR in all cholinergic neurons under the control of the
+unc-17
+promoter
+26
+. In P
+unc-17::Halo/NpHR::CFP
+transgenic worms, illuminating a short segment of the VNC suppressed propagation of the undulatory wave to the entire region posterior to the illuminated segment without affecting the undulatory wave anterior to the illuminated segment (
+Fig. 3a,b
+and
+Supplementary Video 4
+). This suggests that the activity of posterior VB and DB neurons is coupled to the activity of anterior VB and DB neurons, consistent with a wave of neuronal excitation that propagates from head to tail during forward movement.
+The CoLBeRT system also allows us to specifically illuminate either the dorsal nerve cord or the ventral nerve cord (
+Supplemental Video 5
+). The ventral nerve cord contains the cell bodies of the cholinergic motor neurons, whereas the dorsal nerve cord contains only nerve processes. Illuminating the entire ventral nerve cord was particularly effective in hyperpolarizing the cholinergic motor neurons of P
+unc-17::Halo/NpHR::CFP
+animals, inducing paralysis. Illuminating the entire dorsal nerve cord, however, only produced a small (~15%) drop in the speed of wave propagation (
+Fig. 3c,d
+). The asymmetric effect of illuminating the ventral and dorsal nerve cords is likely due to the higher density of optogenetic protein in the cell bodies.
+Surprisingly, the paralysis evoked by illuminating the VNC can occur without allowing relaxation of the worm body. In this instance, as long as the entire cholinergic network within the VNC was deactivated, the worm retained the posture it had immediately before illumination (
+Fig. 3c
+). When the muscle cells of a swimming worm are hyperpolarized, on the other hand, the body straightened (
+Supplementary Video 1
+). This observation suggests that muscle cells can remain in contracted or relaxed states without requiring continuous cholinergic input.
+Optogenetic manipulation of single touch receptor types
+Next, we applied the CoLBeRT system to the touch receptor system in
+C. elegans
+. Six cells are specialized for sensing gentle touch in
+C. elegans
+: the left and right anterior lateral microtubule cells (ALML and ALMR); the left and right posterior lateral microtubule cells (PLML and PLMR); the anterior ventral microtubule cell (AVM); and the posterior ventral microtubule cell (PVM)
+13
+. Gently touching the worm near its anterior stimulates reversal movement dependent upon ALML, ALMR, and AVM. Gently touching the worm near its posterior stimulates forward movement dependent upon PLML and PLMR. The role of PVM remains unclear.
+Channelrhodopsin can be expressed in all six touch receptor cells using the
+mec-4
+promoter. Illuminating the whole body of transgenic animals with blue light evokes reversal responses, presumably by simultaneously activating ALM, AVM, and PLM
+1
+. The spatial resolution afforded by the CoLBeRT system allowed us to individually activate the ALM, AVM, and PLM cell types. The left and right lateral cells (ALML and ALMR; PLML and PLMR) lie on top of one another when the animal is viewed laterally. Illuminating the anterior end containing both the AVM and ALM neurons triggered reverse movement (
+Fig. 4a
+and
+Supplementary Video 6
+). Illuminating the posterior end containing the PLM neurons triggered forward movement (
+Fig. 4b
+and
+Supplementary Video 7
+).
+The CoLBeRT system also enabled us to induce reversals by targeting just AVM or ALM with an illumination box (20 micrometers in the dorsal-ventral dimension; 30 micrometers in the anterior-posterior direction for a young adult worm) that was centered on each cell body (
+Fig. 4c,d
+and
+Supplementary Videos 8, 9
+). These illumination boxes enabled us to avoid illuminating the axon of the non-targeted neuron. These observations are consistent with prior work that shows that single touch receptor types are sufficient to drive behavioral responses
+27
+.
+To confirm that the CoLBeRT system is capable of specifically targeting either AVM or ALM, we used transgenic worms which express the photoconvertible fluorescent protein Kaede in the mechanosensory neurons
+28
+. Upon illumination by UV or violet light, Kaede converts from a green to a red fluorescent state. We used the CoLBeRT system with 405 nm wavelength light to specifically illuminate either the AVM or ALM cell bodies for a total of 60 s in freely moving
+mec-4::Kaede
+worms. We found that animals in which AVM or ALM had been targeted only exhibited detectable red fluorescence in AVM or ALM, respectively, whereas all mechanosensory neurons exhibited green fluorescence (
+Fig. 5a,b
+). By quantifying the ratio between the red and green fluorescence signals, we estimated that the non-targeted neurons were illuminated for less than ~1 s (see methods).
+Nagel et al. (2005) showed that the mechanosensory circuit habituates to repetitive optogenetic stimulation
+1
+. We used the CoLBeRT system to quantify the rate of AVM and ALM habituation over 40 min by repeatedly stimulating either AVM or ALM every 60 seconds. We observed comparable rates of habituation for both ALM and AVM (
+Fig. 5c,d
+). Kitamura et al. (2001) studied loci for habituation in the mechanosensory circuit by laser killing touch receptor cells and/or downstream neurons and quantifying rates of habituation to gentle touch
+15
+. If habituation partly occurs at interneurons that are downstream of both ALM and AVM, then one might expect cross-habituation of the AVM response to repeated ALM stimulation, and vice-versa. Cross-habituation may also be mediated by electrical gap junction between AVM and ALM
+23
+. To test whether cross-habituation occurs, we subjected an animal to interleaved AVM and ALM stimulation every 30 s, such that each neuron type was stimulated every 60 s. We found that the rates of habituation to both AVM and ALM stimulation were indeed more rapid with interleaved stimulation than with individual stimulation. This effect was particularly dramatic in the case of AVM stimulation (
+Fig. 5e
+).
+Discussion
+To date, optogenetic stimulation with single cell resolution in freely moving
+C. elegans
+has required the use of cell-specific promoters. Now, single cells can be targeted in transgenic animals that express optogenetic proteins in several cells, provided they are spaced sufficiently far apart. By introducing light delivery with high spatial and temporal resolution in freely moving animals, CoLBeRT enhances the flexibility and power of optogenetic approaches in
+C. elegans
+.
+At present, the spatial resolution of CoLBeRT is ~30 micrometers when tracking a swimming worm. The system has better resolution when tracking the slower movements of a crawling worm, but is ultimately limited to ~5 micrometer resolution owing to the pixel resolution of the DMD. In principle, higher spatial resolution could be achieved by tracking a specific region of the worm (e.g., the nerve ring) at higher magnification. This modification to CoLBeRT would require a different approach to image analysis and targeting, e.g., analysis of cell body fluorescence instead of analysis of the posture of the whole animal.
+CoLBeRT may be adapted to the optogenetic analysis of other genetically tractable, transparent animals like the
+Drosophila
+or zebrafish larva. A simplified version of CoLBeRT may also be used to facilitate optogenetic illumination in other settings, e.g., studies of mammalian brain slices or exposed brain surfaces. Variants of CoLBeRT utilizing its capacity for rapid closed-loop feedback may be used to trigger optogenetic stimulation based on simultaneous recordings of neural activity in addition to animal posture.
+In summary, CoLBeRT represents a new tool for optogenetic analysis of neural circuits, providing a flexible and easy-to-use platform to design and project arbitrary spatiotemporal patterns of illumination with closed-loop sensitivity to the real-time behavior of the animal.
+Methods
+Strains
+We cultivated transgenic worms in the dark at 20 °C on nematode growth medium (NGM) plates with OP50 bacteria with all-
+trans
+retinal. We made OP50-retinal plates by seeding 6 cm NGM plates with 250 µl of a suspension of OP50 bacteria in LB, to which we added 1 µl of 100 mM retinal in ethanol immediately prior to seeding. Plates were stored in the dark and all worms were handled in the dark or under red light.
+The strain FQ10 (P
+egl-6::ChR2::YFP
+) was a gift of N. Ringstad (Skirball Institute of Biomolecular Medicine, New York University School of Medicine, New York, NY). The strain QH3341_[vdEx128(P
+mec-4::Kaede
+)] was a gift of B. Neumann and M. Hilliard (Queensland Brain Institute, Brisbane, Australia). The strains ZX444 (
+lin-15
+(n765ts); zxEx29 [P
+myo-3::NpHR::ECFP
+;
+lin-15
++]) and ZX422 (
+lin-15
+(n765ts); zxEx33 [P
+unc-17::NpHR::ECFP
+;
+lin-15
++]) were gifts of A. Gottschalk (Frankfurt Molecular Life Sciences Institute, Frankfurt, Germany). The strain P
+myo-3::Halo::CFP
+used in our experiments was generated by integrating the transgene in ZX444 by cobalt-60 irradiation and outcrossing the resulting strain 3X to the wild-type N2 strain. The strain P
+unc-17::Halo::
+CFP used in our experiments was generated by M. Zhen (Samuel Lunenfeld Institute, Toronto, Canada) by irradiating ZX422 using UV radiation and outcrossing 2X to the wild-type N2 strain. The P
+mec-4::ChR2
+strain (QW309) was generated by injection of P
+mec-4::ChR2::YFP
+plasmid at 100 ng µl
+−1
+into
+lin-15(n765ts)
+animals along with the
+lin-15
+rescuing plasmid (pL15 EK) at 50 ng µl
+−1
+; the extrachromosomal array was integrated using gamma irradiation and outcrossed four times to wild-type N2.
+Microscopy
+The setup is built around a Nikon Eclipse TE2000-U inverted microscope. We performed dark field imaging using annular illumination of the specimen through a Ph3 phase ring. A red-light transmitting filter (Hoya) was mounted to the microscope illumination optical pathway in order to minimize inadvertent activation of ChR2 or Halo/NpHR due to dark field illumination.
+We imaged worms using a 10X, NA 0.45 Plan Apo objective. We used a custom optical system composed of two camera lenses (Nikon) to reduce the size of the image on the camera by a factor of 3.5. This allowed us to capture almost all of the 2.5 mm diameter field of view on the camera sensor. We used a PhotonFocus MV2-D1280-640CL camera and BitFlow Karbon PCI Express x8 10-tap Full Camera Link frame grabber to capture images.
+The microscope stage was controlled by a Ludl BioPrecision2 XY motorized stage and MAC 6000 stage-controller. During data acquisition, computer software kept the worm centered in the field of view via an automated feedback loop.
+Optics and illumination
+To stimulate ChR2 we used a diode-pumped solid state (DPSS) laser (LP473-100, 473 nm wavelength, 100mW maximum power, LaserShowParts). Similarly, to stimulate Halo/NpHR we used a DPSS laser (LP532-200, 532 nm wavelength, 200mW maximum power, LaserShowParts). To photoconvert Kaede, we used a DPSS laser (EL-100B, 405 nm wavelength, 100 mW maximum power, Laserwold). The beams from the 473nm and 532nm lasers were aligned to a common path by a dichroic beamsplitter. The beam from the 405nm laser was aligned to the common path with a retractable mirror. For each experiment, however, only one of the three lasers was used. The laser beam was expanded using a telescope composed of two plano-convex lenses and incident onto a 1024×768 digital micromirror device (Texas Instruments DLP, Discovery 4000 BD VIS 0.55” XGA, Digital Light Innovations) attached to a mirror mount. Using a series of mirrors, the laser was aligned such that the reflected beam for the “ON” state of the DMD is centered on the optical axis of the illumination pathway.
+The plane of the DMD was imaged onto the sample via the epifluorescence illumination pathway of the microscope using an optical system composed of two achromatic doublet lenses. We used a dichroic filter, FF580-FDi01-25x36 (Semrock), to reflect 405 nm, 473 nm, or 532 nm laser light onto the sample while passing wavelengths used for dark field illumination (λ > 600 nm). We used an emission filter, BLP01-594R-25, (Semrock) used to prevent stray laser reflections from reaching the camera. The dichroic and emission filters were mounted in a custom filter cube in the microscope filter turret.
+Imaging Kaede photoconversion
+To measure photoconversion of ALM and AVM neurons in
+mec-4::Kaede
+worms, we imaged worms on 5% agarose pads containing 3 mM sodium azide as anesthetic. We recorded images using epifluorescence filter cubes, a cooled CCD camera (CoolSnap HQ2, Photometrics) and the NIS Elements D imaging software (Nikon Corporation ). We measured the ratio
+R
+between the integrated and background-subtracted fluorescence pixel counts in the red and green fluorescence channels. (Note that
+R
+is dependent on the filter sets, illumination power, wavelength dependence of CCD camera sensitivity, and other factors and cannot be directly compared to fluorescence ratios in other reports). We first measured
+R
+for Kaede-expressing neurons in immobilized worms exposed to 405 nm light for defined durations, in order to establish the slope of the linear increase in
+R
+with light exposure
+28
+. We found that under our conditions,
+R
+increased by approximately 0.1% for every second of illumination by 405 nm light at an irradiance of 1 mW mm
+−2
+. Next, we imaged
+mec-4::Kaede
+worms in which AVM only or ALM only had been illuminated by 405 nm laser light when freely moving. We found that non-targeted neurons exhibited a fluorescence ratio
+R
+< 0.1%. Our measurements suggest that illumination of the off-target neuron occurs at a rate of at most ~1% that of the targeted neuron.
+To prepare the fluorescence images of the
+mec-4::Kaede
+worms for display, (
+Fig 5a,b
+), we used ImageJ (version 1.42q) to linearly adjust the brightness levels and apply red or green false-color.
+Software
+The microscope and all its components were controlled with custom MindControl software running Windows XP on an Acer Veriton M670G computer with an Intel Core 2 Quad processor running at 2.83 GHz and 3GB of RAM. MindControl enables the user to define arbitrary illumination patterns for optogenetic stimulation, and to deliver illumination patterns either manually or automatically. To operate rapidly, MindControl was written in the C programming language utilizing the open source OpenCV computer vision library along with Intel’s Integrated Performance Primitives for maximal speed. To further increase speed, we used multiple threads to separately handle image processing and the user interface. Every 20 ms, MindControl acquires an image from the camera, computes the location of the worm, generates an illumination pattern, and sends that pattern to the DMD. For each video frame, the boundary and centerline of the worm and the status of the stimulus is recorded in a human- and computer-readable YAML file. Every frame is also recorded in two video streams, one containing annotations about optogenetic stimulation, and the other containing just images of the freely moving worm. A graphical user interface allows the user to adjust the parameters of optogenetic stimulation in real time during each experiment. After each experiment, we used custom scripts written in MATLAB to perform quantitative analysis of the resulting video. All software and documentation is freely available for modification and redistribution under the GNU General Public License. For download information see (
+Supplementary Software
+and
+http://github.com/samuellab/mindcontrol-analysis for the MindControl-analysis software
+).
+Behavioral experiments
+For motor circuit experiments, we washed each young adult worm in NGM solution and transferred each worm to a chamber composed of approximately 100 µl of a 30% dextran in NGM solution sandwiched between two microscope slides separated by 0.127 mm. In this chamber the worm was approximately confined to two dimensions but otherwise able to move freely. We then placed the chamber on the microscope for data collection.
+To analyze egg-laying, we selected gravid adult worms, washed them in NGM, and transferred them to chambers as above. Each worm was subject to sequential pulses of 4 s blue light illumination. Each pulse illuminated a stripe orthogonal to the worm centerline, spanning the worm diameter with width corresponding to 2% of total body length. The stripe progressed along the worm centerline from head to tail or from tail to head until the first egg was laid. After an egg was laid, the trial ended and the worm was discarded. Out of 14 worms studied, one did not lay any eggs.
+For mechanosensory circuit experiments, we prescreend young adult P
+mec-4::ChR2
+worms on a fluorescence stereo microscope (Nikon SMZ 1500) by illuminating the anterior of the worm with blue light from a 50 W mercury lamp through a GFP excitation filter. Only worms that responded with a reversal were chosen for further experiments. We performed this prescreening procedure because the P
+mec-4::ChR2
+strain (QW309) exhibited noticeable worm to worm variability: only about ~70% responded robustly and consistently. The reasons for this variability are unclear. Worms which passed this prescreening were then transferred to an unseeded NGM agar plate and allowed to crawl for ~30 s to free themselves of bacteria. We then transferred worms onto a plate containing a 1–2 mm thick layer of NGM agar and covered with mineral oil to improve optical imaging quality. Specific regions of each worm were targeted with blue light and illuminated for 1.5 s. We scored anterior touch responses by quantifying the bending wave speed 2 s before stimulus onset and 3 s after stimulus onset. We classified a successful response to stimuli as a reduction in wave speed by more than 0.03 body-lengths per second. To calculate habituation rates as in (
+Fig. 5c–e
+), multiple worms were repeatedly stimulated over time. Fractional response, as plotted, is the total number of observed responses divided by the total number of stimuli in a ~4 min window for all worms of a given experiment.
+Quantifying locomotory behavior
+The locomotory behavior of individual worms was analyzed by quantifying time-varying worm posture in each video sequence. A least-squares cubic smoothing spline fit to the body centerline was calculated, and curvature was calculated at each point along the centerline as the derivative of the unit vector tangent to the centerline with respect to the distance along the centerline. To graphically display locomotory gait, we utilize kymographs of curvature as a function of distance along the centerline and time. We calculated the speed of the bending wave along the centerline within the reference frame of the worm body by measuring the displacement of curvature profiles along the centerline (Δ
+x
+) at successive points in time (Δ
+t
+) according to
+ν
+= Δ
+x
+/ Δ
+t
+.
+Supplementary Material
+1
+2
+ACKNOWLEDGMENTS
+This work was supported by the Dana Foundation, NSF, and an NIH Pioneer Award to A.D.T.S. A.M.L. is supported by an NSF Graduate Research Fellowship. We thank M. Zhen (Samuel Lunenfeld Institute), N. Ringstad (Skirball Institute of Biomolecular Medicine, New York University School of Medicine), A. Gottschalk (Frankfurt Molecular Life Sciences Institute), and B. Neumann and M. Hilliard (Queensland Brain Institute, University of Queens) for gifts of transgenic strains. We thank J. Stirman (Georgia Institute of Technology) for sharing unpublished results about a similar system that he developed. We thank B. Chow (Massachusetts Institute of Technology) for useful discussions. We thank A. Tang and B. Schwartz of Harvard University for assistance with data analysis.
+AUTHOR CONTRIBUTIONS
+C.F.Y. and AML designed the hardware setup. A.M.L. wrote the software, with supervision from M.G. A.M.L., C.F.Y., M.J.A. & A.D.T.S. designed experiments. A.M.L. performed experiments. A.M.L. and C.F.Y. analyzed data with advice from M.G. A.M.L., C.F.Y., and A.D.T.S. wrote the manuscript.
+COMPETING FINANCIAL INTERESTS
+The authors declare no competing financial interest
+REFERENCES
+1
+Nagel
+G
+Channelrhodopsin-2, a directly light-gated cation-selective membrane channel
+Proc. Natl. Acad. Sci. USA
+2003
+100
+13940
+13945
+14615590
+10.1073/pnas.1936192100
+PMC283525
+2
+Boyden
+ES
+Zhang
+F
+Bamberg
+E
+Nagel
+G
+Deisseroth
+K
+Millisecond-timescale, genetically targeted optical control of neural activity
+Nat Neurosci
+2005
+8
+1263
+1268
+16116447
+10.1038/nn1525
+3
+Zhang
+F
+Wang
+L
+Boyden
+ES
+Deisseroth
+K
+Channelrhodopsin-2 and optical control of excitable cells
+Nature Methods
+2006
+3
+785
+792
+16990810
+10.1038/nmeth936
+4
+Han
+X
+Boyden
+ES
+Multiple-color optical activation, silencing, and desynchronization of neural activity, with single-spike temporal resolution
+PLoS ONE
+2007
+3
+e299
+17375185
+10.1371/journal.pone.0000299
+PMC1808431
+5
+Szobota
+S
+Remote control of neuronal activity with a light-gated glutamate receptor
+Neuron
+2007
+54
+535
+545
+17521567
+10.1016/j.neuron.2007.05.010
+6
+Zhang
+F
+Multimodal fast optical interrogation of neural circuitry
+Nature
+2007
+446
+633
+639
+17410168
+10.1038/nature05744
+7
+Chow
+BY
+High-performance genetically targetable optical neural silencing by light-driven proton pumps
+Nature
+2010
+463
+98
+102
+20054397
+10.1038/nature08652
+PMC2939492
+8
+Nagel
+G
+Light activation of channelrhodopsin-2 in excitable cells of Caenorhabditis elegans triggers rapid behavioral responses
+Curr. Biol
+2005
+15
+2279
+2284
+16360690
+10.1016/j.cub.2005.11.032
+9
+Liewald
+JF
+Optogenetic analysis of synaptic function
+Nature Methods
+2008
+5
+895
+902
+18794862
+10.1038/nmeth.1252
+10
+Guo
+ZV
+Hart
+AC
+Ramanathan
+S
+Optical interrogation of neural circuits in Caenorhabditis elegans
+Nature Methods
+2009
+6
+891
+896
+19898486
+10.1038/nmeth.1397
+PMC3108858
+11
+Stirman
+JN
+Brauner
+M
+Gottschalk
+A
+Lu
+H
+High-throughput study of synaptic transmission at the neuromuscular junction enabled by optogenetics and microfluidics
+J. Neurosci. Methods
+2010
+191
+90
+93
+20538016
+10.1016/j.jneumeth.2010.05.019
+PMC2908193
+12
+Wyart
+C
+Optogenetic dissection of a behavioural module in the vertebrate spinal cord
+Nature
+2009
+461
+407
+410
+19759620
+10.1038/nature08323
+PMC2770190
+13
+Chalfie
+M
+The neural circuit for touch sensitivity in Caenorhabditis elegans
+J. Neurosci
+1985
+5
+956
+964
+3981252
+10.1523/JNEUROSCI.05-04-00956.1985
+PMC6565008
+14
+Wicks
+SR
+Roehrig
+CJ
+Rankin
+CH
+A dynamic network simulation of the nematode tap withdrawal circuit: predictions concerning synaptic function using behavioral criteria
+J. Neurosci
+1996
+16
+4017
+4031
+8656295
+10.1523/JNEUROSCI.16-12-04017.1996
+PMC6578605
+15
+Kitamura
+K
+Amano
+S
+Hosono
+R
+Contribution of neurons to habituation to mechanical stimulation in Caenorhabditis elegans
+J. Neurobiol
+2001
+46
+28
+40
+10.1002/1097-4695(200101)46:1<29::aid-neu3>3.0.co;2-8
+11108613
+16
+Bradski
+G
+The Open CV Library
+Dr. Dobb's Journal of Software Tools Nov 2000
+2000
+120
+126
+17
+Ringstad
+N
+Horvitz
+HR
+FMRFamide neuropeptides and acetylcholine synergistically inhibit egg-laying by C. elegans
+Nat. Neurosci
+2008
+325
+1168
+1176
+18806786
+10.1038/nn.2186
+PMC2963311
+18
+Von Stetina
+SE
+Treinin
+M
+Miller
+DM
+The motor circuit
+Int. Rev. Neurobiol
+2006
+69
+125
+167
+16492464
+10.1016/S0074-7742(05)69005-8
+19
+Marder
+E
+Calabrese
+RL
+Principles of rhythmic motor pattern generation
+Physiol. Rev
+1996
+76
+687
+717
+8757786
+10.1152/physrev.1996.76.3.687
+20
+Bryden
+J
+Cohen
+N
+Neural control of Caenorhabditis elegans forward locomotion: the role of sensory feedback
+Biol. Cybern
+2008
+98
+339
+351
+18350313
+10.1007/s00422-008-0212-6
+21
+Karbowski
+J
+Schindelman
+G
+Cronin
+CJ
+Seah
+A
+Sternberg
+PW
+Systems level circuit model of C. elegans undulatory locomotion: mathematical modeling and molecular genetics
+J. Comput. Neurosci
+2008
+24
+253
+276
+17768672
+10.1007/s10827-007-0054-6
+22
+Liu
+Q
+Chen
+B
+Gaier
+E
+Joshi
+J
+Wang
+ZW
+Low conductance gap junctions mediate specific electrical coupling in body-wall muscle cells of Caenorhabditis elegans
+J. Biol. Chem
+2006
+281
+7881
+7889
+16434400
+10.1074/jbc.M512382200
+23
+White
+J
+Southgate
+E
+Thomson
+JN
+Brenner
+S
+The structure of the ventral nerve cord of Caenorhabditis elegans
+Philos. Trans. R. Soc. Lond., B, Biol Sci
+1976
+275
+327
+348
+8806
+10.1098/rstb.1976.0086
+24
+Chen
+BL
+Hall
+DH
+Chklovskii
+DB
+Wiring optimization can relate neuronal structure and function
+Proc. Natl. Acad. Sci. USA
+2006
+103
+4723
+4728
+16537428
+10.1073/pnas.0506806103
+PMC1550972
+25
+Haspel
+G
+O'Donovan
+MJ
+Hart
+AC
+Motoneurons dedicated to either forward or backward locomotion in the nematode Caenorhabditis elegans
+J. Neurosci
+2010
+30
+11151
+11156
+20720122
+10.1523/JNEUROSCI.2244-10.2010
+PMC2945236
+26
+Roghani
+A
+Molecular cloning of a putative vesicular transporter for acetylcholine
+Proc. Natl. Acad. Sci. USA
+1994
+91
+10620
+10624
+7938002
+10.1073/pnas.91.22.10620
+PMC45073
+27
+Chalfie
+M
+Sulston
+J
+Developmental genetics of the, mechanosensory neurons of Caenorhabditis elegans
+Dev. Biol
+1981
+82
+358
+370
+7227647
+10.1016/0012-1606(81)90459-0
+28
+Ando
+R
+Hama
+H
+Hino
+MK
+Mizuno
+H
+Miyawaki
+A
+An optical marker based on the UV-induced green-to-red photoconversion of a fluorescent protein
+Proc. Natil. Acad. Sci. USA
+2002
+99
+12651
+12656
+10.1073/pnas.202320599
+PMC130515
+12271129
+Figure 1
+High resolution optogenetic control of freely moving
+C. elegans
+. (
+a
+) An individual worm swims or crawls on a motorized stage under red dark field illumination. A high-speed camera images the worm. Custom software instructs a DMD to reflect laser light onto targeted cells. (
+b
+) Images are acquired and processed at ~50 fps (scale bar is 100 µm). Each 1024×768 pixel image is thresholded and the worm boundary is found. Head and tail are located as maxima of boundary curvature (red arrows). Centerline is calculated from the midpoint of line segments connecting dorsal and ventral boundaries (blue bar), and is resampled to contain 100 equally spaced points. The worm is partitioned into segments by finding vectors (green arrows) from centerline to boundary, and selecting one that is most perpendicular to the centerline (orange arrow). Targets defined in worm coordinates are transformed into image coordinates and sent to the DMD for illumination (green bar). (
+c
+) Schematic shows body wall muscles. Anterior is to the left and dorsal is to the top. A swimming worm expressing Halo/NpHR in its body wall muscles was subjected to green light (10 mW mm
+−2
+) outside or inside the worm boundary (n = 5 worms, representative trace) and its bending wave speed is shown. (
+d
+) Schematic shows HSN. A swimming worm expressing ChR2 in HSN was subjected to blue light (5 mW mm
+−2
+). The histogram shows the position at which egg-laying occurred when a narrow stripe of light was slowly scanned along the worm’s centerline (
+n
+= 13 worms). Once an egg was laid, the worm was discarded.
+Figure 2
+Optogenetic inactivation of muscle cells. (
+a
+) A kymograph of time-varying body curvature along the centerline of a P
+myo3::Halo/NpHR::CFP
+transgenic worm. Between
+t
+= 0 s and
+t
+= 4 s, the worm is stimulated with green light (10 mW mm
+−2
+) in a region spanning the worm diameter and between 0.38 and 0.6 of the fractional distance along the centerline (
+n
+= 5 worms, representative trace). (
+b
+) For the kymograph shown in (
+a)
+, time-varying curvature is shown at two points along the worm centerline, both anterior (upper panel) and posterior (lower panel) to the illuminated region.
+Figure 3
+Inhibition of motor neurons.
+(a)
+The schematic shows the positions of the cholinergic DB and VB motor neurons. Anterior is to the left and dorsal to the top. A kymograph of time-varying body curvature along the centerline of a P
+unc-17::Halo/NpHR::CFP
+transgenic worm illuminated by a stripe of green light (10 mW mm
+−2
+) along its ventral nerve cord between
+t
+= 0s and 1.6s. In the dorsal-ventral direction, the stripe width was equal to 50% of the worm diameter and centered on the ventral boundary. In the anterior-posterior direction, the stripe length was between 0.14 and 0.28 of the fractional distance along the body (
+n
+= 5 worms, representative trace).
+(b)
+For the kymograph shown in (
+a)
+, time-varying curvature is shown at two points along the worm centerline, both anterior (upper panel) and posterior (lower panel) to the illuminated region.
+(c)
+Video sequence showing a worm illuminated by a long stripe of green light (10 mW mm
+−2
+) spanning the ventral nerve cord between
+t
+= 0 s and 1.8 s. Scale bar is ~100 micrometers
+(d)
+The bending wave speed of a swimming worm illuminated by a long stripe of green light (10 mW mm
+−2
+) lasting 1.8s and spanning the ventral nerve cord (upper panel) and dorsal nerve cord (lower panel) (
+n
+= 10 worms, representative trace).
+Figure 4
+Optogenetic analysis of mechanosensory neurons. The schematic shows the positions of anterior and posterior touch receptor cells. Anterior is to the left and dorsal to the top. Kymographs (left panels) show time-varying curvature of the centerline of worms expressing ChR2 in mechanosensory neurons (P
+mec-4::ChR2::GFP
+) subjected to rectangles of blue light (5 mW mm
+−2
+) targeting different groups of touch receptor neurons. Plots of bending wave speed (right panels) indicate stimulus-evoked changes in direction or speed. (
+a
+) The AVM and ALM neurons are subjected to 1.5 s of stimulation (
+n
+= 5 worms, representative trace). Given a coordinate system where
+x
+specifies dorsal-ventral location (−1 is dorsal boundary, 0 is centerline and 1 is ventral boundary) and
+y
+defines fractional distance along the worm’s centerline (0 is head and 1 is tail), the rectangle of illumination has corners (
+x
+,
+y
+) = [(−1.1,0), (1.1,0.46)]. (
+b
+) The PVM and PLM neurons are subjected to 2.5 s of stimulation with a rectangular illumination (n = 5 worms, representative trace) with corners at (
+x
+,
+y
+) = [(−1.1,0.62), (1.1,0.99)]. (
+c
+) The ALM cell body is specifically stimulated by illuminating a small rectangle (n = 14 worms, representative trace) with corners at (
+x
+,
+y
+) = [(−0.3,0.38), (−0.9,0.46)]. (
+d
+) The AVM cell body is specifically stimulated by illuminating a small rectangle (n = 14 worms, representative trace) with corners at (
+x
+,
+y
+) = [(0.3,0.3), (0.9,0.38)].
+Figure 5
+Habituation of individual touch receptor neuronal types. (
+a,b
+) Schematic shows position of anterior and posterior touch receptor neurons. Anterior is to the left and dorsal to the top. A freely swimming animal expressing Kaede in touch receptor neurons was continuously tracked and illuminated with a small rectangle of 405 nm light ( 2 mW mm
+−2
+) centered on either AVM or ALM as in (
+Fig. 4c,d
+) for 60 s total . Scale bars are 100 micrometers. (
+a
+) AVM was illuminated. Red and green fluorescence images show that photoconversion occurred in AVM but not ALM neurons. (
+b
+) ALM was illuminated. Photoconversion occurred in ALM neurons but not AVM. During tracking, a transient segmentation error owing to an omega turn by the animal caused the system to illuminate PLM and PVM for ~1 s, producing slight photoconversion in those neurons. (
+c–e
+) Individual ALM and AVM neurons were repeatedly stimulated with blue light (5 mW mm
+−2
+) for 1.5 s every 60 s for ~40 min, either
+(c,d)
+alone or (
+e
+) interleaved within each experiment (ALM, 30 s, AVM, 30 s, ALM, 30 s …). (
+c–e
+) Fractional response to stimulus of each neuronal type was fit to an exponential,
+a
++
+b
+exp[−
+t
+/τ], using maximum likelihood estimator. Time constant for habituation, τ, was extracted from each fit. All error bars are s.e.m. (
+c
+) Fractional response of ALM when stimulated alone (
+n
+= 7 worms). (
+d
+) Fractional response of AVM when stimulated alone (
+n
+= 8 worms). (
+e
+) Fractional response of ALM (left panel) and AVM (right panel) during interleaved stimulation of both (
+n
+= 7 worms).

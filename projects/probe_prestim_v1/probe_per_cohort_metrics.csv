@@ -1,0 +1,9 @@
+dataset_name,modality,n_groups,n_samples,b0_persist_post_r2,b1_stim_only_post_r2,b2_pop_delta_post_r2,ridge_post_r2,mlp_backprop_post_r2,b2_pop_delta_r2,ridge_delta_r2,mlp_backprop_delta_r2,r2_gain_ridge_vs_b2,ci95_low_b2,ci95_high_b2,perm_p_vs_b2,perm_p_vs_b1_stim_only,future_tamper_invariance,conclusion_flag
+P1a_yang2022_WT_all_5neurons,immobilized,21,288,-0.0774,0.4451,0.4944,0.517,0.5585,0.4923,0.515,0.5567,0.0227,-0.0338,0.07,0.17491,0.05147,True,null
+P1b_yang2022_WT_sensory_AWB_ASH,immobilized,16,139,-0.2186,0.3872,0.4304,0.4795,0.5716,0.4017,0.4533,0.55,0.0516,-0.0052,0.1166,0.13943,0.06747,True,null
+P1c_yang2022_WT_interneurons_AVA_AIB_RIM,immobilized,5,149,0.3063,0.108,0.6591,0.7626,0.5382,0.2981,0.5112,0.0493,0.2131,0.0261,0.2107,0.15152,0.15152,True,null
+P2a_atanas2023_heat_named_neurons_19worms,freely_moving,19,1608,0.089,0.269,0.3531,0.3439,0.3103,0.2865,0.2763,0.2393,-0.0102,-0.0594,0.0233,0.84558,0.14993,True,null
+P2b_atanas_heat30_dag_patch6_wholebrain_arousal,freely_moving,36,36,-0.746,-0.063,0.0547,0.0514,-142.2077,-0.0636,-0.0674,-160.1391,-0.0037,-0.0242,0.0159,0.46027,0.004,True,null
+P3a_yemini2021_21worms_all_shared_head_neurons,immobilized,21,10335,0.5693,0.046,0.6554,0.7038,0.6765,0.183,0.2977,0.233,0.1147,0.0089,0.1511,0.001,0.0005,True,positive
+P3b_yemini2021_21worms_chemosensory_command_circuit,immobilized,21,1677,0.0386,0.3601,0.4696,0.4764,0.4697,0.4293,0.4366,0.4293,0.0073,-0.005,0.0156,0.22689,0.0005,True,null
+P3c_yemini2021_21worms_interneurons_only,immobilized,21,1053,0.5165,0.0669,0.5529,0.6322,0.6267,0.0752,0.2393,0.2279,0.1641,0.0087,0.1305,0.07696,0.0005,True,null

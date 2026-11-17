@@ -1,0 +1,191 @@
+{
+  "source_format": "wormwideweb-json",
+  "source_record_id": "2022-08-03-31",
+  "source_metadata": {
+    "blake3_neuropal_dict": "5b123fc9ae956c21c8085e694203fa222b121ad992db5a427c23f72b602b59e1",
+    "checksum_h5": "bd3d9e8fdead70631e5d3209cfb64e3cbf7d841cbe25d866cc6a3c99f4f421e5",
+    "dataset_type": [
+      "neuropal",
+      "reFed"
+    ],
+    "n_neuron": 167,
+    "paper_id": "dag_nwabudike_kang_2023",
+    "source_filename": "2022-08-03-31-data.h5",
+    "uid": "2022-08-03-31"
+  },
+  "source_group_id": "source-h5:bd3d9e8fdead70631e5d3209cfb64e3cbf7d841cbe25d866cc6a3c99f4f421e5",
+  "animal_id": null,
+  "animal_identity_status": "unknown",
+  "condition": [
+    "neuropal",
+    "reFed"
+  ],
+  "signal_kind": "calcium_reporter_fluorescence",
+  "signal_source_field": "gcamp/trace_array_original",
+  "signal_unit": "source_fluorescence_scale",
+  "source_preprocessing": "Author-provided extracted fluorescence; not raw photons or membrane voltage. Upstream processing is not proven causal.",
+  "normalization_applied_here": "none",
+  "source_author_zscore_uses_future_statistics": "possible; excluded by default loader",
+  "time_unit": "s",
+  "time_unit_evidence": "WormWideWeb JSON schema: timestamp_confocal and mean_timestep",
+  "source_time_origin": 1921833.024387454,
+  "event_index_origin": "unknown_preserved_not_converted",
+  "events_source_index": {},
+  "reversal_events_source_index": [
+    [
+      7,
+      9
+    ],
+    [
+      15,
+      18
+    ],
+    [
+      36,
+      38
+    ],
+    [
+      44,
+      47
+    ],
+    [
+      59,
+      64
+    ],
+    [
+      101,
+      103
+    ],
+    [
+      114,
+      116
+    ],
+    [
+      199,
+      203
+    ],
+    [
+      210,
+      213
+    ],
+    [
+      231,
+      233
+    ],
+    [
+      254,
+      256
+    ],
+    [
+      257,
+      260
+    ],
+    [
+      265,
+      267
+    ],
+    [
+      290,
+      295
+    ],
+    [
+      315,
+      317
+    ],
+    [
+      354,
+      357
+    ],
+    [
+      372,
+      380
+    ],
+    [
+      432,
+      435
+    ],
+    [
+      540,
+      543
+    ],
+    [
+      581,
+      583
+    ],
+    [
+      605,
+      608
+    ],
+    [
+      647,
+      650
+    ],
+    [
+      700,
+      703
+    ],
+    [
+      726,
+      728
+    ],
+    [
+      742,
+      744
+    ],
+    [
+      750,
+      754
+    ]
+  ],
+  "behavior_channels": [
+    {
+      "name": "velocity",
+      "source_unit": "0.1 mm/s",
+      "conversion": "identity"
+    },
+    {
+      "name": "head_angle",
+      "source_unit": "rad",
+      "conversion": "identity"
+    },
+    {
+      "name": "angular_velocity",
+      "source_unit": "rad/s",
+      "conversion": "identity"
+    },
+    {
+      "name": "pumping",
+      "source_unit": "1/s",
+      "conversion": "identity"
+    }
+  ],
+  "issues": [
+    "UPSTREAM_CAUSAL_PREPROCESSING_NOT_VERIFIED"
+  ],
+  "source_original_available": true,
+  "control": false,
+  "record_key": "dc13c548a7fd0dc836841a283f29d2b8",
+  "parser_version": "neural-v2.0",
+  "signal_sha256": "34d731fde3cea92c8ad4d4a6abc870b975237e0c3fc2c4eebe5e36d2e489b041",
+  "timestamps_sha256": "9b923232ed6e2bc7f0c5c83a4535d1a6915825643b2753a3faec4b6c494ab42a",
+  "n_timepoints": 799,
+  "n_neurons": 167,
+  "n_named_neurons": 106,
+  "finite_fraction": 1.0,
+  "median_dt_s": 0.6000188675243407,
+  "n_segments": 1,
+  "axis_order": [
+    "time",
+    "neuron"
+  ],
+  "dtype": "float32",
+  "mask_definition": "finite numerical values; not a complete biological quality mask",
+  "qc_state": "usable",
+  "training_eligible": true,
+  "evaluation_scope": "chronological within-record forecasting; cross-animal grouping requires identity review",
+  "source": {
+    "source_archive": "C:\\projects\\bio\\source_data\\behavior_forecast_5papers_2026-09-15\\raw\\dag_nwabudike_kang_2023\\dag_nwabudike_kang_2023.tar.bz2",
+    "member": "dag_nwabudike_kang_2023_2022-08-03-31.json",
+    "paper_key": "dag_nwabudike_kang_2023"
+  }
+}

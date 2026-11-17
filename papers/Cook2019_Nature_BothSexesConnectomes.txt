@@ -1,0 +1,2557 @@
+Nature
+Nature
+319
+nihpa
+0410462
+Nature
+0028-0836
+1476-4687
+pmc-is-collection-domain
+yes
+pmc-collection-title
+NIHPA Author Manuscripts
+PMC6889226
+PMC6889226.1
+6889226
+6889226
+NIHMS1054987
+31270481
+10.1038/s41586-019-1352-7
+NIHMS1054987
+NIHPA1054987
+1
+Article
+Whole-animal connectomes of both
+Caenorhabditis elegans
+sexes
+cook
+Steven J.
+1
+7
+Jarrell
+Travis A
+2
+7
+Brittin
+christopher A.
+2
+Wang
+Yi
+2
+Bloniarz
+Adam E.
+3
+Yakovlev
+Maksim A.
+2
+Nguyen
+Ken c. Q.
+1
+tang
+Leo T.-H.
+2
+Bayer
+Emily A.
+4
+Duerr
+Janet S.
+5
+Bulow
+Hannes E.
+1
+2
+Hobert
+Oliver
+4
+6
+Hall
+David H.
+1
+Emmons
+Scott W.
+1
+2
+*
+1
+Dominick P. Purpura Department of Neuroscience, Albert Einstein College of Medicine, New York, NY, USA.
+2
+Department of Genetics, Albert Einstein College of Medicine, New York, NY, USA.
+3
+Google, Boulder, CO, USA.
+4
+Department of Biological Science, Columbia University, New York, NY, USA.
+5
+Department of Biological Sciences, Ohio University, Athens, OH, USA.
+6
+Howard Hughes Medical Institute, Columbia University, New York, NY, USA.
+7
+These authors contributed equally: Steven J. Cook, Travis A. Jarrell.
+Author contributions
+S.J.C., T.A.J., C.A.B., Y.W., A.E.B. and M.A.Y. generated and analysed the data, including performing electron microscopy experiments, annotating electron micrographs, compilation of data and curation of neuron maps; A.E.B. performed the statistical analysis for left versus right and hermaphrodite versus male comparisons; K.C.Q.N. carried out sample preparation and serial sectioning for electron microscopy; S.J.C., L.T-H.T and E.A.B. performed the experiments involving fluorescent labelling of synapses; J.S.D. carried out analysis of acetylcholine expression in the sublateral cords; H.E.B. and O.H. conceived and supervised the experiments involving fluorescent labelling of synapses; D.H.H. and S.W.E. conceived, planned and supervised the experiments; all co-authors contributed to preparation of the manuscript; S.W.E. wrote the paper.
+*
+scott.emmons@einstein.yu.edu
+03
+7
+2019
+7
+2019
+571
+7763
+347030
+63
+71
+07
+11
+2019
+03
+12
+2019
+03
+12
+2019
+16
+06
+2024
+Reprints and permissions information
+is available at
+http://www.nature.com/reprints
+.
+This file is available for text mining. It may also be used consistent with the principles of fair use under the copyright law.
+Knowledge of connectivity in the nervous system is essential to understanding its function. Here we describe connectomes for both adult sexes of the nematode
+Caenorhabditis elegans,
+an important model organism for neuroscience research. We present quantitative connectivity matrices that encompass all connections from sensory input to end-organ output across the entire animal, information that is necessary to model behaviour. Serial electron microscopy reconstructions that are based on the analysis of both new and previously published electron micrographs update previous results and include data on the male head. The nervous system differs between sexes at multiple levels. Several sex-shared neurons that function in circuits for sexual behaviour are sexually dimorphic in structure and connectivity. Inputs from sex-specific circuitry to central circuitry reveal points at which sexual and non-sexual pathways converge. In sex-shared central pathways, a substantial number of connections differ in strength between the sexes. Quantitative connectomes that include all connections serve as the basis for understanding how complex, adaptive behavior is generated.
+pmc-status-qastatus
+0
+pmc-status-live
+yes
+pmc-status-embargo
+no
+pmc-status-released
+yes
+pmc-prop-open-access
+no
+pmc-prop-olf
+no
+pmc-prop-manuscript
+yes
+pmc-prop-open-manuscript
+yes
+pmc-prop-legally-suppressed
+no
+pmc-prop-has-pdf
+yes
+pmc-prop-has-supplement
+yes
+pmc-prop-pdf-only
+no
+pmc-prop-suppress-copyright
+no
+pmc-prop-is-real-version
+no
+pmc-prop-is-scanned-article
+no
+pmc-prop-preprint
+no
+pmc-prop-in-epmc
+yes
+Animals are capable of a wide range of behaviours that collectively must be controlled and tightly integrated to promote survival and reproduction. To understand animal behaviour, it is necessary not only to identify the cellular substrates and circuits that underlie particular responses and actions, but also to describe how these circuits are integrated to generate a cohesive and prioritized adaptive output. A connectivity diagram that covers the entire nervous system is necessary to investigate how such integration is implemented. To date, synapse-level neural maps derived from electron micrographs have been published for the nematodes
+C. elegans
+1
+–
+4
+and
+Pristionchus pacificus
+5
+, the retina and portions of the neocortex of the mouse
+6
+–
+10
+, the visual system, mushroom body, locomotion and larval escape response circuits of
+Drosophila
+11
+–
+15
+,
+the larval visual system of the annelid
+Platynereis
+16
+and the central nervous system of larva of the ascidian
+Ciona
+17
+.
+Here we present connectomes that encompass the entire animal for the nervous systems of the two adult sexes of the nematode
+C. elegans.
+Whole-animal connectomes
+Connectivity has been described previously for sections of the
+C. elegans
+nervous system that encompasses the major neural centres, including the anterior and posterior body regions and the pharynx of the adult hermaphrodite and the posterior region of the adult male
+1
+–
+4
+,
+18
+. These data have been the basis not only of
+C. elegans
+neuroscience research, but also of investigations into the network structure and its potential dynamic and control properties, studies that have contributed to the development of network concepts such as ‘small world, ‘network motifs’, ‘modules’ and ‘rich clubs’.
+Here we add a reconstruction of circuitry for the male head, including the nerve ring and retrovesicular ganglion, from a new electron microscopy (EM) series and re-annotate previously generated prints of the hermaphrodite. This allowed us to extend the previous work in a number of ways (
+Extended Data Fig. 1
+,
+Methods
+and
+Supplementary Information 1
+). The reconstructions are quantitative and based on the sizes of the synapses (
+Methods
+,
+Extended Data Fig. 2
+and
+Supplementary Information 2
+,
+3
+), thus making graph and network analysis possible. Our annotation method of the digitized images enabled us to score more synapses than the previous efforts (
+Extended Data Fig. 1
+and
+Methods
+).
+As none of the EM series cover an entire single animal, to generate whole-animal connectomes, data from different reconstruction series were combined and the remaining gaps were filled by extrapolating known connectivity across repetitive regions (
+Methods
+). The graph of the hermaphrodite connectome has 460 nodes (302 neurons, 132 muscles, and 26 non-muscle end organs), whereas the male graph has 579 nodes (385 neurons, 155 muscles, and 39 non-muscle end organs). Complete cell lists are given in
+Supplementary Information 4
+. The respective graphs have 4,887 chemical (or directed) edges and 1,447 gap junction (or undirected) edges in the hermaphrodite and 5,315 chemical and 1,755 gap junction edges in the male (
+Extended Data Fig. 3
+and
+Supplementary Information 5
+). They are sparse graphs with respectively 3.2% (for the hermaphrodite) and 2.4% (for the male) of all possible edges. Although sparse, if all edges for both sexes are considered to be undirected, both chemical and gap junction graphs are connected, meaning that there is a path connecting every pair of nodes (weakly connected). The fraction of physical connectivity due to gap junctions varies widely among neuron classes, ranging for non-pharyngeal interneurons from over 90% to less than 5% (
+Extended Data Fig. 3d
+).
+Two-dimensional layouts of the connectivity graphs based on computational arrangement reveal the pathways of sensory information flow, the small number (1–5) of synaptic steps between the sensory neurons and the end organs, and the feedforward nature of the networks (
+Fig. 1
+; A3 and interactive versions of
+Fig. 1
+can be found in the
+Supplementary Information
+). The notable similarity in the placement of the nodes to the neuroanatomy of the worm reflects economical wiring, a property commonly found for nervous systems, including in
+C. elegans
+19
+–
+22
+.
+Although the graph layouts of the two sexes appear to be different superficially, close examination shows that for those neurons present in both sexes, including the ones in the head that provide sensory input and decision-making for head movement and navigation in the physical and chemical environment, pathways of connectivity are similar but not identical (see ‘
+Comparison of the sexes’
+). Within the animal, neurons and neuronal processes are arranged similarly (
+Extended Data Fig. 4
+). The primary sex differences are in reproductive functions, the vulval and uterine muscles and the motor neurons that control them in the hermaphrodite and—in the male—the large number of additional neurons, sex muscles and connections in the tail that generate the circuits for copulation
+3
+.
+The architecture of information flow
+We use the polarity of the chemical synapses and the architecture of the physical connectivity networks to order the sex-shared neuron and end-organ classes using an algorithm that detects hierarchy in a network
+18
+,
+23
+(
+Fig. 2
+). (Lists of the neuron and end-organ classes are provided in
+Supplementary Information 6
+; adjacency matrices by cell class are included in
+Supplementary Information 7
+.) Interneurons can be categorized roughly into one of three layers that reflect the preponderance of their output onto the layer below and approximately the number of synaptic steps to motor neurons
+24
+. A fourth interneuron category, which consists of interneurons that interact across all layers, cannot be fitted into this layered structure. Chemical and gap junctional connections are distributed throughout the network (
+Extended Data Fig. 6
+).
+The 83 sensory neurons that are shared by both sexes may be grouped into six categories based on type of stimulus, connectivity and the nature of the evoked behavioural response. Output of these categories is differentially distributed across the network (
+Fig. 3
+). Chemical connectivity between the three interneuron layers forms a feedforward loop: layer 3 substantially targets both layer 2 and layer 1, whereas layer 2 targets layer 1. As previously noted
+3
+,
+18
+, the feedforward loop is a prevalent motif in the
+C. elegans
+connectome (
+Extended Data Fig. 7
+).
+As the sensory neurons of
+C. elegans
+generally respond to multiple stimuli, sensory integration begins within the sensory neurons themselves
+25
+,
+26
+. The amount of convergence and divergence at single nodes in a network is specified by a quantity known as the node degree, which refers to the number of attached edges (number of neighbours) (
+Extended Data Fig. 3
+). Considering the graph of connectivity between cell classes, median degree values of around 19 illustrate the extensive cross-connectivity and thus indicate both convergence and divergence throughout the nervous system. Diverging connectivity enables information from single sensory neurons to potentially reach from 70% to 98% of all the other cells in the network within two synaptic steps.
+In addition to outputs to muscle, there is considerable nervous system connectivity to non-muscle end organs, including the hypodermis, intestine, excretory system and—in the male—the gonad (
+Extended Data Fig. 8
+and
+Supplementary Information 5
+). These connections suggest an important role for the nervous system in influencing physiology beyond the secretion of extrasynaptic signals.
+Generation of body movements
+Postural movements of
+C. elegans
+during foraging and locomotion are generated by a set of 95 body-wall muscles that are arranged in four longitudinal rows, two of which are sub-dorsal and the other two are sub-ventral. Within each of these quadrants, adjacent muscle cells are electrically coupled by gap junctions (
+Fig. 1
+). One hundred fifty-four neurons in 46 classes have neuromuscular junctions with these somatic muscles (
+Extended Data Fig. 9a
+). Of these neurons, we classify 108 neurons in 17 classes—accounting for 91% of input to the body-wall muscles—as motor neurons, because a large fraction of their output is to muscle, and muscle control appears to be their primary function (
+Extended Data Fig. 9b
+). Our classification for some motor neurons differs from the previous classification
+1
+(
+Supplementary Information 1
+).
+The 108 motor neurons can be subdivided into three groups. Five classes of head motor neurons innervate the muscles in the anterior body region (URA, RME, RMD, RIV and RMH), seven classes of ventral cord motor neurons innervate the muscles in the remainder of the body (VA, DA, VB, DB, VD, DD and AS) and five classes of sublateral motor neurons (SAB, SMD, SMB, SIB and SIA) have muscle output from axons that extend longitudinally in sublateral tracts adjacent to each of the four muscle quadrants (
+Extended Data Fig. 10a
+). The sublateral motor neurons have been incompletely described heretofore, because their axons run through body regions that have not been fully imaged by EM at high magnification. Immunofluorescence staining of acetylcholine-synthesizing and -releasing machinery reveals extensive release of this neurotransmitter along the sublateral tracts, at least through the anterior two-thirds of the body
+27
+(
+Extended Data Fig. 10b
+). Limited spot checks of available micrographs have verified that the release sites correspond to dyadic synapses onto hypodermis and muscle at swellings that contain presynaptic densities
+28
+(
+Extended Data Fig. 10c
+,
+d
+). Functional studies have shown that SMD encodes the amplitude of a deep ventral bend behaviour known as the Ω-turn; SMB influences the amplitude of sinusoidal movement; SAB is thought to act in proprioception; and the SIA neurons are involved in so-called ‘flipping behaviour’ during lethargus
+24
+,
+29
+,
+30
+.
+It may be expected that the posture of the worm will arise from the muscle tensions that result from the summed inputs of these three groups of motor neurons. Indeed, worm posture can be described well by summing four ‘eigenworms, the shapes of which, respectively, correspond to these groups: the first two are sinusoidal, corresponding to the forward and backward classes of ventral cord motor neurons, the third is a general body curvature, corresponding to the potential effect of the sublateral motor neurons, and the fourth includes head bending, corresponding to the head motor neurons
+31
+,
+32
+.
+Innervation of the members of these three classes of motor neurons is complex. Altogether, there is synaptic input into the motor system (motor neurons and muscles) of significant strength (more than three serial EM sections) from 60 classes of interneurons and sensory neurons (126 neurons) out of a total of 82 classes (73%;
+Fig. 4
+). These observations emphasize the complexity of motor control in
+C. elegans
+and the importance of taking an analytical approach based on a complete structural description and considering behavioural state and motor output as an emergent property of the network
+31
+–
+33
+.
+Reproducibility of connectivity
+We examined the connectivity of members of left-right homologous neuron pairs onto left-right homologous targets in the nerve ring of the hermaphrodite reconstruction to assess the amount of natural variability in connectivity. For chemical connections, edge weights varied by 10–40%, depending on connection strength (
+Fig. 5a
+,
+Extended Data Fig. 11
+and
+Supplementary Information 8
+). Gap junctions were more variable. Differences between individual worms will be expected to be at least this large. This information is used in the following section to identify sex differences.
+We examined one apparent outlier of interest. In both sexes, the gustatory neuron ASEL (that is, the left neuron of the pair) has greater chemical connectivity than ASER (that is, the right neuron of the pair) to the olfactory neuron class AWC. The ASEL-ASER pair is known to be lateralized in its ability to sense chemosensory cues
+34
+,
+35
+. We confirmed the difference in connectivity by in vivo fluorescence labelling of this synaptic connection (
+Fig. 5b
+).
+Comparison of the sexes
+The extensive sexual differentiation of the morphology and tissues of the two
+C. elegans
+sexes extends to the nervous system and end organs. In total 8 neurons and 16 sex muscles are specific to the hermaphrodite; 91 neurons and 39 sex muscles are specific to the male. These sex-unique components are synaptically integrated within the shared nervous system of 294 neurons. In the male, 67% of the shared neuron classes (62 out of 93 classes) receive input from sex-specific neurons, accounting for 16% of their total input. Reciprocally, 54% of the shared neuron classes (50 out of 93 classes) have output onto the sex-specific component, constituting 18% of the input of the sex-specific neurons. In the hermaphrodite, 37% of the neuron classes are targeted by the two sex-specific neuron classes, HSN and VC, but this constitutes only 1.4% of total input of the shared component.
+The circuits controlling the sex-unique behaviours of egg laying and copulation include both sex-specific and sex-shared neurons. This is most notable in the male, in which the neural network that controls copulation consists of 85 male-specific and 64 shared neurons
+3
+,
+36
+. Some of the shared neurons retain the same function that they have in the hermaphrodite but are targeted by male-specific neurons. For example, the major layer 1 pre-motor interneurons AVA and AVB, which promote backward and forward locomotion, respectively, are targeted by three major male-specific interneurons, PVV, PVX and PVY, that regulate the locomotion of the male during copulation
+37
+,
+38
+. Other shared neurons that participate in the male circuits are extensively differentiated in the adult male compared to the adult hermaphrodite and larval stages, and serve different functions in the two sexes (
+Fig. 6a
+–
+f
+).
+Sex-specific neurons connect into the sex-shared central circuitry in the head with two functions: to regulate behaviour during overt reproductive activity and to mediate sex-specific, appetitive decision-making. Some of their targets, several of which are targeted in both sexes, also receive inputs from sex-shared sensory circuits and thus represent points of integration of sexual and non-sexual pathways (
+Fig. 6g
+,
+h
+).
+Several shared neurons, including sensory neurons, are sexually differentiated to support sex-specific navigational choices
+39
+,
+40
+. Sex- specific patterns of neurotransmitter expression have been described for 11 classes of shared neurons
+41
+. Such differences in neuron properties extend to connectivity throughout the nervous system. A statistical ranking of differences is provided in
+Supplementary Information 9
+. We tested six chemical connections by in vivo synaptic labelling and confirmed that each exhibited a difference between the sexes (
+Fig. 5c
+,
+d
+and
+Extended Data Fig. 12
+). A further six have been experimentally verified by others
+42
+. An additional 33 chemical and gap junctional differences that are found among the connections of the neurons that are remodelled during sexual differentiation are also likely to be true sex differences (
+Supplementary Information 9
+). In central pathways, there are sex differences involving shared neurons that appear to function in sexual pathways (for example, male-specific connectivity of AVF to RIF and RIM, and male-specific connectivity of AIM to AIB (AIM shows male-specific expression of neurotransmitters and expresses the male mate-searching-promoting neuropeptide PDF-1
+41
+,
+43
+)). Through the analysis of fluorescent synaptic reporters in juvenile animals before sexual maturation, we furthermore found that, apart from previously described sex-specific pruning
+42
+, sexually dimorphic synapses can also be generated through sex-specific growth of synaptic contacts (
+Fig. 5d
+).
+It is difficult to identify sex differences from EM reconstructions alone. Differences may be due to developmental variability, as assessed above (
+Fig. 5a
+), or to age disparity, rearing conditions or experience, not to mention differences due to errors and differing degrees of completeness in the reconstructions themselves. With these caveats, the statistical ranking of differences (
+Supplementary Information 9
+) provides a list of candidates for further examination. Even accepting these reservations, extrapolation from the abovementioned results suggests that as many as 10–30% of the substantial connections (more than three serial EM sections) found in either reconstruction may represent connections that differ substantially in strength between the sexes. Such possible differences involve both chemical and gap junctional connections and occur at all levels throughout the network (
+Extended Data Fig. 13
+).
+Discussion
+We present physical connectivity matrices for the entire nervous system of an animal, for both adult sexes. The quantitative, connected networks serve as starting points for deciphering the neural control of the behaviour of
+C. elegans.
+The amount of convergence and divergence of sensory input pathways is such that particular behavioural-response pathways cannot be readily identified in general. The major motor neurons as well as their primary pre-motor interneurons are highly interconnected and receive some input from most of the remaining neurons, defying simple interpretation of motor output. Moreover, the structural connectome describes only one portion of the functional communication network. Extrasynaptic communication by neurotransmitters, neuropeptides and hormones provides a second dimension that controls the flow of information for optimal output
+44
+. The complex circuitry outlined here must underlie both the many known behaviours in
+C. elegans,
+and the underpinnings for less well understood or novel behaviours, such as learning and memory, inter-animal communication, social behaviour and the complexities of mating.
+These whole-animal
+C. elegans
+connectomes should be considered a conceptualization, being constructed as they are from multiple animals and including some connections that are observed in the opposite sex and some that are not observed at all but assumed to be present based on the repetitive nature of certain regions. Individuals will differ in detail as a result of natural developmental variability (
+Fig. 5a
+). Additional differences will add further variation to this basal level. Outgrowth of neurites and establishment of synapses in
+C. elegans
+occurs throughout larval development and continues through the L4 larval stage and into adulthood, and ectopic neurite sprouting continues as the nervous system ages
+45
+,
+46
+. Reinforcement of connectivity by circuit activity and hence experience has been demonstrated but little studied so far
+45
+. The extent to which differences in the behaviour of individual worms is due to differences in connectivity remains to be explored
+47
+. The connectome is too complex not to be under the control of dynamic, homeostatic mechanisms; an EM-based connectome should be considered a snapshot of a dynamic structure.
+These results are important for modelling studies in two ways. First, the more-detailed architecture of individual neurons, and the locations and structures of individual synapses may be important for understanding the functions of neurons within circuits. Although
+C. elegans
+neurons are largely isopotential
+48
+, the properties of these neurons that control activity, such as calcium levels, may be compartmentalized, as has been previously demonstrated in one example
+49
+. Thus, signalling may not be uniform or simultaneous at all synapses.
+Second, modelling the functions of the nervous system at the abstracted level of the connectivity network cannot be seriously undertaken if a considerable number of nodes or edges (for example, edges that represent electrical couplings) are missing. Inclusion of the end organs is important as—at least in the case of
+C. elegans
+—they are electrically coupled, which will have a marked effect on their activity. Any gap in a chain of connected cells, such as the chains of motor neurons and muscles that drive
+C. elegans
+locomotion, will prevent the propagation of signals. The attempt is made here to describe connec- tomes that are sufficiently complete for computational analysis.
+Our characterization of the sublateral motor neurons, identification of interneurons in central sexual pathways, documentation of a class of interneurons that connect across an otherwise hierarchical structure, and description of an important interface between the nervous system and non-muscle end organs such as the hypodermis, highlight the importance of the connectomic approach for understanding the function and behaviour of the nervous system. For well over a century, from the time of Broca, neuroscientists have endeavoured to locate the neural substrates of behaviour. For this effort, connectomic reconstruction is a powerful approach. The function of some neurons may be deduced from their connectivity, which can identify them as a previously unknown cell class. How neurons signal emerges from whether they are chemically or electrically coupled. EM-level ultrastructures can indicate neuronal functions such as sensory perception or hormone secretion. Modelling approaches, for which completeness is essential, are enabled by connectomes and can provide novel insights. The physical structure gives a massive amount of new information, much of which could not have been foreseen; unidentified unknowns can come to light. New information revealed by structure provides the basis for subsequent hypothesis testing by experimental methods.
+METHODS
+Nematodes.
+For the EM series constructed in the MRC laboratory (Cambridge, UK) during the 1970s, hermaphrodite and male nematodes were of the wild-type N2 (Bristol) strain
+1
+. For the N930 male series generated for in the present study, male worms of the N2 strain with the
+him-5
+(
+e1490
+) mutation were used. This mutation increases the rate of X chromosome non-disjunction, thus raising the frequency of males in selfing populations. Nematodes were grown on Petri dishes as described previously
+59
+.
+The ages of the Cambridge worms at the time of fixation were not generally recorded (N. Thomson, personal communication). However, they are likely to have been adults that were several days old, as practice showed that older worms generated clearer electron micrographs (J. White, personal communication). We judge N2U to be a three-day old adult, based on the appearance of the uterus, which is still healthy like a younger adult. The male for the posterior series, N2Y (series 4 of the previous study
+60
+), is described as an ‘old adult’
+60
+. It may be a day older than N2U, judged by the more darkly staining nervous tissue.
+Male worms for the N930 series were staged and tested for fertility before fixation, as follows: L4 males were separated to an all-male plate preseeded with bacteria and allowed to mature overnight. The next day, they were placed individually with five
+fog-2
+(
+q91
+) females for 5 h and then moved to a separate plate. The following day, the number of laid eggs and hatched larvae on the mating plates were counted and males with demonstrated fertility were chosen for fixation and electron microscopy (around 40 h after L4-adult moult). Individual N930 sired 108 progeny in this test.
+Sample preparation for transmission electron microscopy.
+In the previous study, worms were fixed in 1% osmium tetroxide in 0.1 M sodium phosphate, pH 7.4 for 1 h at 20 °C before embedding, sectioning and poststaining
+1
+. This method was developed by N. Thomson to best bring out cell membranes and synaptic structures at the expense of many features within the cytoplasm. In the present study, fixation and staining methods for the male series N930 were developed to closely match the Thomson results with improved cytoplasmic features. A combined 0.7% glutaraldehyde and 0.7% osmium tetroxide fixation in cacodylate buffer at 4 °C for 3 h was followed by fixation in 2% osmium tetroxide, again in cold cacodylate buffer for 4.5 h before embedding, sectioning and poststaining. Although our efforts failed to stain chemical synaptic features exactly as in the previously published images, they are still identifiable and measurable in size in animals from both sources. Gap junctions are more difficult to score overall, but those difficulties are similar across all animals used in this study.
+The EM series for hermaphrodites.
+The EM series used are described in
+Supplementary Information 10
+. The hermaphrodite reconstruction is based on the legacy series that has previously been described for the anterior and posterior regions
+1
+(N2U, N2T, JSE) and for the pharynx
+2
+(N2T, N2W, JSA). Sections are transverse to the longitudinal axis of the worm; section thickness is 70–90 nm, judged by silver colour
+61
+(N. Thomson, personal communication). For reannotation in the present work, the original 55 cm × 60 cm montaged prints covering the region of the nerve ring, 30 cm × 40 cm prints elsewhere, were digitized. New images of the original grids were obtained for the dorsal cord for N2U and of the sublateral cords from N2U and N2T. New images of the sublateral cords and lateral nerves were also obtained from multiple N2 animals in the Hall collection (N501A-C, N939A-I, N2_825 and him5–1217) (young adults, about 2 days old, section thickness about 50 nm, judged by grey/silver colour). Altogether, several thousand new images were obtained and analysed.
+The EM series for males.
+The N2Y series covering the male posterior was created for a previous study
+60
+at the same time as the hermaphrodite series. It consists of a single long low-power series covering the entire tail plus several high-power sets covering the posterior ventral cord, the pre-anal ganglion, the dorsorectal ganglion, the left and right lumbar ganglia, and several lateral sets for tracing the commissures from the lumbar ganglia into the pre-anal ganglion (
+Supplementary Information 10
+).
+Series N930, generated at Einstein for the present study, consists of 1,515 50-nm transverse sections that extend from anterior of the anterior bulb of the pharynx to the posterior end of the pharynx (
+Supplementary Information 10
+). Altogether, 54,000 digital camera images were obtained (the resolution of the digital camera necessitated imaging at high magnification); those from single sections were montaged for annotation. In the 286-section region that covers the nerve ring, for which a complete cross-section of the worm has to be imaged, 120 camera images were stitched per section. In the 334-section region that covers the ventral ganglion, 50 camera images were stitched per section.
+EM annotation and reconstruction of connectivity.
+Electron micrographs were annotated by hand using the software program Elegance
+62
+. Images are viewed from the posterior so that left and right correspond to the left and right sides of the worm. Elegance is designed to make reconstruction as rapid as possible by allowing all features to be entered by single mouse clicks without tracing. Thus neuron maps are skeleton diagrams. Coordinates of centroids of neurite and cell body profiles, presynaptic density structures and gap junctional structures are entered as point objects in a MySql database. Pairwise relationships between these structures are then entered: identities of pre- and postsynaptic neurites for chemical synapses, neurites joined by gap junctions, and the continuity across sections of multi-section structures—neurites, presynaptic densities and gap junctions. Identities of postsynaptic cells at polyadic chemical synapses are entered consistently in clockwise order around the presynaptic site (
+Extended Data Fig. 2
+). This order of entry is recorded in the database so the precise structure of the synapse is known. The software handles all bookkeeping, assigning index labels to objects, storing relationships in the database, and generating skeleton neuron maps and synapse lists. Reproducibility of the annotation has been assessed by comparing the results of independent annotators
+62
+. In this analysis, the percentage uncertainty (s.d.) in the number of sections scored ranged for chemical synapses between 10% for edge weights of 10 sections or less to 2% for edge weights of 40 sections or more. Similar results are expected for gap junctions. Differences arise from out-and-out errors and from differing interpretations of ambiguous structures.
+Reannotation of the previously analysed micrographs
+1
+,
+60
+was facilitated by the numbers written on the neuron profiles during the previous studies, which aided following neurites and provided cell identities. There are no prior annotations indicating synapses. Cell identities in the N930 male reconstruction were made in a progressive manner by comparing many features to those of cells and neurites in the hermaphrodite. These features included cell-body location and morphology (soma size, directionality of processes, number and location of branches, and vesicle density and appearance), process location in the neuropil in relation to other processes, process morphology, whether presynaptic, postsynaptic or with neuromuscular junctions. Synaptic partnerships were not used to identify neurons. For the male posterior, the connectivity described in a previous study
+3
+was used. Results of the reconstructions, including neuron maps, synapse lists and links to the electron micrographs, are available at
+http://wormwiring.org/
+.
+Adjacency matrices.
+For a description of nervous system structure as a graph of connectivity, the data from neuron maps are abstracted as an adjacency matrix with weights that indicate the total amount of physical connectivity between each cell pair. We obtained weights by adding together the sizes of the often multiple-synaptic connections. As
+C. elegans
+is a worm and much of the nervous system consists of simple, unbranched processes that run in longitudinal bundles in which they make en passant synapses, while our EM sections are transverse to the longitudinal axis, our annotation method made it possible to obtain an estimate of the size of most synapses by counting the number of sections traversed by the synaptic structure. This varies from 1 to 23 sections in the hermaphrodite and from 1 to 41 sections in the male for chemical synapses, and from 1 to 20 sections in the hermaphrodite and from 1 to 30 sections in the male for gap junction synapses (
+Supplementary Information 3
+). For both chemical and gap junction synapses, average synapse size judged in this way is larger for stronger connections than for weak ones (
+Extended Data Fig. 2d
+). If synapse size is not taken into account, judging connectivity strength by counting synapses alone will therefore underestimate the strength of strong connections and overestimate the strength of weaker connections.
+The sizes of synaptic structures within neurite profiles in the EM images, which are not all the same, are not measured. Error due to this simplification becomes more important in cases in which neurites travel closer to the plane of section, for example in the region of the nerve ring. Notably, this has little effect on the values of the weights but it could be important for particular connections. To judge the size of the effect, we examined the data of the hermaphrodite anterior reconstruction (N2U). We divided the synapses into three regions: not nerve ring (that is, retrovesicular ganglion and nerve cord—mostly longitudinal processes), nerve ring 45° section, nerve ring in-plane section (in which neurites cross over the top of the pharynx). Of7,446 synapses (chemical plus gap junctions), the synapses fell roughly equally into these three regions (2,578 not nerve ring, 2,472 nerve ring 45°, 2,396 nerve ring in-plane). Because the scoring method does not account for ‘partial’ sections, it has no effect on scored synapse sizes below four sections. It may or may not have any effect on larger synapses, depending on where they lie with respect to section boundaries; there is only a definite effect on larger synapses. However, only a small fraction of the load in each region (total number of sections) is through synapses >4 sections (not nerve ring: 5.5% of synapses, 26% of sections; nerve ring 45°: 4.7% of synapses, 18% of sections; nerve ring in-plane: 1.9% of synapses, 6.3% of sections). Although these values do appear to reflect a cut-off of higher values in which neurites are running in or near the section plane, the error in total connectivity is small. However, this conclusion might not be true for a particular connection. Therefore, for each synapse in the N2U and N930 reconstructions, its location in one of the three regions is noted in the synapse lists (
+Supplementary Information 3
+). If a particular synapse or set of synapses of interest fall within the nerve ring in-plane region—where there could be a large effect—the electron micrographs can be retrieved and examined through WormWiring (
+http://wormwiring.org/
+).
+The completeness of the reconstructions varies and will affect the values of the weights. When comparing weights in N930 with those in N2U and N2Y, if weights in N930 were reduced by a factor of0.625 (50/80) to account for the difference in section thickness, they were uniformly low. This is probably due to the less complete nature of the N930 reconstruction—synapses are missing (
+Supplementary Information 10
+). Considering that the male graph contains the same major pathways as the hermaphrodite and verifiable sex differences can be identified, the missing synapses must be distributed relatively uniformly over the connections. It was judged that for the purpose of comparison, the best estimate of the weights in N930 was obtained by omitting a correction factor for the smaller section thickness. Comparison of absolute morphological weights across different reconstructions is likely always to be a fraught enterprise.
+Assembly of whole-animal connectomes.
+None of the EM series covers an entire animal. In the hermaphrodite, the best anterior series (N2U) ends around the midbody vulva whereas the best posterior series (JSE) extends anteriorly only as far as the junction between the ventral cord and the pre-anal ganglion (
+Supplementary Information 10
+). N2U includes only the anterior portion of the dorsal nerve cord where the neuromuscular junctions to the dorsal muscle quadrants are located. N2T was used to view newly found synapses along the amphid nerves, anterior to the ring. In the male, the anterior series (N930) extends posteriorly through the ventral ganglion, whereas the posterior series (N2Y) extends anteriorly to a position near the border between the seminal vesicle and the vas deferens (
+Supplementary Information 10
+).
+As a first step in generating adjacency matrices covering the entire animal, gaps were filled with data available from the opposite sex. For these regions—roughly the posterior ventral cord in the hermaphrodite, the anterior ventral cord in the male and the male pharynx—sex differences, if present, are missed. After adding data from the opposite sex, a gap still remains in a region of the posterior body where there are no high-power EM series from either sex. This gap includes gap junctions between adjacent muscles, neuromuscular junctions between the ventral cord motor neurons and dorsal and ventral body-wall muscles, connections from one ventral cord motor neuron to the next, and connections between the major premotor interneurons AVA and AVB and ventral cord motor neurons. These gaps in the adjacency matrices, which leave some muscle cells and some motor neurons without any innervation, precisely line up with the unreconstructed region and thus are unquestionably artefactual. To complete the connectome, connections were added with weights similar or identical to the measured weights of neighbours in these chains. A similar extrapolation approach was used to estimate connectivity of the sublateral motor neurons to body-wall muscles. Altogether, in the hermaphrodite adjacency matrix, chemical edges between neurons added by extrapolation amount to 3.6% of the non-pharyngeal neuron-neuron edges, whereas neuromuscular junctions amount to 45% of the neuron-muscle edges, half of which involve the sublateral motor neurons. Extrapolated gap junctions, mostly between muscles, amount to 13% of the non-pharyngeal gap junction edges.
+Comparison to previously published studies.
+The method of reconstruction using the software Elegance allowed us to generate more finely detailed skeleton maps than those published previously
+1
+. We scored more synapses compared to the previous papers for two reasons (
+Extended Data Fig. 1
+). First, we scored more electron micrographs. We have gone back to the original thin sections from the previous study
+1
+to gather more electron micrographs of some nerve cords, including the dorsal cord from N2U and the sublateral cords from N2T and N2U. We also imaged sections from the Hall laboratory collection of previously sectioned wild-type animals for coverage of the sublateral and lateral cords. We added more synapses in the amphid nerves that had not been closely examined for possible connectivity in the original N2T prints, but had been first noted in another species
+5
+.
+Second, by switching our analysis to a digital platform, using Elegance software, it became easier to visualize and score many smaller chemical synapses and gap junctions compared to viewing single EM prints by eye. Elegance places several successive aligned images side-by-side on the screen. The user can zoom in to an arbitrarily large size. Marks are placed in overlays over those images for annotating both neurites and synapses
+62
+. Previously, prints were marked for neurite profiles but not for synapses, which were only noted down on separate lists. By placing marks over every synapse, it became easier to exhaustively tally them in a complex field of view. For the largest chemical presynaptic densities that span many sections, it became easier to notice and record where additional postsynaptic partners appeared for just one or two sections, thus adding more synaptic connections and potentially edges to the graph.
+We make it possible to confirm our calls. Excel files are provided that list every synapse in an EM series, its properties and a unique identifier (
+Supplementary Information 3
+). The ID number can be entered in a search box on the neuron page of WormWiring (
+http://wormwiring.org/
+), which will locate the synapse on the map. Clicking the synapse on the map opens the relevant EMs for viewing.
+In the neuron maps provided in previous publications, it was not always possible to determine what all the partners are at a polyadic synapse. Maps note polyadic partners at synapses in cases in which a neuron is presynaptic but do not list corecipients in cases in which a neuron is postsynaptic
+1
+. In order to determine the co-recipients in that case, it is necessary to consult the map of the presynaptic neuron. However, it is not always possible to correlate synapses on different maps. In addition to the cells involved at each polyadic synapse, we record their arrangement around the presynaptic density, as described above (
+Extended Data Fig. 2
+). This data may be analysed to determine whether there are categories of postsynaptic cells: ‘primary’ (the cell in the middle of a triad, or a cell in apposition throughout the length of a presynaptic density) and ‘secondary’ (cells not in the middle, or not in contact throughout the length of a presynaptic density). This information may have implications for synaptogenesis or synapse function.
+Immunocytochemistry.
+To identify cholinergic specializations in the sublateral nerves, adult nematodes were fixed with methanol and acetone and stained with a mouse monoclonal antibody against VAChT (monoclonal antibody 1403) and Cy3 anti-mouse antibody (Jackson ImmunoResearch)
+63
+.
+Statistical analysis for comparison of connectivity.
+To compare male and hermaphrodite connectivity for cell classes, a z-score was calculated for each presynaptic-postsynaptic pair that is shared between the two sexes (
+Supplementary Information 9
+). The
+z
+-score is the difference between connection strengths between genders, normalized by its estimated variance. The variance of the observed connection strength is assumed to be a function of its expectation. In order to assess this variance and identify differences between the hermaphrodite and male data that are greater than expected due to developmental variability, we estimated the amount of developmental variability by comparing left-right homologues in the hermaphrodite data (the most complete and accurate dataset). We compared the connectivity of left-right homologues onto cell classes that themselves consist of left-right homologues and derived a function for variance as a function of expectation. To estimate this function, we assume that the observed weights of connections between left-right homologues in the hermaphrodite are independent observations of random variables with the same mean and variance, denoted here as
+X
+and Y. Under this assumption,
+E
+(
+X
+— Y) = 0, and Var(
+X
+—
+Y
+) = 2Var(
+X
+) = 2Var(
+Y
+). We estimate
+E
+(
+X
+) as the average of
+X
+and
+Y
+. Then, we apply the LOESS procedure, a method for nonparametric function estimation, to smooth the values (
+X
+—
+Y
+)
+2
+against 0.5(
+X
++
+Y
+). We use the tricubic kernel, and adaptively set the kernel width such that 100 neuron pairs have non-zero weight at every point. This estimated variance function was also used to calculate
+z
+-scores for differences in left-right connectivity in the hermaphrodite (
+Supplementary Information 8
+). Curves for estimated standard deviation versus expected edge weight are shown in
+Extended Data Fig. 11
+.
+Fluorescence labelling of synapses.
+Strains.
+Worms were maintained according to standard methods
+59
+. Animals were grown at 20 °C on nematode growth medium plates coated with bacteria (
+Escherichia coli
+0P50) as a food source. The wild-type strain used was
+C. elegans
+Bristol N2. Mutant strains used in this study include:
+him-8
+(
+e1489
+)
+IV
+and
+him-5
+(
+e1490
+)
+V.
+Transgenic stains used in this study are listed in
+Supplementary Table 1
+.
+Cloning and constructs.
+Pnlg-1::gfp1–10 (MVC2), Pnlg-1::gfp11 (MVC3), Pflp-18p::mCherry (MVC11)
+and
+flp-18::nlg-1::gfp11 (MVC12) plasmids were a gift from M. VanHoven.
+Construction of vectors containing
+Pgcy-8::BirA::nrx-1, Pflp-18::AP::nlg-1, Pgcy-32::BirA::nrx-1 and Pttx-3::AP::nlg-1
+was described previously
+64
+, as was
+Psrg-13::BirA::nrx-1
+(pM023)
+42
+.
+pEAB27 (
+Psri-9::wrmCherry)
+, was generated by Gibson assembly of a 1.2-kb fragment of the
+sri-9
+promoter into the 5
+’
+SphI and 3
+’
+XmaI sites of a Fire vector-based mCherry plasmid (
+C
+.
+elegans
+codon-optimized; here called wrmCherry) (forward primer 5
+’
+-CAACTTGGAAATGAAATAAGCTTGCATGCAGCATTTCTGAGCTGTAATTT-3
+’
+, reverse primer 5
+’
+-GGGTCCTTTGGCCAATCCCGGGTGTTTTTTGAAGCCTTGAAATAAAC-30’), which was then subcloned into the 5
+’
+SphI and 3
+’
+XmaI sites of MVC2 to generate pEAB31 (
+Psri-9::nlg-1::gfp1–10
+).
+pEAB23 (
+Psrh-18::wrmCherry
+), was generated by Gibson assembly of a 464-bp fragment of the
+srh-18
+promoter into the 5
+’
+SphI and 3
+’
+XmaI sites of a Fire vector-based wrmCherry (forward primer 5
+’
+-CAACTTGGAAATGAAATAAGCTTGCATGCTAGGT GACAGT GGTTATT C-3
+’
+and reverse primer 5
+’
+-GGGTCCTTTGGCCAATCCCGGGTGATTTTATGACGTGAAGTTTGTTC-3
+’
+), which was then subcloned into the 5
+’
+SphI and 3
+’
+XmaI sites of MVC2 to generate pEAB25 (
+Psrh-18::nlg-1::gfp1–10)
+.
+pEAB28 (
+Pgpa-6::AP::nlg-1
+) was generated by subcloning of a 2.7-kb fragment of the
+gpa-6
+promoter from the 5
+’
+SphI and 3
+’
+XmaI sites of pM022 (
+Pgpa-6::BirA::nrx-1
+).
+To generate
+Psto-3::tagBFP
+and
+Psto-3::AP::nlg-1,
+a 971-bp fragment of the
+sto-3
+promoter was amplified from genomic DNA (forward primer 5
+’
+-CGCTAACAACTT GGAAATGAAATAAGCTTGCATGCGATGCCCAATCAGTTTTTTTTCACC-3
+’
+, r everse primer 5
+’
+-TTTCAGGAGGACCCTTGGAGGGTACCGCCGGCCAATCATAAGCCAAACCAAGTGAGAAG-3
+’
+) and inserted into the 5
+’
+SphI and 3
+’
+KpnI sites of
+tagBFP
+and
+AP::nlg-1
+using Gibson assembly.
+To generate
+Pklp-6::BirA::nrx-1,
+a 877-bp fragment of the
+klp-6
+promoter was amplified from genomic DNA (forward primer 5
+’
+-ACGCTAACAACTTGGAAATGAAATAAGCTTGCATGCTGAAATGCCG CAAAGACTAC-3’, reverse primer 5’-AGCAATGATGTTGAAGGTGGCATTGCCGGCGGTACCGAGTC ACCCTTTCCCATTATTCT-3’) and inserted into the 5
+’
+SphI and 3
+’
+Kpnl sites of
+BirA::nrx-1
+using Gibson assembly.
+To generate
+Pglr-6::BirA::nrx-1,
+a 3,905-bp fragment of the
+glr-6
+promoter was amplified from genomic DNA (forward primer 5
+’
+-ACGCTAACAACTTGGAAATGAAATAAGCTTGCATGCGGCCCGAGTCACAAATACCGC-3
+’
+, reverse primer 5
+’
+-AGCAATGATGTTGAAGGTGGCATTGCCGGCGGTACCTTCAAATGCATTTGTTCAGC-3
+’
+) and inserted into the 5
+’
+SphI and 3
+’
+Kpnl sites of
+BirA::nrx-1
+using Gibson assembly.
+To generate
+Peat-4p12::BirA::nrx-1
+a 480-bp fragment of the
+eat-4
+promoter was isolated by 5
+’
+Kpnl and 3
+’
+SphI restriction digest from a plasmid containing
+Peat-4p12::GFP
+and inserted into the 5
+’
+SphI and
+3’
+Kpnl sites of
+BirA::nrx-1
+using T4 ligase.
+To generate
+Pche-1::BirA::nrx-1
+, a 1,380-bp fragment of the
+che-1
+promoter was amplified from genomic DNA (forward primer 5
+’
+-GGAAATGAAATAAGCTTGCATGCGAACAAACCAGAGGATTATGTTCC-3
+’
+, reverse primer 5
+’
+-GTCCTT TGGCCAATCCCGGGTATTTATTTCAATTAAAACAAGAGTTTAAAAC-3’) and inserted into
+BirA::nrx-1
+using RF cloning.
+To generate
+Pceh-36::tagBFP
+and
+Pceh-36::AP::nlg-1,
+a 1,841-bp fragment of the modified
+ceh-36
+promoter was isolated by 5
+’
+HindIII and 3
+’
+BamHI restriction digest from a plasmid containing
+Pceh-36prom2del1::GFP
+and inserted into the 5
+’
+SphI and 3
+’
+KpnI sites of
+tagBFP
+and
+AP::nlg-1
+using Gibson assembly.
+To generate
+Pinx-1::BirA::nrx-1,
+a 961-bp fragment of the
+inx-1
+promoter was amplified from genomic DNA (forward primer 5
+’
+-ACGCTAACAACTTGGAAATGAAATAAGCTTGCATGCCAGATTCATAACTGTCTATG-3’, reverse primer 5
+’
+-AGCAATGATGTTGAAGGTGGCATTGCCGGCGGTACCCTTGTCCACAAAATCGTCGTC-3’) and inserted into the 5
+’
+SphI and 3
+’
+KpnI sites of
+BirA::nrx-1
+using Gibson assembly.
+To generate
+Pgcy-13::tagBFP
+and
+Pgcy-13::AP::nlg-1
+, a 2,225-bp fragment of the
+gcy-13
+promoter was amplified from genomic DNA (forward primer 5
+’
+-CCCCGCGCGTTGGCCGATTCATTAATGCAGCTCAAAATCCATTGTGTAAGTTC-3
+’
+, reverse primer 5
+’
+-TGCCGGCGGTACCCTCCAAGGGTCCTCCTGAAACCATCCTACAGAGGAGGC-3’) and inserted into the 5
+’
+SphI and 3
+’
+KpnI sites of
+tagBFP
+and
+AP::nlg-1
+using Gibson assembly.
+To generate
+Pflp-26::BirA::nrx-1
+, a 4,130-bp fragment of the
+flp-26
+promoter was amplified from genomic DNA (forward primer 5
+’
+-ACGCTAACAACTTGGAAATGAAATAAGCTTGCATGCATGATCCCGACCAGACCTGTGTG-3
+’
+, reverse primer 5
+’
+-ATGATGTTGAAGGTGGCATTGCCGGCGGTACCTGTGAAAACTGTAAGTGTTCTTG ACGGG-3
+’
+) and inserted into the 5
+’
+SphI and 3
+’
+KpnI sites of
+BirA::nrx-1
+using Gibson assembly.
+To generate
+Pgpa-4::BirA::nrx-1
+, a 2,570-bp fragment of the
+gpa-4
+promoter was amplified from genomic DNA (forward primer 5
+’
+-ACGCTAACAACTTGGAAATGAAATAAGCTTGCATGCATGCGACAGAAGACAGAGACTCGAG-3
+’
+, reverse primer 5
+’
+-ATGATGTTGAAGGTGGCATTGCCGGCGGTACCCATTTTGTGAACACTTTTCAACAATG-3’) and inserted into the 5
+’
+SphI and 3
+’
+KpnI sites of
+BirA::nrx-1
+using Gibson assembly.
+Light microscopy.
+Worms were anaesthetized using either 100 mM sodium azide (NaN
+3
+) or 5 mM levamisole and mounted on glass slides with 5% agarose pads. Worms were visualized using fluorescence microscopy and Nomarski optics using a Zeiss 880 confocal laser-scanning microscope (all GRASP experiments and PHA to PHB iBLINC) or Zeiss Axioimager Z1 with Apotome. Multidimensional data were reconstructed as maximum-intensity projections using either the Zeiss Zen Black software or ImageJ. Puncta were quantified by scanning the
+z
+stack of images for distinct dots that corresponded to axons labelled by cytoplasmic markers. All anterior images were scored blind to sex. Sexually dimorphic tail anatomy precluded blinding to sex when scoring posterior images of the PAG. Use of different fluorescence markers to label the presynaptic neurite prevented blinding to genotype in most instances. Figures were prepared using Adobe Photoshop CS6 and Adobe Illustrator CS6.
+Reporting summary.
+Further information on research design is available in the Nature Research Reporting Summary linked to this paper.
+Extended Data
+Extended Data Fig. 1 |
+Comparison of previous reconstructions to this work.
+Many more synapses are scored primarily because the reconstruction method using Elegance enabled the marking of synapses on images, facilitating an exhaustive annotation (
+Methods
+).
+a
+, Maps of AIML and AIMR from reconstruction of the hermaphrodite series N2U as presented previously
+1
+(left) and the present study (right). The map from the present reconstruction, as given at
+http://wormwiring.org/
+, has been redrawn to have the same projection as the previous study (laying out the portion that extends around the nerve ring). Furthermore, as in the previous study, only the target cells at polyadic chemical synapses at which AIML and AIMR are presynaptic are shown. However, co-recipients at synapses in which AIML or AIMR are postsynaptic may be obtained by moving over the synapse on the online map at
+http://wormwiring.org/
+. The small branches on the skeleton backbone are not neurite branches or spines, but rather are locations where a protrusion or bulging out of the neurite resulted in EM profiles separated from the main profile for a few sections. In the scoring method, all profiles are marked by a point object. The skeleton map is created by joining these objects, resulting in the short extensions from the backbone at the bulges.
+b
+, Comparison of the number of edges in the adjacency matrices and the number of synapses scored in the present and previous studies
+1
+,
+18
+.
+c
+, The edges in the present study that are not present in the previous study are mostly small.
+Extended Data Fig. 2 |
+Properties of synapses.
+a
+, Electron micrographs of a representative chemical synapse (left) and a gap junction synapse (right), marked by an asterisk. The triadic chemical synapse of AIYR to RIAR, AIZR, and RIBR (synapse number N2U391) is recognized by the presynaptic density and the presence of presynaptic vesicles within AIYR. The postsynaptic cells are entered into the database in a clockwise order around the presynaptic density. As electron micrographs give a consistent cross-sectional view from the posterior, the location of the neuronal processes is oriented in the worm. The gap junction (synapse number N2U3875) is recognized as a straightened or slightly curving region of apposed membranes with increased staining and a uniform small gap. Below the micrographs is shown how each of these two synapses is listed in the table of synapses (
+Supplementary Information 3
+).
+b
+, Number of postsynaptic partners at chemical synapses. The lower number of polyads in the male data is probably not a true difference between the sexes, but rather a result of the less-complete nature of the male reconstruction, which was due to the lower quality of the electron micrographs.
+c
+, Size distributions of synapses.
+d
+, Larger edges are composed of larger synapses as well as more synapses.
+Extended Data Fig. 3 |
+Properties of the graphs.
+a
+, Distributions of weights for chemical (left) and gap junction (right) edges (number of serial EM sections).
+b
+, Degree distributions.
+c
+, Distribution of the presumptive load (cumulative physical sizes of the edges) as a function of edge weight. A large fraction of the load is carried by the many small edges.
+d
+, The fraction of connectivity due to gap junctions for the classes of interneurons in the hermaphrodite.
+Extended Data Fig. 4 |
+Similar arrangement of neurite processes in the two sexes.
+The transverse section of the ventral ganglion in the hermaphrodite (N2U series) depicted in figure 16 of the previous study
+1
+is compared to the corresponding section in the male (series N930, section 1100). Some of the processes in the male were not identified.
+Extended Data Fig. 5 |
+Output of the algorithm for finding hierarchy in a network.
+The previously published algorithm
+18
+,
+23
+was used to analyse the hierarchical structure of the nervous system networks (
+Fig. 2
+). Hierarchical position is shown on the
+y
+axis; the adjacency of neurons (roughly, anterior to left, posterior to right) is shown on the x axis. For
+Fig. 2
+, some small adjustments to the node positions were made, primarily in the horizontal direction, to clarify the data by removing overlaps. Two adjustments were made in the vertical direction to make neuron positions reflect the preponderance of their output. RIA was moved down to the level of the other neurons that have a majority of output onto motor neurons and muscles. Notably, 88% of RIA chemical output is onto motor neurons and muscles, making it seem that RIA should be considered one of the premotor interneurons. It is probably placed at a higher level of the hierarchy by the algorithm because of its large number of inputs from sensory neurons (10) and layer 3 interneurons (3). It receives input from only a single layer 2 interneuron, RIB (see below). (It has negligible gap junctional connectivity.) In the second case, RIB was moved up, to the next higher layer (interneuron layer 2). Only 10% of RIB chemical output is onto motor neurons and muscles, whereas 43% is onto layer 1 interneurons (including RIA). In addition, 40% of RIB total output is through gap junctions. Of these, 37% of the load is with motor neurons (possibly influencing its placement by the algorithm), 15% with layer 1 interneurons and 47% with layer 2 and above. These were the only two neuron classes that seemed to be placed by the algorithm at a position that did not well represent the preponderance of their output.
+Extended Data Fig. 6 |
+Chemical and gap junction networks.
+a-d
+, The hierarchical networks of
+Fig. 2
+are shown with chemical and gap junction edges separated. e, Left, gap junction output of sensory neuron classes. The touch neurons (SN3) have a higher proportion of gap junctional connectivity than the other classes. Middle, gap junctions are distributed fairly uniformly throughout the network. The category 4 interneurons, which cannot be placed at a particular level in the otherwise hierarchical structure, are also distinguished by making remarkably few gap junctions. (The number of category 4 interneurons is a quarter to a half the number of neurons in each of the other categories.) Right, the fraction of connectivity due to gap junctions is similar throughout the network.
+Extended Data Fig. 7 |
+Analysis of doublet and triplet motifs in the somatic nervous system.
+The frequency (blue) of doublets and triplets in the unweighted hermaphrodite and male networks compared to 1,000 degree-conserved randomized networks (red crosses). a, b, Hermaphrodite and male gap junction doublets. c, d, Hermaphrodite and male chemical synapse doublets. e, f, Hermaphrodite and male chemical synapse triplets. We determined statistically significant deviations from our randomized data using a MATLAB script based on a previously published study18. We used the single step min p procedure and multiple hypothesis testing; *
+P
+< 0.05.
+Extended Data Fig. 8 |
+Connectivity in the hermaphrodite to non-muscle end organs.
+There is substantial connectivity (>3 EM serial sections) to five cells or organs: the intestine (int), hypodermis (hyp), head mesodermal cell (hmc), CAN cell (a neuron-like cell with unusual properties) and the excretory gland (exc_gl) cell. In the male, DVB and AVL are repurposed to have a role in ejaculation. Many of the neurons that innervate the hypodermis have processes running through the animal in the ventral cord. The head mesodermal cell, a cell of unknown function, has extensive gap junctions to body-wall muscles. This provides an indirect connection between the body-wall muscles and the excretory gland cell.
+Extended Data Fig. 9 |
+Innervation of body-wall muscle and definition of motor neurons.
+a
+, Fraction of synaptic output that is onto muscle for the neuron classes that make neuromuscular junctions. With the exception of IL1, classes for which greater than 30% of their chemical output is onto muscle are classified as motor neurons (mn). IL1 neurons—which are classified as sensory neurons (sn)—have clear sensory endings and sensory function; they are sensory-motor neurons, but we do not use that classification here. VC and HSN—hermaphrodite-specific neurons—innervate egg-laying muscles and have traditionally been considered motor neurons. The remaining neurons are classified as interneurons. Neurons that have previously been categorized as interneurons are indicated by a dagger. Neurons that have previously been categorized as motor neurons are indicated by an asterisk.
+b
+, Fraction of the input to the body-wall muscles of the head region and the remainder of the body that comes from neurons of various classes.
+Extended Data Fig. 10 |
+Five classes of sublateral motor neurons (SAB, SMD, SMB, SIB and SIA) are contained in sublateral nerves and innervate body-wall muscles.
+a
+, Schematic transverse view of anterior midbody to show the relative positions of the four posterior sublateral nerves (large arrows) in relation to the body-wall muscles (green), the lateral nerves (Lat), ventral nerve cord (VC) and dorsal nerve cord (DC). All nerves are shown in red. Anterior to the nerve ring, the anterior sublateral nerves adopt the same relative positions with respect to more anterior body-wall muscles, tending to lie in a cleft at the margins of two adjoining rows of muscles in each quadrant. Intestine (pink), germline tissues (dark blue), pseudocoelom (yellow), hypodermis (tan), excretory canal (purple) and seam (orange). Cartoon is adapted from the WormAtlas.
+b
+, Adult head showing Cy3-anti-mouse antibody staining of VAChT (monoclonal antibody1403; secondary antibody from Jackson ImmunoResearch) inside neuronal processes in the nerve ring (NR), dorsal cord, and anterior and posterior sublateral nerves. The members of the sublateral nerves show periodic swellings that are brightly stained, whereas the entire nerve ring and dorsal cord are extremely bright. Lateral view, anterior to the left, dorsal to the top. Scale bar, 100 μm.
+n >
+50 animals.
+c
+,
+d
+, Transmission electron micrographs from adult wild-type animals obtained as transverse cross-sections. Note that each sublateral nerve contains 4–5 axons lying in an indentation of the outer edge of the body-wall muscle quadrant, close to the cell border between two adjoining muscles. White asterisks mark swollen axons of interest. Synaptic vesicles cluster among electron-dense ground substance near the active zone. Other sublateral axons tend to be very narrow, contain a few microtubules and often a narrow tube of smooth endoplasmic reticulum but no ground substance. Electron-dense material is sometimes seen at the base of the plasma membrane to form a small dark presynaptic bar. Diffuse basal lamina fills the extracellular space between the muscles and the underlying layer of hypodermis and its sublateral nerve. The cuticle is shown along the bottom edge of each panel.
+c
+, Adult sublateral nerve in which the axon on the far left forms a presynaptic density (small electrondense patch is the centre of the active zone) pointing leftward to BWM and hypodermis. Animal N2U, E4, image 014.
+d
+, Adult sublateral nerve in which one swollen axon contains vesicles and ground substance, but shows no evidence of a presynaptic density. The thin hypodermal layer is locally swollen to accommodate a mitochondrion just to the left of the nerve. Some swellings show only vesicles and extra ground substance, whereas others include a small presynaptic dense bar that can point towards muscle, hypodermis or other members of the nerve. Animal N501C, image Y382.
+c
+,
+d
+, Scale bar, 0.5 (im. Transmission electron micrographs of 6 animals show similar synaptic features (J.S.D. et al., manuscript in preparation).
+Extended Data Fig. 11 |
+Estimated s.d. as a function of edge weight for the left-right comparison.
+Analysis related to data shown in the scatter plots of
+Fig. 5a
+. Values are the number of serial EM sections.
+Extended Data Fig. 12 |
+Comparison of connectivity across sex using transsynaptic fluorescent labelling.
+a-h
+, Fluorescent micrographs and quantification of immunofluorescence data.
+a
+, iBLINC labelling of AFD to AIY synapses.
+n
+= 18 male animals and
+n
+= 23 hermaphrodite animals,
+P
+= 0.99.
+b
+, iBLINC labelling of PHA to PHB synapses.
+n
+= 14 male animals and
+n
+= 15 hermaphrodite animals,
+P
+= 0.43.
+c
+, iBLINC labelling of URX and AQR to AVA, RIG, and AIY synapses.
+n
+= 15 male animals and
+n
+= 15 hermaphrodite animals,
+P
+= 1.00.
+d
+, iBLINC labelling of ASI to AFD synapses.
+n
+= 22 male animals and
+n
+= 22 hermaphrodite animals,
+P
+= 0.0000059.
+e
+, GRASP labelling of IL2 to RIB synapses.
+n
+= 19 male animals and
+n
+= 23 hermaphrodite animals,
+P
+= 0.0114.
+f
+, iBLINC labelling of IL1 to RIB.
+n
+= 17 male animals and
+n
+= 26 hermaphrodite animals,
+P
+= 0.0000099.
+g
+, GRASP labelling of AIB to RIM synapses.
+n
+= 20 male animals and
+n
+= 29 hermaphrodite animals,
+P
+= 0.053.
+h
+, GRASP labelling of ASH to AVA.
+n
+= 14 male animals and
+n
+= 16 hermaphrodite animals,
+P
+< 0.0001. For all fluorescence comparisons a two-sided Wilcoxon rank-sum test was used. Each dot represents the number of synaptic puncta in one animal, the middle black line is the median, the box shows the interquartile range, whiskers show the outer quartiles.
+Extended Data Fig. 13 |
+Possible sex differences in connectivity between shared neurons are distributed throughout the network.
+Separately for the chemical and gap junction networks, the hermaphrodite and male networks for cell classes (
+Fig. 2
+) were added together and edges that come mainly from just one sex are highlighted: green, stronger in the hermaphrodite, blue, stronger in the male. Selection of edges to highlight was done as follows. Using the data in
+Supplementary Information 9
+, for the chemical matrix the highest 100
+z
+-scores for each sex (out of 1,823 comparisons) were selected; for the gap junction matrix the highest 35
+z
+-scores out of 356 comparisons were selected. Thus approximately 20% of edges are highlighted. Note, differences between the two reconstructions can arise for many reasons. Whether the edges highlighted here are true sex differences needs to be tested by methodology that allows many animals to be examined.
+Supplementary Material
+Supplementary files
+Acknowledgements
+We thank A. Barrios and B. Kim for comments on the manuscript; J. Koehler for comments on the statistical analysis; J. Hodgkin and J. White for their help in lending the electron microscopy archives from MRC/LMB for long-term curation at the Hall laboratory. M. Bernstein tested the fertility of males for the N930 reconstruction. M. Xu computationally aligned EM images. C. Crocker created the interactive version of
+Fig. 1
+and formatted figures throughout. This work was supported by NIH grants from NINDS (F31NS096863 to E.A.B.; R01NS096672 to H.E.B.; R37NS039996 to O.H.), NIHD (P30HD071593 to S.W.E.), NIMH (R01MH112689 to S.W.E.), NIGMS (T32GM00749 1 to S.J.C.; R01GM066897 to S.W.E.), NINCDS (R15N548916 to J.S.D) and the Office of the NIH Director (OD 010943 to D.H.H.), and by the G. Harold and Leila Y. Mathers Charitable Foundation (S.W.E.). L.T-H.T is a Croucher Foundation Research Fellow. H.E.B. is an Irma T Hirschl/Monique Weill-Caullier Research Fellow. O.H. is an investigator of the Howard Hughes Medical Institute. Some nematode strains were provided by the CGC, which is funded by NIH Office of Research Infrastructure Programs (P40 0D010440).
+Reviewer information
+Nature
+thanks Albert-László Barabási, Dan Bumbarger, Douglas Portman, Paul W. Sternberg, Emma Towlson and the other anonymous reviewer(s) for their contribution to the peer review of this work.
+Competing interests
+The authors declare no competing interests.
+Additional information
+Extended data
+is available for this paper at
+https://doi.org/10.1038/s41586–019-1352–7
+.
+Supplementary information
+is available for this paper at
+https://doi.org/10.1038/s41586–019-1352–7
+.
+Publisher’s note:
+Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+Data availability
+The datasets generated and/or analysed during the current study are available at
+http://wormwiring.org/
+. The collection of
+C. elegans
+nervous system electron micrographs are also available at
+https://www.wormatlas.org/
+and
+https://wormim-age.org
+. The datasets generated and/or analysed during the current study are also available from the corresponding author on reasonable request.
+Online content
+Any methods, additional references, Nature Research reporting summaries, source data, statements of data availability and associated accession codes are available at
+https://doi.org/10.1038/s41586–019-1352–7
+.
+1.
+White
+JG
+,
+Southgate
+E
+,
+Thomson
+JN
+&
+Brenner
+S
+The structure of the nervous system of the nematode Caenorhabditis elegans
+.
+Phil. Trans. R. Soc. Lond. B
+314
+,
+1
+–
+340
+(
+1986
+).
+22462104
+10.1098/rstb.1986.0056
+2.
+Albertson
+DG
+&
+Thomson
+JN
+The pharynx of Caenorhabditis elegans
+.
+Phil. Trans. R. Soc. Lond. B
+275
+,
+299
+–
+325
+(
+1976
+).
+8805
+10.1098/rstb.1976.0085
+3.
+Jarrell
+TA
+The connectome of a decision-making neural network
+.
+Science
+337
+,
+437
+–
+444
+(
+2012
+).
+22837521
+10.1126/science.1221762
+4.
+Hall
+DH
+&
+Russell
+RL
+The posterior nervous system of the nematode Caenorhabditis elegans: serial reconstruction of identified neurons and complete pattern of synaptic interactions
+.
+J. Neurosci
+.
+11
+,
+1
+–
+22
+(
+1991
+).
+1986064
+10.1523/JNEUROSCI.11-01-00001.1991
+PMC6575198
+5.
+Bumbarger
+DJ
+,
+Riebesell
+M
+,
+Rödelsperger
+C
+&
+Sommer
+RJ
+System-wide rewiring underlies behavioral differences in predatory and bacterial-feeding nematodes
+.
+Cell
+152
+,
+109
+–
+119
+(
+2013
+).
+23332749
+10.1016/j.cell.2012.12.013
+6.
+Helmstaedter
+M
+Connectomic reconstruction of the inner plexiform layer in the mouse retina
+.
+Nature
+500
+,
+168
+–
+174
+(
+2013
+).
+23925239
+10.1038/nature12346
+7.
+Bock
+DD
+Network anatomy and in vivo physiology of visual cortical neurons
+.
+Nature
+471
+,
+177
+–
+182
+(
+2011
+).
+21390124
+10.1038/nature09802
+PMC3095821
+8.
+Briggman
+KL
+,
+Helmstaedter
+M
+&
+Denk
+W
+Wiring specificity in the direction-selectivity circuit of the retina
+.
+Nature
+471
+,
+183
+–
+188
+(
+2011
+).
+21390125
+10.1038/nature09818
+9.
+Kasthuri
+N
+Saturated reconstruction of a volume of neocortex
+.
+Cell
+162
+,
+648
+–
+661
+(
+2015
+).
+26232230
+10.1016/j.cell.2015.06.054
+10.
+Lee
+W-CA
+Anatomy and function of an excitatory network in the visual cortex
+.
+Nature
+532
+,
+370
+–
+374
+(
+2016
+).
+27018655
+10.1038/nature17192
+PMC4844839
+11.
+Ohyama
+T
+A multilevel multimodal circuit enhances action selection in Drosophila
+.
+Nature
+520
+,
+633
+–
+639
+(
+2015
+).
+25896325
+10.1038/nature14297
+12.
+Fushiki
+A
+A circuit mechanism for the propagation of waves of muscle contraction in Drosophila
+.
+eLife
+5
+,
+e13253
+(
+2016
+).
+10.7554/eLife.13253
+PMC4829418
+26880545
+13.
+Takemura
+SY
+The comprehensive connectome of a neural substrate for ‘ON’ motion detection in Drosophila
+.
+eLife
+6
+,
+e24394
+(
+2017
+).
+10.7554/eLife.24394
+PMC5435463
+28432786
+14.
+Eichler
+K
+The complete connectome of a learning and memory centre in an insect brain
+.
+Nature
+548
+,
+175
+–
+182
+(
+2017
+).
+28796202
+10.1038/nature23455
+PMC5806122
+15.
+Larderet
+I
+Organization of the Drosophila larval visual circuit
+.
+eLife
+6
+,
+e28387
+(
+2017
+).
+10.7554/eLife.28387
+PMC5577918
+30726702
+16.
+Randel
+N
+Neuronal connectome of a sensory-motor circuit for visual navigation
+.
+eLife
+3
+,
+e02730
+(
+2014
+).
+10.7554/eLife.02730
+PMC4059887
+24867217
+17.
+Ryan
+K
+,
+Lu
+Z
+&
+Meinertzhagen
+IA
+The CNS connectome of a tadpole larva of Ciona intestinalis (L.) highlights sidedness in the brain of a chordate sibling
+.
+eLife
+5
+,
+e16962
+(
+2016
+).
+10.7554/eLife.16962
+PMC5140270
+27921996
+18.
+Varshney
+LR
+,
+Chen
+BL
+,
+Paniagua
+E
+,
+Hall
+DH
+&
+Chklovskii
+DB
+Structural properties of the Caenorhabditis elegans neuronal network
+.
+PLOS Comput. Biol
+.
+7
+,
+e1001066
+(
+2011
+).
+10.1371/journal.pcbi.1001066
+PMC3033362
+21304930
+19.
+Ahn
+Y-Y
+,
+Jeong
+H
+&
+Kim
+BJ
+Wiring cost in the organization of a biological neuronal network
+.
+Physica A
+367
+,
+531
+–
+537
+(
+2006
+).
+20.
+Chen
+BL
+,
+Hall
+DH
+&
+Chklovskii
+DB
+Wiring optimization can relate neuronal structure and function
+.
+Proc. Natl Acad. Sci. USA
+103
+,
+4723
+–
+4728
+(
+2006
+).
+16537428
+10.1073/pnas.0506806103
+PMC1550972
+21.
+Wang
+IE
+&
+Clandinin
+TR
+The influence of wiring economy on nervous system evolution
+.
+Curr. Biol
+.
+26
+,
+R1101-R1108
+(
+2016
+).
+10.1016/j.cub.2016.08.053
+27780051
+22.
+Gushchin
+A
+&
+Tang
+A
+Total wiring length minimization of C. elegans neural network: a constrained optimization approach
+.
+PLoS ONE
+10
+,
+e0145029
+(
+2015
+).
+10.1371/journal.pone.0145029
+PMC4682822
+26659722
+23.
+Carmel
+L
+,
+Harel
+D
+&
+Koren
+Y
+Combining hierarchy and energy for drawing directed graphs
+.
+IEEE Trans. Vis. Comput. Graph
+.
+10
+,
+46
+–
+57
+(
+2004
+).
+15382697
+10.1109/TVCG.2004.1260757
+24.
+Gray
+JM
+,
+Hill
+JJ
+&
+Bargmann
+CI
+A circuit for navigation in Caenorhabditis elegans
+.
+Proc. Natl Acad. Sci. USA
+102
+,
+3184
+–
+3191
+(
+2005
+).
+15689400
+10.1073/pnas.0409009101
+PMC546636
+25.
+Zou
+W
+Polymodal responses in C. elegans phasmid neurons rely on multiple intracellular and intercellular signaling pathways
+.
+Sci. Rep
+.
+7
+,
+42295
+(
+2017
+).
+10.1038/srep42295
+PMC5307315
+28195191
+26.
+Hart
+AC
+,
+Kass
+J
+,
+Shapiro
+JE
+&
+Kaplan
+JM
+Distinct signaling pathways mediate touch and osmosensory responses in a polymodal sensory neuron
+.
+J. Neurosci
+.
+19
+,
+1952
+–
+1958
+(
+1999
+).
+10066248
+10.1523/JNEUROSCI.19-06-01952.1999
+PMC6782580
+27.
+Pereira
+L
+A cellular and regulatory map of the cholinergic nervous system of C. elegans
+.
+eLife
+4
+,
+e12432
+(
+2015
+).
+10.7554/eLife.12432
+PMC4769160
+26705699
+28.
+Zhao
+H
+&
+Nonet
+ML
+A retrograde signal is involved in activity-dependent remodeling at a C. elegans neuromuscular junction
+.
+Development
+127
+,
+1253
+–
+1266
+(
+2000
+).
+10683178
+10.1242/dev.127.6.1253
+29.
+Kratsios
+P
+Transcriptional coordination of synaptogenesis and neurotransmitter signaling
+.
+Curr. Biol
+.
+25
+,
+1282
+–
+1295
+(
+2015
+).
+25913400
+10.1016/j.cub.2015.03.028
+PMC4465358
+30.
+Schwarz
+J
+&
+Bringmann
+H
+Analysis of the NK2 homeobox gene ceh-24 reveals sublateral motor neuron control of left-right turning during sleep
+.
+eLife
+6
+,
+e24846
+(
+2017
+).
+10.7554/eLife.24846
+PMC5384828
+28244369
+31.
+Stephens
+GJ
+,
+Bueno de Mesquita
+M
+,
+Ryu
+WS
+&
+Bialek
+W
+Emergence of long timescales and stereotyped behaviors in Caenorhabditis elegans
+.
+Proc. Natl Acad. Sci. USA
+108
+,
+7286
+–
+7289
+(
+2011
+).
+21502536
+10.1073/pnas.1007868108
+PMC3088607
+32.
+Stephens
+GJ
+,
+Johnson-Kerner
+B
+,
+Bialek
+W
+&
+Ryu
+WS
+Dimensionality and dynamics in the behavior of C. elegans
+.
+PLOS Comput. Biol
+.
+4
+,
+e1000028
+(
+2008
+).
+10.1371/journal.pcbi.1000028
+PMC2276863
+18389066
+33.
+Kato
+S
+Global brain dynamics embed the motor command sequence of Caenorhabditis elegans
+.
+Cell
+163
+,
+656
+–
+669
+(
+2015
+).
+26478179
+10.1016/j.cell.2015.09.034
+34.
+Pierce-Shimomura
+JT
+,
+Faumont
+S
+,
+Gaston
+MR
+,
+Pearson
+BJ
+&
+Lockery
+SR
+The homeobox gene lim-6 is required for distinct chemosensory representations in C. elegans
+.
+Nature
+410
+,
+694
+–
+698
+(
+2001
+).
+11287956
+10.1038/35070575
+35.
+Johnston
+RJ
+Jr
+,
+Chang
+S
+,
+Etchberger
+JF
+,
+Ortiz
+CO
+&
+Hobert
+O
+MicroRNAs acting in a double-negative feedback loop to control a neuronal cell fate decision
+.
+Proc. Natl Acad. Sci. USA
+102
+,
+12449–12454
+(
+2005
+).
+10.1073/pnas.0505530102
+PMC1194938
+16099833
+36.
+Emmons
+SW
+Neural circuits of sexual behavior in Caenorhabditis elegans
+.
+Annu. Rev. Neurosci
+.
+41
+,
+349
+–
+369
+(
+2018
+).
+29709211
+10.1146/annurev-neuro-070815-014056
+37.
+Sherlekar
+AL
+The C. elegans male exercises directional control during mating through cholinergic regulation of sex-shared command interneurons
+.
+PLoS ONE
+8
+,
+e60597
+(
+2013
+).
+10.1371/journal.pone.0060597
+PMC3618225
+23577128
+38.
+Koo
+PK
+,
+Bian
+X
+,
+Sherlekar
+AL
+,
+Bunkers
+MR
+&
+Lints
+R
+The robustness of Caenorhabditis elegans male mating behavior depends on the distributed properties of ray sensory neurons and their output through core and male-specific targets
+.
+J. Neurosci
+.
+31
+,
+7497
+–
+7510
+(
+2011
+).
+21593334
+10.1523/JNEUROSCI.6153-10.2011
+PMC6622613
+39.
+Ryan
+DA
+Sex, age, and hunger regulate behavioral prioritization through dynamic modulation of chemoreceptor expression
+.
+Curr. Biol
+.
+24
+,
+2509
+–
+2517
+(
+2014
+).
+25438941
+10.1016/j.cub.2014.09.032
+PMC4254623
+40.
+Hilbert
+ZA
+&
+Kim
+DH
+Sexually dimorphic control of gene expression in sensory neurons regulates decision-making behavior in C. elegans
+.
+eLife
+6
+,
+e21166
+(
+2017
+).
+10.7554/eLife.21166
+PMC5262377
+28117661
+41.
+Serrano-Saiz
+E
+A neurotransmitter atlas of the Caenorhabditis elegans male nervous system reveals sexually dimorphic neurotransmitter usage
+.
+Genetics
+206
+,
+1251
+–
+1269
+(
+2017
+).
+28684604
+10.1534/genetics.117.202127
+PMC5500128
+42.
+Oren-Suissa
+M
+,
+Bayer
+EA
+&
+Hobert
+O
+Sex-specific pruning of neuronal synapses in Caenorhabditis elegans
+.
+Nature
+533
+,
+206
+–
+211
+(
+2016
+).
+27144354
+10.1038/nature17977
+PMC4865429
+43.
+Barrios
+A
+,
+Ghosh
+R
+,
+Fang
+C
+,
+Emmons
+SW
+&
+Barr
+MM
+PDF-1 neuropeptide signaling modulates a neural circuit for mate-searching behavior in C. elegans
+.
+Nat. Neurosci
+.
+15
+,
+1675
+–
+1682
+(
+2012
+).
+23143519
+10.1038/nn.3253
+PMC3509246
+44.
+Jang
+H
+Neuromodulatory state and sex specify alternative behaviors through antagonistic synaptic pathways in C. elegans
+.
+Neuron
+75
+,
+585
+–
+592
+(
+2012
+).
+22920251
+10.1016/j.neuron.2012.06.034
+PMC3462069
+45.
+Hart
+MP
+&
+Hobert
+O
+Neurexin controls plasticity of a mature, sexually dimorphic neuron
+.
+Nature
+553
+,
+165
+–
+170
+(
+2018
+).
+29323291
+10.1038/nature25192
+PMC5968453
+46.
+Toth
+ML
+Neurite sprouting and synapse deterioration in the aging Caenorhabditis elegans nervous system
+.
+J. Neurosci
+.
+32
+,
+8778
+–
+8790
+(
+2012
+).
+22745480
+10.1523/JNEUROSCI.1494-11.2012
+PMC3427745
+47.
+Stern
+S
+,
+Kirst
+C
+&
+Bargmann
+CI
+Neuromodulatory control of long-term behavioral patterns and individuality across development
+.
+Cell
+171
+,
+1649
+–
+1662
+(
+2017
+).
+29198526
+10.1016/j.cell.2017.10.041
+48.
+Goodman
+MB
+,
+Hall
+DH
+,
+Avery
+L
+&
+Lockery
+SR
+Active currents regulate sensitivity and dynamic range in C. elegans neurons
+.
+Neuron
+20
+,
+763
+–
+772
+(
+1998
+).
+9581767
+10.1016/s0896-6273(00)81014-4
+PMC4444786
+49.
+Hendricks
+M
+,
+Ha
+H
+,
+Maffey
+N
+&
+Zhang
+Y
+Compartmentalized calcium dynamics in a C. elegans interneuron encode head movement
+.
+Nature
+487
+,
+99
+–
+103
+(
+2012
+).
+22722842
+10.1038/nature11081
+PMC3393794
+50.
+LeBoeuf
+B
+&
+Garcia
+LR
+Caenorhabditis elegans male copulation circuitry incorporates sex-shared defecation components to promote intromission and sperm transfer
+.
+G3 (Bethesda)
+7
+,
+647
+–
+662
+(
+2017
+).
+28031243
+10.1534/g3.116.036756
+PMC5295609
+51.
+Chalfie
+M
+The neural circuit for touch sensitivity in Caenorhabditis elegans
+.
+J. Neurosci
+.
+5
+,
+956
+–
+964
+(
+1985
+).
+3981252
+10.1523/JNEUROSCI.05-04-00956.1985
+PMC6565008
+52.
+Jee
+C
+,
+Goncalves
+JF
+,
+LeBoeuf
+B
+&
+Garcia
+LR
+CRF-like receptor SEB-3 in sex-common interneurons potentiates stress handling and reproductive drive in C. elegans
+.
+Nat. Commun
+.
+7
+,
+11957
+(
+2016
+).
+10.1038/ncomms11957
+PMC4915151
+27321013
+53.
+Hardaker
+LA
+,
+Singer
+E
+,
+Kerr
+R
+,
+Zhou
+G
+&
+Schafer
+WR
+Serotonin modulates locomotory behavior and coordinates egg-laying and movement in Caenorhabditis elegans
+.
+J. Neurobiol
+.
+49
+,
+303
+–
+313
+(
+2001
+).
+11745666
+10.1002/neu.10014
+54.
+Garrison
+JL
+Oxytocin/vasopressin-related peptides have an ancient role in reproductive behavior
+.
+Science
+338
+,
+540
+–
+543
+(
+2012
+).
+23112335
+10.1126/science.1226201
+PMC3597094
+55.
+Barrios
+A
+,
+Nurrish
+S
+&
+Emmons
+SW
+Sensory regulation of C. elegans male mate-searching behavior
+.
+Curr. Biol
+.
+18
+,
+1865
+–
+1871
+(
+2008
+).
+19062284
+10.1016/j.cub.2008.10.050
+PMC2652568
+56.
+Sammut
+M
+Glia-derived neurons are required for sex-specific learning in C. elegans
+.
+Nature
+526
+,
+385
+–
+390
+(
+2015
+).
+26469050
+10.1038/nature15700
+PMC4650210
+57.
+Sakai
+N
+A sexually conditioned switch of chemosensory behavior in C. elegans
+.
+PLoS ONE
+8
+,
+e68676
+(
+2013
+).
+10.1371/journal.pone.0068676
+PMC3701651
+23861933
+58.
+Narayan
+A
+Contrasting responses within a single neuron class enable sex-specific attraction in Caenorhabditis elegans
+.
+Proc. Natl Acad. Sci. USA
+113
+,
+E1392
+–
+E1401
+(
+2016
+).
+26903633
+10.1073/pnas.1600786113
+PMC4791020
+59.
+Brenner
+S
+The genetics of Caenorhabditis elegans
+.
+Genetics
+77
+,
+71
+–
+94
+(
+1974
+).
+4366476
+10.1093/genetics/77.1.71
+PMC1213120
+60.
+Sulston
+JE
+,
+Albertson
+DG
+&
+Thomson
+JN
+The Caenorhabditis elegans male: postembryonic development of nongonadal structures
+.
+Dev. Biol
+.
+78
+,
+542
+–
+576
+(
+1980
+).
+7409314
+10.1016/0012-1606(80)90352-8
+61.
+Peachey
+LD
+Thin sections. I. A study of section thickness and physical distortion produced during microtomy
+.
+J. Biophys. Biochem. Cytol
+.
+4
+,
+233
+–
+242
+(
+1958
+).
+13549493
+10.1083/jcb.4.3.233
+PMC2224471
+62.
+Xu
+M
+Computer assisted assembly of connectomes from electron micrographs: application to Caenorhabditis elegans
+.
+PLoS ONE
+8
+,
+e54050
+(
+2013
+).
+10.1371/journal.pone.0054050
+PMC3546938
+23342070
+63.
+Duerr
+JS
+,
+Gaskin
+J
+&
+Rand
+JB
+Identified neurons in C. elegans coexpress vesicular transporters for acetylcholine and monoamines
+.
+Am. J. Physiol. Cell Physiol
+.
+280
+,
+C1616
+–
+C1622
+(
+2001
+).
+11350757
+10.1152/ajpcell.2001.280.6.C1616
+64.
+Desbois
+M
+,
+Cook
+SJ
+,
+Emmons
+SW
+&
+Bülow
+HE
+Directional trans-synaptic labeling of specific neuronal connections in live animals
+.
+Genetics
+200
+,
+697
+–
+705
+(
+2015
+).
+25917682
+10.1534/genetics.115.177006
+PMC4512537
+Fig. 1 |
+The
+C. elegans
+adult nervous system, neuroanatomy and connectivity.
+a
+, The major nerve tracts and ganglia (anterior to left) of adult hermaphrodite and adult male. Not shown are lateral nerves containing the processes of three neurons associated with the canal cell and processes of lateral touch neurons. The major sex difference is a larger number of neurons and muscles in the male tail that subserve copulation. The primary centres of complex connectivity are the nerve ring and, in the male, the pre- anal ganglion. CG, cloacal ganglion; DRG, dorsorectal ganglion; LG, lumbar ganglion; PAG, pre-anal ganglion; RVG, retrovesicular ganglion; VG, ventral ganglion. Bottom diagrams, neuroanatomy and network graph. In the interactive version of this figure (see
+Supplementary Information
+), the cells in the worm are connected to the nodes in the network, and information about each cell is given along with links to supporting websites.
+b
+,
+c
+, Adult hermaphrodite (
+b
+) and adult male (
+c
+). The top right insets show the sex muscles. The worm diagrams show the locations of cell nuclei (left side and centre nuclei only, the right-side homologues of left-right pairs are not shown). In the graph representations, the layout of the vertices is determined by an algorithm that clusters more-heavily connected cell pairs (AllegroViva, force-directed strong clustering algorithm). The display is by Cytoscape (
+https://cytoscape.org/
+). Nodes are labelled in the A3 and interactive versions of the figure (see
+Supplementary Information
+). Directed edges (black arrows) represent chemical synapses; undirected edges (red lines) represent gap junctional connections. The widths and transparencies of the lines represent the edge weights. A single key to network diagrams is used throughout: triangles, sensory neurons; hexagons, interneurons; ovals or circles, motor neurons; rectangles, muscles. Colours define various categories: various shades of red indicate categories of sensory neurons defined by modality and similarity of connectivity (
+Fig. 3
+); various shades of blue indicate interneuron categories according to their assignment to a layer (or lack of assignment in the case of IN4) (
+Fig. 2
+); motor neuron classes (various shades of yellow and orange) are described in the text; non-muscle end organs are white, grey or black. Sex-specific neurons are pink or purple, with numerous additional colours used here for the male- specific network in the male tail, delineating the modules described previously
+3
+.
+Fig. 2 |
+The nervous system can be arranged hierarchically.
+a
+, A previously published algorithm
+18
+,
+23
+was used to arrange the neuron and end organ classes of the hermaphrodite (
+Extended Data Fig. 5
+).
+b
+, For the male, to facilitate comparison, the sex-shared classes were arranged to match the hermaphrodite arrangement and the male-specific nodes were added by hand to show their inputs.
+a
+,
+b
+, The layout shows a largely directional information flow (vertical axis) from sensory neurons (triangles), through interneurons (hexagons) and motor neurons (coloured circles), to muscles (boxes). The horizontal axis is based on the amount of connectivity and roughly corresponds anatomically to anterior to left, posterior to right (similar to
+Fig. 1
+). Sex-specific neuron and muscle classes are indicated by a purple surround. Three layers of interneurons approximately one, two and three synapses, respectively, from motor neurons can be discerned, each consisting of neuron classes with a preponderance of their output onto neuron classes of the layer below (as shown in
+c
+,
+d
+). A fourth type of interneuron (five classes, light violet) is placed by the algorithm at the top of the diagram, probably because these interneurons have considerable output onto sensory neurons, but their output otherwise is relatively uniform across the layers (as shown in
+c
+,
+d
+).
+c
+, Chemical connectivity across the network (number of serial EM sections). Sensory neurons (SN) have outputs across all layers. Interneurons (IN) of types 1–3 have a preponderance of outputs onto the next lower layer or layers. Type 4 interneurons have considerable connectivity to sensory neurons and otherwise uniform outputs across the layers.
+d
+, Gap junction connectivity across the network. Much of the gap junctional connectivity is between neurons of the same layer. The IN4 class is notable for its paucity of gap junctions. HMN, head motor neurons; SMN, sublateral motor neurons. MNVC, ventral cord motor neurons. Cell class names are listed in
+Supplementary Information 6
+.
+Fig. 3 |
+Sensory streams enter the network at all levels.
+a
+,
+b
+, Sensory neurons may be grouped into six categories as shown for the hermaphrodite (
+a
+) (they are the same in the male (
+b
+), which also has male-specific sensory neurons in the tail for copulation) according to their modalities and connectivity. The categories differentially target the network layers—for example, chemosensory, odorsensory and thermosensory neurons (SN6, amphid) preferentially target interneuron layer 3 (IN3) whereas touch neurons (SN3) preferentially target interneuron layer 1 (IN1).
+c
+, Interneuron targets of the sensory classes (hermaphrodite data). The
+y
+axis shows the number of serial EM sections of connectivity.
+Fig. 4 |
+A large number of neurons have input to the motor system.
+Neuron classes in the hermaphrodite reconstruction that have input connections (chemical synapses, neuromuscular junctions or gap junctions) of more than three serial EM sections to motor neurons or muscles are shown in colour or solid grey; the remaining neurons are shown in transparent grey. Node arrangement is the same as in
+Fig. 2
+, except the seven classes of ventral cord motor neurons (MNVC in
+Fig. 2
+) are grouped separately (VA, DA, VB, DB, VD, DD and AS).
+Fig. 5 |
+Left versus right and hermaphrodite versus male comparisons.
+a
+, For left-right homologous neuron pairs in the hermaphrodite, the connectivity (output) of the left homologue is compared to the right homologue for cell classes that themselves consist of left-right homologous pairs. Assuming that the members of these neuron pairs are equivalent, scatter about the 45° line represents natural biological variability or error in the reconstruction. The arrow indicates the ASE to AWC connection. Left, chemical connectivity. Right, electrical connectivity. The number of EM sections for each homologue is shown.
+b
+, The sensory neuron pair ASEL and ASER are asymmetrically connected to AWC. Fluorescence micrographs of the ASE to AWC connection labelled by iBLINC (left) and quantification (right). Right, dots are the number of synaptic puncta on each side of a given animal connected by a line (red, left > right; blue, left = right; green, left < right).
+n =
+34 animals,
+P =
+0.000029.
+c
+, Stronger male connectivity of RIA to RIB. Fluorescence micrographs of RIA to RIB synapses labelled by iBLINC (left) and quantification (right).
+n =
+20 males and
+n =
+15 hermaphrodites,
+P =
+0.024. d, Stronger adult hermaphrodite connectivity of ADL to AVA. Fluorescence micrographs of ADL to AVA synapses labelled by GRASP (left) and quantification (right). Black-and-white images show synapses (arrows).
+n =
+14 L1 hermaphrodites and
+n =
+15 L1 males,
+n =
+13 adult hermaphrodites and
+n =
+15 adult males. All comparisons were made using a two-sided Wilcoxon rank-sum test; the middle black line is the median, the box shows the interquartile range, whiskers show the outer quartiles.
+Fig. 6 |
+Sexual pathways and dimorphisms among shared neurons.
+Left, hermaphrodite; right, male.
+a
+-
+f
+, Sexually dimorphic neurons.
+a
+,
+b
+, AVL.
+c
+,
+d
+, DVB.
+a
+-
+d
+, AVL and DVB are repurposed from defecation in the hermaphrodite to ejaculation in the male
+50
+. Connections to the intestine and intestinal muscle in the hermaphrodite are absent in the male. In the male, connections are made to male-specific neurons and muscles instead (violet backgrounds).
+e
+,
+f
+, LUA is repurposed from the touch circuit in the hermaphrodite
+51
+to sustaining copulation in the male
+52
+.
+g
+,
+h
+, Nerve ring targets of sex-specific neurons (HSN in the hermaphrodite and CEM, MCM and EF in the male) together with the targets of two shared neurons (PVQ and AVF) that are targeted by the sex-specific neurons in both sexes.
+g
+, In the hermaphrodite, the serotonergic HSN neurons target the shared left-right pair of AVF interneurons, which in turn target the AVB forward premotor interneurons. This connection stimulates a momentary burst of forward locomotion just before egg-laying
+53
+.
+h
+, In the male, AVF—which has a cell body in the head and a process extending through the ventral nerve cord into the tail—receives extensive input from the male-specific component in the tail and, as in the hermaphrodite, targets AVB in the head. This common function in the two sexes implicates AVF as a shared interface for controlling locomotion during sexual behaviour.
+g
+,
+h
+, The shared interneuron RIF similarly receives input from sex-specific neurons in both sexes. RIF is also targeted in both sexes by the AIA interneuron, a conduit of pathways from sensory pathways in the head (data not shown). RIF thus appears to be a locus of integration of sexual and sensory pathways. Both AVF and RIF, along with PVQ, express the receptor for sexual behaviour-promoting neuropeptide PDF-1; in addition, RIF expresses the receptor for the sexual behaviour-promoting neuropeptide nematocin, a homologue of oxytocin and vasopressin
+43
+,
+54
+.
+h
+, GABAergic (γ-aminobutyric-acid-releasing) male-specific tail interneurons EF (EF1, EF2 and EF3)—which, similar to AVF, receive extensive input from male-specific sensory neurons in the tail and communicate to the head—are necessary for the presence of hermaphrodites on a bacterial food source to prevent males from leaving
+55
+. Male-specific head interneuron class MCM (MCML and MCMR) mediates male-specific prioritization of sex-attraction cues over aversive cues in a conditional learning paradigm
+56
+,
+57
+. Both EF and MCM, as well as male-specific pheromone-sensing CEM neurons, have AVB, RIF and AVF among their targets
+58
+.
