@@ -1,0 +1,7 @@
+{
+  "run_id": "r0_15_b6_capacity_matched_graphfree_control",
+  "wall_clock_sec": 4.666,
+  "cpu_time_sec": 7.658,
+  "peak_rss_mb": 5491.35,
+  "omp_threads": 2
+}

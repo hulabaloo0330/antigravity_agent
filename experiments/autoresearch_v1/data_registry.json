@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "created_at_utc": "2026-11-18T01:29:44Z",
+  "confirmatory_gate_status": {
+    "registered_independent_sources_count": 5,
+    "active_causal_trace_sources_count": 4,
+    "comparable_immobilized_chemosensory_sources": [
+      "yemini2021",
+      "seyedolmohadesin2025",
+      "toyoshima2024"
+    ],
+    "unexposed_immobilized_chemosensory_confirmation_sources": [
+      "seyedolmohadesin2025",
+      "toyoshima2024"
+    ],
+    "cross_modality_stress_test_sources": [
+      "baskoylu2026_copper"
+    ],
+    "mechanistic_perturbation_sources": [
+      "randi2023_atlas"
+    ],
+    "audited_excluded_sources": [],
+    "e2_dual_unexposed_immobilized_gate": "UNLOCKED_TWO_UNEXPOSED_IMMOBILIZED_SOURCES",
+    "honest_scope_statement": "True 2-source unexposed immobilized `E2` confirmation is UNLOCKED: (1) `seyedolmohadesin2025` (47 worms: 32 dev / 15 sealed vault across both sexes, GCaMP6s, 8 chemicals), and (2) `toyoshima2024` (24 recordings / 21 unique worms: 14 dev [11 worms] / 10 sealed vault [10 unseen worms], raw un-centered YC2.60 `YFP/CFP` extracted from `20221118freezed.7z` + `meta/stimulation_timing.xlsx`, explicitly rejecting `normalize1_withoutremove.zip`). `yemini2021` (21 worms) serves strictly for historical dev/regression, `baskoylu2026_copper` (27 worms: 18 dev / 9 vault) serves as a separate freely-moving Cu2+ cross-modality stress test, and `randi2023_atlas` (113 WT + 18 unc-31 atlas + OSF `e2syt` time-series) serves as external mechanistic perturbation validation."
+  },
+  "sources": {
+    "yemini2021": {
+      "citation": "Yemini et al. (Cell 2021) NeuroPAL: A Multicolor Atlas for Whole-Brain Neuronal Identification in C. elegans",
+      "doi_or_url": "https://doi.org/10.1016/j.cell.2020.12.012 | https://github.com/TuragaLab/wormvae/tree/master/data/worm_activity",
+      "version_sha256": "164f066dec197b6130c2cbacee4ae62aaf54f662acfa87be7595c9a5899c8986",
+      "license": "MIT / Public Academic Release",
+      "n_animals": 21,
+      "sex_distribution": {
+        "hermaphrodite": 21,
+        "male": 0
+      },
+      "genotype": "OH16230 (otIs670 [NeuroPAL]; otIs672 [pan-neuronal GCaMP6s])",
+      "modality": "immobilized",
+      "immobilization": "1 mM tetramisole in microfluidic chip",
+      "fps_hz": 4.0,
+      "stimulus_protocol": "3 chemical stimuli per worm (2-butanone, 2,3-pentanedione, NaCl), 10s ON pulses at t=[60,70)s, [120,130)s, [180,190)s",
+      "synchrony": "simultaneous whole-head volumetric GCaMP6s",
+      "neuron_coverage_per_animal": {
+        "min": 146,
+        "median": 171.0,
+        "max": 179
+      },
+      "raw_preprocessing_verified": "Extracted strictly `traces` (raw histogram-matched dF/F0 without non-negativity clipping); `norm_traces` explicitly rejected.",
+      "historical_exposure": "HISTORICALLY_EXPOSED_DEV_ONLY",
+      "assigned_role": "primary_immobilized_chemosensory_dev_and_historical_regression"
+    },
+    "seyedolmohadesin2025": {
+      "citation": "Seyedolmohadesin et al. (bioRxiv 2025 / Curr. Biol. 2026) Whole-brain chemosensory responses of both C. elegans sexes",
+      "doi_or_url": "https://doi.org/10.1101/2025.03.01.640987 | https://dandiarchive.org/dandiset/000981",
+      "version_sha256": "dandi:000981/draft (per-asset SHA-256 recorded in split_manifest.json)",
+      "license": "CC-BY-4.0",
+      "n_animals": 47,
+      "sex_distribution": {
+        "hermaphrodite": 22,
+        "male": 25
+      },
+      "genotype": "NeuroPAL + pan-neuronal GCaMP6s (hermaphrodite & male)",
+      "modality": "immobilized",
+      "immobilization": "1 mM levamisole in multi-channel microfluidic olfactory chip",
+      "fps_hz": 2.66,
+      "stimulus_protocol": "8 chemical stimuli (100mM NaCl, 450mM NaCl, e-2 IAA, e-6 IAA, 1uM ascr#3, 10mM CuSO4, 800mM Sorbitol, OP50) + 2 controls (Control, Fluorescein) x 3 randomized cycles (~15s ON, ~45s CTX buffer = 30 deliveries/worm)",
+      "synchrony": "simultaneous whole-head volumetric GCaMP6s (~196 sex-shared neurons + 6 male-specific head neurons)",
+      "neuron_coverage_per_animal": {
+        "min": 42,
+        "median": 188.0,
+        "max": 195
+      },
+      "raw_preprocessing_verified": "Streamed raw ZephIR `processing/CalciumActivity/ActivityTraces/activity` via HTTP Range (`remfile`); authors' `global_zscored_raw.csv` bandpass/z-score explicitly rejected.",
+      "historical_exposure": "UNEXPOSED_SPLIT_INTO_32_DEV_AND_15_SEALED_VAULT",
+      "assigned_role": "primary_immobilized_chemosensory_dev_and_sealed_confirmation"
+    },
+    "baskoylu2026_copper": {
+      "citation": "Baskoylu, ..., & Flavell (bioRxiv 2026) Parallel neural integrators control distinct features of an aversive behavioral state in C. elegans",
+      "doi_or_url": "https://doi.org/10.5061/dryad.w9ghx3g4v",
+      "version_sha256": "b4b9c03e6efe839d7c4ed85f351fdd258ad9ee25c36450179716ccbc31c09bae",
+      "license": "CC0-1.0",
+      "n_animals": 27,
+      "sex_distribution": {
+        "hermaphrodite": 27,
+        "male": 0
+      },
+      "genotype": "NeuroPAL; pan-neuronal NLS-GCaMP7f",
+      "modality": "freely_moving",
+      "immobilization": "none (freely moving in circular agar arena with 4 mm radius Cu2+ aversive barrier)",
+      "fps_hz": 1.6667,
+      "stimulus_protocol": "Causal physical encounters with circular Cu2+ boundary (`dist_from_cuCenter` upward crossing of 38,000 / 0.9*circle_radius)",
+      "synchrony": "simultaneous spinning-disk confocal whole-brain GCaMP7f + NIR behavioral tracking",
+      "neuron_coverage_per_animal": {
+        "min": 77,
+        "median": 95.0,
+        "max": 115
+      },
+      "raw_preprocessing_verified": "Extracted strictly `gcamp/trace_array_original` (raw un-zscored, unsmoothed fluorescence) + `NeuroPAL_labels.jld2` (`confidence >= 2`); whole-trace z-scored `trace_array` and `F/Fmean` rejected.",
+      "historical_exposure": "UNEXPOSED_SPLIT_INTO_18_DEV_AND_9_SEALED_VAULT",
+      "assigned_role": "separate_freely_moving_aversive_chemosensory_stress_test"
+    },
+    "toyoshima2024": {
+      "citation": "Toyoshima et al. (PLOS Computational Biology 2024) Ensemble dynamics and information flow deduction from whole-brain imaging data",
+      "doi_or_url": "https://doi.org/10.1371/journal.pcbi.1011848 | https://figshare.com/articles/dataset/21968078 (`20221118freezed.7z`)",
+      "version_sha256": "figshare:21968078/44290748 (per-xlsx SHA-256 recorded in split_manifest.json)",
+      "license": "CC-BY-4.0",
+      "n_recordings": 24,
+      "n_unique_animals": 21,
+      "sex_distribution": {
+        "hermaphrodite": 21,
+        "male": 0
+      },
+      "genotype": "JN3038 (pan-neuronal nuclear YC2.60 + multi-color landmark reporters)",
+      "modality": "immobilized",
+      "immobilization": "PDMS olfactory microfluidic chip (with & without anesthetic, balanced across dev/vault)",
+      "fps_hz": "3.69 - 5.72 Hz (exact per-recording fps from meta/stimulation_timing.xlsx)",
+      "stimulus_protocol": "Periodic microfluidic NaCl step switches (50 mM <-> 25 mM every 30s, period 60s; exact startframe & period per worm from meta/stimulation_timing.xlsx)",
+      "synchrony": "simultaneous 4D spinning-disk confocal whole-head YC2.60 imaging",
+      "neuron_coverage_per_animal": {
+        "min": 79,
+        "median": 152.5,
+        "max": 178
+      },
+      "raw_preprocessing_verified": "Extracted pure instantaneous raw YC2.60 FRET ratio `YFP / CFP` (`pi_k_Ch3 / pi_k_Ch2`) from `20221118freezed.7z` with zero temporal smoothing and zero full-sequence centering (`normalize1_withoutremove.zip` explicitly rejected).",
+      "historical_exposure": "UNEXPOSED_SPLIT_INTO_14_DEV_RECORDINGS_AND_10_SEALED_VAULT_WORMS",
+      "assigned_role": "primary_immobilized_chemosensory_dev_and_second_unexposed_E2_sealed_confirmation"
+    },
+    "randi2023_atlas": {
+      "citation": "Randi, Sharma, Dvali & Leifer (Nature 2023) Neural signal propagation atlas of C. elegans",
+      "doi_or_url": "https://doi.org/10.1038/s41586-023-06683-4 | wormneuroatlas v0.0.7.3",
+      "version_sha256": "d36e04c09b29ed54d8a228751072709dc869320fe5a17282146595f24d02a6fa",
+      "license": "MIT / Academic Open Source",
+      "n_animals": 131,
+      "genotype": "113 WT + 18 unc-31(e928) neuropeptide-release mutant (NeuroPAL; GCaMP6s; Chrimson)",
+      "modality": "immobilized_optogenetic_single_cell_perturbation",
+      "historical_exposure": "EXTERNAL_MECHANISTIC_VALIDATION_ONLY",
+      "assigned_role": "external_wt_vs_unc31_neuropeptide_perturbation_validation_never_used_for_prior_selection",
+      "timeseries_and_atlas_files": [
+        "data/randi2023_atlas/randi2023_wt_unc31_atlas.npz",
+        "data/randi2023_atlas/dandi001075_sample_timeseries.npz"
+      ]
+    }
+  },
+  "connectome_priors": {
+    "bundle_path": "/home/antigravity/data/connectomes/connectome_priors_bundle.npz",
+    "bundle_sha256": "c9892d2809b67c0ecf8aebbdaaa6e9a9d524a6fd8432a9255359b5bc8de489a9",
+    "n_canonical_neurons": 310,
+    "layers": {
+      "cook2019_herm_chem_nnz": 3768,
+      "cook2019_herm_gap_nnz": 2212,
+      "cook2019_male_chem_nnz": 2315,
+      "cook2019_male_gap_nnz": 1518,
+      "witvliet2021_conserved_chem_nnz": 1311,
+      "witvliet2021_conserved_gap_nnz": 325,
+      "ripollsanchez2023_short_nnz": 31865,
+      "ripollsanchez2023_mid_nnz": 40909,
+      "ripollsanchez2023_long_nnz": 54208,
+      "monoamine_nnz": 2889
+    },
+    "polarity_counts_on_chem_edges": {
+      "excitatory_plus1": 251,
+      "inhibitory_minus1": 439,
+      "mixed_biphasic_zero": 2195,
+      "unknown_nan": 1872
+    }
+  }
+}

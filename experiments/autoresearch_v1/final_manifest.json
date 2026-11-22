@@ -1,0 +1,159 @@
+{
+  "config_id": "lambda_global_v1",
+  "dev_summary_snapshot": {
+    "M2_reference_B4_ridge_self_stim_E_d": {
+      "baskoylu2026_copper": 0.357946,
+      "seyedolmohadesin2025": 0.16924062225140485,
+      "toyoshima2024": 0.3399742816327226,
+      "yemini2021": 0.798889161676471
+    },
+    "M35_R6_five_seed_dev": {
+      "M35_01_I_macro_all3_vs_B4": "+4.00% \u00b1 0.20%",
+      "M35_01_I_macro_main2_vs_B4": "+2.55% \u00b1 0.43%",
+      "M35_02_I_macro_all3_vs_B4": "+4.15% \u00b1 0.19%",
+      "M35_02_I_macro_main2_vs_B4": "+2.80% \u00b1 0.36%",
+      "M35_03_I_macro_all3_vs_B4": "+4.29% \u00b1 0.15%",
+      "M35_03_I_macro_main2_vs_B4": "+3.01% \u00b1 0.39%",
+      "M35_03_I_macro_main2_vs_M35_01": "+0.48% \u00b1 0.07%",
+      "leakage_invariance_passed": true,
+      "oat_05x_1x_2x_positive": "9/9"
+    },
+    "M3_R4_01_linear_base_plus_film": {
+      "copper_dev_I_d_vs_B4": 0.005814,
+      "main2_I_macro_vs_B4": 0.00948
+    },
+    "M4A_null_graphs_dev": {
+      "M35_02_K19_film_main2_p": 0.05,
+      "M35_K199_full_8layer_ridge_main2_p": 0.26,
+      "M35_K199_gap_only_ridge_main2_p": 0.05,
+      "M3R3_K199_full_8layer_main2_p": null,
+      "M3R3_K199_gap_only_main2_p": null
+    },
+    "M4B_copper_dev_18w_stress_test": {
+      "B4_E_d": 0.357946,
+      "M35_01_I_d_vs_B4": 0.015548,
+      "M35_02_I_d_vs_B4": 0.015055,
+      "M35_03_I_d_vs_B4": 0.010741,
+      "M35_03_I_d_vs_M35_01": -0.004883,
+      "M3R4_01_I_d_vs_B4": 0.005814,
+      "leakage_invariance_passed": true
+    },
+    "M4B_randi_unc31_validation": {
+      "n_cotested_non_bilateral_pairs": 7939,
+      "n_excluded_u31_selected_wireless_complement": 192,
+      "npp_short_cotested_mwu_p": 0.045933235306574324,
+      "npp_short_cotested_wt_only_fisher_p": 7.534008860963216e-05,
+      "npp_short_cotested_wt_only_or": 1.479276399705878
+    }
+  },
+  "frozen_at_utc": "2026-11-22T00:49:28Z",
+  "manifest_sha256": "db5cd2a4fe67d471092a865cbd5dc66a75ad6b7b6cb8731b1aae2249eeecfb85",
+  "manifest_version": "1.0.0",
+  "pre_registered_confirmatory_plan": {
+    "frozen_candidate_lineup_single_batch": [
+      "B4_ridge_self_stim",
+      "M3R4_01_connectome_film_herm_final",
+      "M35_01_zeroinit_nonlinear_self_anchor",
+      "M35_02_nonlinear_anchor_1hop2hop_connectome_patch_film",
+      "M35_03_nonlinear_anchor_graphfree_patch_film_ctrl"
+    ],
+    "frozen_connectome_mechanistic_pair": "M35_02_nonlinear_anchor_1hop2hop_connectome_patch_film",
+    "frozen_nonlinear_self_counterfactual": "M35_01_zeroinit_nonlinear_self_anchor",
+    "frozen_primary_candidate": "M35_03_nonlinear_anchor_graphfree_patch_film_ctrl",
+    "frozen_reference_baseline": "B4_ridge_self_stim",
+    "isolated_freely_moving_stress_test_source": {
+      "dataset_id": "baskoylu2026_copper",
+      "modality": "freely_moving_isolated_instance_never_mixed_with_immobilized",
+      "n_dev_animals": 18,
+      "n_vault_animals": 9,
+      "n_vault_unique_physical_animals": 9
+    },
+    "primary_confirmatory_sources": [
+      {
+        "dataset_id": "seyedolmohadesin2025",
+        "n_dev_animals": 32,
+        "n_vault_animals": 15,
+        "n_vault_unique_physical_animals": 15,
+        "split_disjointness": "animal_id_and_date_batch_disjoint"
+      },
+      {
+        "dataset_id": "toyoshima2024",
+        "n_dev_records": 14,
+        "n_vault_records": 10,
+        "n_vault_unique_physical_animals": 10,
+        "split_disjointness": "physical_animal_id_and_date_batch_disjoint"
+      }
+    ],
+    "section8_equivalence_and_bound_criteria": {
+      "check_isolated_copper_no_degradation_gt_2pct_vs_B4": true,
+      "check_seyedolmohadesin_ge_5pct_vs_B4": true,
+      "check_simultaneous_positive_I_d_gt_0": true,
+      "check_toyoshima_within_snr_floor_bound": true,
+      "no_post_hoc_threshold_lowering": true,
+      "quantify_simultaneous_95pct_ci_vs_B4_and_vs_M35_01": true
+    },
+    "seed_aggregation_rule": "equal_weight_mean_across_5_seeds_on_per_animal_loss_L_w",
+    "seeds": [
+      20261117,
+      20261118,
+      20261119,
+      20261120,
+      20261121
+    ],
+    "statistical_inference": {
+      "bonferroni_marginal_confidence_level": 0.975,
+      "bootstrap_seed": 20261117,
+      "bootstrap_unit": "physical_animal_id",
+      "family_wise_alpha": 0.05,
+      "marginal_confidence_level_reported_alongside": 0.95,
+      "n_bootstrap_resamples": 2000,
+      "n_primary_sources": 2
+    },
+    "training_protocol_for_confirmatory": "Fit each model on the full Dev split of each source independently using exact frozen configs/lambda_global.json (zero dataset_id hyperparameter branches; sensor bounds & per-neuron scales s_n fitted strictly on Dev split only), then evaluate once in a single batch on the unseen sealed vault split."
+  },
+  "protocol_version": "1.0.0",
+  "route_decision": "section8_equivalence_bound",
+  "route_decision_rationale": {
+    "dev_evidence_summary": "On strictly leak-free Dev 5-seed evaluation under unified lambda_global_v1, primary candidate M35_03_nonlinear_anchor_graphfree_patch_film_ctrl achieves I_macro_all3 = +4.29% \u00b1 0.15% and I_macro_main2 = +3.01% \u00b1 0.39% vs B4_ridge_self_stim, with Seyedolmohadesin = +5.50% (exceeding 5%) vs Toyoshima = +0.53% (physically bounded by 82.14% high-frequency white optical shot-noise floor in raw YFP/CFP traces). Net cross-neuron increment beyond nonlinear self-anchor M35_01 is +0.48% \u00b1 0.07% (Seyed +0.95%, Toyo +0.02%). Because Toyoshima and Main 2 macro improvement are < 5% due to the physical SNR ceiling, we strictly lock the \u00a78 High-Precision Effect-Size & Upper-Bound Quantification Route BEFORE unsealing any vaulted animal, never lowering the 5% E2 threshold post-hoc.",
+    "e2_threshold_retained_unmodified": 0.05,
+    "policy_basis": "MODEL_REQUIREMENTS.md \u00a78 & User A3 verbatim directive",
+    "toyoshima_shot_noise_fraction_of_B4_Ed": 0.8214
+  },
+  "sha256_checksums": {
+    "governance_and_configs": {
+      "configs/lambda_global.json": "b449c039d14d97d208f18e64215909770c281c71f0151a2d73919f6d03f90d9c",
+      "data_registry.json": "4ac2bbcbdf9a3df919f57fa1abb078e08dad29f04a850f7c39213903ba5fe9d3",
+      "exposure_ledger.json": "5f76a5099f1d4c831a03320106ef5c461169415bb2ab0181ddaea2586a8ad5ee",
+      "protocol.json": "208cb7cdd973d85418c648454a9bb42bd02e6e70d8d1f8d87e02c9bcadfaa8a8",
+      "split_manifest.json": "2a9a3cca9d7c1fdb1a16b84974e0536136c88fc4d471e21bd97d2b9e2c0779ce",
+      "toyoshima2024_manifest.json": "d94762e20ea6defa5244c0bf4d5a666312c2437652efdbddae1a167ac214aa7e"
+    },
+    "python_source_files": {
+      "evaluators/scorer.py": "d47eb47eebaf0bb42b59f8805d51ba02872b1d01c2422f2df53b6881ec78b376",
+      "models/__init__.py": "a937b04ac5ecf75157232167da93139e4f7a2ef6d387dddf69f87d3e0be77d87",
+      "models/m2_pipeline.py": "89b0a9374aeeb8da7efa427869d268c6fcd59ff9da011debe3384169c012ccbf",
+      "models/m35_round5_nonlinear.py": "d94d7a57376f1f21141b86c5a636f7273455e4a61db1cb4f5e58c97397b08704",
+      "models/m35_round6_validation.py": "14f8cb9c8ee23be69798676da31f403aaee890556a6ec23ce0bc43ce8218b076",
+      "models/m3_round1_h1.py": "5c26d56667390a1677b284ae51f3dddc2153af7c81e16e74ff76b2815b59cc52",
+      "models/m3_round2_h2.py": "0eb78882ac8a9b6d7e7bef0bec326ee5292dad6148d97e9bb23c3efb81a677dc",
+      "models/m3_round3_h3.py": "d493cac595516fb8f2e4a900aa1dac3215e2a834c588b8ae18f1d1471010331e",
+      "models/m3_round4_f11.py": "226b8cfee16a7f4cb79a3a007cfd266b9c58df41eae9772ec52cdc50dab33688",
+      "models/m4_null_graphs.py": "2f463cf9d78556e42d90dae6ce7231a6b71c52d65bde8a94068631db32f1b97b",
+      "scripts/run_m4b_randi_copper_freeze.py": "2c0859cd9075d4147c024f810468f055a747a37151351d49cca2335199ab6650",
+      "src/__init__.py": "33771b48d9cf909b3e45218b9b96b239bd1907d1aab7b11ab761f58d183b68b8",
+      "src/acquire_and_vault.py": "c13970ede84592bc2bf095d6d11faca6d44e53159d25ab139ff0a8a743b7ecbf",
+      "src/audit_cli.py": "9721a751e83b122377473de1bbebc165ca5632eb0286015fef60675da246fd4a",
+      "src/baselines.py": "81be2ffe1a51652e458772631fcd8b32981d383ed9156e0826e159d2d5924e6d",
+      "src/cli.py": "2286b96c465a5c9e0038e01f0ab00af87804c2ba6126303104ad4202ba65e152",
+      "src/connectome_priors.py": "e86c08600cf6fc32d3a01fbac45b73731f969554f3dc19f069b2cfebfde42b71",
+      "src/data_adapters.py": "076dce298d5ccfa33ae37ffa287a22dd939f901a2e4d615f8f9e38260c094910",
+      "src/evaluator.py": "c03d3aaf5afb278ea2ee761394511ac541269bd6550d02dec721ad0ac99c7cad",
+      "src/features.py": "94cbca4ac5b067ab9c171545fc18b502737c6cca85fc26aa3471bc1c8b2c4b72",
+      "src/upgrade_toyoshima_and_vaults.py": "6c548fc1906abc40c2662f7f250295a43e1c0eb2f66bdee7609bef5215232c12"
+    },
+    "total_python_files_hashed": 21
+  },
+  "vault_access_audit_entries_at_freeze": 0,
+  "vault_untouched_at_freeze": true,
+  "zero_dataset_id_branches": true
+}

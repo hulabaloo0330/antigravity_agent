@@ -1,0 +1,293 @@
+{
+  "generated_at_utc": "2026-11-21T12:10:24Z",
+  "wall_clock_sec": 97.57,
+  "peak_rss_mb": 2911.16,
+  "cross_dataset_physical_snr_ceiling": {
+    "yemini2021": {
+      "dataset_id": "yemini2021",
+      "n_dev_worms": 21,
+      "mean_fps": 4.0,
+      "hf_innovation_var_post_norm": 0.011446,
+      "hf_innovation_var_pre_norm": 0.009105,
+      "lag1_autocorrelation": 0.989505,
+      "post_total_var_norm": 1.054955,
+      "post_delta_var_norm": 0.701137,
+      "persistence_E_d": 0.713587,
+      "B4_ridge_E_d": 0.798889,
+      "empirical_snr_hf": 91.1718,
+      "empirical_post_R2_ceiling": 0.989151,
+      "shot_noise_fraction_of_B4_E_d": 0.0143,
+      "max_non_shot_noise_headroom_vs_B4": 0.9857
+    },
+    "seyedolmohadesin2025": {
+      "dataset_id": "seyedolmohadesin2025",
+      "n_dev_worms": 32,
+      "mean_fps": 2.66,
+      "hf_innovation_var_post_norm": 0.009079,
+      "hf_innovation_var_pre_norm": 0.007876,
+      "lag1_autocorrelation": 0.989427,
+      "post_total_var_norm": 0.926774,
+      "post_delta_var_norm": 0.216769,
+      "persistence_E_d": 0.218131,
+      "B4_ridge_E_d": 0.169241,
+      "empirical_snr_hf": 101.0741,
+      "empirical_post_R2_ceiling": 0.990203,
+      "shot_noise_fraction_of_B4_E_d": 0.0536,
+      "max_non_shot_noise_headroom_vs_B4": 0.9464
+    },
+    "toyoshima2024": {
+      "dataset_id": "toyoshima2024",
+      "n_dev_worms": 11,
+      "mean_fps": 4.273,
+      "hf_innovation_var_post_norm": 0.279239,
+      "hf_innovation_var_pre_norm": 0.365631,
+      "lag1_autocorrelation": 0.928056,
+      "post_total_var_norm": 3.406399,
+      "post_delta_var_norm": 0.37082,
+      "persistence_E_d": 0.370839,
+      "B4_ridge_E_d": 0.339974,
+      "empirical_snr_hf": 11.1989,
+      "empirical_post_R2_ceiling": 0.918025,
+      "shot_noise_fraction_of_B4_E_d": 0.8214,
+      "max_non_shot_noise_headroom_vs_B4": 0.1786
+    }
+  },
+  "toyoshima2024_per_stimulus": {
+    "NaCl_25_to_50mM": {
+      "n_trials": 176,
+      "B4_ridge_E_d": 0.331472,
+      "M3R1_02_E_d": 0.33156,
+      "persistence_E_d": 0.367726,
+      "M3R1_02_gain_vs_B4": -0.000265,
+      "mean_abs_response_norm": 0.364261,
+      "mean_signed_response_norm": -0.009834
+    },
+    "NaCl_50_to_25mM": {
+      "n_trials": 184,
+      "B4_ridge_E_d": 0.348476,
+      "M3R1_02_E_d": 0.348265,
+      "persistence_E_d": 0.389575,
+      "M3R1_02_gain_vs_B4": 0.000605,
+      "mean_abs_response_norm": 0.365862,
+      "mean_signed_response_norm": 0.010378
+    }
+  },
+  "toyoshima2024_per_horizon": {
+    "[0,2)s": {
+      "B4_ridge_E_d": 0.327155,
+      "M3R1_02_E_d": 0.327562,
+      "persistence_E_d": 0.353612,
+      "M3R1_02_gain_vs_B4": -0.001244
+    },
+    "[2,5)s": {
+      "B4_ridge_E_d": 0.331683,
+      "M3R1_02_E_d": 0.331459,
+      "persistence_E_d": 0.363665,
+      "M3R1_02_gain_vs_B4": 0.000675
+    },
+    "[5,10)s": {
+      "B4_ridge_E_d": 0.350351,
+      "M3R1_02_E_d": 0.350201,
+      "persistence_E_d": 0.397975,
+      "M3R1_02_gain_vs_B4": 0.000428
+    }
+  },
+  "toyoshima2024_per_cell_class": {
+    "command_motor": {
+      "B4_ridge_E_d": 0.385373,
+      "M3R1_02_E_d": 0.383627,
+      "M3R1_02_gain_vs_B4": 0.004531
+    },
+    "interneuron": {
+      "B4_ridge_E_d": 0.360067,
+      "M3R1_02_E_d": 0.360323,
+      "M3R1_02_gain_vs_B4": -0.000711
+    },
+    "motor": {
+      "B4_ridge_E_d": 0.220594,
+      "M3R1_02_E_d": 0.220341,
+      "M3R1_02_gain_vs_B4": 0.001147
+    },
+    "pharyngeal": {
+      "B4_ridge_E_d": 0.265881,
+      "M3R1_02_E_d": 0.265116,
+      "M3R1_02_gain_vs_B4": 0.002877
+    },
+    "premotor_command": {
+      "B4_ridge_E_d": 0.507961,
+      "M3R1_02_E_d": 0.505127,
+      "M3R1_02_gain_vs_B4": 0.005579
+    },
+    "sensory": {
+      "B4_ridge_E_d": 0.519813,
+      "M3R1_02_E_d": 0.520871,
+      "M3R1_02_gain_vs_B4": -0.002035
+    }
+  },
+  "toyoshima2024_top10_highest_error_neurons": [
+    {
+      "neuron": "RIS",
+      "tier": "interneuron",
+      "n_worms": 11,
+      "n_trials": 331,
+      "B4_ridge_E_d": 6.720865,
+      "M3R1_02_E_d": 6.775149,
+      "mean_abs_response_norm": 0.806306
+    },
+    {
+      "neuron": "AVER",
+      "tier": "premotor_command",
+      "n_worms": 8,
+      "n_trials": 262,
+      "B4_ridge_E_d": 4.139405,
+      "M3R1_02_E_d": 4.093733,
+      "mean_abs_response_norm": 0.595387
+    },
+    {
+      "neuron": "SIBVR",
+      "tier": "interneuron",
+      "n_worms": 3,
+      "n_trials": 69,
+      "B4_ridge_E_d": 3.183931,
+      "M3R1_02_E_d": 3.163425,
+      "mean_abs_response_norm": 0.790383
+    },
+    {
+      "neuron": "SAADL",
+      "tier": "interneuron",
+      "n_worms": 4,
+      "n_trials": 126,
+      "B4_ridge_E_d": 2.878219,
+      "M3R1_02_E_d": 2.87953,
+      "mean_abs_response_norm": 0.73362
+    },
+    {
+      "neuron": "AFDL",
+      "tier": "sensory",
+      "n_worms": 11,
+      "n_trials": 331,
+      "B4_ridge_E_d": 2.724434,
+      "M3R1_02_E_d": 2.777797,
+      "mean_abs_response_norm": 0.496545
+    },
+    {
+      "neuron": "AWBR",
+      "tier": "sensory",
+      "n_worms": 10,
+      "n_trials": 274,
+      "B4_ridge_E_d": 2.666333,
+      "M3R1_02_E_d": 2.674417,
+      "mean_abs_response_norm": 0.566096
+    },
+    {
+      "neuron": "ADFR",
+      "tier": "sensory",
+      "n_worms": 10,
+      "n_trials": 245,
+      "B4_ridge_E_d": 2.285323,
+      "M3R1_02_E_d": 2.274742,
+      "mean_abs_response_norm": 0.498819
+    },
+    {
+      "neuron": "ASEL",
+      "tier": "sensory",
+      "n_worms": 11,
+      "n_trials": 331,
+      "B4_ridge_E_d": 2.172925,
+      "M3R1_02_E_d": 2.159542,
+      "mean_abs_response_norm": 0.516174
+    },
+    {
+      "neuron": "SIBDR",
+      "tier": "interneuron",
+      "n_worms": 9,
+      "n_trials": 275,
+      "B4_ridge_E_d": 1.950754,
+      "M3R1_02_E_d": 1.984662,
+      "mean_abs_response_norm": 0.60401
+    },
+    {
+      "neuron": "AIYR",
+      "tier": "sensory",
+      "n_worms": 11,
+      "n_trials": 331,
+      "B4_ridge_E_d": 1.867655,
+      "M3R1_02_E_d": 1.85614,
+      "mean_abs_response_norm": 0.535296
+    }
+  ],
+  "toyoshima2024_key_circuit_neurons": {
+    "ASEL": {
+      "neuron": "ASEL",
+      "tier": "sensory",
+      "n_worms": 11,
+      "n_trials": 331,
+      "B4_ridge_E_d": 2.172925,
+      "M3R1_02_E_d": 2.159542,
+      "mean_abs_response_norm": 0.516174
+    },
+    "AIYR": {
+      "neuron": "AIYR",
+      "tier": "sensory",
+      "n_worms": 11,
+      "n_trials": 331,
+      "B4_ridge_E_d": 1.867655,
+      "M3R1_02_E_d": 1.85614,
+      "mean_abs_response_norm": 0.535296
+    },
+    "AIBR": {
+      "neuron": "AIBR",
+      "tier": "sensory",
+      "n_worms": 10,
+      "n_trials": 303,
+      "B4_ridge_E_d": 0.686833,
+      "M3R1_02_E_d": 0.686353,
+      "mean_abs_response_norm": 0.365463
+    },
+    "ASER": {
+      "neuron": "ASER",
+      "tier": "sensory",
+      "n_worms": 11,
+      "n_trials": 331,
+      "B4_ridge_E_d": 0.616493,
+      "M3R1_02_E_d": 0.610347,
+      "mean_abs_response_norm": 0.53223
+    },
+    "AIYL": {
+      "neuron": "AIYL",
+      "tier": "sensory",
+      "n_worms": 9,
+      "n_trials": 291,
+      "B4_ridge_E_d": 0.323698,
+      "M3R1_02_E_d": 0.322001,
+      "mean_abs_response_norm": 0.384175
+    },
+    "AIBL": {
+      "neuron": "AIBL",
+      "tier": "sensory",
+      "n_worms": 10,
+      "n_trials": 318,
+      "B4_ridge_E_d": 0.173817,
+      "M3R1_02_E_d": 0.173355,
+      "mean_abs_response_norm": 0.269026
+    },
+    "AVAR": {
+      "neuron": "AVAR",
+      "tier": "premotor_command",
+      "n_worms": 11,
+      "n_trials": 331,
+      "B4_ridge_E_d": 0.136023,
+      "M3R1_02_E_d": 0.131623,
+      "mean_abs_response_norm": 0.230135
+    },
+    "AVAL": {
+      "neuron": "AVAL",
+      "tier": "premotor_command",
+      "n_worms": 11,
+      "n_trials": 331,
+      "B4_ridge_E_d": 0.122438,
+      "M3R1_02_E_d": 0.121073,
+      "mean_abs_response_norm": 0.228062
+    }
+  }
+}

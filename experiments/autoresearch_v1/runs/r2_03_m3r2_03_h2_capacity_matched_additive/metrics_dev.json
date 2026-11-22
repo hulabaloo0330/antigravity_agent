@@ -1,0 +1,300 @@
+{
+  "run_id": "r2_03_m3r2_03_h2_capacity_matched_additive",
+  "parent_id": "r1_02_m3r1_02_h1_confounds_only",
+  "is_self_only": false,
+  "uses_confounds": true,
+  "uses_network_state": true,
+  "uses_bilinear_gating": false,
+  "is_stochastic": false,
+  "hypothesis": "H2 F9 control: Strictly capacity-matched additive nonlinear basis on z_state and u_stim separately (same param count, rank=4, L2; ZERO z_state x u_stim cross-terms).",
+  "capacity_audit": {
+    "yemini2021": {
+      "feature_dim": 40.0,
+      "param_count": 240.0,
+      "rank": 4.0,
+      "eff_dof": 12.776,
+      "eff_l2": 200.0
+    },
+    "seyedolmohadesin2025": {
+      "feature_dim": 80.0,
+      "param_count": 480.0,
+      "rank": 4.0,
+      "eff_dof": 32.79,
+      "eff_l2": 400.0
+    },
+    "toyoshima2024": {
+      "feature_dim": 32.0,
+      "param_count": 192.0,
+      "rank": 4.0,
+      "eff_dof": 14.482,
+      "eff_l2": 160.0
+    }
+  },
+  "I_macro_main2_vs_B4": 0.006427,
+  "I_macro_main2_vs_B4_ci95": [
+    0.003282,
+    0.009801
+  ],
+  "I_macro_all3_vs_B4": 0.016961,
+  "I_macro_all3_vs_B4_ci95": [
+    0.010158,
+    0.020424
+  ],
+  "I_macro_main2_vs_M3R1_02": -0.000289,
+  "I_macro_main2_vs_M3R1_02_ci95": [
+    -0.001026,
+    0.000434
+  ],
+  "I_macro_all3_vs_M3R1_02": 0.001719,
+  "I_macro_all3_vs_M3R1_02_ci95": [
+    -0.000424,
+    0.003213
+  ],
+  "I_macro_main2_vs_M3R2_03": 0.0,
+  "I_macro_main2_vs_M3R2_03_ci95": [
+    0.0,
+    0.0
+  ],
+  "I_macro_all3_vs_M3R2_03": 0.0,
+  "I_macro_all3_vs_M3R2_03_ci95": [
+    0.0,
+    0.0
+  ],
+  "worst_main_source_I_d_vs_B4": 0.000481,
+  "prediction_files_dev": {
+    "yemini2021": "runs/r2_03_m3r2_03_h2_capacity_matched_additive/predictions_dev_yemini2021.npz",
+    "seyedolmohadesin2025": "runs/r2_03_m3r2_03_h2_capacity_matched_additive/predictions_dev_seyedolmohadesin2025.npz",
+    "toyoshima2024": "runs/r2_03_m3r2_03_h2_capacity_matched_additive/predictions_dev_toyoshima2024.npz"
+  },
+  "wall_clock_sec": 12.138,
+  "cpu_time_sec": 18.54,
+  "datasets": {
+    "yemini2021": {
+      "E_d": 0.76851,
+      "rmse_raw": 0.52345,
+      "post_R2": 0.521598,
+      "post_R2_ci95": [
+        0.387607,
+        0.602681
+      ],
+      "delta_R2": 0.267663,
+      "delta_R2_ci95": [
+        0.199019,
+        0.324432
+      ],
+      "buffer_E_d": 0.834696,
+      "buffer_vs_M3R1_02": {
+        "n_worms": 21,
+        "buffer_E_d_cand": 0.834696,
+        "buffer_E_d_ref": 0.833119,
+        "I_d_buffer": -0.001893,
+        "I_d_buffer_ci95": [
+          -0.010925,
+          0.004493
+        ],
+        "n_worms_improved": 8
+      },
+      "n_worms_total": 21,
+      "vs_B4_ridge_self_stim": {
+        "I_d": 0.038027,
+        "I_d_ci95": [
+          0.018352,
+          0.047013
+        ],
+        "n_worms_improved": 17,
+        "fraction_worms_improved": 0.8095
+      },
+      "vs_M3R1_02_h1_confounds_only": {
+        "I_d": 0.005736,
+        "I_d_ci95": [
+          -0.000643,
+          0.009766
+        ],
+        "n_worms_improved": 14,
+        "fraction_worms_improved": 0.6667
+      },
+      "vs_M3R2_03_h2_capacity_matched_additive": {
+        "I_d": 0.0,
+        "I_d_ci95": [
+          0.0,
+          0.0
+        ],
+        "n_worms_improved": 0,
+        "fraction_worms_improved": 0.0
+      },
+      "temporal_horizon_errors": {
+        "early_0_3s_E_d": 0.319527,
+        "late_3_10s_E_d": 0.961234
+      },
+      "cell_class_errors": {
+        "command_motor": 0.474455,
+        "interneuron": 0.841599,
+        "motor": 0.420768,
+        "pharyngeal": 0.2429,
+        "premotor_command": 0.552085,
+        "sensory": 1.355744
+      },
+      "sex_errors": {
+        "hermaphrodite": 0.76851
+      },
+      "stimulus_errors": {
+        "butanone": 0.492585,
+        "nacl": 0.950969,
+        "pentanedione": 0.861975
+      }
+    },
+    "seyedolmohadesin2025": {
+      "E_d": 0.167147,
+      "rmse_raw": 2.186888,
+      "post_R2": 0.891608,
+      "post_R2_ci95": [
+        0.877451,
+        0.904171
+      ],
+      "delta_R2": 0.266364,
+      "delta_R2_ci95": [
+        0.20681,
+        0.312439
+      ],
+      "buffer_E_d": 0.101757,
+      "buffer_vs_M3R1_02": {
+        "n_worms": 32,
+        "buffer_E_d_cand": 0.101757,
+        "buffer_E_d_ref": 0.101254,
+        "I_d_buffer": -0.004973,
+        "I_d_buffer_ci95": [
+          -0.009799,
+          -0.001523
+        ],
+        "n_worms_improved": 7
+      },
+      "n_worms_total": 32,
+      "vs_B4_ridge_self_stim": {
+        "I_d": 0.012373,
+        "I_d_ci95": [
+          0.006583,
+          0.017957
+        ],
+        "n_worms_improved": 24,
+        "fraction_worms_improved": 0.75
+      },
+      "vs_M3R1_02_h1_confounds_only": {
+        "I_d": -0.000878,
+        "I_d_ci95": [
+          -0.002327,
+          0.000379
+        ],
+        "n_worms_improved": 15,
+        "fraction_worms_improved": 0.4688
+      },
+      "vs_M3R2_03_h2_capacity_matched_additive": {
+        "I_d": 0.0,
+        "I_d_ci95": [
+          0.0,
+          0.0
+        ],
+        "n_worms_improved": 0,
+        "fraction_worms_improved": 0.0
+      },
+      "temporal_horizon_errors": {
+        "early_0_3s_E_d": 0.075268,
+        "late_3_10s_E_d": 0.208688
+      },
+      "cell_class_errors": {
+        "command_motor": 0.105544,
+        "interneuron": 0.103834,
+        "motor": 0.093929,
+        "pharyngeal": 0.155823,
+        "premotor_command": 0.136303,
+        "sensory": 0.374537
+      },
+      "sex_errors": {
+        "hermaphrodite": 0.189866,
+        "male": 0.151602
+      },
+      "stimulus_errors": {
+        "100mM NaCl": 0.101282,
+        "10mM CuSO4": 0.150872,
+        "1uM ascr#3": 0.236286,
+        "450mM NaCl": 0.147772,
+        "800mM Sorbitol": 0.121462,
+        "OP50": 0.265213,
+        "e-2 IAA": 0.231307,
+        "e-6 IAA": 0.084692
+      }
+    },
+    "toyoshima2024": {
+      "E_d": 0.339811,
+      "rmse_raw": 0.272703,
+      "post_R2": 0.74669,
+      "post_R2_ci95": [
+        0.633933,
+        0.855991
+      ],
+      "delta_R2": 0.099735,
+      "delta_R2_ci95": [
+        0.067743,
+        0.117029
+      ],
+      "buffer_E_d": 0.370103,
+      "buffer_vs_M3R1_02": {
+        "n_worms": 11,
+        "buffer_E_d_cand": 0.370103,
+        "buffer_E_d_ref": 0.370724,
+        "I_d_buffer": 0.001676,
+        "I_d_buffer_ci95": [
+          0.0004,
+          0.002589
+        ],
+        "n_worms_improved": 9
+      },
+      "n_worms_total": 11,
+      "vs_B4_ridge_self_stim": {
+        "I_d": 0.000481,
+        "I_d_ci95": [
+          -0.003127,
+          0.003955
+        ],
+        "n_worms_improved": 9,
+        "fraction_worms_improved": 0.8182
+      },
+      "vs_M3R1_02_h1_confounds_only": {
+        "I_d": 0.000299,
+        "I_d_ci95": [
+          1.2e-05,
+          0.000893
+        ],
+        "n_worms_improved": 8,
+        "fraction_worms_improved": 0.7273
+      },
+      "vs_M3R2_03_h2_capacity_matched_additive": {
+        "I_d": 0.0,
+        "I_d_ci95": [
+          0.0,
+          0.0
+        ],
+        "n_worms_improved": 0,
+        "fraction_worms_improved": 0.0
+      },
+      "temporal_horizon_errors": {
+        "early_0_3s_E_d": 0.326126,
+        "late_3_10s_E_d": 0.345701
+      },
+      "cell_class_errors": {
+        "command_motor": 0.383448,
+        "interneuron": 0.360232,
+        "motor": 0.220487,
+        "pharyngeal": 0.265235,
+        "premotor_command": 0.504648,
+        "sensory": 0.520614
+      },
+      "sex_errors": {
+        "hermaphrodite": 0.339811
+      },
+      "stimulus_errors": {
+        "NaCl_25_to_50mM": 0.440448,
+        "NaCl_50_to_25mM": 0.457989
+      }
+    }
+  }
+}

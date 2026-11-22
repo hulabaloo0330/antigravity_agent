@@ -1,0 +1,563 @@
+{
+  "created_at_utc": "2026-11-21T09:11:02Z",
+  "model_id": "M3R4_01_connectome_film_herm_final",
+  "run_id": "r4_01_m3r4_01_connectome_film_herm_final",
+  "checksums": {
+    "protocol_sha256": "208cb7cdd973d85418c648454a9bb42bd02e6e70d8d1f8d87e02c9bcadfaa8a8",
+    "lambda_global_sha256": "b449c039d14d97d208f18e64215909770c281c71f0151a2d73919f6d03f90d9c",
+    "split_manifest_sha256": "2a9a3cca9d7c1fdb1a16b84974e0536136c88fc4d471e21bd97d2b9e2c0779ce",
+    "connectome_bundle_sha256": "c9892d2809b67c0ecf8aebbdaaa6e9a9d524a6fd8432a9255359b5bc8de489a9",
+    "code_bundle_sha256": "54b61d73ef286123e71d3eb32febca1d10a3a296f7255d73b2fe734d97d52e30"
+  },
+  "param_counts_by_dataset": {
+    "yemini2021": 2022,
+    "seyedolmohadesin2025": 2142,
+    "toyoshima2024": 1998
+  },
+  "selected_epochs_by_dataset": {
+    "yemini2021": [
+      5,
+      7,
+      6,
+      5,
+      4,
+      6,
+      7,
+      6,
+      6,
+      6,
+      6,
+      5,
+      6,
+      4,
+      6,
+      6,
+      7,
+      6,
+      7,
+      6,
+      7
+    ],
+    "seyedolmohadesin2025": [
+      3,
+      10,
+      4,
+      9,
+      14,
+      4
+    ],
+    "toyoshima2024": [
+      13,
+      15,
+      18,
+      13,
+      15,
+      11,
+      16,
+      18,
+      8,
+      15,
+      8
+    ]
+  },
+  "primary_seed": 20261117,
+  "primary_seed_vs_B4": {
+    "I_macro_main2": 0.009484,
+    "I_macro_main2_ci95": [
+      0.00457,
+      0.014609
+    ],
+    "I_macro_all3": 0.018223,
+    "I_macro_all3_ci95": [
+      0.011435,
+      0.022778
+    ],
+    "worst_main_source_I_d": 0.000319,
+    "per_dataset": {
+      "yemini2021": {
+        "E_d": 0.770368,
+        "I_d": 0.035701,
+        "I_d_ci95": [
+          0.018773,
+          0.043602
+        ],
+        "n_worms_improved": 18,
+        "n_worms_total": 21
+      },
+      "seyedolmohadesin2025": {
+        "E_d": 0.166084,
+        "I_d": 0.01865,
+        "I_d_ci95": [
+          0.00799,
+          0.028354
+        ],
+        "n_worms_improved": 25,
+        "n_worms_total": 32
+      },
+      "toyoshima2024": {
+        "E_d": 0.339866,
+        "I_d": 0.000319,
+        "I_d_ci95": [
+          -0.002707,
+          0.003398
+        ],
+        "n_worms_improved": 7,
+        "n_worms_total": 11
+      }
+    }
+  },
+  "primary_seed_vs_M3R1_02": {
+    "I_macro_main2": 0.00281,
+    "I_macro_main2_ci95": [
+      -0.001239,
+      0.006612
+    ],
+    "I_macro_all3": 0.002984,
+    "I_macro_all3_ci95": [
+      0.000492,
+      0.005886
+    ],
+    "worst_main_source_I_d": 0.000137,
+    "per_dataset": {
+      "yemini2021": {
+        "E_d": 0.770368,
+        "I_d": 0.003331,
+        "I_d_ci95": [
+          0.001421,
+          0.007019
+        ],
+        "n_worms_improved": 14,
+        "n_worms_total": 21
+      },
+      "seyedolmohadesin2025": {
+        "E_d": 0.166084,
+        "I_d": 0.005483,
+        "I_d_ci95": [
+          -0.002063,
+          0.01332
+        ],
+        "n_worms_improved": 23,
+        "n_worms_total": 32
+      },
+      "toyoshima2024": {
+        "E_d": 0.339866,
+        "I_d": 0.000137,
+        "I_d_ci95": [
+          -0.000891,
+          0.00143
+        ],
+        "n_worms_improved": 8,
+        "n_worms_total": 11
+      }
+    }
+  },
+  "primary_seed_vs_M3R2_04": {
+    "I_macro_main2": 0.001573,
+    "I_macro_main2_ci95": [
+      -0.003088,
+      0.005577
+    ],
+    "I_macro_all3": 0.000979,
+    "I_macro_all3_ci95": [
+      -0.00191,
+      0.003797
+    ],
+    "worst_main_source_I_d": 7.3e-05,
+    "per_dataset": {
+      "yemini2021": {
+        "E_d": 0.770368,
+        "I_d": -0.000208,
+        "I_d_ci95": [
+          -0.003674,
+          0.001516
+        ],
+        "n_worms_improved": 11,
+        "n_worms_total": 21
+      },
+      "seyedolmohadesin2025": {
+        "E_d": 0.166084,
+        "I_d": 0.003073,
+        "I_d_ci95": [
+          -0.005589,
+          0.011072
+        ],
+        "n_worms_improved": 19,
+        "n_worms_total": 32
+      },
+      "toyoshima2024": {
+        "E_d": 0.339866,
+        "I_d": 7.3e-05,
+        "I_d_ci95": [
+          -0.000775,
+          0.000932
+        ],
+        "n_worms_improved": 6,
+        "n_worms_total": 11
+      }
+    }
+  },
+  "primary_seed_vs_M3R3_04": {
+    "I_macro_main2": 0.000592,
+    "I_macro_main2_ci95": [
+      -0.001328,
+      0.002217
+    ],
+    "I_macro_all3": 0.000395,
+    "I_macro_all3_ci95": [
+      -0.000774,
+      0.001561
+    ],
+    "worst_main_source_I_d": 0.0,
+    "per_dataset": {
+      "yemini2021": {
+        "E_d": 0.770368,
+        "I_d": -0.0,
+        "I_d_ci95": [
+          -0.0,
+          0.0
+        ],
+        "n_worms_improved": 7,
+        "n_worms_total": 21
+      },
+      "seyedolmohadesin2025": {
+        "E_d": 0.166084,
+        "I_d": 0.001184,
+        "I_d_ci95": [
+          -0.002671,
+          0.004436
+        ],
+        "n_worms_improved": 16,
+        "n_worms_total": 32
+      },
+      "toyoshima2024": {
+        "E_d": 0.339866,
+        "I_d": 0.0,
+        "I_d_ci95": [
+          -0.0,
+          0.0
+        ],
+        "n_worms_improved": 7,
+        "n_worms_total": 11
+      }
+    }
+  },
+  "primary_seed_source_metrics": {
+    "yemini2021": {
+      "E_d": 0.770368,
+      "I_d": 0.035701,
+      "I_d_ci95": [
+        0.018773,
+        0.043602
+      ],
+      "post_R2": 0.522566,
+      "post_R2_ci95": [
+        0.38961,
+        0.602524
+      ],
+      "delta_R2": 0.269145,
+      "delta_R2_ci95": [
+        0.198489,
+        0.328305
+      ],
+      "rmse_raw": 0.522921,
+      "n_worms_improved": 18,
+      "n_worms_total": 21,
+      "by_cell_class_E_d": {},
+      "by_sex_E_d": {},
+      "early_0_3s_E_d": NaN,
+      "late_3_10s_E_d": NaN
+    },
+    "seyedolmohadesin2025": {
+      "E_d": 0.166084,
+      "I_d": 0.01865,
+      "I_d_ci95": [
+        0.00799,
+        0.028354
+      ],
+      "post_R2": 0.891387,
+      "post_R2_ci95": [
+        0.877349,
+        0.904192
+      ],
+      "delta_R2": 0.26487,
+      "delta_R2_ci95": [
+        0.2039,
+        0.313739
+      ],
+      "rmse_raw": 2.189114,
+      "n_worms_improved": 25,
+      "n_worms_total": 32,
+      "by_cell_class_E_d": {},
+      "by_sex_E_d": {},
+      "early_0_3s_E_d": NaN,
+      "late_3_10s_E_d": NaN
+    },
+    "toyoshima2024": {
+      "E_d": 0.339866,
+      "I_d": 0.000319,
+      "I_d_ci95": [
+        -0.002707,
+        0.003398
+      ],
+      "post_R2": 0.746703,
+      "post_R2_ci95": [
+        0.634029,
+        0.855798
+      ],
+      "delta_R2": 0.099779,
+      "delta_R2_ci95": [
+        0.066824,
+        0.117082
+      ],
+      "rmse_raw": 0.272696,
+      "n_worms_improved": 7,
+      "n_worms_total": 11,
+      "by_cell_class_E_d": {},
+      "by_sex_E_d": {},
+      "early_0_3s_E_d": NaN,
+      "late_3_10s_E_d": NaN
+    }
+  },
+  "five_seed_summary": {
+    "seeds": [
+      20261117,
+      20261118,
+      20261119,
+      20261120,
+      20261121
+    ],
+    "I_macro_main2_vs_B4_mean": 0.009471,
+    "I_macro_main2_vs_B4_std": 0.000664,
+    "I_macro_all3_vs_B4_mean": 0.017812,
+    "I_macro_all3_vs_B4_std": 0.000398,
+    "I_macro_main2_vs_M3R1_02_mean": 0.002795,
+    "I_macro_main2_vs_M3R1_02_std": 0.000672,
+    "I_macro_all3_vs_M3R1_02_mean": 0.002558,
+    "I_macro_all3_vs_M3R1_02_std": 0.000404,
+    "per_dataset": {
+      "yemini2021": {
+        "E_d_mean": 0.771331,
+        "E_d_std": 0.000677,
+        "I_d_vs_B4_mean": 0.034496,
+        "I_d_vs_B4_std": 0.000848,
+        "I_d_vs_M3R1_02_mean": 0.002086,
+        "I_d_vs_M3R1_02_std": 0.000875,
+        "post_R2_mean": 0.521296,
+        "delta_R2_mean": 0.267202
+      },
+      "seyedolmohadesin2025": {
+        "E_d_mean": 0.166126,
+        "E_d_std": 0.000204,
+        "I_d_vs_B4_mean": 0.0184,
+        "I_d_vs_B4_std": 0.001207,
+        "I_d_vs_M3R1_02_mean": 0.00523,
+        "I_d_vs_M3R1_02_std": 0.001223,
+        "post_R2_mean": 0.89147,
+        "delta_R2_mean": 0.265436
+      },
+      "toyoshima2024": {
+        "E_d_mean": 0.33979,
+        "E_d_std": 6.4e-05,
+        "I_d_vs_B4_mean": 0.000541,
+        "I_d_vs_B4_std": 0.000187,
+        "I_d_vs_M3R1_02_mean": 0.000359,
+        "I_d_vs_M3R1_02_std": 0.000187,
+        "post_R2_mean": 0.74673,
+        "delta_R2_mean": 0.099877
+      }
+    },
+    "per_seed": [
+      {
+        "seed": 20261117,
+        "wall_clock_sec": 65.47,
+        "datasets": {
+          "yemini2021": {
+            "E_d": 0.770368,
+            "I_d_vs_B4": 0.035701,
+            "I_d_vs_M3R1_02": 0.003331,
+            "post_R2": 0.522566,
+            "delta_R2": 0.269145,
+            "rmse_raw": 0.522921
+          },
+          "seyedolmohadesin2025": {
+            "E_d": 0.166084,
+            "I_d_vs_B4": 0.01865,
+            "I_d_vs_M3R1_02": 0.005483,
+            "post_R2": 0.891387,
+            "delta_R2": 0.26487,
+            "rmse_raw": 2.189114
+          },
+          "toyoshima2024": {
+            "E_d": 0.339866,
+            "I_d_vs_B4": 0.000319,
+            "I_d_vs_M3R1_02": 0.000137,
+            "post_R2": 0.746703,
+            "delta_R2": 0.099779,
+            "rmse_raw": 0.272696
+          }
+        },
+        "I_macro_main2_vs_B4": 0.009484,
+        "I_macro_all3_vs_B4": 0.018223,
+        "I_macro_main2_vs_M3R1_02": 0.00281,
+        "I_macro_all3_vs_M3R1_02": 0.002984
+      },
+      {
+        "seed": 20261118,
+        "wall_clock_sec": 60.43,
+        "datasets": {
+          "yemini2021": {
+            "E_d": 0.771938,
+            "I_d_vs_B4": 0.033735,
+            "I_d_vs_M3R1_02": 0.0013,
+            "post_R2": 0.520281,
+            "delta_R2": 0.265648,
+            "rmse_raw": 0.52417
+          },
+          "seyedolmohadesin2025": {
+            "E_d": 0.16613,
+            "I_d_vs_B4": 0.018378,
+            "I_d_vs_M3R1_02": 0.005207,
+            "post_R2": 0.891755,
+            "delta_R2": 0.267362,
+            "rmse_raw": 2.185401
+          },
+          "toyoshima2024": {
+            "E_d": 0.339803,
+            "I_d_vs_B4": 0.000505,
+            "I_d_vs_M3R1_02": 0.000323,
+            "post_R2": 0.746738,
+            "delta_R2": 0.099905,
+            "rmse_raw": 0.272677
+          }
+        },
+        "I_macro_main2_vs_B4": 0.009441,
+        "I_macro_all3_vs_B4": 0.017539,
+        "I_macro_main2_vs_M3R1_02": 0.002765,
+        "I_macro_all3_vs_M3R1_02": 0.002277
+      },
+      {
+        "seed": 20261119,
+        "wall_clock_sec": 67.56,
+        "datasets": {
+          "yemini2021": {
+            "E_d": 0.771007,
+            "I_d_vs_B4": 0.034901,
+            "I_d_vs_M3R1_02": 0.002504,
+            "post_R2": 0.5219,
+            "delta_R2": 0.268126,
+            "rmse_raw": 0.523285
+          },
+          "seyedolmohadesin2025": {
+            "E_d": 0.166454,
+            "I_d_vs_B4": 0.016465,
+            "I_d_vs_M3R1_02": 0.003269,
+            "post_R2": 0.891052,
+            "delta_R2": 0.262603,
+            "rmse_raw": 2.192487
+          },
+          "toyoshima2024": {
+            "E_d": 0.339827,
+            "I_d_vs_B4": 0.000433,
+            "I_d_vs_M3R1_02": 0.000251,
+            "post_R2": 0.746668,
+            "delta_R2": 0.099658,
+            "rmse_raw": 0.272715
+          }
+        },
+        "I_macro_main2_vs_B4": 0.008449,
+        "I_macro_all3_vs_B4": 0.017266,
+        "I_macro_main2_vs_M3R1_02": 0.00176,
+        "I_macro_all3_vs_M3R1_02": 0.002008
+      },
+      {
+        "seed": 20261120,
+        "wall_clock_sec": 54.15,
+        "datasets": {
+          "yemini2021": {
+            "E_d": 0.771988,
+            "I_d_vs_B4": 0.033673,
+            "I_d_vs_M3R1_02": 0.001236,
+            "post_R2": 0.520545,
+            "delta_R2": 0.266051,
+            "rmse_raw": 0.524027
+          },
+          "seyedolmohadesin2025": {
+            "E_d": 0.165892,
+            "I_d_vs_B4": 0.019783,
+            "I_d_vs_M3R1_02": 0.006632,
+            "post_R2": 0.891816,
+            "delta_R2": 0.267775,
+            "rmse_raw": 2.184785
+          },
+          "toyoshima2024": {
+            "E_d": 0.339704,
+            "I_d_vs_B4": 0.000796,
+            "I_d_vs_M3R1_02": 0.000614,
+            "post_R2": 0.746785,
+            "delta_R2": 0.100071,
+            "rmse_raw": 0.272652
+          }
+        },
+        "I_macro_main2_vs_B4": 0.01029,
+        "I_macro_all3_vs_B4": 0.018084,
+        "I_macro_main2_vs_M3R1_02": 0.003623,
+        "I_macro_all3_vs_M3R1_02": 0.002827
+      },
+      {
+        "seed": 20261121,
+        "wall_clock_sec": 55.46,
+        "datasets": {
+          "yemini2021": {
+            "E_d": 0.771352,
+            "I_d_vs_B4": 0.034469,
+            "I_d_vs_M3R1_02": 0.002058,
+            "post_R2": 0.52119,
+            "delta_R2": 0.267039,
+            "rmse_raw": 0.523673
+          },
+          "seyedolmohadesin2025": {
+            "E_d": 0.166072,
+            "I_d_vs_B4": 0.018724,
+            "I_d_vs_M3R1_02": 0.005558,
+            "post_R2": 0.891342,
+            "delta_R2": 0.264569,
+            "rmse_raw": 2.189563
+          },
+          "toyoshima2024": {
+            "E_d": 0.339752,
+            "I_d_vs_B4": 0.000654,
+            "I_d_vs_M3R1_02": 0.000472,
+            "post_R2": 0.746757,
+            "delta_R2": 0.099973,
+            "rmse_raw": 0.272667
+          }
+        },
+        "I_macro_main2_vs_B4": 0.009689,
+        "I_macro_all3_vs_B4": 0.017949,
+        "I_macro_main2_vs_M3R1_02": 0.003015,
+        "I_macro_all3_vs_M3R1_02": 0.002696
+      }
+    ]
+  },
+  "invariance_verification": {
+    "model_id": "M3R4_01_connectome_film_herm_final",
+    "dataset_id": "yemini2021",
+    "passed": true,
+    "future_poison_max_abs_diff": 0.0,
+    "future_poison_target_shift_verified": 1000043.875,
+    "oof_tamper_weight_diff": 0.0,
+    "oof_tamper_pred_diff": 0.0,
+    "connectome_max_abs_diag": 0.0,
+    "connectome_max_bilateral_entry": 0.0,
+    "bilateral_exclusion_AVAR_to_AVAL_diff": 0.0,
+    "bilateral_exclusion_AIYR_to_AIYL_diff": 0.0,
+    "bilateral_exclusion_ASER_to_ASEL_diff": 0.0,
+    "bilateral_exclusion_AWCOFF_to_AWCON_diff": 0.0,
+    "target_self_network_pathway_diff": 0.0,
+    "aiyl_sees_asel_aser_connectome_asymmetry_delta": 1.4081634283065796,
+    "sex_routing_mode": "herm_only"
+  },
+  "runs_jsonl_total_rows": 28,
+  "wall_clock_sec": 472.78,
+  "peak_rss_mb": 3160.17
+}

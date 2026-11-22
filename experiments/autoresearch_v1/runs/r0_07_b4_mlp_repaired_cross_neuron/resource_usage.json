@@ -1,0 +1,7 @@
+{
+  "run_id": "r0_07_b4_mlp_repaired_cross_neuron",
+  "wall_clock_sec": 53.827,
+  "cpu_time_sec": 0.518,
+  "peak_rss_mb": 5186.31,
+  "omp_threads": 2
+}

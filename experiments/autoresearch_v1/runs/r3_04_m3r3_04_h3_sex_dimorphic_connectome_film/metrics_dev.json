@@ -1,0 +1,247 @@
+{
+  "run_id": "r3_04_m3r3_04_h3_sex_dimorphic_connectome_film",
+  "parent_id": "r2_04_m3r2_04_h2_film_gating_residual",
+  "is_self_only": false,
+  "uses_confounds": true,
+  "uses_connectome": true,
+  "uses_polarity_sign": true,
+  "uses_wireless": true,
+  "uses_sex_connectome": true,
+  "is_stochastic": true,
+  "hypothesis": "H3 sex-dimorphic FiLM: Routes hermaphrodites/unknown through Cook 2019 herm matrices and males through Cook 2019 male matrices + CeNGEN polarity + wireless NPP/monoamine + excluded-self slow state into bounded multiplicative FiLM residual gate anchored on M3R1_02.",
+  "capacity_audit": {},
+  "I_macro_main2_vs_B4": 0.008903,
+  "I_macro_main2_vs_B4_ci95": [
+    0.003502,
+    0.014815
+  ],
+  "I_macro_all3_vs_B4": 0.017835,
+  "I_macro_all3_vs_B4_ci95": [
+    0.011394,
+    0.022412
+  ],
+  "I_macro_main2_vs_M3R1_02": 0.00222,
+  "I_macro_main2_vs_M3R1_02_ci95": [
+    -0.002401,
+    0.006959
+  ],
+  "I_macro_all3_vs_M3R1_02": 0.002591,
+  "I_macro_all3_vs_M3R1_02_ci95": [
+    -0.00065,
+    0.006041
+  ],
+  "I_macro_main2_vs_M3R2_04": 0.000982,
+  "I_macro_main2_vs_M3R2_04_ci95": [
+    -0.003557,
+    0.00508
+  ],
+  "I_macro_all3_vs_M3R2_04": 0.000585,
+  "I_macro_all3_vs_M3R2_04_ci95": [
+    -0.002654,
+    0.003503
+  ],
+  "worst_main_source_I_d_vs_B4": 0.000319,
+  "prediction_files_dev": {
+    "yemini2021": "runs/r3_04_m3r3_04_h3_sex_dimorphic_connectome_film/predictions_dev_yemini2021.npz",
+    "seyedolmohadesin2025": "runs/r3_04_m3r3_04_h3_sex_dimorphic_connectome_film/predictions_dev_seyedolmohadesin2025.npz",
+    "toyoshima2024": "runs/r3_04_m3r3_04_h3_sex_dimorphic_connectome_film/predictions_dev_toyoshima2024.npz"
+  },
+  "wall_clock_sec": 0.0,
+  "cpu_time_sec": 0.0,
+  "datasets": {
+    "yemini2021": {
+      "E_d": 0.770368,
+      "rmse_raw": 0.522921,
+      "post_R2": 0.522566,
+      "post_R2_ci95": [
+        0.38961,
+        0.602524
+      ],
+      "delta_R2": 0.269145,
+      "delta_R2_ci95": [
+        0.198489,
+        0.328305
+      ],
+      "buffer_E_d": 0.832107,
+      "n_worms_total": 21,
+      "vs_B4_ridge_self_stim": {
+        "I_d": 0.035701,
+        "I_d_ci95": [
+          0.019341,
+          0.043139
+        ],
+        "n_worms_improved": 18,
+        "fraction_worms_improved": 0.8571
+      },
+      "vs_M3R1_02_h1_confounds_only": {
+        "I_d": 0.003331,
+        "I_d_ci95": [
+          0.001436,
+          0.007757
+        ],
+        "n_worms_improved": 14,
+        "fraction_worms_improved": 0.6667
+      },
+      "vs_M3R2_04_h2_film_gating_residual": {
+        "I_d": -0.000208,
+        "I_d_ci95": [
+          -0.003303,
+          0.001568
+        ],
+        "n_worms_improved": 11,
+        "fraction_worms_improved": 0.5238
+      },
+      "temporal_horizon_errors": {
+        "early_0_3s_E_d": 0.319938,
+        "late_3_10s_E_d": 0.963716
+      },
+      "cell_class_errors": {
+        "command_motor": 0.476535,
+        "interneuron": 0.843631,
+        "motor": 0.418781,
+        "pharyngeal": 0.244718,
+        "premotor_command": 0.559878,
+        "sensory": 1.362783
+      },
+      "sex_errors": {
+        "hermaphrodite": 0.770368
+      },
+      "stimulus_errors": {
+        "butanone": 0.493095,
+        "nacl": 0.957165,
+        "pentanedione": 0.860845
+      }
+    },
+    "seyedolmohadesin2025": {
+      "E_d": 0.166281,
+      "rmse_raw": 2.188356,
+      "post_R2": 0.891462,
+      "post_R2_ci95": [
+        0.877267,
+        0.904099
+      ],
+      "delta_R2": 0.265379,
+      "delta_R2_ci95": [
+        0.201991,
+        0.315862
+      ],
+      "buffer_E_d": 0.101551,
+      "n_worms_total": 32,
+      "vs_B4_ridge_self_stim": {
+        "I_d": 0.017487,
+        "I_d_ci95": [
+          0.006929,
+          0.028084
+        ],
+        "n_worms_improved": 25,
+        "fraction_worms_improved": 0.7812
+      },
+      "vs_M3R1_02_h1_confounds_only": {
+        "I_d": 0.004304,
+        "I_d_ci95": [
+          -0.005198,
+          0.013952
+        ],
+        "n_worms_improved": 23,
+        "fraction_worms_improved": 0.7188
+      },
+      "vs_M3R2_04_h2_film_gating_residual": {
+        "I_d": 0.001892,
+        "I_d_ci95": [
+          -0.007381,
+          0.010106
+        ],
+        "n_worms_improved": 20,
+        "fraction_worms_improved": 0.625
+      },
+      "temporal_horizon_errors": {
+        "early_0_3s_E_d": 0.074941,
+        "late_3_10s_E_d": 0.207569
+      },
+      "cell_class_errors": {
+        "command_motor": 0.106119,
+        "interneuron": 0.103656,
+        "motor": 0.094378,
+        "pharyngeal": 0.156256,
+        "premotor_command": 0.137095,
+        "sensory": 0.37044
+      },
+      "sex_errors": {
+        "hermaphrodite": 0.19006,
+        "male": 0.150012
+      },
+      "stimulus_errors": {
+        "100mM NaCl": 0.100936,
+        "10mM CuSO4": 0.149833,
+        "1uM ascr#3": 0.229507,
+        "450mM NaCl": 0.148332,
+        "800mM Sorbitol": 0.122239,
+        "OP50": 0.268299,
+        "e-2 IAA": 0.22827,
+        "e-6 IAA": 0.08459
+      }
+    },
+    "toyoshima2024": {
+      "E_d": 0.339866,
+      "rmse_raw": 0.272696,
+      "post_R2": 0.746703,
+      "post_R2_ci95": [
+        0.634029,
+        0.855798
+      ],
+      "delta_R2": 0.099779,
+      "delta_R2_ci95": [
+        0.066824,
+        0.117082
+      ],
+      "buffer_E_d": 0.370264,
+      "n_worms_total": 11,
+      "vs_B4_ridge_self_stim": {
+        "I_d": 0.000319,
+        "I_d_ci95": [
+          -0.003082,
+          0.003797
+        ],
+        "n_worms_improved": 7,
+        "fraction_worms_improved": 0.6364
+      },
+      "vs_M3R1_02_h1_confounds_only": {
+        "I_d": 0.000137,
+        "I_d_ci95": [
+          -0.000935,
+          0.001371
+        ],
+        "n_worms_improved": 8,
+        "fraction_worms_improved": 0.7273
+      },
+      "vs_M3R2_04_h2_film_gating_residual": {
+        "I_d": 7.3e-05,
+        "I_d_ci95": [
+          -0.000878,
+          0.000941
+        ],
+        "n_worms_improved": 6,
+        "fraction_worms_improved": 0.5455
+      },
+      "temporal_horizon_errors": {
+        "early_0_3s_E_d": 0.326109,
+        "late_3_10s_E_d": 0.345787
+      },
+      "cell_class_errors": {
+        "command_motor": 0.38365,
+        "interneuron": 0.360307,
+        "motor": 0.220576,
+        "pharyngeal": 0.265091,
+        "premotor_command": 0.504926,
+        "sensory": 0.520623
+      },
+      "sex_errors": {
+        "hermaphrodite": 0.339866
+      },
+      "stimulus_errors": {
+        "NaCl_25_to_50mM": 0.440386,
+        "NaCl_50_to_25mM": 0.458172
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "run_id": "r0_10_b5_causal_gru",
+  "wall_clock_sec": 311.032,
+  "cpu_time_sec": 0.523,
+  "peak_rss_mb": 5186.43,
+  "omp_threads": 2
+}

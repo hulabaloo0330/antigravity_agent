@@ -1,0 +1,249 @@
+{
+  "model_wall": {
+    "M3R2_01_h2_bilinear_uniform": 10.7005615234375,
+    "M3R2_02_h2_bilinear_hierarchical": 9.888567924499512,
+    "M3R2_03_h2_capacity_matched_additive": 12.138084173202515,
+    "M3R2_04_h2_film_gating_residual": 0.0
+  },
+  "model_cpu": {
+    "M3R2_01_h2_bilinear_uniform": 16.304320777000004,
+    "M3R2_02_h2_bilinear_hierarchical": 15.637755696999982,
+    "M3R2_03_h2_capacity_matched_additive": 18.539876981,
+    "M3R2_04_h2_film_gating_residual": 0.0
+  },
+  "model_reg_ts": {
+    "M3R2_01_h2_bilinear_uniform": "2026-11-21T07:18:40Z",
+    "M3R2_02_h2_bilinear_hierarchical": "2026-11-21T07:18:40Z",
+    "M3R2_03_h2_capacity_matched_additive": "2026-11-21T07:18:40Z",
+    "M3R2_04_h2_film_gating_residual": "2026-11-21T07:18:40Z"
+  },
+  "model_pred_files": {
+    "M3R2_01_h2_bilinear_uniform": {
+      "yemini2021": "runs/r2_01_m3r2_01_h2_bilinear_uniform/predictions_dev_yemini2021.npz",
+      "seyedolmohadesin2025": "runs/r2_01_m3r2_01_h2_bilinear_uniform/predictions_dev_seyedolmohadesin2025.npz",
+      "toyoshima2024": "runs/r2_01_m3r2_01_h2_bilinear_uniform/predictions_dev_toyoshima2024.npz"
+    },
+    "M3R2_02_h2_bilinear_hierarchical": {
+      "yemini2021": "runs/r2_02_m3r2_02_h2_bilinear_hierarchical/predictions_dev_yemini2021.npz",
+      "seyedolmohadesin2025": "runs/r2_02_m3r2_02_h2_bilinear_hierarchical/predictions_dev_seyedolmohadesin2025.npz",
+      "toyoshima2024": "runs/r2_02_m3r2_02_h2_bilinear_hierarchical/predictions_dev_toyoshima2024.npz"
+    },
+    "M3R2_03_h2_capacity_matched_additive": {
+      "yemini2021": "runs/r2_03_m3r2_03_h2_capacity_matched_additive/predictions_dev_yemini2021.npz",
+      "seyedolmohadesin2025": "runs/r2_03_m3r2_03_h2_capacity_matched_additive/predictions_dev_seyedolmohadesin2025.npz",
+      "toyoshima2024": "runs/r2_03_m3r2_03_h2_capacity_matched_additive/predictions_dev_toyoshima2024.npz"
+    },
+    "M3R2_04_h2_film_gating_residual": {
+      "yemini2021": "runs/r2_04_m3r2_04_h2_film_gating_residual/predictions_dev_yemini2021.npz",
+      "seyedolmohadesin2025": "runs/r2_04_m3r2_04_h2_film_gating_residual/predictions_dev_seyedolmohadesin2025.npz",
+      "toyoshima2024": "runs/r2_04_m3r2_04_h2_film_gating_residual/predictions_dev_toyoshima2024.npz"
+    }
+  },
+  "capacity_audit": {
+    "M3R2_01_h2_bilinear_uniform": {
+      "yemini2021": {
+        "feature_dim": 40.0,
+        "param_count": 240.0,
+        "rank": 4.0,
+        "eff_dof": 17.121,
+        "eff_l2": 200.0
+      },
+      "seyedolmohadesin2025": {
+        "feature_dim": 80.0,
+        "param_count": 480.0,
+        "rank": 4.0,
+        "eff_dof": 39.633,
+        "eff_l2": 400.0
+      },
+      "toyoshima2024": {
+        "feature_dim": 32.0,
+        "param_count": 192.0,
+        "rank": 4.0,
+        "eff_dof": 18.242,
+        "eff_l2": 160.0
+      }
+    },
+    "M3R2_02_h2_bilinear_hierarchical": {
+      "yemini2021": {
+        "param_count": 540.0,
+        "eff_dof": 31.112
+      },
+      "seyedolmohadesin2025": {
+        "param_count": 1080.0,
+        "eff_dof": 72.616
+      },
+      "toyoshima2024": {
+        "param_count": 432.0,
+        "eff_dof": 34.8
+      }
+    },
+    "M3R2_03_h2_capacity_matched_additive": {
+      "yemini2021": {
+        "feature_dim": 40.0,
+        "param_count": 240.0,
+        "rank": 4.0,
+        "eff_dof": 12.776,
+        "eff_l2": 200.0
+      },
+      "seyedolmohadesin2025": {
+        "feature_dim": 80.0,
+        "param_count": 480.0,
+        "rank": 4.0,
+        "eff_dof": 32.79,
+        "eff_l2": 400.0
+      },
+      "toyoshima2024": {
+        "feature_dim": 32.0,
+        "param_count": 192.0,
+        "rank": 4.0,
+        "eff_dof": 14.482,
+        "eff_l2": 160.0
+      }
+    },
+    "M3R2_04_h2_film_gating_residual": {}
+  },
+  "perm_results": {
+    "M3R2_01_h2_bilinear_uniform": {
+      "yemini2021": {
+        "n_permutations": 20,
+        "unpermuted_E_d": 0.776051,
+        "anchor_M3R1_02_E_d": 0.772943,
+        "unpermuted_I_d_vs_M3R1_02": -0.004021,
+        "permuted_mean_E_d": 0.778799,
+        "permuted_mean_I_d_vs_M3R1_02": -0.007576,
+        "permuted_std_I_d_vs_M3R1_02": 0.004317,
+        "I_d_drop_on_permutation": 0.003555,
+        "frac_perms_worse_than_unpermuted": 0.85
+      },
+      "seyedolmohadesin2025": {
+        "n_permutations": 20,
+        "unpermuted_E_d": 0.166995,
+        "anchor_M3R1_02_E_d": 0.167,
+        "unpermuted_I_d_vs_M3R1_02": 2.7e-05,
+        "permuted_mean_E_d": 0.167697,
+        "permuted_mean_I_d_vs_M3R1_02": -0.004173,
+        "permuted_std_I_d_vs_M3R1_02": 0.001486,
+        "I_d_drop_on_permutation": 0.0042,
+        "frac_perms_worse_than_unpermuted": 1.0
+      },
+      "toyoshima2024": {
+        "n_permutations": 20,
+        "unpermuted_E_d": 0.340105,
+        "anchor_M3R1_02_E_d": 0.339912,
+        "unpermuted_I_d_vs_M3R1_02": -0.000566,
+        "permuted_mean_E_d": 0.340194,
+        "permuted_mean_I_d_vs_M3R1_02": -0.000827,
+        "permuted_std_I_d_vs_M3R1_02": 0.000156,
+        "I_d_drop_on_permutation": 0.000261,
+        "frac_perms_worse_than_unpermuted": 0.95
+      }
+    },
+    "M3R2_02_h2_bilinear_hierarchical": {
+      "yemini2021": {
+        "n_permutations": 20,
+        "unpermuted_E_d": 0.774647,
+        "anchor_M3R1_02_E_d": 0.772943,
+        "unpermuted_I_d_vs_M3R1_02": -0.002204,
+        "permuted_mean_E_d": 0.778885,
+        "permuted_mean_I_d_vs_M3R1_02": -0.007687,
+        "permuted_std_I_d_vs_M3R1_02": 0.003146,
+        "I_d_drop_on_permutation": 0.005483,
+        "frac_perms_worse_than_unpermuted": 0.95
+      },
+      "seyedolmohadesin2025": {
+        "n_permutations": 20,
+        "unpermuted_E_d": 0.167195,
+        "anchor_M3R1_02_E_d": 0.167,
+        "unpermuted_I_d_vs_M3R1_02": -0.001168,
+        "permuted_mean_E_d": 0.16787,
+        "permuted_mean_I_d_vs_M3R1_02": -0.005212,
+        "permuted_std_I_d_vs_M3R1_02": 0.002037,
+        "I_d_drop_on_permutation": 0.004045,
+        "frac_perms_worse_than_unpermuted": 1.0
+      },
+      "toyoshima2024": {
+        "n_permutations": 20,
+        "unpermuted_E_d": 0.340187,
+        "anchor_M3R1_02_E_d": 0.339912,
+        "unpermuted_I_d_vs_M3R1_02": -0.000808,
+        "permuted_mean_E_d": 0.340469,
+        "permuted_mean_I_d_vs_M3R1_02": -0.001638,
+        "permuted_std_I_d_vs_M3R1_02": 0.000205,
+        "I_d_drop_on_permutation": 0.00083,
+        "frac_perms_worse_than_unpermuted": 1.0
+      }
+    }
+  },
+  "sham_buffer_results": {
+    "M3R2_01_h2_bilinear_uniform": {
+      "yemini2021": {
+        "n_worms": 21,
+        "buffer_E_d_cand": 0.844039,
+        "buffer_E_d_ref": 0.833119,
+        "I_d_buffer": -0.013107,
+        "I_d_buffer_ci95": [
+          -0.033031,
+          -0.007576
+        ],
+        "n_worms_improved": 2
+      },
+      "seyedolmohadesin2025": {
+        "n_worms": 32,
+        "buffer_E_d_cand": 0.102526,
+        "buffer_E_d_ref": 0.101254,
+        "I_d_buffer": -0.012566,
+        "I_d_buffer_ci95": [
+          -0.01907,
+          -0.007203
+        ],
+        "n_worms_improved": 4
+      },
+      "toyoshima2024": {
+        "n_worms": 11,
+        "buffer_E_d_cand": 0.371141,
+        "buffer_E_d_ref": 0.370724,
+        "I_d_buffer": -0.001126,
+        "I_d_buffer_ci95": [
+          -0.002161,
+          -0.000322
+        ],
+        "n_worms_improved": 4
+      }
+    },
+    "M3R2_02_h2_bilinear_hierarchical": {
+      "yemini2021": {
+        "n_worms": 21,
+        "buffer_E_d_cand": 0.850164,
+        "buffer_E_d_ref": 0.833119,
+        "I_d_buffer": -0.02046,
+        "I_d_buffer_ci95": [
+          -0.050602,
+          -0.011078
+        ],
+        "n_worms_improved": 1
+      },
+      "seyedolmohadesin2025": {
+        "n_worms": 32,
+        "buffer_E_d_cand": 0.102089,
+        "buffer_E_d_ref": 0.101254,
+        "I_d_buffer": -0.008255,
+        "I_d_buffer_ci95": [
+          -0.014357,
+          -0.003189
+        ],
+        "n_worms_improved": 11
+      },
+      "toyoshima2024": {
+        "n_worms": 11,
+        "buffer_E_d_cand": 0.371422,
+        "buffer_E_d_ref": 0.370724,
+        "I_d_buffer": -0.001883,
+        "I_d_buffer_ci95": [
+          -0.003518,
+          -0.001071
+        ],
+        "n_worms_improved": 0
+      }
+    }
+  }
+}

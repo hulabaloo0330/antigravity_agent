@@ -1,0 +1,7 @@
+{
+  "run_id": "r0_03_b3_self_arfir_spline",
+  "wall_clock_sec": 3.768,
+  "cpu_time_sec": 0.541,
+  "peak_rss_mb": 5169.59,
+  "omp_threads": 2
+}

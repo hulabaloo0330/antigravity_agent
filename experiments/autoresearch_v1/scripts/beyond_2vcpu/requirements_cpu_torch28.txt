@@ -1,0 +1,18 @@
+# CPU-Only PyTorch 2.8 Environment for Beyond-2-vCPU Autoresearch Extension Scripts
+#
+# Install on any 8 / 16 / 32 / 64 vCPU Linux server (no CUDA/GPU required):
+#   pip install --upgrade pip
+#   pip install -r requirements_cpu_torch28.txt
+#
+# Note: All 3 standalone scripts in scripts/beyond_2vcpu/ use strictly standard,
+# forward-compatible PyTorch CPU APIs verified both in-container (torch==2.5.1+cpu)
+# and against PyTorch 2.8 CPU-only wheels (torch>=2.8.0,<2.9.0).
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch>=2.8.0,<2.9.0
+numpy>=2.0.0,<3.0.0
+scipy>=1.13.0,<2.0.0
+scikit-learn>=1.5.0,<2.0.0
+h5py>=3.10.0,<4.0.0
+psutil>=5.9.0,<7.0.0

@@ -1,0 +1,7 @@
+{
+  "run_id": "r0_02_b2_neuron_stim_mean",
+  "wall_clock_sec": 1.213,
+  "cpu_time_sec": 0.529,
+  "peak_rss_mb": 5169.46,
+  "omp_threads": 2
+}
