@@ -1,0 +1,134 @@
+{
+  "run_id": "r4_01_m3r4_01_connectome_film_herm_final",
+  "parent_id": "r3_04_m3r3_04_h3_sex_dimorphic_connectome_film",
+  "round": 4,
+  "category": "M3_round4_final_candidate",
+  "model_id": "M3R4_01_connectome_film_herm_final",
+  "family_id": "M3R4_FINAL",
+  "is_self_only": false,
+  "hypothesis": "M3 final Dev candidate: uses unified herm_only receptor-polarity-signed multi-layer connectome (W_chem_pos, W_chem_neg, W_chem_unk, W_gap, W_witvliet_core, W_npp_short/mid, W_monoamine; strict diag=0 & bilateral=0; ASEL/ASER & AWCON/OFF preserved) + excluded-self slow-state into bounded multiplicative FiLM residual gate anchored on M3R1_02_h1_confounds_only.",
+  "single_factor_changed": "freeze_herm_only_complete_signed_multilayer_connectome_film_5seed_synthesis",
+  "registered_before_training_utc": "2026-11-21T09:03:09Z",
+  "completed_at_utc": "2026-11-21T09:11:02Z",
+  "config_id": "lambda_global_v1",
+  "seed": 20261117,
+  "seeds_evaluated": [
+    20261117,
+    20261118,
+    20261119,
+    20261120,
+    20261121
+  ],
+  "checksums": {
+    "protocol_sha256": "208cb7cdd973d85418c648454a9bb42bd02e6e70d8d1f8d87e02c9bcadfaa8a8",
+    "lambda_global_sha256": "b449c039d14d97d208f18e64215909770c281c71f0151a2d73919f6d03f90d9c",
+    "split_manifest_sha256": "2a9a3cca9d7c1fdb1a16b84974e0536136c88fc4d471e21bd97d2b9e2c0779ce",
+    "connectome_bundle_sha256": "c9892d2809b67c0ecf8aebbdaaa6e9a9d524a6fd8432a9255359b5bc8de489a9",
+    "code_bundle_sha256": "54b61d73ef286123e71d3eb32febca1d10a3a296f7255d73b2fe734d97d52e30"
+  },
+  "reference_baseline_id": "B4_ridge_self_stim",
+  "I_macro": 0.009484,
+  "I_macro_ci95": [
+    0.00457,
+    0.014609
+  ],
+  "I_macro_all3_immobilized": 0.018223,
+  "I_macro_all3_ci95": [
+    0.011435,
+    0.022778
+  ],
+  "I_macro_vs_M3R1_02": 0.00281,
+  "I_macro_vs_M3R2_04": 0.001573,
+  "I_macro_vs_M3R3_04": 0.000592,
+  "I_macro_main2_5seed_mean": 0.009471,
+  "I_macro_main2_5seed_std": 0.000664,
+  "worst_main_source_I_d": 0.000319,
+  "source_metrics": {
+    "yemini2021": {
+      "E_d": 0.770368,
+      "I_d": 0.035701,
+      "I_d_ci95": [
+        0.018773,
+        0.043602
+      ],
+      "post_R2": 0.522566,
+      "post_R2_ci95": [
+        0.38961,
+        0.602524
+      ],
+      "delta_R2": 0.269145,
+      "delta_R2_ci95": [
+        0.198489,
+        0.328305
+      ],
+      "rmse_raw": 0.522921,
+      "n_worms_improved": 18,
+      "n_worms_total": 21,
+      "by_cell_class_E_d": {},
+      "by_sex_E_d": {},
+      "early_0_3s_E_d": NaN,
+      "late_3_10s_E_d": NaN
+    },
+    "seyedolmohadesin2025": {
+      "E_d": 0.166084,
+      "I_d": 0.01865,
+      "I_d_ci95": [
+        0.00799,
+        0.028354
+      ],
+      "post_R2": 0.891387,
+      "post_R2_ci95": [
+        0.877349,
+        0.904192
+      ],
+      "delta_R2": 0.26487,
+      "delta_R2_ci95": [
+        0.2039,
+        0.313739
+      ],
+      "rmse_raw": 2.189114,
+      "n_worms_improved": 25,
+      "n_worms_total": 32,
+      "by_cell_class_E_d": {},
+      "by_sex_E_d": {},
+      "early_0_3s_E_d": NaN,
+      "late_3_10s_E_d": NaN
+    },
+    "toyoshima2024": {
+      "E_d": 0.339866,
+      "I_d": 0.000319,
+      "I_d_ci95": [
+        -0.002707,
+        0.003398
+      ],
+      "post_R2": 0.746703,
+      "post_R2_ci95": [
+        0.634029,
+        0.855798
+      ],
+      "delta_R2": 0.099779,
+      "delta_R2_ci95": [
+        0.066824,
+        0.117082
+      ],
+      "rmse_raw": 0.272696,
+      "n_worms_improved": 7,
+      "n_worms_total": 11,
+      "by_cell_class_E_d": {},
+      "by_sex_E_d": {},
+      "early_0_3s_E_d": NaN,
+      "late_3_10s_E_d": NaN
+    }
+  },
+  "prediction_files_dev": {
+    "yemini2021": "runs/r4_01_m3r4_01_connectome_film_herm_final/predictions_dev_yemini2021.npz",
+    "seyedolmohadesin2025": "runs/r4_01_m3r4_01_connectome_film_herm_final/predictions_dev_seyedolmohadesin2025.npz",
+    "toyoshima2024": "runs/r4_01_m3r4_01_connectome_film_herm_final/predictions_dev_toyoshima2024.npz"
+  },
+  "wall_clock_sec": 65.47,
+  "five_seed_total_wall_clock_sec": 472.77,
+  "peak_rss_mb": 3160.17,
+  "exit_code": 0,
+  "status": "completed",
+  "decision": "FROZEN_M3_DEV_CANDIDATE"
+}

@@ -1,0 +1,80 @@
+{
+  "dataset_id": "yemini2021",
+  "dropout_curve": {
+    "0pct": {
+      "B4_ridge_self_stim": {
+        "E_d": 0.798889161676471,
+        "post_R2": 0.496686631895669
+      },
+      "M35_01_zeroinit_nonlinear_self_anchor": {
+        "E_d": 0.7387621409919474,
+        "post_R2": 0.5527925781244243
+      },
+      "M35_03_nonlinear_anchor_graphfree_patch_film_ctrl": {
+        "E_d": 0.7381941383001246,
+        "post_R2": 0.5519550141152034
+      }
+    },
+    "15pct": {
+      "B4_ridge_self_stim": {
+        "E_d": 0.798889161676471,
+        "post_R2": 0.496686631895669
+      },
+      "M35_01_zeroinit_nonlinear_self_anchor": {
+        "E_d": 0.7420603870614473,
+        "post_R2": 0.5495613722125341
+      },
+      "M35_03_nonlinear_anchor_graphfree_patch_film_ctrl": {
+        "E_d": 0.7415284012232368,
+        "post_R2": 0.5486989178994186
+      }
+    },
+    "30pct": {
+      "B4_ridge_self_stim": {
+        "E_d": 0.798889161676471,
+        "post_R2": 0.496686631895669
+      },
+      "M35_01_zeroinit_nonlinear_self_anchor": {
+        "E_d": 0.7483091631581507,
+        "post_R2": 0.5432402781466279
+      },
+      "M35_03_nonlinear_anchor_graphfree_patch_film_ctrl": {
+        "E_d": 0.7479394611552276,
+        "post_R2": 0.5425011405156562
+      }
+    },
+    "50pct": {
+      "B4_ridge_self_stim": {
+        "E_d": 0.798889161676471,
+        "post_R2": 0.496686631895669
+      },
+      "M35_01_zeroinit_nonlinear_self_anchor": {
+        "E_d": 0.7611274947243781,
+        "post_R2": 0.5302072525115333
+      },
+      "M35_03_nonlinear_anchor_graphfree_patch_film_ctrl": {
+        "E_d": 0.7606750395213039,
+        "post_R2": 0.5297213761615002
+      }
+    }
+  },
+  "short_window_5s": {
+    "B4_ridge_self_stim": {
+      "E_d": 0.7697636638067002,
+      "post_R2": 0.5181962379227181,
+      "delta_R2": 0.266167061049124
+    },
+    "M35_01_zeroinit_nonlinear_self_anchor": {
+      "E_d": 0.7634449277773857,
+      "post_R2": 0.5293627580394533,
+      "delta_R2": 0.2831747328858655
+    },
+    "M35_03_nonlinear_anchor_graphfree_patch_film_ctrl": {
+      "E_d": 0.7629535307849805,
+      "post_R2": 0.5290623642793999,
+      "delta_R2": 0.28271720462823613
+    }
+  },
+  "wall_sec": 259.82,
+  "peak_rss_mb": 707.28
+}

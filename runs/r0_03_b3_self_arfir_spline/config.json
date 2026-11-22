@@ -1,0 +1,123 @@
+{
+  "run_id": "r0_03_b3_self_arfir_spline",
+  "round": 0,
+  "milestone": "M2",
+  "model_id": "B3_self_arfir_spline",
+  "family_id": "B3",
+  "family_name": "Regularized AR-FIR / Orthonormal Temporal Basis Self-History",
+  "is_self_only": true,
+  "uses_network_state": false,
+  "lambda_global": {
+    "config_id": "lambda_global_v1",
+    "version": "1.0.0",
+    "protocol_ref": "protocol.json",
+    "window_protocol_sec": {
+      "input_window_bounds_sec": [
+        -10.0,
+        0.0
+      ],
+      "target_window_bounds_sec": [
+        0.0,
+        10.0
+      ],
+      "calibration_window_bounds_sec": [
+        -30.0,
+        -10.0
+      ],
+      "fast_anchor_bounds_sec": [
+        -2.0,
+        0.0
+      ],
+      "strictly_causal_cutoff": "frame_idx < onset_idx",
+      "dataset_id_branches_allowed": false
+    },
+    "hyperparameters": {
+      "input_window_sec": 10.0,
+      "target_window_sec": 10.0,
+      "calibration_window_sec": 20.0,
+      "fast_anchor_sec": 2.0,
+      "n_temporal_basis": 6,
+      "basis_taus_sec": [
+        0.75,
+        2.0,
+        5.0,
+        10.0
+      ],
+      "pre_ar_lags_sec": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          2.5
+        ],
+        [
+          2.5,
+          5.0
+        ],
+        [
+          5.0,
+          10.0
+        ]
+      ],
+      "rank": 6,
+      "l2_penalty": 25.0,
+      "prior_shrinkage_counts": 5.0,
+      "lds_latent_dim": 8,
+      "learning_rate": 0.003,
+      "weight_decay": 0.01,
+      "mlp_hidden_dim": 48,
+      "gru_hidden_dim": 24,
+      "tcn_channels": 24,
+      "tcn_kernel_size": 3,
+      "poco_film_dim": 24,
+      "dropout": 0.15,
+      "batch_size": 2048,
+      "max_epochs": 18,
+      "early_stopping_patience": 4,
+      "seed": 20261117,
+      "loss_reduction": "mean_per_sample",
+      "regularization_scaling": "closed_form_ridge_gram_plus_l2_times_max_1_sqrt_N_over_100_and_adamw_mean_mse",
+      "state_l2_penalty": 50.0,
+      "bilinear_rank": 4,
+      "bilinear_l2_penalty": 60.0,
+      "connectome_l2_penalty": 60.0,
+      "wireless_rank": 6,
+      "wireless_l2_multiplier": 2.5,
+      "connectome_taus_sec": [
+        2.0,
+        5.0,
+        10.0
+      ],
+      "missingness_precision_kappa": 4.0
+    },
+    "selection_governance": {
+      "source_aggregation": "equal_weight_macro",
+      "main_dev_sources": [
+        "seyedolmohadesin2025",
+        "toyoshima2024"
+      ],
+      "historical_dev_sources": [
+        "yemini2021"
+      ],
+      "separate_modality_instances": true,
+      "per_dataset_inner_cv_merged": false,
+      "worst_dev_source_gain": 0.0,
+      "zero_dataset_id_tuning_branches": true
+    },
+    "generalization_claims": [
+      {
+        "claim_type": "cross_dataset_method_reproduction",
+        "target_weights_refitted": true,
+        "hyperparameters_frozen": true
+      }
+    ]
+  },
+  "checksums": {
+    "protocol_sha256": "208cb7cdd973d85418c648454a9bb42bd02e6e70d8d1f8d87e02c9bcadfaa8a8",
+    "lambda_global_sha256": "b449c039d14d97d208f18e64215909770c281c71f0151a2d73919f6d03f90d9c",
+    "split_manifest_sha256": "2a9a3cca9d7c1fdb1a16b84974e0536136c88fc4d471e21bd97d2b9e2c0779ce",
+    "code_bundle_sha256": "3fb4346d7c38612dab67191561f8d88d155906083342f5fb32cd48673e210f2f"
+  }
+}

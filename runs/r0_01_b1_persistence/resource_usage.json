@@ -1,0 +1,7 @@
+{
+  "run_id": "r0_01_b1_persistence",
+  "wall_clock_sec": 0.559,
+  "cpu_time_sec": 0.49,
+  "peak_rss_mb": 5154.49,
+  "omp_threads": 2
+}

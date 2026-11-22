@@ -1,0 +1,7 @@
+{
+  "run_id": "r0_12_b6_poco_univariate_ms_mlp",
+  "wall_clock_sec": 42.02,
+  "cpu_time_sec": 70.878,
+  "peak_rss_mb": 5491.35,
+  "omp_threads": 2
+}

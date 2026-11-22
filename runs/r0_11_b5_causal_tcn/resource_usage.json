@@ -1,0 +1,7 @@
+{
+  "run_id": "r0_11_b5_causal_tcn",
+  "wall_clock_sec": 333.449,
+  "cpu_time_sec": 636.607,
+  "peak_rss_mb": 5491.35,
+  "omp_threads": 2
+}

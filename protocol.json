@@ -1,0 +1,74 @@
+{
+  "protocol_id": "celegans_chemosensory_causal_trajectory_v1",
+  "version": "1.0.0",
+  "created_at_utc": "2026-11-18T03:42:00Z",
+  "input_window_sec": [-10.0, 0.0],
+  "calibration_window_sec": [-30.0, -10.0],
+  "target_window_sec": [0.0, 10.0],
+  "window_unit": "physical_seconds",
+  "input_strictly_before_onset": true,
+  "animal_weighting": "equal_per_animal",
+  "scale_floor_percentile": 10.0,
+  "scale_floor_fallback": 1e-6,
+  "task_definition": {
+    "primary_endpoint": "post_stimulus_calcium_trajectory",
+    "frame_rule": {
+      "n_input_frames": "ceil(10.0 * fps)",
+      "n_calibration_frames": "ceil(20.0 * fps)",
+      "n_target_frames": "floor(10.0 * fps)",
+      "strict_causal_cutoff": "frame_idx < onset_idx"
+    },
+    "allowed_inputs": [
+      "causal_pre_stimulus_neural_traces_strictly_before_onset",
+      "causal_observation_mask_strictly_before_onset",
+      "canonical_neuropal_neuron_identities_preserving_LR_and_ON_OFF",
+      "known_stimulus_identity_and_onset_offset_schedule",
+      "causal_session_metadata_sex_trial_order_elapsed_sec"
+    ],
+    "prohibited_inputs": [
+      "post_stimulus_neural_traces_t_ge_0",
+      "post_stimulus_behavior_or_velocity",
+      "full_recording_zscore_or_ppca_imputation",
+      "bidirectional_or_savgol_future_smoothing",
+      "dataset_id_hyperparameter_branches"
+    ]
+  },
+  "neuron_vocabulary": {
+    "source": "/home/antigravity/data/connectomes/connectome_priors_bundle.npz",
+    "n_canonical_neurons": 310,
+    "preserve_asymmetric_pairs": ["ASEL", "ASER", "AWCON", "AWCOFF", "AWCL", "AWCR"],
+    "exclude_non_neuronal_rois": true
+  },
+  "primary_scoring_rule": {
+    "scale_definition": "s_n = max(std_train_n, s_floor) fitted strictly on training-fold animals",
+    "trial_loss": "e_{w,c,m} = mean_{(n,t) in valid_post} ((y_true[n,t] - y_pred[n,t]) / s_n[n])^2",
+    "worm_loss": "L_w = equal-weight mean across non-buffer stimulus conditions c of mean_m e_{w,c,m}",
+    "dataset_loss": "E_d = equal-weight mean across unique physical animals w of L_w",
+    "relative_gain": "I_d = 1 - E_d(candidate) / E_d(reference_baseline)",
+    "macro_gain": "I_macro = equal-weight mean of I_d across unexposed main immobilized sources [seyedolmohadesin2025, toyoshima2024]",
+    "buffer_control_handling": "Events with is_control=True or is_buffer_control=True are excluded from primary E_d and scored separately in buffer_E_d",
+    "sensor_glitch_filter": "Frames outside [p0.1_train - 15*IQR_train, p99.9_train + 15*IQR_train] derived strictly from training-fold observed traces are masked as tracking/CFP->0 division glitches identically across all models and standalone scorer (zero dataset_id branches, zero future/val leakage)"
+  },
+  "cv_and_grouping_rules": {
+    "yemini2021": {
+      "role": "historically_exposed_dev_and_audit",
+      "group_unit": "animal_id",
+      "dev_cv_scheme": "leave_one_worm_out_21_folds"
+    },
+    "seyedolmohadesin2025": {
+      "role": "primary_unexposed_immobilized_source_1",
+      "group_unit": "animal_id_grouped_by_date_batch_for_cv",
+      "dev_cv_scheme": "date_batch_grouped_6_folds_32_worms"
+    },
+    "toyoshima2024": {
+      "role": "primary_unexposed_immobilized_source_2",
+      "group_unit": "physical_animal_id",
+      "dev_cv_scheme": "physical_animal_grouped_cv_11_unique_worms_across_14_sessions"
+    },
+    "baskoylu2026_copper": {
+      "role": "isolated_freely_moving_stress_test",
+      "group_unit": "animal_id",
+      "dev_cv_scheme": "batch_grouped_cv_isolated_modality"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "dataset_id": "toyoshima2024",
+  "dropout_curve": {
+    "0pct": {
+      "B4_ridge_self_stim": {
+        "E_d": 0.3399742816327226,
+        "post_R2": 0.7469896485093148
+      },
+      "M35_01_zeroinit_nonlinear_self_anchor": {
+        "E_d": 0.33812847999986767,
+        "post_R2": 0.74814888145484
+      },
+      "M35_03_nonlinear_anchor_graphfree_patch_film_ctrl": {
+        "E_d": 0.33801025817201186,
+        "post_R2": 0.7482401952692511
+      }
+    },
+    "15pct": {
+      "B4_ridge_self_stim": {
+        "E_d": 0.3399742816327226,
+        "post_R2": 0.7469896485093148
+      },
+      "M35_01_zeroinit_nonlinear_self_anchor": {
+        "E_d": 0.3383267650106789,
+        "post_R2": 0.7479803381117882
+      },
+      "M35_03_nonlinear_anchor_graphfree_patch_film_ctrl": {
+        "E_d": 0.33819893344983404,
+        "post_R2": 0.7481027931253186
+      }
+    },
+    "30pct": {
+      "B4_ridge_self_stim": {
+        "E_d": 0.3399742816327226,
+        "post_R2": 0.7469896485093148
+      },
+      "M35_01_zeroinit_nonlinear_self_anchor": {
+        "E_d": 0.338672298559305,
+        "post_R2": 0.7476890990189662
+      },
+      "M35_03_nonlinear_anchor_graphfree_patch_film_ctrl": {
+        "E_d": 0.3386010912176415,
+        "post_R2": 0.7477667165132078
+      }
+    },
+    "50pct": {
+      "B4_ridge_self_stim": {
+        "E_d": 0.3399742816327226,
+        "post_R2": 0.7469896485093148
+      },
+      "M35_01_zeroinit_nonlinear_self_anchor": {
+        "E_d": 0.33932566098887545,
+        "post_R2": 0.7471243560398788
+      },
+      "M35_03_nonlinear_anchor_graphfree_patch_film_ctrl": {
+        "E_d": 0.33918937252826653,
+        "post_R2": 0.7472731142736105
+      }
+    }
+  },
+  "short_window_5s": {
+    "B4_ridge_self_stim": {
+      "E_d": 0.3538088403063924,
+      "post_R2": 0.7362821134531414,
+      "delta_R2": 0.06283537479782664
+    },
+    "M35_01_zeroinit_nonlinear_self_anchor": {
+      "E_d": 0.35517831329826993,
+      "post_R2": 0.7344727624400753,
+      "delta_R2": 0.05640555016127102
+    },
+    "M35_03_nonlinear_anchor_graphfree_patch_film_ctrl": {
+      "E_d": 0.35512503956192876,
+      "post_R2": 0.7346448649311494,
+      "delta_R2": 0.05701714450041839
+    }
+  },
+  "wall_sec": 534.45,
+  "peak_rss_mb": 1357.0
+}
